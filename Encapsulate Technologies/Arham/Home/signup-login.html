@@ -370,13 +370,20 @@
             <h3>Sign Up For Customers</h3><br>
             <input class="form-control input-lg ct-input--border ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Type of Inspection" required>
             <input class="form-control input-lg ct-input--border ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Type of Inspection" required>
-            <select class="form-control">
-                <option>Property Type</option>
-                <option>Residential</option>
-                <option>Commericial</option>
-                <option>Plot</option>
-                <option>land</option>
-            </select><br><br>
+            <div class="row">
+               <div class="col-md-12">
+                    <div class="ct-form--item">
+                        <select class="ct-js-select ct-select-lg">
+                            <option value="any">Property Type</option>
+                            <option value="1">Residential</option>
+                            <option value="2">Commercial</option>
+                            <option value="3">Plot</option>
+                            <option value="4">Land</option>
+                        </select>
+                    </div>
+               </div>
+            </div>
+            <br><br>
             <div class="row">
                 <div class="col-md-6">
                     <input class="form-control input-lg ct-input--border ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Area (Sq.Ft)" required>
