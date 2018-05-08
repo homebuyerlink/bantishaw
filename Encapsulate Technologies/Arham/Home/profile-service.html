@@ -35,14 +35,14 @@
     <ul class="ct-menuMobile-navbar">
         <li class="dropdown"><a>Home<span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="index.html">Home V1 - Portal Slider</a></li>
-                <li><a href="index2.html">Home V2 - Portal Map</a></li>
-                <li><a href="index3.html">Home V3 - Portal Map (Light)</a></li>
-                <li><a href="index4.html">Home V4 - Real Estate Agency</a></li>
-                <li><a href="index5.html">Home V5 - Property Slider</a></li>
-                <li><a href="index6.html">Home V6 - Simple Onepager</a></li>
-                <li><a href="index7.html">Home V7 - Onepager Video</a></li>
-                <li><a href="index8.html">Home V8 - Side Map</a></li>
+                <li><a href="home.html">Home V1 - Portal Slider</a></li>
+                <li><a href="home2.html">Home V2 - Portal Map</a></li>
+                <li><a href="home3.html">Home V3 - Portal Map (Light)</a></li>
+                <li><a href="home4.html">Home V4 - Real Estate Agency</a></li>
+                <li><a href="home5.html">Home V5 - Property Slider</a></li>
+                <li><a href="home6.html">Home V6 - Simple Onepager</a></li>
+                <li><a href="home7.html">Home V7 - Onepager Video</a></li>
+                <li><a href="home8.html">Home V8 - Side Map</a></li>
             </ul>
         </li>
         <li class="dropdown"><a>Properties<span class="caret"></span></a>
@@ -57,16 +57,16 @@
                 <li><a href="submission.html">Submission Page</a></li>
             </ul>
         </li>
-        <li class="dropdown"><a>Agents<span class="caret"></span></a>
+        <li class="dropdown active "><a>Agents<span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="agency.html">Agency Page</a></li>
                 <li><a href="agent.html">Agent's Profile</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="agency-edit.html">Front Editing - Agency Page</a></li>
-                <li><a href="agent-edit.html">Front Editing - Agent's Profile</a></li>
+                <li class="active"><a href="agent-edit.html">Front Editing - Agent's Profile</a></li>
             </ul>
         </li>
-        <li class="dropdown active"><a>Features<span class="caret"></span></a>
+        <li class="dropdown"><a>Features<span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="features-grid.html"><i class="fa fa-fw fa-th"></i> Grid System</a></li>
                 <li><a href="features-typography.html"><i class="fa fa-fw fa-font"></i> Typography</a></li>
@@ -78,7 +78,7 @@
                 </li>
                 <li><a href="features-iconboxes.html"><i class="fa fa-fw fa-th-large"></i> Icon Boxes</a>
                 </li>
-                <li class="active"><a href="features-personboxes.html"><i class="fa fa-fw fa-users"></i> Person Boxes</a>
+                <li><a href="features-personboxes.html"><i class="fa fa-fw fa-users"></i> Person Boxes</a>
                 </li>
                 <li><a href="features-counters.html"><i class="fa fa-fw fa-plus"></i> Counters</a></li>
                 <li><a href="features-toggable.html"><i class="fa fa-fw fa-toggle-on"></i> Toggables</a>
@@ -236,6 +236,90 @@
     </div>
 </form>
 
+<!--POPUP FORMS-->
+
+<div class="ct-popupForm ct-js-productForm--agents infinite-left">
+    <form role="form" class="center-block">
+        <div class="form-group">
+            <div class="ct-form-content">
+                <h3 class="text-uppercase">Edit Agent Details</h3>
+                <div class="ct-content--left pull-left">
+                    <label>First Name</label>
+                    <input type="text" required class="form-control input-lg" value="Kristine" placeholder="">
+                    <label>Last Name</label>
+                    <input type="text" required class="form-control input-lg" value="Black" placeholder="">
+                    <label>Number of Properties</label>
+                    <input type="text" required class="form-control input-lg" value="15" placeholder="">
+                    <label>Include contact form?</label>
+                    <select class="ct-js-select ct-select-lg">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="ct-content--right pull-right">
+                    <label>Phone</label>
+                    <input type="text" required class="form-control input-lg" value="(123) 456 7890" placeholder="">
+                    <label>Mobile</label>
+                    <input type="text" required class="form-control input-lg" value="888 999 000" placeholder="">
+                    <label>Skype</label>
+                    <input type="text" required class="form-control input-lg" value="kristine.black" placeholder="">
+                    <label>Email</label>
+                    <input type="text" required class="form-control input-lg" value="kristine.black@example.com" placeholder="">
+                </div>
+                <div class="clearfix"></div>
+                <h3 class="text-uppercase">Socials</h3>
+                <div class="ct-content--left pull-left">
+                    <label>Facebook</label>
+                    <input type="text" required class="form-control input-lg" value="" placeholder="">
+                    <label>Instagram</label>
+                    <input type="text" required class="form-control input-lg" value="" placeholder="">
+                    <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="ct-content--right pull-right">
+                    <label>Twitter</label>
+                    <input type="text" required class="form-control input-lg" value="" placeholder="">
+                </div>
+                <div class="clearfix"></div>
+                <button type="submit" class="btn btn-success center-block">Save changes</button>
+            </div>
+            <div class="ct-form-close"><i class="fa fa-times"></i></div>
+        </div>
+    </form>
+</div>
+<div class="ct-popupForm ct-js-productForm--properties infinite-left">
+    <form role="form">
+        <div class="form-group">
+            <div class="ct-form-content">
+                <div class="ct-content--left pull-left">
+                    <h3 class="text-uppercase">Edit Property Details</h3>
+                    <label>Property Name</label>
+                    <input type="text" required class="form-control input-lg" value="15421 Southwest 39th Terrace" placeholder="">
+                    <label>Property Price</label>
+                    <input type="text" required class="form-control input-lg" value="$ 350 000" placeholder="">
+                    <label>Old Price</label>
+                    <input type="text" required class="form-control input-lg" value="$ 450 000" placeholder="">
+                    <label>Description</label>
+                    <textarea placeholder="" class="form-control" name="field[]" required="">Beautiful apartment in a great, very calm and safe place.</textarea>
+                </div>
+                <div class="ct-content--right pull-right">
+                    <h3 class="text-uppercase">Edit Property Meta</h3>
+                    <label>Bedrooms</label>
+                    <input type="text" required class="form-control input-lg" value="3" placeholder="">
+                    <label>Baths</label>
+                    <input type="text" required class="form-control input-lg" value="2" placeholder="">
+                    <label>Area (m2)</label>
+                    <input type="text" required class="form-control input-lg" value="105" placeholder="">
+                </div>
+                <div class="clearfix"></div>
+                <button type="submit" class="btn btn-success">Save changes</button>
+            </div>
+            <div class="ct-form-close"><i class="fa fa-times"></i></div>
+        </div>
+    </form>
+</div>
+<div class="mask infinite-left"></div>
+
+<!--END-->
 
 <div id="ct-js-wrapper" class="ct-pageWrapper">
 
@@ -246,7 +330,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html"><img src="assets/images/content/logo.png" alt="Estato"> </a>
+    <a class="navbar-brand" href="home.html"><assets/images/content/img-sample.jpg" alt="Estato"> </a>
     <button type="button" class="searchForm-toggle">
         <span class="sr-only">Toggle navigation</span>
         <span><i class="fa fa-search"></i></span>
@@ -322,7 +406,7 @@
 <nav class="navbar yamm ct-navbar--noDecoration" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
     <div class="container">
         <div class="navbar-header ct-panel--navbar">
-            <a href="index.html">
+            <a href="home.html">
                 <img src="assets/images/content/logo.png" alt="logo">
             </a>
         </div>
@@ -338,8 +422,8 @@
             <ul class="nav navbar-nav ct-navbar--fadeInUp">
                 <li class="dropdown"><a href="#">How it works<span class="caret ct-menu--arrow"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Customers</a></li>
-                        <li><a href="#">Professionals</a></li>
+                        <li><a href="faq-cs.html">Customers</a></li>
+                        <li><a href="faq-pro.html">Professionals</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#">Sign In  /Registered<span class="caret ct-menu--arrow"></span></a>
@@ -350,14 +434,14 @@
                 </li>
                 <li class="dropdown"><a href="#">Post AD<span class="caret ct-menu--arrow"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Rent</a></li>
-                        <li><a href="#">Sell</a></li>
+                        <li><a href="post-rent.html">Rent</a></li>
+                        <li><a href="post-sell.html">Sell</a></li>
                     </ul>
                 </li>
                  <li class="dropdown"><a href="about.html">Community<span class="caret ct-menu--arrow"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Home Owners</a></li>
-                        <li><a href="#">Professionals</a></li>
+                        <li><a href="comu-home.html">Home Owners</a></li>
+                        <li><a href="comu-pro.html">Professionals</a></li>
                     </ul>
                 </li>
             </ul>
@@ -366,13 +450,14 @@
 </nav>
 <div class="ct-site--map">
     <div class="container">
-        <a href="index.html">Dashboard</a>
-        <a href="features-personboxes.html">My Profile</a>
+        <a href="home.html">Dashboard</a>
+        <a href="agency.html">My Profile</a>
+        <a href="agent.html">Offer Services</a>
     </div>
 </div>
-<section class="ct-u-paddingBoth70 text-center ct-js-section">
+<header class="ct-mediaSection ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="470" data-type="parallax" data-bg-image="assets/images/content/agency-parallax.jpg" data-bg-image-mobile="assets/images/content/agency-parallax.jpg">
     <div class="container">
-        <div class="ct-personBox ct-personBox--extended text-left ct-u-marginBottom60">
+        <div class="ct-personBox ct-personBox--extended ct-personBox--extendedLight text-left">
             <div class="ct-imagePerson">
                 <img src="assets/images/content/agent-single.jpg" alt="">
                 <ul class="ct-panel--socials list-inline list-unstyled">
@@ -380,11 +465,12 @@
                     <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
                     <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
                 </ul>
+                <a class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
             </div>
             <div class="ct-personContent">
                 <div class="ct-personName ct-u-paddingBoth10 text-uppercase">
-                    <h2>Encapsulate</h2><br>
-                    <p>Zohaib Aslam</p>
+                    <h2>Zohaib Aslam<a class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a></h2>
+                    <a href="">Encapsulate Technologies</a>
                 </div>
                 <div class="ct-personDescription pull-right ct-u-paddingBoth20">
                     <ul class="list-unstyled ct-contactPerson pull-right">
@@ -393,301 +479,333 @@
                             <span>(123) 456 7890</span>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-skype"></i> Zohaib Aslam</a>
+                            <a href=""><i class="fa fa-skype"></i> zohaib.aslam</a>
                         </li>
                         <li>
                             <i class="fa fa-mobile"></i>
                             <span>888 999 000</span>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-envelope-o"></i> zohaib@encapsulate.com</a>
+                            <a href=""><i class="fa fa-envelope-o"></i> zohaib.aslam@encapsulate.com</a>
                         </li>
                     </ul>
                 </div>
-                <div class="ct-buttonPanel text-capitalize ct-u-paddingTop20 pull-right">
-                    <a href="contact.html" class="btn btn-primary btn-transparent--border ct-u-text--motive">Contact Person</a>
-                    <a href="properties.html" class="btn btn-primary btn-transparent--border ct-u-text--motive">View Services</a>
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="row">
-             <div class="ct-personName ct-u-paddingBoth10 text-uppercase">
-                <h2 align="left">recommendations</h2><br>
-            </div>
-            <div class="col-sm-12 col-md-10">
-                <div class="ct-personBox text-left">
-                    <div class="ct-personContent">
-                        <div class="ct-personDescription">
-                            <i class="fa fa-star fa-2x"></i>
-                                <span class="text-recomden-home"> &nbsp;&nbsp;&nbsp;This Website is just for Home buyers and sellers. This Website is just for Home buyers and sellers.</span><br>
-                            <i class="fa fa-star fa-2x"></i>
-                                <span class="text-recomden-home"> &nbsp;&nbsp;&nbsp;This Website is just for Home buyers and sellers. This Website is just for Home buyers and sellers.</span><br>
-                            <i class="fa fa-star-o fa-2x"></i>
-                                <span class="text-recomden-home"> &nbsp;&nbsp;&nbsp;This Website is just for Home buyers and sellers. This Website is just for Home buyers and sellers.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><br><br>
-        <div class="row">
-             <div class="ct-personName ct-u-paddingBoth10 text-uppercase">
-                <h2 align="left">Credential</h2><br>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="ct-personBox text-left">
-                    <div class="ct-personContent">
-                        <div class="ct-personDescription">
-                            <h5 class="ct-fw-600">Kristine Black</h5>
-                            <a href="">15 Properties</a>
-                        </div><hr>
-                        <div class="ct-personDescription">
-                            <h5 class="ct-fw-600">Kristine Black</h5>
-                            <a href="">15 Properties</a>
-                        </div><hr>
-                        <div class="ct-personDescription">
-                            <h5 class="ct-fw-600">Kristine Black</h5>
-                            <a href="">15 Properties</a>
-                        </div><hr>
-                        <div class="ct-personDescription">
-                            <h5 class="ct-fw-600">Kristine Black</h5>
-                            <a href="">15 Properties</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-sm-3">
-                <div class="ct-personBox text-left">
-                    <div class="ct-imagePerson">
-                        <img src="assets/images/content/agents-3.jpg" alt="">
-                        <ul class="ct-panel--socials list-inline list-unstyled">
-                            <li><a href="https://www.facebook.com/createITpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
-                            <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
-                            <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
-                        </ul>
-                    </div>
-                    <div class="ct-personContent">
-                        <div class="ct-personDescription"><br>
-                            <h5 class="ct-fw-600">Youtube Videos</h5><br>
-                            <a href="">Some videos</a><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-sm-3">
-                <div class="ct-personBox text-left">
-                    <div class="ct-imagePerson">
-                        <img src="assets/images/content/agents-3.jpg" alt="">
-                        <ul class="ct-panel--socials list-inline list-unstyled">
-                            <li><a href="https://www.facebook.com/createITpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
-                            <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
-                            <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
-                        </ul>
-                    </div>
-                    <div class="ct-personContent">
-                        <div class="ct-personDescription"><br>
-                            <h5 class="ct-fw-600">Youtube Videos</h5><br>
-                            <a href="">Some videos</a><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><br><br>
-        <div class="clearfix"></div>
-        <div class="row">
-             <div class="ct-personName ct-u-paddingBoth10 text-uppercase">
-                <h2 align="left">Services</h2><br>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="ct-personBox text-left">
-                    <div class="ct-imagePerson">
-                        <img src="assets/images/content/agents-1.jpg" alt="">
-                        <ul class="ct-panel--socials list-inline list-unstyled">
-                            <li><a href="https://www.facebook.com/createITpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
-                            <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
-                            <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
-                        </ul>
-                    </div>
-                    <div class="ct-personContent">
-                        <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
-                            <h5 class="ct-fw-600">Kristine Black</h5>
-                            <a href="">15 Properties</a>
-                        </div>
-                        <div class="ct-personDescription">
-                            <h5>Services Area</h5><br>
-                            <ul class="list-unstyled">
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    California
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    Los Angeles
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    New Roman City
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    Sydney
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="ct-personBox text-left">
-                    <div class="ct-imagePerson">
-                        <img src="assets/images/content/agents-1.jpg" alt="">
-                        <ul class="ct-panel--socials list-inline list-unstyled">
-                            <li><a href="https://www.facebook.com/createITpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
-                            <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
-                            <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
-                        </ul>
-                    </div>
-                    <div class="ct-personContent">
-                        <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
-                            <h5 class="ct-fw-600">Kristine Black</h5>
-                            <a href="">15 Properties</a>
-                        </div>
-                        <div class="ct-personDescription">
-                            <h5>Services Area</h5><br>
-                            <ul class="list-unstyled">
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    California
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    Los Angeles
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    New Roman City
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    Sydney
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="ct-personBox text-left">
-                    <div class="ct-imagePerson">
-                        <img src="assets/images/content/agents-1.jpg" alt="">
-                        <ul class="ct-panel--socials list-inline list-unstyled">
-                            <li><a href="https://www.facebook.com/createITpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
-                            <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
-                            <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
-                        </ul>
-                    </div>
-                    <div class="ct-personContent">
-                        <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
-                            <h5 class="ct-fw-600">Kristine Black</h5>
-                            <a href="">15 Properties</a>
-                        </div>
-                        <div class="ct-personDescription">
-                            <h5>Services Area</h5><br>
-                            <ul class="list-unstyled">
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    California
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    Los Angeles
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    New Roman City
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    Sydney
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="ct-personBox text-left">
-                    <div class="ct-imagePerson">
-                        <img src="assets/images/content/agents-1.jpg" alt="">
-                        <ul class="ct-panel--socials list-inline list-unstyled">
-                            <li><a href="https://www.facebook.com/createITpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
-                            <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
-                            <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
-                        </ul>
-                    </div>
-                    <div class="ct-personContent">
-                        <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
-                            <h5 class="ct-fw-600">Kristine Black</h5>
-                            <a href="">15 Properties</a>
-                        </div>
-                        <div class="ct-personDescription">
-                            <h5>Services Area</h5><br>
-                            <ul class="list-unstyled">
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    California
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    Los Angeles
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    New Roman City
-                                </li>
-                                <li>
-                                                <span class="fa-stack">
-                                                  <i class="fa fa-map-marker fa-stack-2x"></i>
-                                                </span>
-                                    Sydney
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="ct-buttonPanel text-capitalize ct-u-paddingBoth20 pull-right">
+                    <a href="contact.html" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Contact Agent</a>
+                    <a href="properties.html" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">View Properties</a>
                 </div>
             </div>
         </div>
     </div>
+</header>
+<section class="ct-u-paddingBoth60">
+<div class="container">
+<div class="ct-heading ct-u-marginBottom60 text-center">
+    <h3 class="text-uppercase">Zohaib's Services</h3><a class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Properties">edit</a>
+</div>
+<div class="ct-section--products">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+        <label class="control-label sale">
+            Sale
+        </label>
+        <a href="product-single.html">
+            <div class="ct-main-content">
+                <div class="ct-imageBox">
+                    <img src="assets/images/content/property-1.jpg" alt=""><i class="fa fa-eye"></i>
+                </div>
+                <div class="ct-main-text">
+                    <div class="ct-product--tilte">
+                        1724 Clear Hills Rise, Farewells
+                    </div>
+                    <div class="ct-product--price">
+                        <span class="ct-price--Old">$ 450,000</span>
+                        <span>$ 350,000</span>
+                    </div>
+                    <div class="ct-product--description">
+                        Beautiful apartment in a great, very calm and safe place.
+                    </div>
+                </div>
+            </div>
+            <div class="ct-product--meta">
+                <div class="ct-icons">
+                                    <span>
+                                        <i class="fa fa-bed"></i> 3
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-cutlery"></i> 2
+                                    </span>
+                </div>
+                <div class="ct-text">
+                    <span> Area: <span>105 m2</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+        <a href="product-single.html">
+            <div class="ct-main-content">
+                <div class="ct-imageBox">
+                    <img src="assets/images/content/property-2.jpg" alt=""><i class="fa fa-eye"></i>
+                </div>
+                <div class="ct-main-text">
+                    <div class="ct-product--tilte">
+                        1856 Misty Concession, Colonsay
+                    </div>
+                    <div class="ct-product--price">
+                        <span>$ 450,000</span>
+                    </div>
+                    <div class="ct-product--description">
+                        Beautiful apartment in a great, very calm and safe place.
+                    </div>
+                </div>
+            </div>
+            <div class="ct-product--meta">
+                <div class="ct-icons">
+                                    <span>
+                                        <i class="fa fa-bed"></i> 3
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-cutlery"></i> 2
+                                    </span>
+                </div>
+                <div class="ct-text">
+                    <span> Area: <span>105 m2</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+        <label class="control-label new">
+            New
+        </label>
+        <a href="product-single.html">
+            <div class="ct-main-content">
+                <div class="ct-imageBox">
+                    <img src="assets/images/content/property-3.jpg" alt=""><i class="fa fa-eye"></i>
+                </div>
+                <div class="ct-main-text">
+                    <div class="ct-product--tilte">
+                        3046 Merry Landing, High Lonesome Wells
+                    </div>
+                    <div class="ct-product--price">
+                        <span>$ 450,000</span>
+                    </div>
+                    <div class="ct-product--description">
+                        Beautiful apartment in a great, very calm and safe place.
+                    </div>
+                </div>
+            </div>
+            <div class="ct-product--meta">
+                <div class="ct-icons">
+                                    <span>
+                                        <i class="fa fa-bed"></i> 3
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-cutlery"></i> 2
+                                    </span>
+                </div>
+                <div class="ct-text">
+                    <span> Area: <span>105 m2</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+        <a href="product-single.html">
+            <div class="ct-main-content">
+                <div class="ct-imageBox">
+                    <img src="assets/images/content/property-4.jpg" alt=""><i class="fa fa-eye"></i>
+                </div>
+                <div class="ct-main-text">
+                    <div class="ct-product--tilte">
+                        5454 Fallen Deer Wood, Flat Nose
+                    </div>
+                    <div class="ct-product--price">
+                        <span>$ 450,000</span>
+                    </div>
+                    <div class="ct-product--description">
+                        Beautiful apartment in a great, very calm and safe place.
+                    </div>
+                </div>
+            </div>
+            <div class="ct-product--meta">
+                <div class="ct-icons">
+                                    <span>
+                                        <i class="fa fa-bed"></i> 3
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-cutlery"></i> 2
+                                    </span>
+                </div>
+                <div class="ct-text">
+                    <span> Area: <span>105 m2</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+        <a href="product-single.html">
+            <div class="ct-main-content">
+                <div class="ct-imageBox">
+                    <img src="assets/images/content/property-5.jpg" alt=""><i class="fa fa-eye"></i>
+                </div>
+                <div class="ct-main-text">
+                    <div class="ct-product--tilte">
+                        2501 Heather Pine Round, Terramuggus
+                    </div>
+                    <div class="ct-product--price">
+                        <span>$ 450,000</span>
+                    </div>
+                    <div class="ct-product--description">
+                        Beautiful apartment in a great, very calm and safe place.
+                    </div>
+                </div>
+            </div>
+            <div class="ct-product--meta">
+                <div class="ct-icons">
+                                    <span>
+                                        <i class="fa fa-bed"></i> 3
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-cutlery"></i> 2
+                                    </span>
+                </div>
+                <div class="ct-text">
+                    <span> Area: <span>105 m2</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+        <a href="product-single.html">
+            <div class="ct-main-content">
+                <div class="ct-imageBox">
+                    <img src="assets/images/content/property-6.jpg" alt=""><i class="fa fa-eye"></i>
+                </div>
+                <div class="ct-main-text">
+                    <div class="ct-product--tilte">
+                        9541 Rustic Forest Crescent, Falmouth
+                    </div>
+                    <div class="ct-product--price">
+                        <span>$ 450,000</span>
+                    </div>
+                    <div class="ct-product--description">
+                        Beautiful apartment in a great, very calm and safe place.
+                    </div>
+                </div>
+            </div>
+            <div class="ct-product--meta">
+                <div class="ct-icons">
+                                    <span>
+                                        <i class="fa fa-bed"></i> 3
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-cutlery"></i> 2
+                                    </span>
+                </div>
+                <div class="ct-text">
+                    <span> Area: <span>105 m2</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+        <a href="product-single.html">
+            <div class="ct-main-content">
+                <div class="ct-imageBox">
+                    <img src="assets/images/content/property-7.jpg" alt=""><i class="fa fa-eye"></i>
+                </div>
+                <div class="ct-main-text">
+                    <div class="ct-product--tilte">
+                        916 Umber Run, Skookumchuck
+                    </div>
+                    <div class="ct-product--price">
+                        <span>$ 450,000</span>
+                    </div>
+                    <div class="ct-product--description">
+                        Beautiful apartment in a great, very calm and safe place.
+                    </div>
+                </div>
+            </div>
+            <div class="ct-product--meta">
+                <div class="ct-icons">
+                                    <span>
+                                        <i class="fa fa-bed"></i> 3
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-cutlery"></i> 2
+                                    </span>
+                </div>
+                <div class="ct-text">
+                    <span> Area: <span>105 m2</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+        <a href="product-single.html">
+            <div class="ct-main-content">
+                <div class="ct-imageBox">
+                    <img src="assets/images/content/property-8.jpg" alt=""><i class="fa fa-eye"></i>
+                </div>
+                <div class="ct-main-text">
+                    <div class="ct-product--tilte">
+                        8553 Fallen Creek Bend, North Carolina
+                    </div>
+                    <div class="ct-product--price">
+                        <span>$ 450,000</span>
+                    </div>
+                    <div class="ct-product--description">
+                        Beautiful apartment in a great, very calm and safe place.
+                    </div>
+                </div>
+            </div>
+            <div class="ct-product--meta">
+                <div class="ct-icons">
+                                    <span>
+                                        <i class="fa fa-bed"></i> 3
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-cutlery"></i> 2
+                                    </span>
+                </div>
+                <div class="ct-text">
+                    <span> Area: <span>105 m2</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+<div class="ct-pagination text-center">
+    <ul class="pagination">
+        <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li>
+    </ul>
+</div>
+</div>
 </section>
 <footer>
     <div class="ct-footer--extended ct-u-paddingBoth60">
@@ -867,6 +985,7 @@
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
 <script src="assets/js/dependencies.js"></script>
 
 <script src="assets/js/select2/select2.min.js"></script>
