@@ -5625,6 +5625,11 @@ form input {
   color: #555555;
   font-weight: 600;
 }
+.text-selector-adjus{
+  background-color: #504e3d;
+  color: white;
+  font-weight: 600;
+}
 .ct-js-select a {
   padding: 0 !important;
   border-radius: 3px;
@@ -5649,6 +5654,11 @@ form input {
 .ct-js-select .select2-chosen {
   font-size: 14px;
   color: #555555 !important;
+}
+.select-adj{
+  color: black;
+  background-color: white;
+  border: none !important;
 }
 .select2-container {
   width: 100% !important;
@@ -13923,6 +13933,10 @@ span.round-tab:hover {
   background: #E74B37;
 }
 .back-inp-color{
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 24px;
+}
+.text-inner-input{
+  background-color: transparent;
+  border: 1px solid #e6e6e6;
+  color: black;
 }
