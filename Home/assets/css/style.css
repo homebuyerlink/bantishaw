@@ -5659,6 +5659,7 @@ form input {
   color: black;
   background-color: white;
   border: none !important;
+  border-radius: 0px;
 }
 .select2-container {
   width: 100% !important;
