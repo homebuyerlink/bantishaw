@@ -1,0 +1,29 @@
+-->Home page search
+
+Remove "Advanced" button.
+Remove search type select box and add radio buttons with same options for each tab.
+Search form should take below three inputs apart from radio button selection
+Property Type (text input box )
+City/Community (text input box )
+Zip Code (text input box )
+Search form contents should be same except the radio buttons for all tabs.
+Content should not change based on radio button selection.
+Search window background should be dark and transparent as mentioned in issue1.
+Make the tabs little smaller and more sharper.
+Active tab should be blue and other should be dark color with white text.
+For mobile view use mdbootstrap free icons to represent tabs with tooltip in order to save space.
+
+-->
+Please add logo to the fixed top navbar as well in case user scrolls down the page.
+-->
+Change default view to listing one result per row instead of grid. Remove button to switch views.
+Add side column to show advance filters like any e-shopping sites (Amazon or Flipkart)
+Display contents and buttons of the row as per the attached image(search-result-listing.png)
+-->
+Please modify as per details mentioned below:- These changes are only for carousel and search layout and not for navbars.
+
+Increase the size of the carousel up to search layout bottom and show it in background.
+Search layout should be on front of carousel with dark transparent background.
+Text on the carousel should be displayed at the top where it currently is.
+Carousel slides should changes automatically in background and should not affect in any means search layout screen.
+NOTE : take reference of the attached image(required-home-layout.png) to incorporate changes. Please keep the same background and color combination) of the search layout.
