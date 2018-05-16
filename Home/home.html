@@ -29,26 +29,87 @@
 </head>
 <body class="ct-headroom--fixedTopBar cssAnimate in">
 
-<div class="ct-topBar ">
+<div class="ct-topBar" style="position: fixed">
     <div class="container">
         <div class="row">
             <div class="col-md-offset-8 col-md-4">
-                <div class="ct-panel--user ct-panel--right text-right">
+                <div class="ct-panel--user ct-panel--right">
                     <div class="ct-panel--item ct-email">
                         <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
                     </div>
                     <div class="ct-panel--item ct-email">
-                        <a href="login.html"><i class="fa fa-user"></i> Login</a>
+                        <a class="btn btn-link btn-sm" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i> Login</a>
+                        <div class="modal fade" id="login-modal" role="dialog">
+                            <div class="modal-dialog">
+                                 <div class="modal-content" style="margin-top: 30%;max-width: 78%;margin-left: 15%;">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title">Login</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required>
+                                      <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-warning">Sign In</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="ct-panel--item ct-email">
-                        <a href="registration.html"><i class="fa fa-plus-square"></i> Register</a>
+                        <a class="btn btn-link btn-sm" data-toggle="modal" data-target="#register-modal"><i class="fa fa-user-plus"></i> Register</a>
+                        <div class="modal fade" id="register-modal" role="dialog">
+                            <div class="modal-dialog">
+                                 <div class="modal-content" style="margin-top: 20%;max-width: 83%;margin-left: 15%;">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title">Registration For Professionals</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                       <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required>
+                                       <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required><br>
+                                       <label>Sign Up As</label>
+                                       <select class="ct-js-select ct-select-lg" style="border:1px solid grey;">
+                                            <option value="month">Client</option>
+                                            <option value="month">Home Owner</option>
+                                            <option value="month">Real Estate Agent</option>
+                                            <option value="January">Mortgage Advisor</option>
+                                            <option value="month">Building Inspector</option>
+                                            <option value="January">Real Estate Lawyer</option>
+                                        </select>
+                                       <div class="ct-form--item ct-u-marginBottom20">
+                                        <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">
+                                                    I read and agree to<a href="terms.html"> terms & conditions</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                       <div class="ct-form--item">
+                                            <button class="loginBtn loginBtn--facebook">
+                                              Login with Facebook
+                                            </button>
+                                            <button class="loginBtn loginBtn--google">
+                                              Login with Google
+                                            </button>
+                                       </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-warning">Register Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<nav class="navbar yamm ct-navbar--noDecoration" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
+<nav class="navbar yamm ct-navbar--noDecoration" role="navigation" data-heighttopbar="40px" data-startnavbar="0" style="position: fixed;margin-top: 48px;">
     <div class="container">
         <div class="navbar-header ct-panel--navbar">
             <a href="home.html">
@@ -80,7 +141,7 @@
     </div>
 </nav>
 <header>
-    <div class="ct-js-owl" data-items="1" data-navigation="true" data-autoPlay="true" data-lazyLoad="true" data-animations="true">
+    <div class="ct-js-owl" data-items="1" data-navigation="true" data-autoPlay="true" data-lazyLoad="true" data-animations="true" style="padding-top: 130px;">
         <div class="item">
             <div class="ct-owl--background">
                 <img src="assets/images/content/header-slider-1.jpg" alt="" height="200px" width="5000px;">
@@ -140,195 +201,222 @@
                 <div role="tabpanel">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs nav-justified" role="tablist">
-                        <li role="presentation" class="active"><a href="#history3" aria-controls="history3" role="tab" data-toggle="tab">Home Owner</a></li>
-                        <li role="presentation"><a href="#vision3" aria-controls="vision3" role="tab" data-toggle="tab">Real Es. Agent</a></li>
-                        <li role="presentation"><a href="#mission3" aria-controls="mission3" role="tab" data-toggle="tab">Mortgage Advisor</a></li>
-                        <li role="presentation"><a href="#mission4" aria-controls="mission4" role="tab" data-toggle="tab">Building Inspec.</a></li>
-                        <li role="presentation"><a href="#mission5" aria-controls="mission5" role="tab" data-toggle="tab">Real Es. Lawyer</a></li>
+                        <li role="presentation" class="active" id="hme-expedia-stylee"><a href="#history3" id="font-expedia" aria-controls="history3" role="tab" data-toggle="tab">
+                            <i class="fa fa-home fa-2x"></i>
+                        Home Owner</a></li>
+                        <li role="presentation" id="hme-expedia-stylee"><a href="#vision3" id="font-expedia" aria-controls="vision3" role="tab" data-toggle="tab">
+                            <i class="fa fa-building-o fa-2x"></i>
+                        Real Es. Agent</a></li>
+                        <li role="presentation" id="hme-expedia-stylee"><a href="#mission3" id="font-expedia" aria-controls="mission3" role="tab" data-toggle="tab">
+                        <i class="fa fa-money fa-2x"></i> Mortgage Advisor</a></li>
+                        <li role="presentation" id="hme-expedia-stylee"><a href="#mission4" id="font-expedia" aria-controls="mission4" role="tab" data-toggle="tab">
+                        <i class="fa fa-building fa-2x"></i>Building Inspec.</a></li>
+                        <li role="presentation" id="hme-expedia-stylee"><a href="#mission5" id="font-expedia" aria-controls="mission5" role="tab" data-toggle="tab">
+                            <i class="fa fa-graduation-cap fa-2x"></i>Real Es. Lawyer</a></li>
                     </ul>
                     <div class="clearfix"></div>
                     <!-- Tab panes -->
                     <div class="tab-content tab-content--withBorder">
                         <div role="tabpanel" class="tab-pane active" id="history3" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-md-offset-1 col-md-6" style="padding-left: 25px;padding-bottom: 0px;">
-                                    <select class="selectpicker ct-js-select ct-select-lg select-adj">
-                                      <option value="1">Buy</option>
-                                      <option value="2">Sell</option>
-                                      <option value="3">Rent</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-offset-1 col-md-8 back-inp-color" style="color: white;">
-                                    <div class="no">
-                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                <div class="col-md-8">
+                                    <div role="tabpanel">
+
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#history" aria-controls="history" role="tab" data-toggle="tab">Buy</a></li>
+                                            <li role="presentation"><a href="#vision" aria-controls="vision" role="tab" data-toggle="tab">Sell</a></li>
+                                            <li role="presentation"><a href="#mission" aria-controls="mission" role="tab" data-toggle="tab">Rent</a></li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="history" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                            <div role="tabpanel" class="tab-pane" id="vision" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
+                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="mission" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
+                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="yesdes" style="display: none;"><br>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required>
-                                        <button type="button" class="btn btn-warning pull-right">Search</button> 
-                                    </div>
-                                    <div class="third" style="display: none;"><br>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                        <button type="button" class="btn btn-warning pull-right">Search</button> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="vision3" style="background-image: url('assets/images/content/back-input.jpg');">
-                            <div class="row">
-                                <div class="col-md-offset-1 col-md-6" style="padding-left: 25px;padding-bottom: 0px;">
-                                    <select class="selectpicker ct-js-select ct-select-lg select-adj">
-                                      <option value="1">Buyers</option>
-                                      <option value="2">Sellers</option>
-                                      <option value="3">Commercial</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-offset-1 col-md-8 back-inp-color" style="color: white;">
-                                    <div class="no">
-                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                           <div class="row">
+                                <div class="col-md-8">
+                                    <div role="tabpanel">
+
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#history-11" aria-controls="history" role="tab" data-toggle="tab">Buyers</a></li>
+                                            <li role="presentation"><a href="#vision-22" aria-controls="vision" role="tab" data-toggle="tab">Sellers</a></li>
+                                            <li role="presentation"><a href="#mission-33" aria-controls="mission" role="tab" data-toggle="tab">Commercial</a></li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="history-11" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                            <div role="tabpanel" class="tab-pane" id="vision-22" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
+                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="mission-33" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
+                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="yesdes" style="display: none;">
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                        <button type="button" class="btn btn-warning pull-right">Search</button> 
-                                    </div>
-                                    <div class="third" style="display: none;">
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                        <button type="button" class="btn btn-warning pull-right">Search</button> 
-                                    </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission3" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-md-offset-1 col-md-6" style="padding-left: 25px;padding-bottom: 0px;">
-                                    <select class="selectpicker ct-js-select ct-select-lg select-adj">
-                                      <option value="1">Agents</option>
-                                      <option value="2">Brokers</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-offset-1 col-md-8 back-inp-color" style="color: white;">
-                                    <div class="no">
-                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                <div class="col-md-8">
+                                    <div role="tabpanel">
+
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#history-44" aria-controls="history" role="tab" data-toggle="tab">Agents</a></li>
+                                            <li role="presentation"><a href="#mission-55" aria-controls="mission" role="tab" data-toggle="tab">Commercial</a></li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="history-44" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                            <div role="tabpanel" class="tab-pane" id="mission-55" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
+                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="yesdes" style="display: none;">
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                        <button type="button" class="btn btn-warning pull-right">Search</button> 
-                                    </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission4" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-md-offset-1 col-md-6" style="padding-left: 25px;padding-bottom: 0px;">
-                                    <select class="selectpicker ct-js-select ct-select-lg select-adj">
-                                      <option value="1">Commercial</option>
-                                      <option value="2">Residencial</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-offset-1 col-md-8 back-inp-color" style="color: white;">
-                                    <div class="no">
-                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                <div class="col-md-8">
+                                    <div role="tabpanel">
+
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#history-66" aria-controls="history" role="tab" data-toggle="tab">Commercial</a></li>
+                                            <li role="presentation"><a href="#mission-77" aria-controls="mission" role="tab" data-toggle="tab">Residencial</a></li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="history-66" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                            <div role="tabpanel" class="tab-pane" id="mission-77" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
+                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="yesdes" style="display: none;">
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                        <button type="button" class="btn btn-warning pull-right">Search</button> 
-                                    </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission5" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-md-offset-1 col-md-6" style="padding-left: 25px;padding-bottom: 0px;">
-                                    <select class="selectpicker ct-js-select ct-select-lg select-adj">
-                                      <option value="1">Commercial</option>
-                                      <option value="2">Residencial</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-offset-1 col-md-8 back-inp-color" style="color: white;">
-                                    <div class="no">
-                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                <div class="col-md-8">
+                                    <div role="tabpanel">
+
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#history-88" aria-controls="history" role="tab" data-toggle="tab">Commercial</a></li>
+                                            <li role="presentation"><a href="#mission-99" aria-controls="mission" role="tab" data-toggle="tab">Residencial</a></li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="history-88" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-3">
-                                               <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                            <div role="tabpanel" class="tab-pane" id="mission-99" style="background-color: rgba(0,0,0,.75)">
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
+                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
+                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="yesdes" style="display: none;">
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                        <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                        <button type="button" class="btn btn-warning pull-right">Search</button> 
-                                    </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -338,357 +426,214 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="ct-heading ct-u-marginBottom30">
-                        <h3 class="text-uppercase">featured Servicessss</h3>
+                        <h3 class="text-uppercase color-black">Our Services</h3>
                         <a href="search-list.html" class="pull-right"><i class="fa fa-angle-right"></i>View More</a>
                     </div>
                     <div class="row">
-                    <div class="col-md-3">
-                        <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                            <label class="control-label sale">
-                                Sale
-                            </label>
-                            <a href="product-single.html">
-                                <div class="ct-main-content">
-                                    <div class="ct-imageBox">
-                                        <img src="assets/images/content/property-1.jpg" alt=""><i class="fa fa-eye"></i>
-                                    </div>
-                                    <div class="ct-main-text">
-                                        <div class="ct-product--tilte">
-                                            8553 Fallen Creek Bend, North Carolina
+                        <div class="col-md-3">
+                            <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                                <label class="control-label sale">
+                                    Sale
+                                </label>
+                                <a href="product-single.html">
+                                    <div class="ct-main-content">
+                                        <div class="ct-imageBox">
+                                            <img src="assets/images/content/property-1.jpg" alt=""><i class="fa fa-eye"></i>
                                         </div>
-                                        <div class="ct-product--price">
-                                            <span class="ct-price--Old">$ 450,000</span>
-                                            <span>$ 350,000</span>
+                                        <div class="ct-main-text">
+                                            <div class="ct-product--tilte">
+                                                8553 Fallen Creek Bend, North Carolina
+                                            </div>
+                                            <div class="ct-product--price">
+                                                <span class="ct-price--Old">$ 450,000</span>
+                                                <span>$ 350,000</span>
+                                            </div>
+                                            <div class="ct-product--description">
+                                                Beautiful apartment in a great, very calm and safe place.
+                                            </div>
                                         </div>
-                                        <div class="ct-product--description">
-                                            Beautiful apartment in a great, very calm and safe place.
+                                    </div>
+                                    <div class="ct-product--meta">
+                                        <div class="ct-icons">
+                                            <span>
+                                                <i class="fa fa-bed"></i> 3
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-cutlery"></i> 2
+                                            </span>
+                                        </div>
+                                        <div class="ct-text">
+                                            <span> Area: <span>105 m2</span></span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ct-product--meta">
-                                    <div class="ct-icons">
-                                        <span>
-                                            <i class="fa fa-bed"></i> 3
-                                        </span>
-                                        <span>
-                                            <i class="fa fa-cutlery"></i> 2
-                                        </span>
-                                    </div>
-                                    <div class="ct-text">
-                                        <span> Area: <span>105 m2</span></span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                            <a href="product-single.html">
-                                <div class="ct-main-content">
-                                    <div class="ct-imageBox">
-                                        <img src="assets/images/content/property-2.jpg" alt=""><i class="fa fa-eye"></i>
-                                    </div>
-                                    <div class="ct-main-text">
-                                        <div class="ct-product--tilte">
-                                            9544 Umber View, Inspiration
+                        <div class="col-md-3">
+                            <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                                <a href="product-single.html">
+                                    <div class="ct-main-content">
+                                        <div class="ct-imageBox">
+                                            <img src="assets/images/content/property-2.jpg" alt=""><i class="fa fa-eye"></i>
                                         </div>
-                                        <div class="ct-product--price">
-                                            <span>$ 450,000</span>
+                                        <div class="ct-main-text">
+                                            <div class="ct-product--tilte">
+                                                9544 Umber View,<br> Inspiration
+                                            </div>
+                                            <div class="ct-product--price">
+                                                <span>$ 450,000</span>
+                                            </div>
+                                            <div class="ct-product--description">
+                                                Beautiful apartment in a great, very calm and safe place.
+                                            </div>
                                         </div>
-                                        <div class="ct-product--description">
-                                            Beautiful apartment in a great, very calm and safe place.
+                                    </div>
+                                    <div class="ct-product--meta">
+                                        <div class="ct-icons">
+                                                            <span>
+                                                                <i class="fa fa-bed"></i> 3
+                                                            </span>
+                                                            <span>
+                                                                <i class="fa fa-cutlery"></i> 2
+                                                            </span>
+                                        </div>
+                                        <div class="ct-text">
+                                            <span> Area: <span>105 m2</span></span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ct-product--meta">
-                                    <div class="ct-icons">
-                                                        <span>
-                                                            <i class="fa fa-bed"></i> 3
-                                                        </span>
-                                                        <span>
-                                                            <i class="fa fa-cutlery"></i> 2
-                                                        </span>
-                                    </div>
-                                    <div class="ct-text">
-                                        <span> Area: <span>105 m2</span></span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="clearfix hidden-lg"></div>
-                    <div class="col-md-3">
-                        <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                            <label class="control-label new">
-                                New
-                            </label>
-                            <a href="product-single.html">
-                                <div class="ct-main-content">
-                                    <div class="ct-imageBox">
-                                        <img src="assets/images/content/property-3.jpg" alt=""><i class="fa fa-eye"></i>
-                                    </div>
-                                    <div class="ct-main-text">
-                                        <div class="ct-product--tilte">
-                                            4079 Broad Falls, Turkeytown
+                        <div class="clearfix hidden-lg"></div>
+                        <div class="col-md-3">
+                            <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                                <label class="control-label new">
+                                    New
+                                </label>
+                                <a href="product-single.html">
+                                    <div class="ct-main-content">
+                                        <div class="ct-imageBox">
+                                            <img src="assets/images/content/property-3.jpg" alt=""><i class="fa fa-eye"></i>
                                         </div>
-                                        <div class="ct-product--price">
-                                            <span>$ 450,000</span>
+                                        <div class="ct-main-text">
+                                            <div class="ct-product--tilte">
+                                                4079 Broad Falls, Turkeytown
+                                            </div>
+                                            <div class="ct-product--price">
+                                                <span>$ 450,000</span>
+                                            </div>
+                                            <div class="ct-product--description">
+                                                Beautiful apartment in a great, very calm and safe place.
+                                            </div>
                                         </div>
-                                        <div class="ct-product--description">
-                                            Beautiful apartment in a great, very calm and safe place.
+                                    </div>
+                                    <div class="ct-product--meta">
+                                        <div class="ct-icons">
+                                                            <span>
+                                                                <i class="fa fa-bed"></i> 3
+                                                            </span>
+                                                            <span>
+                                                                <i class="fa fa-cutlery"></i> 2
+                                                            </span>
+                                        </div>
+                                        <div class="ct-text">
+                                            <span> Area: <span>105 m2</span></span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ct-product--meta">
-                                    <div class="ct-icons">
-                                                        <span>
-                                                            <i class="fa fa-bed"></i> 3
-                                                        </span>
-                                                        <span>
-                                                            <i class="fa fa-cutlery"></i> 2
-                                                        </span>
-                                    </div>
-                                    <div class="ct-text">
-                                        <span> Area: <span>105 m2</span></span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                            <a href="product-single.html">
-                                <div class="ct-main-content">
-                                    <div class="ct-imageBox">
-                                        <img src="assets/images/content/property-4.jpg" alt=""><i class="fa fa-eye"></i>
-                                    </div>
-                                    <div class="ct-main-text">
-                                        <div class="ct-product--tilte">
-                                            046 Merry Landing, High Lonesome Wells
+                        <div class="col-md-3">
+                            <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                                <a href="product-single.html">
+                                    <div class="ct-main-content">
+                                        <div class="ct-imageBox">
+                                            <img src="assets/images/content/property-4.jpg" alt=""><i class="fa fa-eye"></i>
                                         </div>
-                                        <div class="ct-product--price">
-                                            <span>$ 450,000</span>
+                                        <div class="ct-main-text">
+                                            <div class="ct-product--tilte">
+                                                046 Merry Landing, High Lonesome Wells
+                                            </div>
+                                            <div class="ct-product--price">
+                                                <span>$ 450,000</span>
+                                            </div>
+                                            <div class="ct-product--description">
+                                                Beautiful apartment in a great, very calm and safe place.
+                                            </div>
                                         </div>
-                                        <div class="ct-product--description">
-                                            Beautiful apartment in a great, very calm and safe place.
+                                    </div>
+                                    <div class="ct-product--meta">
+                                        <div class="ct-icons">
+                                                            <span>
+                                                                <i class="fa fa-bed"></i> 3
+                                                            </span>
+                                                            <span>
+                                                                <i class="fa fa-cutlery"></i> 2
+                                                            </span>
+                                        </div>
+                                        <div class="ct-text">
+                                            <span> Area: <span>105 m2</span></span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ct-product--meta">
-                                    <div class="ct-icons">
-                                                        <span>
-                                                            <i class="fa fa-bed"></i> 3
-                                                        </span>
-                                                        <span>
-                                                            <i class="fa fa-cutlery"></i> 2
-                                                        </span>
-                                    </div>
-                                    <div class="ct-text">
-                                        <span> Area: <span>105 m2</span></span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
                 
             </div>
-        </div>
+        </div><br><br>
+        <section class="ct-mediaSection text-center ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="500" data-type="parallax" data-bg-image="assets/images/content/image-main-page.jpg" data-bg-image-mobile="assets/images/content/image-main-page.jpg">
+            <div class="ct-mediaSection-inner">
+                <div class="container">
+                    <div class="row text-left">
+                        <div class="col-md-6 color-white">
+                            <div class="ct-iconBox ct-u-marginBottom40 ct-iconBox--2col how-it-work-side-text">
+                                <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <div class="ct-iconBox--description">
+                                    <span class="ct-title text-uppercase ct-fw-600">Get more users</span>
+                                    <span class="ct-text">Thanks to our content optimization you will get more visits to your property page.</span>
+                                </div>
+                            </div>
+                            <div class="ct-iconBox ct-u-marginBottom40 ct-iconBox--2col how-it-work-side-text">
+                                <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
+                                    <i class="fa fa-bolt"></i>
+                                </div>
+                                <div class="ct-iconBox--description">
+                                    <span class="ct-title text-uppercase ct-fw-600">Convert visitors</span>
+                                    <span class="ct-text">With our design and structures you will be able to show your property in better light.</span>
+                                </div>
+                            </div>
+                            <div class="ct-iconBox ct-iconBox--2col how-it-work-side-text">
+                                <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
+                                    <i class="fa fa-trophy"></i>
+                                </div>
+                                <div class="ct-iconBox--description">
+                                    <span class="ct-title text-uppercase ct-fw-600">Reach your goal</span>
+                                    <span class="ct-text">Estato was designed to become your real estate business partner. It’s not only a tool, it’s a working ecosystem.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="how-it-work-side-text">
+                                <div class="ct-heading text-center color-white">
+                                    <h3 class="text-uppercase">How it works?</h3>
+                                </div>
+                                <div class="ct-heading text-center color-white  ct-u-marginBoth20">
+                                    <p align="left">The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.<br><br>
+                                    The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
-<section class="ct-u-paddingBoth60 ct-js-section" data-bg-color="#f3f3f3">
-    <div class="container">
-        <div class="ct-heading ct-u-marginBottom30">
-            <h3 class="text-uppercase">latest Services</h3>
-            <a href="search-list.html" class="pull-right"><i class="fa fa-angle-right"></i>View More</a>
-        </div>
-        <div class="ct-js-owl ct-owl-controls--type2" data-single="false" data-items="4" data-pagination="false">
-            <div class="item">
-                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                    <label class="control-label sale">
-                        Sale
-                    </label>
-                    <a href="product-single.html">
-                        <div class="ct-main-content">
-                            <div class="ct-imageBox">
-                                <img src="assets/images/content/property-7.jpg" alt=""><i class="fa fa-eye"></i>
-                            </div>
-                            <div class="ct-main-text">
-                                <div class="ct-product--tilte">
-                                    4770 Cotton Berry Point, Carrot River
-                                </div>
-                                <div class="ct-product--price">
-                                    <span class="ct-price--Old">$ 450,000</span>
-                                    <span>$ 350,000</span>
-                                </div>
-                                <div class="ct-product--description">
-                                    Beautiful apartment in a great, very calm and safe place.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ct-product--meta">
-                            <div class="ct-icons">
-                                <span>
-                                    <i class="fa fa-bed"></i> 3
-                                </span>
-                                <span>
-                                    <i class="fa fa-cutlery"></i> 2
-                                </span>
-                            </div>
-                            <div class="ct-text">
-                                <span> Area: <span>105 m2</span></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                    <label class="control-label new">
-                        New
-                    </label>
-                    <a href="product-single.html">
-                        <div class="ct-main-content">
-                            <div class="ct-imageBox">
-                                <img src="assets/images/content/property-8.jpg" alt=""><i class="fa fa-eye"></i>
-                            </div>
-                            <div class="ct-main-text">
-                                <div class="ct-product--tilte">
-                                    7592 Gentle Zephyr Mountain, Hasty
-                                </div>
-                                <div class="ct-product--price">
-                                    <span>$ 450,000</span>
-                                </div>
-                                <div class="ct-product--description">
-                                    Beautiful apartment in a great, very calm and safe place.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ct-product--meta">
-                            <div class="ct-icons">
-                                <span>
-                                    <i class="fa fa-bed"></i> 3
-                                </span>
-                                <span>
-                                    <i class="fa fa-cutlery"></i> 2
-                                </span>
-                            </div>
-                            <div class="ct-text">
-                                <span> Area: <span>105 m2</span></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                    <a href="product-single.html">
-                        <div class="ct-main-content">
-                            <div class="ct-imageBox">
-                                <img src="assets/images/content/property-9.jpg" alt=""><i class="fa fa-eye"></i>
-                            </div>
-                            <div class="ct-main-text">
-                                <div class="ct-product--tilte">
-                                    2254 Easy Oak Drive, Caronport
-                                </div>
-                                <div class="ct-product--price">
-                                    <span>$ 450,000</span>
-                                </div>
-                                <div class="ct-product--description">
-                                    Beautiful apartment in a great, very calm and safe place.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ct-product--meta">
-                            <div class="ct-icons">
-                                <span>
-                                    <i class="fa fa-bed"></i> 3
-                                </span>
-                                <span>
-                                    <i class="fa fa-cutlery"></i> 2
-                                </span>
-                            </div>
-                            <div class="ct-text">
-                                <span> Area: <span>105 m2</span></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                    <a href="product-single.html">
-                        <div class="ct-main-content">
-                            <div class="ct-imageBox">
-                                <img src="assets/images/content/property-10.jpg" alt=""><i class="fa fa-eye"></i>
-                            </div>
-                            <div class="ct-main-text">
-                                <div class="ct-product--tilte">
-                                    1979 Thunder Line, Stoopville
-                                </div>
-                                <div class="ct-product--price">
-                                    <span>$ 450,000</span>
-                                </div>
-                                <div class="ct-product--description">
-                                    Beautiful apartment in a great, very calm and safe place.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ct-product--meta">
-                            <div class="ct-icons">
-                                <span>
-                                    <i class="fa fa-bed"></i> 3
-                                </span>
-                                <span>
-                                    <i class="fa fa-cutlery"></i> 2
-                                </span>
-                            </div>
-                            <div class="ct-text">
-                                <span> Area: <span>105 m2</span></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                    <a href="product-single.html">
-                        <div class="ct-main-content">
-                            <div class="ct-imageBox">
-                                <img src="assets/images/content/property-11.jpg" alt=""><i class="fa fa-eye"></i>
-                            </div>
-                            <div class="ct-main-text">
-                                <div class="ct-product--tilte">
-                                    1724 Clear Hills Rise, Farewells
-                                </div>
-                                <div class="ct-product--price">
-                                    <span>$ 450,000</span>
-                                </div>
-                                <div class="ct-product--description">
-                                    Beautiful apartment in a great, very calm and safe place.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ct-product--meta">
-                            <div class="ct-icons">
-                                <span>
-                                    <i class="fa fa-bed"></i> 3
-                                </span>
-                                <span>
-                                    <i class="fa fa-cutlery"></i> 2
-                                </span>
-                            </div>
-                            <div class="ct-text">
-                                <span> Area: <span>105 m2</span></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</section><br><br>
 <section class="ct-mediaSection text-center ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="765" data-type="parallax" data-bg-image="assets/images/content/iconBox-parallax.jpg" data-bg-image-mobile="assets/images/content/iconBox-parallax.jpg">
     <div class="ct-mediaSection-inner">
         <div class="container">
@@ -748,11 +693,10 @@
         </div>
     </div>
 </section>
-
 <section class="ct-u-paddingBoth60 ct-blog--small">
-    <div class="container">
+    <div class="container" ssssss>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="ct-heading ct-u-marginBottom30">
                     <h3 class="text-uppercase">lately on blog</h3>
                 </div>
@@ -876,68 +820,31 @@
                 </div>
                 <a href="blog.html" class="btn btn-primary btn-transparent--border ct-u-text--motive ct-u-marginBottom30">Read More On Blog</a>
             </div>
-            <div class="col-md-4">
-                <div class="ct-heading ct-u-marginBottom60">
+            <div class="col-md-6" style="background-color: #ecececbf;padding:15px;border: 1px solid #ecececbf;position: sticky;"><br>
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Est. Agent</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Est. Lawyer</a></li>
+                    </ul><br>
+                    <div class="clearfix"></div>
+                    <!-- Tab panes -->
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control ct-input--border ct-u-text--dark" placeholder="Search As" style="width: 100%"><br><br>
+                        <button type="button" class="btn btn-warning pull-right">Search</button>
+                    </div><br><br><br>
                 </div>
-                <div class="successMessage alert alert-success" style="display: none">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    Thank You!
-                </div>
-                <div class="errorMessage alert alert-danger" style="display: none">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    Ups! An error occured. Please try again later.
-                </div>
-                <form role="form" action="assets/form/send.php" method="post" class="contactForm validateIt ct-contactForm--small" data-email-subject="Contact Form" data-show-errors="true">
-                    <div class="form-group">
-                        <div class="ct-form--label--type2">
-                            <div class="ct-u-displayTableVertical">
-                                <div class="ct-u-displayTableCell">
-                                    <div class="ct-input-group-btn">
-                                        <button class="btn btn-primary">
-                                            <i class="fa fa-envelope-o"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="ct-u-displayTableCell text-center">
-                                    <span class="text-uppercase">Feel free to contact us</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ct-form--item">
-                            <input id="contact_name" type="text" required class="form-control input-lg" name="field[]" placeholder="Search here">
-                        </div>
-                        <div class="ct-form--item">
-                            <input id="contact_name" type="email" required class="form-control input-lg" name="field[]" placeholder="Email Address">
-                        </div>
-                        <div class="ct-form--item last">
-                            <button type="submit" class="btn btn-warning text-capitalize pull-right">Send Message</button><br><br>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="ct-js-section ct-u-paddingBoth50 text-center" data-bg-color="grey" style="color: white;">
-    <div class="container">
-        <div class="row">
-            <h2 align="center">How it Works?</h2><br>
-            <div class="col-md-6">
-                <p align="left">
-                    The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.
-                </p>
-            </div>
-            <div class="col-md-6">
-                <p align="left">
-                    The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.
-                </p>
             </div>
         </div>
     </div>
 </section>
 <section class="ct-u-paddingBottom60 text-center">
     <div class="container">
-        <div class="ct-heading ct-u-marginBoth60">
+        <div class="ct-heading ct-u-marginBoth20">
             <h3 class="text-uppercase">our partners</h3>
         </div>
         <div class="ct-js-owl" data-items="6" data-navigation="false" data-autoPlay="true" data-single="false" data-pagination="false">
@@ -1144,6 +1051,24 @@
     box-shadow: none;
     background: transparent;
 }
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
 </style>
 <!-- JavaScripts -->
 

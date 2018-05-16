@@ -324,48 +324,18 @@
 <section class="ct-u-paddingBoth60 ct-blog">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="ct-articleBox ct-u-marginBottom80 ct-articleBox--noImage">
-                    <div class="ct-articleBox-media ct-u-marginBottom30">
-                        <div class="ct-calendar--day text-center ct-calendar--mini hidden-lg">
-                            <div class="ct-day">
-                                <span>15</span>
-                            </div>
-                            <div class="ct-month">
-                                <span class="text-uppercase">jan</span>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="assets/images/content/back-input.jpg" width="100%" height="274px;">
                         </div>
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/pCyKtGC3nIk"></iframe>
-                        </div>
-                    </div>
-                    <div class="ct-articleBox--body">
-                        <div class="ct-u-displayTableVertical">
-                            <div class="ct-calendar--day text-center ct-u-displayTableCell visible-lg-inline-block">
-                                <div class="ct-day">
-                                    <span>15</span>
-                                </div>
-                                <div class="ct-month">
-                                    <span class="text-uppercase">jan</span>
-                                </div>
-                            </div>
-                            <div class="ct-articleBox-titleBox text-uppercase ct-u-displayTableCell">
-
-                                <a href="blog-single.html">We was there</a>
-                                <div class="ct-articleBox-meta">
-                                    <span>Posted on January 15th, 2015 In Loans, Real Estate</span>
-                                </div>
-                                <div class="ct-articleComments">
-                                    <a href="blog-single.html">2 comments</a>
-                                </div>
-                            </div>
+                        <div class="col-md-4">
+                            <img src="assets/images/content/back-input.jpg" width="100%">
+                            <img src="assets/images/content/back-input.jpg" width="100%">
+                            <img src="assets/images/content/back-input.jpg" width="100%">
                         </div>
 
-                        <div class="ct-divider ct-u-marginTop10 ct-u-marginBottom20"></div>
-                        <div class="ct-articleBox-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus.
-                            <a href="blog-single.html">Read more.</a>
-                        </div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -571,7 +541,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="ct-js-sidebar">
                     <div class="row">
                         <div class="col-sm-6 col-md-12">
@@ -616,17 +586,26 @@
                                 </div>
                             </section>
                         </div>
-                        <div class="col-sm-6 col-md-12">
-                            <section class="widget">
-                                <div class="widget-inner">
-                                    <div class="ct-widget-categories ct-js-datetimePicker">
-                                        <h4 class="text-uppercase">Calendar</h4>
-                                        <div class="ct-js-datetimePicker--body"></div>
-                                    </div>
-                                </div>
-                            </section>
+                        <div class="col-sm-6 col-md-12" style="background-color: #ecececbf;padding:10px;border: 1px solid #ecececbf"><br>
+                            <div role="tabpanel">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
+                                    <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Est. Agent</a></li>
+                                    <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
+                                    <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
+                                    <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Est. Lawyer</a></li>
+                                </ul><br>
+                                <div class="clearfix"></div>
+                                <!-- Tab panes -->
+                                <div class="inner-addon left-addon">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                    <input type="text" class="form-control ct-input--border ct-u-text--dark" placeholder="Search As" style="width: 100%"><br><br>
+                                    <button type="button" class="btn btn-warning pull-right">Search</button>
+                                </div><br><br><br>
+                            </div>
                         </div>
-                        <div class="col-sm-6 col-md-12">
+                        <div class="col-sm-6 col-md-12"><br><br>
                             <section class="widget ct-widget-latestPosts">
                                 <div class="widget-inner">
                                     <h4 class="text-uppercase">Latest Posts</h4>
@@ -884,6 +863,26 @@
     </div>
 </footer>
 </div>
+<style type="text/css">
+    .inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+</style>
 <!-- JavaScripts -->
 
 <script src="assets/js/jquery.min.js"></script>

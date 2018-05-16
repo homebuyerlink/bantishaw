@@ -13941,3 +13941,19 @@ span.round-tab:hover {
   border: 1px solid #e6e6e6;
   color: black;
 }
+.color-white{
+  color: white;
+}
+.color-black{
+  color: #000000;
+}
+.how-it-work-side-text{
+    background-color: #3f342296;
+    padding: 23px;
+}
+#hme-expedia-stylee{
+  background-color: #3f3422 !important;
+}
+#font-expedia{
+  color: white !important;
+}
