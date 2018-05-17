@@ -29,16 +29,16 @@
 </head>
 <body class="ct-headroom--fixedTopBar cssAnimate in">
 
-<div class="ct-topBar" style="position: fixed">
+<div class="ct-topBar" style="position: fixed;">
     <div class="container">
         <div class="row">
             <div class="col-md-offset-8 col-md-4">
                 <div class="ct-panel--user ct-panel--right">
                     <div class="ct-panel--item ct-email">
-                        <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+                        <a href="dashboard.html" class="btn btn-link btn-xs btn-upper-nav"><i class="fa fa-home"></i> Dashboard</a>
                     </div>
                     <div class="ct-panel--item ct-email">
-                        <a class="btn btn-link btn-sm" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i> Login</a>
+                        <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i> Login</a>
                         <div class="modal fade" id="login-modal" role="dialog">
                             <div class="modal-dialog">
                                  <div class="modal-content" style="margin-top: 30%;max-width: 78%;margin-left: 15%;">
@@ -47,19 +47,19 @@
                                       <h4 class="modal-title">Login</h4>
                                     </div>
                                     <div class="modal-body">
-                                      <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required>
+                                      <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" placeholder="Email Address" required>
                                       <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-warning">Sign In</button>
+                                        <a href="dashboard.html" class="btn btn-success">Sign In</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="ct-panel--item ct-email">
-                        <a class="btn btn-link btn-sm" data-toggle="modal" data-target="#register-modal"><i class="fa fa-user-plus"></i> Register</a>
+                        <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#register-modal"><i class="fa fa-user-plus"></i> Register</a>
                         <div class="modal fade" id="register-modal" role="dialog">
                             <div class="modal-dialog">
                                  <div class="modal-content" style="margin-top: 20%;max-width: 83%;margin-left: 15%;">
@@ -83,7 +83,7 @@
                                         <div class="checkbox">
                                                 <label>
                                                     <input type="checkbox" value="">
-                                                    I read and agree to<a href="terms.html"> terms & conditions</a>
+                                                    I read and agree to<a href="terms.html" id="btn-lnk-terms"> terms & conditions</a>
                                                 </label>
                                             </div>
                                         </div>
@@ -98,7 +98,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-warning">Register Now</button>
+                                        <a href="registration-login.html" class="btn btn-success">Register Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
         </div>
     </div>
 </div>
-<nav class="navbar yamm ct-navbar--noDecoration" role="navigation" data-heighttopbar="40px" data-startnavbar="0" style="position: fixed;margin-top: 48px;">
+<nav class="navbar aaaa yamm ct-navbar--noDecoration" role="navigation" data-heighttopbar="40px" data-startnavbar="0" style="position: fixed;margin-top: -86px;">
     <div class="container">
         <div class="navbar-header ct-panel--navbar">
             <a href="home.html">
@@ -141,7 +141,7 @@
     </div>
 </nav>
 <header>
-    <div class="ct-js-owl" data-items="1" data-navigation="true" data-autoPlay="true" data-lazyLoad="true" data-animations="true" style="padding-top: 130px;">
+    <div class="ct-js-owl" data-items="1" data-navigation="true" data-autoPlay="true" data-lazyLoad="true" data-animations="true" style="margin-top: 130px;">
         <div class="item">
             <div class="ct-owl--background">
                 <img src="assets/images/content/header-slider-1.jpg" alt="" height="200px" width="5000px;">
@@ -193,26 +193,37 @@
             </div>
         </div>
     </div>
-</header>
+</header><br><br>
+<section class="container">
+    <div class="row" data-spy="marquee" data-life="2">
+        <div class="col-md-12">
+            <marquee direction="left">
+                <h2>
+                This Website is Just for Home Owners and Sale Purchase Purposes. Feel free to contact us, if you have any question. Thanks!
+                </h2>
+            </marquee>
+        </div>
+    </div>
+</section><br><br>
 <section>
     <div class="container" style="color: white;">
         <div class="row"><br>
-            <div class="col-md-offset-1 col-md-10">
-                <div role="tabpanel">
+            <div class="col-md-12">
+                <div role="tabpanel" style="margin-right: 50px;margin-left: 50px;">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs nav-justified" role="tablist">
                         <li role="presentation" class="active" id="hme-expedia-stylee"><a href="#history3" id="font-expedia" aria-controls="history3" role="tab" data-toggle="tab">
                             <i class="fa fa-home fa-2x"></i>
-                        Home Owner</a></li>
+                        Property</a></li>
                         <li role="presentation" id="hme-expedia-stylee"><a href="#vision3" id="font-expedia" aria-controls="vision3" role="tab" data-toggle="tab">
                             <i class="fa fa-building-o fa-2x"></i>
-                        Real Es. Agent</a></li>
+                        Real Estate Agent</a></li>
                         <li role="presentation" id="hme-expedia-stylee"><a href="#mission3" id="font-expedia" aria-controls="mission3" role="tab" data-toggle="tab">
                         <i class="fa fa-money fa-2x"></i> Mortgage Advisor</a></li>
                         <li role="presentation" id="hme-expedia-stylee"><a href="#mission4" id="font-expedia" aria-controls="mission4" role="tab" data-toggle="tab">
                         <i class="fa fa-building fa-2x"></i>Building Inspec.</a></li>
                         <li role="presentation" id="hme-expedia-stylee"><a href="#mission5" id="font-expedia" aria-controls="mission5" role="tab" data-toggle="tab">
-                            <i class="fa fa-graduation-cap fa-2x"></i>Real Es. Lawyer</a></li>
+                            <i class="fa fa-graduation-cap fa-2x"></i>Real Estate Lawyer</a></li>
                     </ul>
                     <div class="clearfix"></div>
                     <!-- Tab panes -->
@@ -231,7 +242,7 @@
                                         <div class="clearfix"></div>
                                         <!-- Tab panes -->
                                         <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane active" id="history" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
                                                 <div class="row">
@@ -243,14 +254,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div role="tabpanel" class="tab-pane" id="vision" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane" id="vision" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
                                                 <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
                                             </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane" id="mission" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
@@ -276,7 +287,7 @@
                                         <div class="clearfix"></div>
                                         <!-- Tab panes -->
                                         <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history-11" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane active" id="history-11" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
                                                 <div class="row">
@@ -288,14 +299,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div role="tabpanel" class="tab-pane" id="vision-22" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane" id="vision-22" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
                                                 <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
                                             </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission-33" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane" id="mission-33" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
@@ -320,7 +331,7 @@
                                         <div class="clearfix"></div>
                                         <!-- Tab panes -->
                                         <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history-44" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane active" id="history-44" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
                                                 <div class="row">
@@ -332,7 +343,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission-55" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane" id="mission-55" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
@@ -357,7 +368,7 @@
                                         <div class="clearfix"></div>
                                         <!-- Tab panes -->
                                         <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history-66" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane active" id="history-66" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
                                                 <div class="row">
@@ -369,7 +380,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission-77" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane" id="mission-77" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
@@ -394,7 +405,7 @@
                                         <div class="clearfix"></div>
                                         <!-- Tab panes -->
                                         <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history-88" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane active" id="history-88" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
                                                 <div class="row">
@@ -406,7 +417,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission-99" style="background-color: rgba(0,0,0,.75)">
+                                            <div role="tabpanel" class="tab-pane" id="mission-99" style="background-color: #f5b92500">
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
                                                 <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
@@ -634,7 +645,7 @@
         </section>
     </div>
 </section><br><br>
-<section class="ct-mediaSection text-center ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="765" data-type="parallax" data-bg-image="assets/images/content/iconBox-parallax.jpg" data-bg-image-mobile="assets/images/content/iconBox-parallax.jpg">
+<section class="ct-mediaSection text-center ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="765" data-type="parallax" style="background-color: #505254;">
     <div class="ct-mediaSection-inner">
         <div class="container">
             <div class="ct-heading ct-u-marginBottom60">
@@ -822,21 +833,21 @@
             </div>
             <div class="col-md-6" style="background-color: #ecececbf;padding:15px;border: 1px solid #ecececbf;position: sticky;"><br>
                 <div role="tabpanel">
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control ct-input--border ct-u-text--dark" placeholder="Search As" style="width: 100%;background-color: white;"><br><br>
+                    </div>
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs nav-justified" role="tablist">
-                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
-                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Est. Agent</a></li>
+                        <li role="presentation" class="active"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Agent</a></li>
                         <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
                         <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
-                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Est. Lawyer</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Lawyer</a></li>
                     </ul><br>
                     <div class="clearfix"></div>
                     <!-- Tab panes -->
-                    <div class="inner-addon left-addon">
-                        <i class="glyphicon glyphicon-search"></i>
-                        <input type="text" class="form-control ct-input--border ct-u-text--dark" placeholder="Search As" style="width: 100%"><br><br>
-                        <button type="button" class="btn btn-warning pull-right">Search</button>
-                    </div><br><br><br>
+                    <button type="button" class="btn btn-warning pull-right">Search</button>
                 </div>
             </div>
         </div>
@@ -848,14 +859,14 @@
             <h3 class="text-uppercase">our partners</h3>
         </div>
         <div class="ct-js-owl" data-items="6" data-navigation="false" data-autoPlay="true" data-single="false" data-pagination="false">
-            <div class="item"><img src="assets/images/content/content-partners-1.png" alt=""></div>
-            <div class="item"><img src="assets/images/content/content-partners-2.png" alt=""></div>
-            <div class="item"><img src="assets/images/content/content-partners-3.png" alt=""></div>
-            <div class="item"><img src="assets/images/content/content-partners-4.png" alt=""></div>
-            <div class="item"><img src="assets/images/content/content-partners-5.png" alt=""></div>
-            <div class="item"><img src="assets/images/content/content-partners-6.png" alt=""></div>
-            <div class="item"><img src="assets/images/content/content-partners-1.png" alt=""></div>
-            <div class="item"><img src="assets/images/content/content-partners-2.png" alt=""></div>
+            <div class="item"><img src="assets/images/content/content-partners-1.png" alt="" width="100%"></div>
+            <div class="item"><img src="assets/images/content/content-partners-2.png" alt="" width="100%" width="100%"></div>
+            <div class="item"><img src="assets/images/content/content-partners-3.png" alt="" width="100%"></div>
+            <div class="item"><img src="assets/images/content/content-partners-4.png" alt="" width="100%"></div>
+            <div class="item"><img src="assets/images/content/content-partners-1.png" alt="" width="100%" width="100%"></div>
+            <div class="item"><img src="assets/images/content/content-partners-2.png" alt="" width="100%"></div>
+            <div class="item"><img src="assets/images/content/content-partners-3.png" alt="" width="100%"></div>
+            <div class="item"><img src="assets/images/content/content-partners-4.png" alt="" width="100%"></div>
         </div>
     </div>
 </section>

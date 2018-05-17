@@ -329,7 +329,7 @@
 <section class="ct-u-paddingBoth60 ct-blog ct-post--single">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
+<div class="col-md-7">
     <div class="ct-articleBox ct-u-marginBottom60">
         <div class="ct-articleBox-media pull-left ct-u-marginBottom30">
             <div class="ct-calendar--day text-center ct-calendar--mini hidden-lg">
@@ -475,7 +475,7 @@
     </div>
     <div class="clearfix"></div>
 </div>
-<div class="col-md-4">
+<div class="col-md-5">
     <div class="ct-js-sidebar">
         <div class="row">
             <div class="col-sm-6 col-md-12">
@@ -520,17 +520,30 @@
                     </div>
                 </section>
             </div>
-            <div class="col-sm-6 col-md-12">
-                <section class="widget">
-                    <div class="widget-inner">
-                        <div class="ct-widget-categories ct-js-datetimePicker">
-                            <h4 class="text-uppercase">Calendar</h4>
-                            <div class="ct-js-datetimePicker--body"></div>
+            <div class="col-sm-6 col-md-12" style="background-color: #ecececbf;padding:15px;border: 1px solid #ecececbf;position: sticky;"><br>
+                <div role="tabpanel">
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control ct-input--border ct-u-text--dark" placeholder="Search As" style="width: 100%;background-color: white;"><br><br>
+                    </div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li role="presentation" class="active"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Agent</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
+                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Lawyer</a></li>
+                    </ul><br>
+                    <div class="clearfix"></div>
+                    <!-- Tab panes -->
+                    <div class="row">
+                        <div class="col-md-offset-8 col-md-4">
+                            <button type="button" class="btn btn-warning">Search</button>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-            <div class="col-sm-6 col-md-12">
+            <div class="col-sm-6 col-md-12"><br><br>
                 <section class="widget ct-widget-latestPosts">
                     <div class="widget-inner">
                         <h4 class="text-uppercase">Latest Posts</h4>
@@ -788,6 +801,26 @@
     </div>
 </footer>
 </div>
+<style type="text/css">
+    .inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+</style>
 <!-- JavaScripts -->
 
 <script src="assets/js/jquery.min.js"></script>
