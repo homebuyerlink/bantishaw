@@ -6264,8 +6264,8 @@ button {
   color: #ffffff;
   background-color: white;
   border-color: black;
-  color: black;
-  border: 2px solid black;
+  color: #f3a822;
+  border: 2px solid #f3a822;
 }
 .btn-danger {
   color: #ffffff;
@@ -14031,4 +14031,13 @@ span.round-tab:hover {
 }
 .font-hm{
   font-size: 15px;
+}
+.fa-heart{
+  color: red;
+}
+.checked{
+  color: orange!important;
+}
+.fa-star{
+  color: #b5b0b0fc;
 }
