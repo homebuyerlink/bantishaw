@@ -33,94 +33,102 @@
         <li class="dropdown"><a href="home.html">Home</a></li>
         <li class="dropdown"><a href="dashboard.html">Dashboard</a></li>
         <li class="dropdown"><a href="listing.html">Services</a></li>
-        <li class="dropdown"><a href="submission.html">Post AD</a></li>
         <li class="dropdown"><a href="faq-cs.html">How it works?</a></li>
-        <li class="dropdown"><a href="blog.html">Blog</a></li>
     </ul>
 </nav>
 
 <div id="ct-js-wrapper" class="ct-pageWrapper">
-<div class="ct-navbarMobile">
+<div class="ct-navbarMobile position-fix">
     <button type="button" class="navbar-toggle">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="home.html"><img src="assets/images/content/logo.jpg" alt="Home Buyer" width="25%"> </a>
-    
+    <a class="navbar-brand" href="home.html"><img src="assets/images/content/logo.jpg" alt="Home Buyer" width="18%">
+    </a>
+    <span class="text-mobile-view-logo">Home Buyers</span>
 </div>
 
 <div class="ct-topBar" style="position: fixed;">
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-8 col-md-4">
+            <div class="col-md-offset-9 col-md-4">
                 <div class="ct-panel--user ct-panel--right">
                     <div class="ct-panel--item ct-email">
                         <a href="dashboard.html" class="btn btn-link btn-xs btn-upper-nav"><i class="fa fa-home"></i> Dashboard</a>
                     </div>
                     <div class="ct-panel--item ct-email">
-                        <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i> Login</a>
+                        <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i> Login / Register</a>
                         <div class="modal fade" id="login-modal" role="dialog">
                             <div class="modal-dialog">
-                                 <div class="modal-content" style="margin-top: 30%;max-width: 78%;margin-left: 15%;">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      <h4 class="modal-title">Login</h4>
-                                    </div>
+                                 <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;">
                                     <div class="modal-body">
-                                      <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" placeholder="Email Address" required>
-                                      <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <a href="dashboard.html" class="btn btn-success">Sign In</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ct-panel--item ct-email">
-                        <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#register-modal"><i class="fa fa-user-plus"></i> Register</a>
-                        <div class="modal fade" id="register-modal" role="dialog">
-                            <div class="modal-dialog">
-                                 <div class="modal-content" style="margin-top: 20%;max-width: 83%;margin-left: 15%;">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      <h4 class="modal-title">Registration For Professionals</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                       <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required>
-                                       <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required><br>
-                                       <label>Sign Up As</label>
-                                       <select class="ct-js-select ct-select-lg" style="border:1px solid grey;">
-                                            <option value="month">Client</option>
-                                            <option value="month">Home Owner</option>
-                                            <option value="month">Real Estate Agent</option>
-                                            <option value="January">Mortgage Advisor</option>
-                                            <option value="month">Building Inspector</option>
-                                            <option value="January">Real Estate Lawyer</option>
-                                        </select>
-                                       <div class="ct-form--item ct-u-marginBottom20">
-                                        <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">
-                                                    I read and agree to<a href="terms.html" id="btn-lnk-terms"> terms & conditions</a>
-                                                </label>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+                                                <div role="tabpanel">
+                                                    <!-- Nav tabs -->
+                                                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                                                        <li role="presentation" class="active"><a href="#history32-1" aria-controls="history32-1" role="tab" data-toggle="tab">LOGIN</a></li>
+                                                        <li role="presentation"><a href="#vision32-1" aria-controls="vision32-1" role="tab" data-toggle="tab">REGISTER</a></li>
+                                                    </ul>
+                                                    <div class="clearfix"></div>
+                                                    <!-- Tab panes -->
+                                                    <div class="tab-content tab-content--withBorder">
+                                                        <div role="tabpanel" class="tab-pane active" id="history32-1">
+                                                            <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" placeholder="Email Address" required>
+                                                            <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required><br><br>
+                                                            <div class="row">
+                                                                <div class="col-md-offset-6 col-md-3">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <a href="dashboard.html" class="btn btn-success">Sign In</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="vision32-1">
+                                                              <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required>
+                                                               <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required><br>
+                                                               <label>Sign Up As</label>
+                                                               <select class="ct-js-select ct-select-lg" style="border:1px solid grey;">
+                                                                    <option value="month">Client</option>
+                                                                    <option value="month">Home Owner</option>
+                                                                    <option value="month">Real Estate Agent</option>
+                                                                    <option value="January">Mortgage Advisor</option>
+                                                                    <option value="month">Building Inspector</option>
+                                                                    <option value="January">Real Estate Lawyer</option>
+                                                                </select>
+                                                               <div class="ct-form--item ct-u-marginBottom20">
+                                                                <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" value="">
+                                                                            I read and agree to<a href="terms.html" id="btn-lnk-terms"> terms & conditions</a>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                               <div class="ct-form--item">
+                                                                    <button class="loginBtn loginBtn--facebook">
+                                                                      Login with Facebook
+                                                                    </button>
+                                                                    <button class="loginBtn loginBtn--google">
+                                                                      Login with Google
+                                                                    </button>
+                                                               </div><br>
+                                                               <div class="row">
+                                                                <div class="col-md-offset-5 col-md-3">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <a href="registration-login.html" class="btn btn-success">Register Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                       <div class="ct-form--item">
-                                            <button class="loginBtn loginBtn--facebook">
-                                              Login with Facebook
-                                            </button>
-                                            <button class="loginBtn loginBtn--google">
-                                              Login with Google
-                                            </button>
-                                       </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <a href="registration-login.html" class="btn btn-success">Register Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +139,7 @@
         </div>
     </div>
 </div>
-<nav class="navbar aaaa yamm ct-navbar--noDecoration" role="navigation" data-heighttopbar="40px" data-startnavbar="0" style="position: fixed;margin-top: -86px;">
+<nav class="navbar aaaa yamm ct-navbar--noDecoration nav-mob" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
     <div class="container">
         <div class="navbar-header ct-panel--navbar">
             <a href="home.html">
@@ -163,63 +171,65 @@
     </div>
 </nav>
 <header>
-    <div class="ct-js-owl" data-items="1" data-navigation="true" data-autoPlay="true" data-lazyLoad="true" data-animations="true" style="margin-top: 130px;">
-        <div class="item">
-            <div class="ct-owl--background">
-                <img src="assets/images/content/header-slider-1.jpg" alt="" height="200px" width="5000px;">
-            </div>
-            <div class="ct-owl--description">
-                <div class="ct-owl--description--inner">
-                    <div class="ct-owl--descriptionItem">
-                        <div class="container">
-                            <img class="ct-u-marginBottom20 animated" data-fx="fadeInDown" data-time="300" src="assets/images/content/logo-sliderLight.jpg" alt="" style="width: 100px;">
-                            <h4 class="ct-u-marginBottom20 animated" data-fx="fadeInDown" data-time="300">Your <span style="font-size: 20px;">Real Estate</span> Partner</h4>
-                            <a class="btn btn-default btn-transparent--border ct-u-text--white animated" data-fx="fadeInUp" data-time="300" href="blog-single.html">Read More</a>
-                            <a class="btn btn-success ct-btn--green animated" data-fx="fadeInUp" data-time="300" href="submission.html">List Property</a>
-                        </div><br><br>
+      <div class="nav-pad">  
+        <div class="ct-js-owl" data-items="1" data-navigation="true" data-autoPlay="true" data-lazyLoad="true" data-animations="true" style="margin-top: 78px;">
+            <div class="item">
+                <div class="ct-owl--background">
+                    <img src="assets/images/content/header-slider-1.jpg" alt="" height="200px" width="5000px;">
+                </div>
+                <div class="ct-owl--description">
+                    <div class="ct-owl--description--inner">
+                        <div class="ct-owl--descriptionItem">
+                            <div class="container">
+                                <img class="ct-u-marginBottom20 animated" data-fx="fadeInDown" data-time="300" src="assets/images/content/logo-sliderLight.jpg" alt="" style="width: 100px;">
+                                <h4 class="ct-u-marginBottom20 animated" data-fx="fadeInDown" data-time="300">Your <span style="font-size: 20px;">Real Estate</span> Partner</h4>
+                                <a class="btn btn-default btn-transparent--border ct-u-text--white animated" data-fx="fadeInUp" data-time="300" href="blog-single.html">Read More</a>
+                                <a class="btn btn-success ct-btn--green animated" data-fx="fadeInUp" data-time="300" href="submission.html">List Property</a>
+                            </div><br><br>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="ct-owl--background">
-                <img src="assets/images/content/header-slider-3.jpg" alt="" height="200px" width="5000px;">
+            <div class="item">
+                <div class="ct-owl--background">
+                    <img src="assets/images/content/header-slider-3.jpg" alt="" height="200px" width="5000px;">
+                </div>
+                <div class="ct-owl--description">
+                    <div class="ct-owl--description--inner">
+                        <div class="ct-owl--descriptionItem">
+                            <div class="container">
+                                <div class="ct-textHeader">
+                                    <h2 class="text-capitalize ct-u-marginBottom30 animated" data-fx="fadeInDown">Our Agents Are At Your Service</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ct-owl--description">
-                <div class="ct-owl--description--inner">
-                    <div class="ct-owl--descriptionItem">
-                        <div class="container">
-                            <div class="ct-textHeader">
-                                <h2 class="text-capitalize ct-u-marginBottom30 animated" data-fx="fadeInDown">Our Agents Are At Your Service</h2>
+            <div class="item">
+                <div class="ct-owl--background">
+                    <img src="assets/images/content/header-slider-1.jpg" alt="" height="200px" width="5000px;">
+                </div>
+                <div class="ct-owl--description">
+                    <div class="ct-owl--description--inner">
+                        <div class="ct-owl--descriptionItem">
+                            <div class="container">
+                                <div class="ct-textHeader ct-textHeader--Square animated" data-fx="zoomIn">
+                                    <img src="assets/images/content/logo-sliderLight.jpg" alt="Logo" class="center-block" style="width: 100px;">
+                                    <h4 class="text-uppercase" data-fx="fadeInUp">A great Place to be</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <div class="ct-owl--background">
-                <img src="assets/images/content/header-slider-1.jpg" alt="" height="200px" width="5000px;">
-            </div>
-            <div class="ct-owl--description">
-                <div class="ct-owl--description--inner">
-                    <div class="ct-owl--descriptionItem">
-                        <div class="container">
-                            <div class="ct-textHeader ct-textHeader--Square animated" data-fx="zoomIn">
-                                <img src="assets/images/content/logo-sliderLight.jpg" alt="Logo" class="center-block" style="width: 100px;">
-                                <h4 class="text-uppercase" data-fx="fadeInUp">A great Place to be</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header><br><br>
-<section>
-    <div class="container" style="color: white;">
-        <div class="row"><br>
-            <div class="col-md-12">
+      </div>
+</header>
+<section><br>
+    <div class="container color-white">
+        <div class="row mt-4">
+            <div class="col-12">
                 <div role="tabpanel">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs nav-justified" role="tablist">
@@ -241,7 +251,7 @@
                     <div class="tab-content tab-content--withBorder">
                         <div role="tabpanel" class="tab-pane active" id="history3" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-sm-7 col-xs-12">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
@@ -254,30 +264,77 @@
                                         <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane active" id="history" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="input-group">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-map-marker font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-home font-hm"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                                </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    <div class="col-sm-3 col-xs-6">
+                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="vision" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-envelope"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                                </div>                                                
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                                </div> 
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-tag font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                                </div> 
+                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="mission" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-envelope"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                                </div>                                                
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                                </div> 
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-tag font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                                </div> 
+                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
@@ -286,7 +343,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="vision3" style="background-image: url('assets/images/content/back-input.jpg');">
                            <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-sm-7 col-xs-12">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
@@ -299,30 +356,77 @@
                                         <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane active" id="history-11" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="input-group">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-map-marker font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-home font-hm"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                                </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    <div class="col-sm-3 col-xs-6">
+                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="vision-22" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-envelope"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                                </div>                                                
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                                </div> 
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-tag font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                                </div> 
+                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="mission-33" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-envelope"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                                </div>                                                
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                                </div> 
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-tag font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                                </div> 
+                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
@@ -331,7 +435,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission3" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-sm-7 col-xs-12">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
@@ -343,23 +447,50 @@
                                         <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane active" id="history-44" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="input-group">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-map-marker font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-home font-hm"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                                </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    <div class="col-sm-3 col-xs-6">
+                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="mission-55" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-envelope"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                                </div>                                                
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                                </div> 
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-tag font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                                </div> 
+                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
@@ -368,7 +499,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission4" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-sm-7 col-xs-12">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
@@ -380,23 +511,50 @@
                                         <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane active" id="history-66" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="input-group">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-map-marker font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-home font-hm"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                                </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    <div class="col-sm-3 col-xs-6">
+                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="mission-77" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-envelope"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                                </div>                                                
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                                </div> 
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-tag font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                                </div> 
+                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
@@ -405,7 +563,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission5" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-sm-7 col-xs-12">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
@@ -417,23 +575,50 @@
                                         <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane active" id="history-88" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Search Here" required>
+                                                <div class="input-group">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-map-marker font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-home font-hm"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                                </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Search</button> 
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                       <button type="button" class="btn btn-warning center-block btn-block">Advanced</button>
+                                                    <div class="col-sm-3 col-xs-6">
+                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="mission-99" style="background-color: #f5b92500">
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Enter Email" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password" required>
-                                                <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname" required> 
-                                                <button type="button" class="btn btn-warning pull-right">Search</button><br><br>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-envelope"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                                </div>
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                                </div>                                                
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-lock font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                                </div> 
+                                                <div class="input-group field-home-pad">
+                                                      <div class="input-group-addon field-input-home">
+                                                        <i class="fa fa-tag font-marker"></i>
+                                                      </div>
+                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                                </div> 
+                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                             </div>
                                         </div>
                                     </div>
@@ -842,20 +1027,25 @@
                 </div>
                 <a href="blog.html" class="btn btn-primary btn-transparent--border ct-u-text--motive ct-u-marginBottom30">Read More On Blog</a>
             </div>
-            <div class="col-md-6" style="background-color: #ecececbf;padding:15px;border: 1px solid #ecececbf;position: sticky;"><br>
+            <div class="col-sm-6 col-xs-12" style="background-color: #ecececbf;padding:15px;border: 1px solid #ecececbf;position: sticky;"><br>
                 <div role="tabpanel">
+                    <h3>Search as:</h3><br>
                     <div class="inner-addon left-addon">
                         <i class="glyphicon glyphicon-search"></i>
                         <input type="text" class="form-control ct-input--border ct-u-text--dark" placeholder="Search As" style="width: 100%;background-color: white;"><br><br>
                     </div>
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs nav-justified" role="tablist">
-                        <li role="presentation" class="active"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
-                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Agent</a></li>
-                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
-                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
-                        <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Lawyer</a></li>
-                    </ul><br>
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <ul class="nav nav-tabs nav-justified" role="tablist">
+                                <li role="presentation" class="active"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
+                                <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Agent</a></li>
+                                <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
+                                <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
+                                <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Lawyer</a></li>
+                            </ul><br>
+                        </div>
+                    </div>
                     <div class="clearfix"></div>
                     <!-- Tab panes -->
                     <button type="button" class="btn btn-warning pull-right">Search</button>
@@ -885,72 +1075,46 @@
     <div class="ct-footer--extended ct-u-paddingBoth60">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="col-sm-12 col-md-12 col-lg-6">
                     <h4 class="text-uppercase ct-u-marginBottom30">About home buyer</h4>
                     <div class="ct-u-marginBottom30">
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum nulla vel.</span>
+                        <span>The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.</span>
                     </div>
                     <ul class="list-unstyled">
                         <li class="ct-u-marginBottom10">
                             <i class="fa fa-home"></i>
-                            <span class="ct-fw-600">Address:</span><span> 1234 Street Name, San Fransico, United States</span>
+                            <span class="ct-fw-600">Address:</span><span> 1234 Street Name, Encapsulate Technologies, Pakistan</span>
                         </li>
                         <li class="ct-u-marginBottom10">
                             <i class="fa fa-envelope-o"></i>
-                            <span class="ct-fw-600">E-mail:</span><span> example@example.com</span>
+                            <span class="ct-fw-600">E-mail: </span><span> example@example.com</span>
                         </li>
                         <li>
                             <i class="fa fa-fax"></i>
-                            <span class="ct-fw-600">Fax:</span><span> 0 123 456 7890</span>
+                            <span class="ct-fw-600">Contact Us: </span><span> 0 123 456 7890</span>
                         </li>
                     </ul>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <h4 class="text-uppercase ct-u-marginBottom30">Contact us</h4>
-                    <ul class="list-unstyled ct-phoneNumbers ct-u-marginBottom30">
-                        <li>
-                            <i class="fa fa-phone"></i>
-                            <span class="ct-fw-600">0 800 123 4567</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-fax"></i>
-                            <span class="ct-fw-600">0 800 123 4562</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-mobile"></i>
-                            <span class="ct-fw-600">+1 500 700 800</span>
-                        </li>
-                    </ul>
-                    <ul class="ct-panel--socials ct-panel--navbar list-inline list-unstyled ct-u-marginBottom30">
-                        <li><a href="https://www.facebook.com/createITpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
-                        <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
-                        <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
-                    </ul>
-                    <div class="ct-contactList ">
-                        <a href="#"><i class="fa fa-envelope-o"></i>questions@Home Buyer.com</a>
-                        <a href="#"><i class="fa fa-envelope-o"></i>sales@Home Buyer.com</a>
-                    </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-3 ">
-                    <h4 class="text-uppercase ct-u-marginBottom30">Quick links</h4>
+                    <h4 class="text-uppercase ct-u-marginBottom30">Related Cities</h4>
                     <div class="row">
                         <div class="ct-links">
                             <div class="col-md-6">
-                                <a class="text-capitalize" href="#">List Property</a>
-                                <a class="text-capitalize" href="#">Home</a>
-                                <a class="text-capitalize" href="#">Properties</a>
-                                <a class="text-capitalize" href="#">Agents</a>
-                                <a class="text-capitalize" href="#">Fratures</a>
-                                <a class="text-capitalize" href="#">About Us</a>
-                                <a class="text-capitalize" href="#">Contact Us</a>
+                                <a class="text-capitalize" href="#">Lahore</a>
+                                <a class="text-capitalize" href="#">Islamabad</a>
+                                <a class="text-capitalize" href="#">Karachi</a>
+                                <a class="text-capitalize" href="#">Okara</a>
+                                <a class="text-capitalize" href="#">Faisalabad</a>
+                                <a class="text-capitalize" href="#">Multan</a>
+                                <a class="text-capitalize" href="#">kasoor</a>
                             </div>
                             <div class="col-md-6">
-                                <a class="text-capitalize" href="#">Login</a>
-                                <a class="text-capitalize" href="#">Register</a>
-                                <a class="text-capitalize" href="#">Pricing</a>
-                                <a class="text-capitalize" href="#">Terms & Conditions</a>
-                                <a class="text-capitalize" href="#">Privacy Policy</a>
-                                <a class="text-capitalize" href="#">Purchase Home Buyer</a>
+                                <a class="text-capitalize" href="#">Gujranwala</a>
+                                <a class="text-capitalize" href="#">Murree</a>
+                                <a class="text-capitalize" href="#">Kashmir</a>
+                                <a class="text-capitalize" href="#">Gilgit</a>
+                                <a class="text-capitalize" href="#">Baltistan</a>
+                                <a class="text-capitalize" href="#">Sindh</a>
                             </div>
                         </div>
                     </div>
@@ -961,11 +1125,11 @@
                         <a href="product-single.html">
                             <div class="ct-main-content">
                                 <div class="ct-imageBox">
-                                    <img src="assets/images/content/recently-reduced-thumbnail-4.jpg" alt="">
+                                    <img src="assets/images/content/recently-reduced-thumbnail-1.jpg" alt="">
                                 </div>
                                 <div class="ct-main-text">
                                     <div class="ct-product--tilte">
-                                        1856 Misty Concession, Colonsay
+                                        9544 Umber View, Inspiration
                                     </div>
                                     <div class="ct-product--price">
                                         <span>$ 650/month</span>
@@ -978,11 +1142,11 @@
                         <a href="product-single.html">
                             <div class="ct-main-content">
                                 <div class="ct-imageBox">
-                                    <img src="assets/images/content/recently-reduced-thumbnail-5.jpg" alt="">
+                                    <img src="assets/images/content/recently-reduced-thumbnail-2.jpg" alt="">
                                 </div>
                                 <div class="ct-main-text">
                                     <div class="ct-product--tilte">
-                                        3046 Merry Landing, High Lonesome Wells
+                                        15421 Southwest 39th Terrace
                                     </div>
                                     <div class="ct-product--price">
                                         <span>$ 650/month</span>
@@ -995,11 +1159,11 @@
                         <a href="product-single.html">
                             <div class="ct-main-content">
                                 <div class="ct-imageBox">
-                                    <img src="assets/images/content/recently-reduced-thumbnail-6.jpg" alt="">
+                                    <img src="assets/images/content/recently-reduced-thumbnail-3.jpg" alt="">
                                 </div>
                                 <div class="ct-main-text">
                                     <div class="ct-product--tilte">
-                                        5454 Fallen Deer Wood, Flat Nose
+                                        4079 Broad Falls, Turkeytown
                                     </div>
                                     <div class="ct-product--price">
                                         <span>$ 650/month</span>
