@@ -311,13 +311,6 @@
         </div>
     </div>
 </nav>
-<div class="ct-site--map">
-    <div class="container">
-        <a href="index.html">Home</a>
-        <a href="faq.html">Submit Property</a>
-        <a href="faq.html">Step 3</a>
-    </div>
-</div>
 <header class="ct-mediaSection" data-stellar-background-ratio="0.3" data-height="140" data-type="parallax" data-bg-image="assets/images/content/agency-parallax.jpg" data-bg-image-mobile="assets/images/content/agency-parallax.jpg">
     <div class="ct-mediaSection-inner">
         <div class="container">
@@ -364,7 +357,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <form role="form" class="ct-formSubmission">
+                <form role="form">
                     <div class="form-group ">
                         <label class="ct-fw-600 text-uppercase ct-u-marginBottom10">Set price of your property</label>
                         <div class="row">
@@ -393,8 +386,21 @@
                                 <label for="monthly">Monthly</label>
                             </div>
                         </div>
+                        <label class="ct-fw-600 text-uppercase ct-u-marginBottom10">Type of Property</label>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <input type="text" required class="form-control input-lg ct-input--border ct-u-marginBottom20" placeholder="">
+                            </div>
+                            <div class="col-md-3">
+                                <select class="ct-js-select ct-select2--light ct-select-lg">
+                                    <option value="usd">Sell</option>
+                                    <option value="euro">Rent</option>
+                                    <option value="pound">Buy</option>
+                                </select>
+                            </div>
+                        </div>
                         <label class="ct-fw-600 text-uppercase ct-u-marginBottom10">Property summary</label>
-                        <div class="row ct-u-marginBottom50">
+                        <div class="row ct-u-marginBottom50"><br>
                             <div class="col-md-6">
                                 <span class="span ct-u-marginBottom10">Area</span>
                                 <input type="text" required class="form-control input-lg ct-input--border ct-u-marginBottom20" placeholder="">
@@ -421,7 +427,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <span class="span ct-u-marginBottom10">Area Units</span>
+                                <span class="span ct-u-marginBottom10">SQFT</span>
                                 <select class="ct-js-select ct-select2--light ct-select-lg ct-u-marginBottom20">
                                     <option value="0">-</option>
                                     <option value="m2">m2</option>
