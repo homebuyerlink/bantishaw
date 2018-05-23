@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
+import { DefaultdashboardComponent } from './defaultdashboard/defaultdashboard.component';
+import { SettingsComponent } from './settings/settings.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
+import { MyagentsComponent } from './myagents/myagents.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent, DefaultdashboardComponent, SettingsComponent, MyprofileComponent, MyagentsComponent, ServicesComponent]
 })
 export class DashboardModule { }
