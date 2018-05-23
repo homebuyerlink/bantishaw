@@ -7539,6 +7539,17 @@ video {
     width: 100%;
   }
 }
+@media (max-width: 768px) {
+  .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-justified > li > a  {
+    border-bottom: 1px solid #ddd !important;
+    border-radius: 4px 4px 0 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
 #infscr-loading {
   z-index: 3000;
   position: absolute;
@@ -13987,4 +13998,34 @@ span.round-tab:hover {
     color: white;
     padding: 4px;
     text-align: center;
+}
+.text-mobile-view-logo{
+  font-size: 25px;
+  color: #f8b81d;
+  font-weight: bold;
+}
+.position-fix{
+  position: fixed;
+}
+.nav-pad{
+  padding-top: 3%;
+}
+.nav-mob{
+  position: fixed;
+  margin-top: 37px;
+}
+.color-white{
+  color: white;
+}
+.field-input-home{
+  background-color: white;
+}
+.field-home-pad{
+  margin-top: 9px;
+}
+.font-marker{
+  font-size: 20px;
+}
+.font-hm{
+  font-size: 15px;
 }
