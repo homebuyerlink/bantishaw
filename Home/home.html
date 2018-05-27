@@ -31,9 +31,12 @@
 <nav class="ct-menuMobile">
     <ul class="ct-menuMobile-navbar">
         <li class="dropdown"><a href="home.html">Home</a></li>
-        <li class="dropdown"><a href="dashboard.html">Dashboard</a></li>
         <li class="dropdown"><a href="listing.html">Services</a></li>
+        <li class="dropdown"><a href="submission.html">Post AD</a></li>
+        <li class="dropdown"><a href="dashboard.html">Dashboard</a></li>
         <li class="dropdown"><a href="how-it-works.html">How it works?</a></li>
+        <li class="dropdown"><a href="blog.html">Blog</a></li>
+        <li class="dropdown"><a href="add-blog.html">Post Blog</a></li>
     </ul>
 </nav>
 
@@ -56,7 +59,7 @@
             <div class="col-md-offset-9 col-md-4">
                 <div class="ct-panel--user ct-panel--right">
                     <div class="ct-panel--item ct-email">
-                        <a href="dashboard.html" class="btn btn-link btn-xs btn-upper-nav"><i class="fa fa-home"></i> Dashboard</a>
+                        <a href="dashboard-spectora.html" class="btn btn-link btn-xs btn-upper-nav"><i class="fa fa-home"></i> Dashboard</a>
                     </div>
                     <div class="ct-panel--item ct-email">
                         <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i> Login / Register</a>
@@ -78,7 +81,15 @@
                                                     <div class="tab-content tab-content--withBorder">
                                                         <div role="tabpanel" class="tab-pane active" id="history32-1">
                                                             <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" placeholder="Email Address" required>
-                                                            <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required><br><br>
+                                                            <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required>
+                                                            <div class="ct-form--item">
+                                                                <button class="loginBtn loginBtn--facebook">
+                                                                  Login with Facebook
+                                                                </button>
+                                                                <button class="loginBtn loginBtn--google">
+                                                                  Login with Google
+                                                                </button>
+                                                           </div><br>
                                                             <div class="row">
                                                                 <div class="col-md-offset-6 col-md-3">
                                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -166,69 +177,15 @@
                 </li>
                 <li class="dropdown"><a href="blog.html">Blog</a>
                 </li>
+                <li class="dropdown"><a href="add-blog.html">Post Blog</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-<header>
-      <div class="nav-pad">  
-        <div class="ct-js-owl" data-items="1" data-navigation="true" data-autoPlay="true" data-lazyLoad="true" data-animations="true" style="margin-top: 78px;">
-            <div class="item">
-                <div class="ct-owl--background">
-                    <img src="assets/images/content/header-slider-1.jpg" alt="" height="200px" width="5000px;">
-                </div>
-                <div class="ct-owl--description">
-                    <div class="ct-owl--description--inner">
-                        <div class="ct-owl--descriptionItem">
-                            <div class="container">
-                                <img class="ct-u-marginBottom20 animated" data-fx="fadeInDown" data-time="300" src="assets/images/content/logo-sliderLight.jpg" alt="" style="width: 100px;">
-                                <h4 class="ct-u-marginBottom20 animated" data-fx="fadeInDown" data-time="300">Your <span style="font-size: 20px;">Real Estate</span> Partner</h4>
-                                <a class="btn btn-default btn-transparent--border ct-u-text--white animated" data-fx="fadeInUp" data-time="300" href="blog-single.html">Read More</a>
-                                <a class="btn btn-success ct-btn--green animated" data-fx="fadeInUp" data-time="300" href="submission.html">List Property</a>
-                            </div><br><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ct-owl--background">
-                    <img src="assets/images/content/header-slider-3.jpg" alt="" height="200px" width="5000px;">
-                </div>
-                <div class="ct-owl--description">
-                    <div class="ct-owl--description--inner">
-                        <div class="ct-owl--descriptionItem">
-                            <div class="container">
-                                <div class="ct-textHeader">
-                                    <h2 class="text-capitalize ct-u-marginBottom30 animated" data-fx="fadeInDown">Our Agents Are At Your Service</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ct-owl--background">
-                    <img src="assets/images/content/header-slider-1.jpg" alt="" height="200px" width="5000px;">
-                </div>
-                <div class="ct-owl--description">
-                    <div class="ct-owl--description--inner">
-                        <div class="ct-owl--descriptionItem">
-                            <div class="container">
-                                <div class="ct-textHeader ct-textHeader--Square animated" data-fx="zoomIn">
-                                    <img src="assets/images/content/logo-sliderLight.jpg" alt="Logo" class="center-block" style="width: 100px;">
-                                    <h4 class="text-uppercase" data-fx="fadeInUp">A great Place to be</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-</header>
-<section><br>
+<section class="pad-tp">
     <div class="container color-white">
-        <div class="row mt-4">
+        <div class="row pt-11">
             <div class="col-12">
                 <div role="tabpanel">
                     <!-- Nav tabs -->
@@ -251,11 +208,11 @@
                     <div class="tab-content tab-content--withBorder">
                         <div role="tabpanel" class="tab-pane active" id="history3" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-sm-7 col-xs-12">
+                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs" role="tablist">
+                                        <ul class="nav nav-tabs nav-justified" role="tablist">
                                             <li role="presentation" class="active"><a href="#history" aria-controls="history" role="tab" data-toggle="tab">Buy</a></li>
                                             <li role="presentation"><a href="#vision" aria-controls="vision" role="tab" data-toggle="tab">Sell</a></li>
                                             <li role="presentation"><a href="#mission" aria-controls="mission" role="tab" data-toggle="tab">Rent</a></li>
@@ -276,11 +233,7 @@
                                                       </div>
                                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-sm-3 col-xs-6">
-                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
-                                                    </div>
-                                                </div>
+                                               <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="vision" style="background-color: #f5b92500">
                                                 <div class="input-group field-home-pad">
@@ -343,11 +296,11 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="vision3" style="background-image: url('assets/images/content/back-input.jpg');">
                            <div class="row">
-                                <div class="col-sm-7 col-xs-12">
+                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs" role="tablist">
+                                        <ul class="nav nav-tabs nav-justified" role="tablist">
                                             <li role="presentation" class="active"><a href="#history-11" aria-controls="history" role="tab" data-toggle="tab">Buyers</a></li>
                                             <li role="presentation"><a href="#vision-22" aria-controls="vision" role="tab" data-toggle="tab">Sellers</a></li>
                                             <li role="presentation"><a href="#mission-33" aria-controls="mission" role="tab" data-toggle="tab">Commercial</a></li>
@@ -368,11 +321,7 @@
                                                       </div>
                                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-sm-3 col-xs-6">
-                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
-                                                    </div>
-                                                </div>
+                                                <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="vision-22" style="background-color: #f5b92500">
                                                 <div class="input-group field-home-pad">
@@ -435,11 +384,11 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission3" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-sm-7 col-xs-12">
+                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs" role="tablist">
+                                        <ul class="nav nav-tabs nav-justified" role="tablist">
                                             <li role="presentation" class="active"><a href="#history-44" aria-controls="history" role="tab" data-toggle="tab">Agents</a></li>
                                             <li role="presentation"><a href="#mission-55" aria-controls="mission" role="tab" data-toggle="tab">Commercial</a></li>
                                         </ul>
@@ -459,11 +408,7 @@
                                                       </div>
                                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-sm-3 col-xs-6">
-                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
-                                                    </div>
-                                                </div>
+                                                <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="mission-55" style="background-color: #f5b92500">
                                                 <div class="input-group field-home-pad">
@@ -499,11 +444,11 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission4" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-sm-7 col-xs-12">
+                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs" role="tablist">
+                                        <ul class="nav nav-tabs nav-justified" role="tablist">
                                             <li role="presentation" class="active"><a href="#history-66" aria-controls="history" role="tab" data-toggle="tab">Commercial</a></li>
                                             <li role="presentation"><a href="#mission-77" aria-controls="mission" role="tab" data-toggle="tab">Residencial</a></li>
                                         </ul>
@@ -523,11 +468,7 @@
                                                       </div>
                                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-sm-3 col-xs-6">
-                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
-                                                    </div>
-                                                </div>
+                                                <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="mission-77" style="background-color: #f5b92500">
                                                 <div class="input-group field-home-pad">
@@ -563,11 +504,11 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mission5" style="background-image: url('assets/images/content/back-input.jpg');">
                             <div class="row">
-                                <div class="col-sm-7 col-xs-12">
+                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
                                     <div role="tabpanel">
 
                                         <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs" role="tablist">
+                                        <ul class="nav nav-tabs nav-justified" role="tablist">
                                             <li role="presentation" class="active"><a href="#history-88" aria-controls="history" role="tab" data-toggle="tab">Commercial</a></li>
                                             <li role="presentation"><a href="#mission-99" aria-controls="mission" role="tab" data-toggle="tab">Residencial</a></li>
                                         </ul>
@@ -587,11 +528,7 @@
                                                       </div>
                                                       <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-sm-3 col-xs-6">
-                                                       <button type="button" class="btn btn-warning center-block btn-block field-home-pad">Search</button> 
-                                                    </div>
-                                                </div>
+                                                <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="mission-99" style="background-color: #f5b92500">
                                                 <div class="input-group field-home-pad">
@@ -1036,13 +973,13 @@
                     </div>
                     <!-- Nav tabs -->
                     <div class="row">
-                        <div class="col-sm-12 col-xs-12">
+                        <div class="col-sm-12 col-xs-12 search-media">
                             <ul class="nav nav-tabs nav-justified" role="tablist">
-                                <li role="presentation" class="active"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
-                                <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Agent</a></li>
-                                <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
-                                <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
-                                <li role="presentation"><a href="#vision3-3" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Lawyer</a></li>
+                                <li role="presentation" class="active"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
+                                <li role="presentation"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Agent</a></li>
+                                <li role="presentation"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
+                                <li role="presentation"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
+                                <li role="presentation"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Lawyer</a></li>
                             </ul><br>
                         </div>
                     </div>
@@ -1111,7 +1048,7 @@
                             <div class="col-md-6">
                                 <h4 class="text-uppercase ct-u-marginBottom10">Links</h4>
                                 <a class="text-capitalize" href="home.html">Home</a>
-                                <a class="text-capitalize" href="faq.html">faq</a>
+                                <a class="text-capitalize" href="faq.html">faqs</a>
                                 <a class="text-capitalize" href="listing.html">Services</a>
                                 <a class="text-capitalize" href="dashboard.html">Dashboard</a>
                                 <a class="text-capitalize" href="how-it-works.html">How it works?</a>

@@ -253,322 +253,136 @@
     </button>
 </div>
 
-<div class="ct-topBar ">
+<div class="ct-topBar" style="position: fixed;">
     <div class="container">
         <div class="row">
-            <div class="col-sm-7 col-md-8">
-                <div class="ct-panel--contact ct-panel--left">
+            <div class="col-md-offset-9 col-md-4">
+                <div class="ct-panel--user ct-panel--right">
                     <div class="ct-panel--item ct-email">
-                        <a href="#"><i class="fa fa-envelope-o"></i> example@example.com</a>
+                        <a href="dashboard.html" class="btn btn-link btn-xs btn-upper-nav"><i class="fa fa-home"></i> Dashboard</a>
                     </div>
-                    <ul class="nav navbar-nav ct-switcher--language">
-                        <li class="dropdown">
-                            <a href="#">
-                                <i class="fa fa-globe"></i>
-                                English
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">
-                                        English
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Spanish
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        German
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div id="ct-js-navSearch">
-                        <i class="fa fa-search"></i>
-                        <input placeholder="Search ..." required type="text" name="field[]" class="form-control input-lg ct-input--search">
-                    </div>
-                    <div class="ct-navbar-search">
-                        <form role="form">
-                            <button class="ct-navbar-search-button" type="submit">
-                                <i class="fa fa-search fa-fw"></i>
-                            </button>
-                            <div class="form-group">
-                                <input id="search" placeholder="Search ..." required type="text" class="form-control input-lg">
+                    <div class="ct-panel--item ct-email">
+                        <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i> Login / Register</a>
+                        <div class="modal fade" id="login-modal" role="dialog">
+                            <div class="modal-dialog">
+                                 <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+                                                <div role="tabpanel">
+                                                    <!-- Nav tabs -->
+                                                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                                                        <li role="presentation" class="active"><a href="#history32-1" aria-controls="history32-1" role="tab" data-toggle="tab">LOGIN</a></li>
+                                                        <li role="presentation"><a href="#vision32-1" aria-controls="vision32-1" role="tab" data-toggle="tab">REGISTER</a></li>
+                                                    </ul>
+                                                    <div class="clearfix"></div>
+                                                    <!-- Tab panes -->
+                                                    <div class="tab-content tab-content--withBorder">
+                                                        <div role="tabpanel" class="tab-pane active" id="history32-1">
+                                                            <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" placeholder="Email Address" required>
+                                                            <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required>
+                                                            <div class="ct-form--item">
+                                                                <button class="loginBtn loginBtn--facebook">
+                                                                  Login with Facebook
+                                                                </button>
+                                                                <button class="loginBtn loginBtn--google">
+                                                                  Login with Google
+                                                                </button>
+                                                           </div><br>
+                                                            <div class="row">
+                                                                <div class="col-md-offset-6 col-md-3">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <a href="dashboard.html" class="btn btn-success">Sign In</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="vision32-1">
+                                                              <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required>
+                                                               <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required><br>
+                                                               <label>Sign Up As</label>
+                                                               <select class="ct-js-select ct-select-lg" style="border:1px solid grey;">
+                                                                    <option value="month">Client</option>
+                                                                    <option value="month">Home Owner</option>
+                                                                    <option value="month">Real Estate Agent</option>
+                                                                    <option value="January">Mortgage Advisor</option>
+                                                                    <option value="month">Building Inspector</option>
+                                                                    <option value="January">Real Estate Lawyer</option>
+                                                                </select>
+                                                               <div class="ct-form--item ct-u-marginBottom20">
+                                                                <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" value="">
+                                                                            I read and agree to<a href="terms.html" id="btn-lnk-terms"> terms & conditions</a>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                               <div class="ct-form--item">
+                                                                    <button class="loginBtn loginBtn--facebook">
+                                                                      Login with Facebook
+                                                                    </button>
+                                                                    <button class="loginBtn loginBtn--google">
+                                                                      Login with Google
+                                                                    </button>
+                                                               </div><br>
+                                                               <div class="row">
+                                                                <div class="col-md-offset-5 col-md-3">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <a href="registration-login.html" class="btn btn-success">Register Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-5 col-md-4">
-                <div class="ct-panel--user ct-panel--right text-right">
-                    <div class="ct-panel--item ct-email">
-                        <a href="properties.html"><i class="fa fa-home"></i> My Properties</a>
-                    </div>
-                    <div class="ct-panel--item ct-email">
-                        <a href="login.html"><i class="fa fa-user"></i> Login</a>
-                    </div>
-                    <div class="ct-panel--item ct-email">
-                        <a href="registration.html"><i class="fa fa-plus-square"></i> Register</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<nav class="navbar yamm ct-navbar--noDecoration" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
+<nav class="navbar aaaa yamm ct-navbar--noDecoration nav-mob" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
     <div class="container">
         <div class="navbar-header ct-panel--navbar">
-            <a href="index.html">
-                <img src="assets/images/content/logo.png" alt="logo">
+            <a href="home.html">
+                <img src="assets/images/content/logo.jpg" alt="logo" width="70px">
             </a>
         </div>
         <div class="ct-panelBox">
-            <div class="ct-panel--text ct-panel--navbar ct-fw-600"><a href="#">8 534 Listings</a></div>
+            <div class="ct-panel--text ct-panel--navbar ct-fw-600"><a href="home.html">Home Buyers</a></div>
             <ul class="ct-panel--socials ct-panel--navbar list-inline list-unstyled">
-                <li><a href="https://www.facebook.com/createITpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
-                <li><a href="https://twitter.com/createitpl"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
+                <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
+                <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
                 <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
             </ul>
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav ct-navbar--fadeInUp">
-                <li class="dropdown"><a href="index.html">Home<span class="caret ct-menu--arrow"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="yamm-content">
-                                <div class="ct-u-displayTableVertical">
-                                    <div class="ct-u-displayTableCell">
-                                        <ul class="list-unstyled pull-left">
-                                            <li><a href="index.html">Home V1 - Portal Slider</a></li>
-                                            <li><a href="index2.html">Home V2 - Portal Map</a></li>
-                                            <li><a href="index3.html">Home V3 - Portal Map (Light)</a></li>
-                                            <li><a href="index4.html">Home V4 - Real Estate Agency</a></li>
-                                            <li><a href="index5.html">Home V5 - Property Slider</a></li>
-                                            <li><a href="index6.html">Home V6 - Simple Onepager</a></li>
-                                            <li><a href="index7.html">Home V7 - Onepager Video</a></li>
-                                            <li><a href="index8.html">Home V8 - Side Map</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <ul class="list-unstyled pull-left">
-                                            <li><a href="index.html">Header - ScrollUp Menu</a></li>
-                                            <li><a href="index2.html">Header - ScrollUp TopBar</a></li>
-                                            <li><a href="index3.html">Header - ScrollUp Both</a></li>
-                                            <li><a href="index4.html">Header - Fixed TopBar</a></li>
-                                            <li><a href="index5.html">Header - Hide Menu</a></li>
-                                            <li><a href="index6.html">Header - Fixed Menu</a></li>
-                                            <li><a href="index7.html">Header - Fixed Both</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <img class="pull-right" src="assets/images/content/megamenu-image.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="ct-menuBrand ct-u-displayTableVertical">
-                                    <div class="ct-u-displayTableCell">
-                                        <a href="index.html">
-                                            <img src="assets/images/content/logo.png" alt="logo">
-                                        </a>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <div class="ct-panel--text ct-panel--navbar ct-fw-600"><a href="index.html">Real Estate Theme</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+            <ul class="nav navbar-nav ct-navbar--fadeInUp navbar-right">
+                <li class="dropdown"><a href="home.html">Home</a>
                 </li>
-                <li class="dropdown"><a href="properties.html">Properties<span class="caret ct-menu--arrow"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="yamm-content">
-                                <div class="ct-u-displayTableVertical">
-                                    <div class="ct-u-displayTableCell">
-                                        <ul class="list-unstyled pull-left">
-                                            <li><a href="product-single.html">Property Page V1</a></li>
-                                            <li><a href="product-single2.html">Property Page V2</a></li>
-                                            <li><a href="search-grid.html">Properties Page - Grid</a></li>
-                                            <li><a href="search-list.html">Properties Page - Listing</a></li>
-                                            <li><a href="properties.html">My Properties Page</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <ul class="list-unstyled pull-left">
-                                            <li><a href="product-singleEdit.html">Front Editing - Property Page V1</a></li>
-                                            <li><a href="product-single2Edit.html">Front Editing - Property Page V2</a></li>
-                                            <li><a href="submission.html">Submission Page</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <img class="pull-right" src="assets/images/content/megamenu-image-2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="ct-menuBrand ct-u-displayTableVertical">
-                                    <div class="ct-u-displayTableCell">
-                                        <a href="index.html">
-                                            <img src="assets/images/content/logo.png" alt="logo">
-                                        </a>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <div class="ct-panel--text ct-panel--navbar ct-fw-600"><a href="index.html">Real Estate Theme</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                <li class="dropdown"><a href="listing.html">Services</a>
                 </li>
-                <li class="dropdown ct-yamm--dropdownRight"><a href="agent.html">Agents<span class="caret ct-menu--arrow"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="yamm-content">
-                                <div class="ct-u-displayTableVertical">
-                                    <div class="ct-u-displayTableCell">
-                                        <img class="pull-right" src="assets/images/content/megamenu-image-3.jpg" alt="">
-                                    </div>
-                                    <div class="ct-u-displayTableCell middle-element">
-                                        <ul class="list-unstyled pull-left">
-                                            <li><a href="agency.html">Agency Page</a></li>
-                                            <li><a href="agent.html">Agent's Profile</a></li>
-                                            <li><a href="about.html">About Us</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <ul class="list-unstyled pull-left">
-                                            <li><a href="agency-edit.html">Front Editing - Agency Page</a></li>
-                                            <li><a href="agent-edit.html">Front Editing - Agent's Profile</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="ct-menuBrand ct-u-displayTableVertical">
-                                    <div class="ct-u-displayTableCell">
-                                        <a href="index.html">
-                                            <img src="assets/images/content/logo.png" alt="logo">
-                                        </a>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <div class="ct-panel--text ct-panel--navbar ct-fw-600"><a href="index.html">Real Estate Theme</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                <li class="dropdown"><a href="submission.html">Post AD</a>
                 </li>
-                <li class="dropdown yamm-fw">
-                    <a href="features-typography.html">Features<span class="caret ct-menu--arrow"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="yamm-content">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <ul class="list-unstyled">
-                                            <li><a href="features-grid.html"><i class="fa fa-fw fa-th"></i> Grid System</a></li>
-                                            <li><a href="features-typography.html"><i class="fa fa-fw fa-font"></i> Typography</a></li>
-                                            <li><a href="features-buttons.html"><i class="fa fa-fw fa-link"></i> Buttons</a></li>
-                                            <li><a href="features-forms.html"><i class="fa fa-fw fa-align-justify"></i> Forms</a></li>
-                                            <li><a href="features-tables.html"><i class="fa fa-fw fa-table"></i> Tables</a></li>
-                                            <li><a href="features-sliders.html"><i class="fa fa-fw fa-navicon"></i> Sliders</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <ul class="list-unstyled">
-                                            <li><a href="features-pricetables.html"><i class="fa fa-fw fa-money"></i> Pricing Tables</a>
-                                            </li>
-                                            <li><a href="features-iconboxes.html"><i class="fa fa-fw fa-th-large"></i> Icon Boxes</a>
-                                            </li>
-                                            <li><a href="features-personboxes.html"><i class="fa fa-fw fa-users"></i> Person Boxes</a>
-                                            </li>
-                                            <li><a href="features-counters.html"><i class="fa fa-fw fa-plus"></i> Counters</a></li>
-                                            <li><a href="features-toggable.html"><i class="fa fa-fw fa-toggle-on"></i> Toggables</a>
-                                            </li>
-                                            <li><a href="features-m-sections.html"><i class="fa fa-fw fa-play"></i> Media Sections</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <ul class="list-unstyled">
-                                            <li><a href="features-charts.html"><i class="fa fa-fw fa-area-chart"></i> Charts</a></li>
-                                            <li><a href="features-p-bars.html"><i class="fa fa-fw fa-bars"></i> Progress Bars</a></li>
-                                            <li><a href="features-p-icons.html"><i class="fa fa-fw fa-star-half-full"></i> Progress
-                                                Icons</a></li>
-                                            <li><a href="features-lists.html"><i class="fa fa-fw fa-list"></i> Lists Simple</a></li>
-                                            <li><a href="features-lists2.html"><i class="fa fa-fw fa-list"></i> Lists Icons</a></li>
-                                            <li><a href="features-developers.html"><i class="fa fa-fw fa-code"></i> For developers</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <ul class="list-unstyled">
-
-
-                                            <li>
-                                                <a href="http://createit.pl" class="ct-image--megamenu"  target="_blank"><img src="./assets/images/content/megamenu-createit.jpg" alt="createIT"></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="ct-u-shadow"></div>
-                                <div class="ct-menuBrand ct-u-displayTableVertical">
-                                    <div class="ct-u-displayTableCell">
-                                        <a href="index.html">
-                                            <img src="assets/images/content/logo.png" alt="logo">
-                                        </a>
-                                    </div>
-                                    <div class="ct-u-displayTableCell">
-                                        <div class="ct-panel--text ct-panel--navbar ct-fw-600"><a href="index.html">We packed Estato with everything in mind!</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                 <li class="dropdown"><a href="how-it-works.html">How it works</a>
                 </li>
-                <li class="dropdown active"><a href="about.html">Pages<span class="caret ct-menu--arrow"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="pricing.html">Pricing Tables</a></li>
-                        <li class="dropdown-submenu">
-                            <a href="gallery1.html">Gallery</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="gallery1.html">Gallery - Three Colums</a></li>
-                                <li><a href="gallery2.html">Gallery - Four Colums</a></li>
-                                <li><a href="gallery3.html">Gallery - Five Colums</a></li>
-                            </ul>
-                        </li>
-                        <li class="active"><a href="faq.html">FAQ</a></li>
-                        <li><a href="terms.html">Terms</a></li>
-                        <li><a href="policy.html">Privacy Policy</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-single.html">Blog Single</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="maintenance.html">Maintenance</a></li>
-                    </ul>
+                <li class="dropdown"><a href="blog.html">Blog</a>
                 </li>
-                <li class="dropdown"><a href="contact.html">Contact Us</a></li>
+                <li class="dropdown"><a href="post-blog.html">Post Blog</a>
+                </li>
             </ul>
-            <a class="btn btn-primary btn-transparent--border ct-u-text--motive" href="submission.html">List Property</a>
-        </div>
-        <div class="ct-shapeBottom"></div>
-    </div>
-</nav>
-<div class="ct-site--map">
-    <div class="container">
-        <a href="index.html">Home</a>
-        <a href="faq.html">FAQ</a>
-    </div>
-</div>
-<header class="ct-mediaSection" data-stellar-background-ratio="0.3" data-height="140" data-type="parallax" data-bg-image="assets/images/content/agency-parallax.jpg" data-bg-image-mobile="assets/images/content/agency-parallax.jpg">
-    <div class="ct-mediaSection-inner">
-        <div class="container">
-            <div class="ct-heading--main text-center">
-                <h3 class="text-uppercase ct-u-text--white">Frequently Asked Questions</h3>
-            </div>
         </div>
     </div>
-</header>
+</nav><br><br><br><br><br><br><br>
 <section class="ct-u-paddingBoth60">
     <div class="container">
         <div class="row">

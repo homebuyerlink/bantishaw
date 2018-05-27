@@ -8,34 +8,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="assets/js/popover-2.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
-	  <script>
-		
-		$(function(){
-		    // Enables popover
-		    $("#example-popover").popover({
-		        html : true, 
-		        content: function() {
-		          return $("#example-popover-content").html();
-		        },
-		        title: function() {
-		          return $("#example-popover-title").html();
-		        }
-		    });
-		});
-		</script>
 </head>
 <body>
-	<section>
+	<section><br><br>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
 					<div class="card">
 					  <div class="card-header">
-					    <i class="fa fa-user font-today-dash">
+					    <i class="fa fa-user font-today-dash mt-2">
 					    	<span> &nbsp;VIEW PROFILE</span>
 					    </i>
+					     <a href="profile-edit.html" class="btn btn-warning pull-right btn-sm">
+					     	<i class="fa fa-edit"></i>
+					     </a>
 					  </div>
 					  <div class="card-body">
 					    <blockquote class="blockquote">
@@ -53,9 +41,9 @@
 					  </div>
 					  <div class="card-body">
 					    <blockquote class="blockquote mb-0">
-					       <a class="btn btn-warning btn-block">Create New Post</a>
-					       <a class="btn btn-warning btn-block">My Post</a>
-					       <a class="btn btn-warning btn-block">Order Article</a>	
+					       <a href="add-blog.html" class="btn btn-warning btn-block">Create New Blog</a>
+					       <a href="my-blog.html" class="btn btn-warning btn-block">My Blogs</a>
+					       <a href="blog.html" class="btn btn-warning btn-block">Our Articles</a>	
 					    </blockquote>
 					  </div>
 					</div><br>
@@ -63,15 +51,16 @@
 				<div class="col-md-4">
 					<div class="card">
 					  <div class="card-header">
-					    <i class="fa fa-book font-today-dash">
-					    	<span> &nbsp;UPCOMING BOOKINGS</span>
+					    <i class="fa fa-book font-today-dash mt-2">
+					    	<span> &nbsp;BOOKINGS</span>
 					    </i>
+					    <a href="booking-view.html" class="btn btn-warning pull-right btn-sm">View</a>
 					  </div>
 					  <div class="card-body">
 					    <blockquote class="blockquote1">
 					    	    <h4 class="text-center mt-3">May 9th 2018 - Mr. X</h4>
 					    	    <p class="text-center">Time : 2pm</p>
-					    	    <a class="btn btn-warning btn-block">+ Bookings</a>
+					    	    <a href="booking-page.html" class="btn btn-warning btn-block">+ Bookings</a>
 					    </blockquote>
 					  </div>
 					</div><br>
@@ -89,10 +78,10 @@
                                     <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Donater's Name" required>
                                     <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" placeholder="Website Address" required>
                                     <label class="custom-file">
-									  <input type="file" id="file" class="custom-file-input">
+									  <input type="file" id="file" style="font-size: 12px;">
 									  <span class="custom-file-control"></span>
 									</label>                                   
-                                    <a class="btn btn-warning btn-block">+ View More</a>
+                                    <a href="charity-view.html" class="btn btn-warning btn-block">+ View More</a>
                                 </div>
                            </div>
 					    </blockquote>
@@ -115,6 +104,19 @@
 					    	    <h5 class="mt-4">Google Drive Backups</h5>
 					    	    <p class="mt-1 mb-5">Autmatically backup your inspection data to your Google Drive account.<a href=""> <b>Read More</b></a></p><hr>
 					    	    <p>Check out feature additions you might have missed at our<a href=""> <b>Development Blog</b></a></p>
+					    </blockquote>
+					  </div>
+					</div><br>
+					<div class="card">
+					  <div class="card-header">
+					    <i class="fa fa-envelope mt-2 font-today-dash">
+					    	<span> &nbsp;HBL BOARD</span>
+					    </i>
+					    <a href="chat-box.html" class="btn btn-warning pull-right btn-sm">View</a>
+					  </div>
+					  <div class="card-body">
+					    <blockquote class="blockquote mb-0">
+					    	 <p>Click <a href="chat-box.html"><b>View</b></a> to see the HBL Board </p>
 					    </blockquote>
 					  </div>
 					</div>
@@ -258,7 +260,9 @@
 					    <i class="fa fa-gear font-today-dash mt-2">
 					    	<span> &nbsp;SETTINGS</span>
 					    </i>
-					    <a href="#" class="btn btn-warning pull-right btn-sm">Change</a>
+					    <a href="setting-edit.html" class="btn btn-warning pull-right btn-sm">
+					    	<i class="fa fa-edit"></i>
+					    </a>
 					  </div>
 					  <div class="card-body">
 					    <blockquote class="blockquote">
@@ -271,7 +275,7 @@
 					    <i class="fa fa-heart font-today-dash mt-2 txt-fav">
 					    	<span> &nbsp;MY FAVOURITES</span>
 					    </i>
-					    <a href="#" class="btn btn-warning pull-right btn-sm">View</a>
+					    <a href="my-favourite.html" class="btn btn-warning pull-right btn-sm">View</a>
 					  </div>
 					  <div class="card-body">
 					    <blockquote class="blockquote">
@@ -319,9 +323,7 @@
 						       		<span> Spectora User Group</span>
 						       	</i>
 					       </a><br>
-					       <a class="btn btn-warning btn-block mt-4">Email Support</a>
-					       <a class="btn btn-warning btn-block">Report Bug</a>
-					       <a class="btn btn-warning btn-block">Facebook User Group</a>	
+					       <a href="faq.html" class="btn btn-warning btn-block mt-4">FAQ's</a>
 					    </blockquote>
 					  </div>
 					</div>
@@ -347,76 +349,55 @@
 					</div>
 				</div>
 			</div><br>
-		
-
-			<button type="button" id="example-popover" class="btn btn-warning btn-text-message" data-trigger="popover" data-placement="top">
-			<i class="fa fa-comment"></i>
+	
+	<section>
+		<button type="button" id="example-popover" class="btn btn-warning btn-text-message" data-trigger="popover" data-placement="top">
+		<i class="fa fa-bell fa-lg"></i>
 		</button>
 		<div id="example-popover-content" class="hidden">
-			<div class="head mb-5">
+			<div class="head mb-4">
 				<div class="back-pop">
-					<h6>Conversations</h6>
+					<h4>Bookings</h4>
+					<p>With Home Buyers</p>
 				</div>
 			</div>
 		   <div class="container-fluid">
 		   		<div class="row">
-		        	<div class="col-md-3">
-		        		<img src="assets/images/profile-snap.jpg" width="100%">
-		        	</div>
-		        	<div class="col-md-9">
-		        		<h6>John</h6>
-		        		<span>Good to See you.</span><br>
+		        	<div class="col-md-12">
+		        		<span>Home Buyer is just about customers and professionals</span><br>
 		        		<small>1 day ago</small>
 		        	</div>
 		        </div><hr>
 		        <div class="row">
-		        	<div class="col-md-3">
-		        		<img src="assets/images/profile-snap.jpg" width="100%">
-		        	</div>
-		        	<div class="col-md-9">
-		        		<h6>William Charles</h6>
-		        		<span>Welcome here again</span><br>
-		        		<small>5 day ago</small>
-
+		        	<div class="col-md-12">
+		        		<span>Home Buyer is just about customers and professionals</span><br>
+		        		<small>1 day ago</small>
 		        	</div>
 		        </div><hr>
 		        <div class="row">
-		        	<div class="col-md-3">
-		        		<img src="assets/images/profile-snap.jpg" width="100%">
+		        	<div class="col-md-12">
+		        		<span>Home Buyer is just about customers and professionals</span><br>
+		        		<small>1 day ago</small>
 		        	</div>
-		        	<div class="col-md-9">
-		        		<h6>William Charles</h6>
-		        		<span>Welcome here again</span><br>
-		        		<small>5 day ago</small>
-					</div>
 		        </div><hr>
 		        <div class="row">
-		        	<div class="col-md-3">
-		        		<img src="assets/images/profile-snap.jpg" width="100%">
+		        	<div class="col-md-12">
+		        		<span>Home Buyer is just about customers and professionals</span><br>
+		        		<small>1 day ago</small>
 		        	</div>
-		        	<div class="col-md-9">
-		        		<h6>William Charles</h6>
-		        		<span>Welcome here again</span><br>
-		        		<small>5 day ago</small>
-					</div>
 		        </div><hr>
 		        <div class="footer">
-		        	<a href="Profile-setting.html"><p class="text-center">See all in Messages</p></a>
+		        	<a href="Profile-setting.html"><p class="text-center">See all in Bookings</p></a>
 		        </div>
 		   </div>
 		</div><br><br>
+	</section>
+	
 
 
 
 		</div>
 	</section>
 
-
-
-
-	
-  
-  
-</body>
 </body>
 </html>

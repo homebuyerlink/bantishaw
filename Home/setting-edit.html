@@ -309,232 +309,317 @@
             </ul>
         </div>
     </div>
-</nav><br>
+</nav><br><br>
 
 <section>
-    <div class="container"><br>
-        <div class="ct-sortingBar ct-u-paddingRight10 ct-u-paddingLeft10 ct-u-marginBottom30">
-            <label class="control-label new">
-                <a href="booking-page.html" class="btn btn-xs text-uppercase ct-js-btnEdit--Properties">Book this Services</a>
-            </label>
-            <div class="ct-sortingTitle pull-left">
-                <h4 class="text-uppercase">Services</h4>
-            </div>
-            <ul class="list-inline list-unstyled pull-right ct-u-paddingBoth15">
-                <li>
-                    <form>
-                        <select class="ct-js-select">
-                            <option value="price">Sort by</option>
-                            <option value="price">Price</option>
-                            <option value="newness">Newness</option>
-                            <option value="rating">Rating</option>
-                            <option value="popularity">Popularity</option>
-                        </select>
-                    </form>
-                </li>
-                <li>
-                    <form>
-                        <select class="ct-js-select">
-                            <option value="nine">12 items</option>
-                            <option value="eighteen">15 items</option>
-                            <option value="eighteen">21 items</option>
-                            <option value="twentyseven">36 items</option>
-                            <option value="fourtyfive">45 items</option>
-                            <option value="ninety">90 items</option>
-                        </select>
-                    </form>
-                </li>
-            </ul>
-            <div class="clearfix"></div>
-        </div><br>
+    <div class="container">
+        <div class="row">
+            <section class="col-md-10 col-md-offset-1">
+                <div class="wizard">
+                    <div class="wizard-inner">
+                        <div class="connecting-line"></div>
+                        <ul class="nav nav-tabs" role="tablist">
 
-        <div class="row pad-list-box">
-            <div class="col-md-2">
-                <img src="assets/images/content/property-1.jpg" alt="Home Buyer" width="100%" height="190px;">
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-uppercase">Encapsulate Technologies
-                    <li class="fa fa-heart"></li></h3>
-                <small>Zohaib Aslam</small>
-                <div class="row">
-                    <div class="col-md-4">
-                        <i class="fa fa-star checked"></i>
-                        <i class="fa fa-star checked"></i>
-                        <i class="fa fa-star checked"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
+                            <li role="presentation" class="active">
+                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-folder-open"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="disabled">
+                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-picture"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="disabled">
+                                <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+
+                    <form role="form">
+                        <div class="tab-content">
+                            <div class="tab-pane active" role="tabpanel" id="step1">
+                                <h2>Company Details</h2><br><br>
+                                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Name of Country" required>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Address" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="ct-form--item">
+                                            <select class="ct-js-select ct-select-lg">
+                                                <option value="any">State</option>
+                                                <option value="1">State 1</option>
+                                                <option value="2">State 2</option>
+                                                <option value="3">State 3</option>
+                                                <option value="4">State 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="City" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Zip/Postal" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Website" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Start Date" required>
+                                    </div>
+                                </div>
+                                <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="About Company Profile"></textarea><br><br>
+                                <h3>Link Social Media and Other Links</h3><br><br>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Facebook Page" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Youtube" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Google+" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Twitter" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Instagram" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Associations" required>
+                                    </div>
+                                </div><br><br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3>Localization</h3><br>
+                                        <p><b>Service Area Name:</b><br>
+                                        Lahore, Pakistan</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3>Services Area Redius KM/Miles</h3>
+                                        <p>Mape Here</p>
+                                    </div>
+                                </div><br><br>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="step2">
+                                <h3>Inspector's Details</h3><br><br>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association" required>
+                                    </div>
+                                </div>
+                                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="email" placeholder="Email if different from company" required>
+                                 <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="phone if different from company" required><br>
+                                 <button type="button" class="btn btn-primary">Add More Teams</button><br><br>
+                                 <h3>Services Name/Keyword</h3><br><br>
+                                 <input type="text" class="form-control" id="fname" placeholder="Enter Keywords you want to search" data-role="tagsinput" /><br><br>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                                    <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="step3">
+                                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name" required>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer" required>
+                                    </div>
+                                </div>
+                                <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"></textarea>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="ct-form--item">
+                                            <select class="ct-js-select ct-select-lg">
+                                                <option value="any">Recommended Services</option>
+                                                <option value="1">Service 1</option>
+                                                <option value="2">Service 2</option>
+                                                <option value="3">Service 3</option>
+                                                <option value="4">Service 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <button type="button" class="btn btn-primary">Add More Services</button><br><br>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                                    <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                                    <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="complete">
+                                <h3>Time Slot</h3><br><br>
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thur</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                        <th>Sun</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>Start</td>
+                                        <td>Start</td>
+                                        <td>Start</td>
+                                        <td>Start</td>
+                                        <td>Start</td>
+                                        <td>Start</td>
+                                        <td>Start</td>
+                                      </tr>
+                                      <tr>
+                                        <td>9 am</td>
+                                        <td>9:30 am</td>
+                                        <td>9 am</td>
+                                        <td>9 am</td>
+                                        <td>9 am</td>
+                                        <td>12 am</td>
+                                        <td>9 am</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                        <td>Finish</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">+Block</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">+Block</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">+Block</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">+Block</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">+Block</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">+Block</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">+Block</button>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                <h3>Calender</h3>
+                                <small>Calender here</small><br><br>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="notification">Notification</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="email" placeholder="Email Address" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="notification">Text Alert</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Text Alert" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="notification">Dn't Allow Scheduling within</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="time limit" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="notification">Stand-Alone Scheduler Page</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <button type="button" class="btn btn-primary">My Online Schedule</button>
+                                    </div>
+                                </div><br><br>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-primary">Save and Finish</button></li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
                 </div>
-                <p>Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Recommended</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Designation</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Experience</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <select class="ct-js-select ct-select-lg"><br>
-                    <option>Select Date</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                </select><br><br>
-                <h2 class="side-listing-price">499.0 USD</h2><br><br>
-                <a href="booking-page.html" class="btn btn-primary btn-block">Book</a>
-            </div>
-        </div><br><hr><br>
-        <div class="row pad-list-box">
-            <div class="col-md-2">
-                <img src="assets/images/content/property-1.jpg" alt="Home Buyer" width="100%" height="190px;">
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-uppercase">Encapsulate Technologies</h3>
-                <small>Zohaib Aslam</small><br><br>
-                <p>Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Recommended</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Designation</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Experience</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <select class="ct-js-select ct-select-lg"><br>
-                    <option>Select Date</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                </select><br><br>
-                <h2 class="side-listing-price">499.0 USD</h2><br><br>
-                <a href="booking-page.html" class="btn btn-primary btn-block">Book</a>
-            </div>
-        </div><br><hr><br>
-        <div class="row pad-list-box">
-            <div class="col-md-2">
-                <img src="assets/images/content/property-1.jpg" alt="Home Buyer" width="100%" height="190px;">
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-uppercase">Encapsulate Technologies</h3>
-                <small>Zohaib Aslam</small><br><br>
-                <p>Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Recommended</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Designation</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Experience</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <select class="ct-js-select ct-select-lg"><br>
-                    <option>Select Date</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                </select><br><br>
-                <h2 class="side-listing-price">499.0 USD</h2><br><br>
-                <a href="booking-page.html" class="btn btn-primary btn-block">Book</a>
-            </div>
-        </div><br><hr><br>
-        <div class="row pad-list-box">
-            <div class="col-md-2">
-                <img src="assets/images/content/property-1.jpg" alt="Home Buyer" width="100%" height="190px;">
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-uppercase">Encapsulate Technologies</h3>
-                <small>Zohaib Aslam</small><br><br>
-                <p>Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Recommended</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Designation</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Experience</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <select class="ct-js-select ct-select-lg"><br>
-                    <option>Select Date</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                </select><br><br>
-                <h2 class="side-listing-price">499.0 USD</h2><br><br>
-                <a href="booking-page.html" class="btn btn-primary btn-block">Book</a>
-            </div>
-        </div><br><hr><br>
-        <div class="row pad-list-box">
-            <div class="col-md-2">
-                <img src="assets/images/content/property-1.jpg" alt="Home Buyer" width="100%" height="190px;">
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-uppercase">Encapsulate Technologies</h3>
-                <small>Zohaib Aslam</small><br><br>
-                <p>Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.Home Inspector with interNacho SOP Free Thermal images and recall check 22 years experience Master Inspector.</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Recommended</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Designation</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-success btn-list-below">Experience</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <select class="ct-js-select ct-select-lg"><br>
-                    <option>Select Date</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                    <option>4-22-2018</option>
-                </select><br><br>
-                <h2 class="side-listing-price">499.0 USD</h2><br><br>
-                <a href="booking-page.html" class="btn btn-primary btn-block">Book</a>
-            </div>
-        </div><br><hr><br>
-        <div class="ct-pagination text-center">
-            <ul class="pagination">
-                <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li>
-            </ul>
-        </div>
-    </div><br><br>
+            </section>
+       </div>
+    </div>
 </section>
     
 
@@ -710,6 +795,9 @@
       </script>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/popover.js"></script>
+<script src="assets/js/input.js"></script>
 
 
 
