@@ -1,37 +1,31 @@
 <nav class="collapse navbar-collapse">
-  <ul class="ct-menuMobile-navbar" id="myNavbar" >
-    <li class="dropdown">
-      <a routerLink="/">Home</a>
-    </li>
-    <li class="dropdown">
-      <a routerLink="/services">Services</a>
-    </li>
-    <li class="dropdown">
-      <a routerLink="/post-ad">Post AD</a>
-    </li>
-    <li class="dropdown">
-      <a routerLink="/dashboard">Dashboard</a>
-    </li>
-    <li class="dropdown">
-      <a routerLink="/how-it-works">How it works?</a>
-    </li>
-    <li class="dropdown">
-      <a routerLink="/blog">Blog</a>
-    </li>
-  </ul>
+    <ul class="ct-menuMobile-navbar" id="myNavbar"n>
+        <li class="dropdown"><a routerLink="/">Home</a></li>
+        <li class="dropdown"><a routerLink="/services" >Services</a></li>
+        <li class="dropdown"><a routerLink="/post-ad">Post AD</a></li>
+        <li class="dropdown"><a routerLink="/dashboard">Dashboard</a></li>
+        <li class="dropdown"><a routerLink="/how-it-works">How it works?</a></li>
+        <li class="dropdown"><a routerLink="/blog">Blog</a></li>
+    </ul>
 </nav>
 <div class="ct-navbarMobile position-fix">
-  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <a class="navbar-brand" routerLink="/">
-    <img src="assets/images/content/logo.jpg" alt="Home Buyer" width="18%">
-  </a>
-  <span class="text-mobile-view-logo">Home Buyers</span>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" routerLink="/"><img src="assets/images/content/logo.jpg" alt="Home Buyer" width="18%">
+    </a>
+    <span class="text-mobile-view-logo">Home Buyers</span>
 </div>
+
+
+
+
+
+
+
 
 
 <div class="ct-topBar ct-js-headroom animatedHeadroom headroom--top" style="position: fixed;">
@@ -52,7 +46,7 @@
                   <div class="modal-body">
                     <div class="row">
                       <div class="col-sm-12">
-                        <button type="button" class="close" data-dismiss="modal">Ã—</button>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
                         <br>
                         <div role="tabpanel">
                           <!-- Nav tabs -->
@@ -79,7 +73,7 @@
                                 <div class="col-md-3">
                                   <a routerLink="/" class="btn btn-success">Sign In</a>
                                 </div>
-                              </div>
+        </div>
                             </div>
                             <div role="tabpanel" class="tab-pane active" id="vision32-1">
                               <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required="">
@@ -95,18 +89,19 @@
                                   </span>
                                 </a>
                                 <label for="s2id_autogen2" class="select2-offscreen"></label>
-                                <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2"
-                                  id="s2id_autogen2">
+                                <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true"
+                                  role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2">
                                 <div class="select2-drop select2-display-none select2-with-searchbox">
                                   <div class="select2-search">
                                     <label for="s2id_autogen2_search" class="select2-offscreen"></label>
-                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox"
-                                      aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search"
-                                      placeholder=""> </div>
+                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                                      spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list"
+                                      aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder=""> </div>
                                   <ul class="select2-results" role="listbox" id="select2-results-2"> </ul>
                                 </div>
                               </div>
-                              <select class="ct-js-select ct-select-lg" style="border: 1px solid grey; display: none;" tabindex="-1" title="">
+                              <select class="ct-js-select ct-select-lg" style="border: 1px solid grey; display: none;" tabindex="-1"
+                                title="">
                                 <option value="month">Client</option>
                                 <option value="month">Home Owner</option>
                                 <option value="month">Real Estate Agent</option>
@@ -171,7 +166,7 @@
                     <div class="modal-body">
                       <div class="row">
                         <div class="col-sm-12">
-                          <button type="button" class="close" data-dismiss="modal">Ã—</button>
+                          <button type="button" class="close" data-dismiss="modal">×</button>
                           <br>
                           <div role="tabpanel">
                             <!-- Nav tabs -->
@@ -196,7 +191,7 @@
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                   </div>
                                   <div class="col-md-3">
-                                    <a class="btn btn-success">Sign In</a>
+                                    <a  class="btn btn-success">Sign In</a>
                                   </div>
                                 </div>
                               </div>
@@ -214,18 +209,19 @@
                                     </span>
                                   </a>
                                   <label for="s2id_autogen2" class="select2-offscreen"></label>
-                                  <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2"
-                                    id="s2id_autogen2">
+                                  <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true"
+                                    role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2">
                                   <div class="select2-drop select2-display-none select2-with-searchbox">
                                     <div class="select2-search">
                                       <label for="s2id_autogen2_search" class="select2-offscreen"></label>
-                                      <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox"
-                                        aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search"
-                                        placeholder=""> </div>
+                                      <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                                        spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list"
+                                        aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder=""> </div>
                                     <ul class="select2-results" role="listbox" id="select2-results-2"> </ul>
                                   </div>
                                 </div>
-                                <select class="ct-js-select ct-select-lg" style="border: 1px solid grey; display: none;" tabindex="-1" title="">
+                                <select class="ct-js-select ct-select-lg" style="border: 1px solid grey; display: none;"
+                                  tabindex="-1" title="">
                                   <option value="month">Client</option>
                                   <option value="month">Home Owner</option>
                                   <option value="month">Real Estate Agent</option>
@@ -283,59 +279,54 @@
 
 
 <nav class="navbar aaaa yamm ct-navbar--noDecoration nav-mob" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
-  <div class="container">
-    <div class="navbar-header ct-panel--navbar">
-      <a routerLink="/">
-        <img src="assets/images/content/logo.jpg" alt="logo" width="70px">
-      </a>
-    </div>
-    <div class="ct-panelBox">
-      <div class="ct-panel--text ct-panel--navbar ct-fw-600">
-        <a routerLink="/">Home Buyers</a>
-      </div>
-      <ul class="ct-panel--socials ct-panel--navbar list-inline list-unstyled">
-        <li>
-          <a href="#">
-            <div class="ct-socials ct-socials--circle">
-              <i class="fa fa-facebook"></i>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="ct-socials ct-socials--circle">
-              <i class="fa fa-twitter"></i>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="ct-socials ct-socials--circle">
-              <i class="fa fa-instagram"></i>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
+    <div class="container">
+        <div class="navbar-header ct-panel--navbar">
+            <a  routerLink="/">
+                <img src="assets/images/content/logo.jpg" alt="logo" width="70px">
+            </a>
+        </div>
+        <div class="ct-panelBox">
+            <div class="ct-panel--text ct-panel--navbar ct-fw-600"><a  routerLink="/">Home Buyers</a></div>
+            <ul class="ct-panel--socials ct-panel--navbar list-inline list-unstyled">
+                <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-facebook"></i></div></a></li>
+                <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-twitter"></i></div></a></li>
+                <li><a href="#"><div class="ct-socials ct-socials--circle"><i class="fa fa-instagram"></i></div></a></li>
+            </ul>
+        </div>
 
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav ct-navbar--fadeInUp navbar-right">
-        <li class="dropdown">
-          <a routerLink="/">Home</a>
-        </li>
-        <li class="dropdown">
-          <a routerLink="/services">Services</a>
-        </li>
-        <li class="dropdown">
-          <a routerLink="/post-ad">Post AD</a>
-        </li>
-        <li class="dropdown">
-          <a routerLink="/how-it-works">How it works</a>
-        </li>
-        <li class="dropdown">
-          <a routerLink="/blog">Blog</a>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav ct-navbar--fadeInUp navbar-right">
+                <li class="dropdown"><a routerLink="/" >Home</a>
+                </li>
+                <li class="dropdown"><a routerLink="/services" >Services</a>
+                </li>
+                <li class="dropdown"><a routerLink="/post-ad" >Post AD</a>
+                </li>
+                 <li class="dropdown"><a routerLink="/how-it-works" >How it works</a>
+                </li>
+                <li class="dropdown"><a routerLink="/blog" >Blog</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

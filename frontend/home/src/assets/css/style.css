@@ -14054,16 +14054,25 @@ span.round-tab:hover {
 }
 .card-body{
     border: 1px solid #ccc5b8;
+    padding: 4px;
 }
 .img-dash-pro{
   border-radius: 50%;
   width: 19%;
 }
+.card-header{
+  padding: 13px;
+}
 .blockquote1{
   margin-bottom: 0%;
+  border-left: none !important;
+}
+.blockquote{
+  border-left: none!important;
 }
 .font-today-dash{
   font-size: 20px;
+  padding-top: 9px;
 }
 .txt-fav{
   color: white;
