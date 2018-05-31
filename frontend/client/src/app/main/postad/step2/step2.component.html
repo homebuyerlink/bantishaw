@@ -49,7 +49,6 @@
 
 
 
-
 <section class="ct-u-paddingTop50 ct-u-paddingBottom100">
     <div class="container">
         <div class="row">
@@ -59,10 +58,12 @@
                         <label class="ct-fw-600 text-uppercase ct-u-marginBottom10">Upload featured image</label>
                         <div class="row ct-u-marginBottom20">
                             <div class="col-md-7">
-                                <input type="text" required class="form-control input-lg ct-input--border" placeholder="">
+                                <input type="text" required="" class="form-control input-lg ct-input--border" placeholder="">
                             </div>
                             <div class="col-md-5">
-                                <a class="btn btn-primary" href="">Browse</a>
+                                <label class="btn btn-primary btn-file btn-sm">
+                                    Browse <input type="file" style="display: none;">
+                                </label>
                                 <a class="btn btn-warning pull-right" href="">Upload</a>
                             </div>
                         </div>
@@ -70,15 +71,16 @@
                         <label class="ct-fw-600 text-uppercase ct-u-marginBottom10">upload images to gallery</label>
                         <div class="row ct-u-marginBottom20">
                             <div class="col-md-7">
-                                <input type="text" required class="form-control input-lg ct-input--border" placeholder="">
+                                <input type="text" required="" class="form-control input-lg ct-input--border" placeholder="">
                             </div>
                             <div class="col-md-5">
-                                <a class="btn btn-primary" href="">Browse</a>
+                                <label class="btn btn-primary btn-file btn-sm">
+                                    Browse <input type="file" style="display: none;">
+                                </label>
                                 <a class="btn btn-warning pull-right" href="">Upload</a>
                             </div>
                         </div>
                         <span class="ct-u-marginBottom40">This is going to be the main image of property, it will be shown in thumbnails and all important places.</span>
-                       
                         <div class="ct-container--Big">
                             <a class="btn btn-link pull-left"  routerLink="/">Back to Step 1</a>
                             <a class="btn btn-warning pull-right"  routerLink="/post-ad/step-3">Continue to Step 3</a>
