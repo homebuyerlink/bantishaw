@@ -40,7 +40,7 @@
                                 <a class="text-capitalize" routerLink="/">Home</a>
                                 <a class="text-capitalize" routerLink="/faq">faq</a>
                                 <a class="text-capitalize" routerLink="/services">Services</a>
-                                <a class="text-capitalize" routerLink="/">Dashboard</a>
+                                <a class="text-capitalize" routerLink="/dashboard">Dashboard</a>
                                 <a class="text-capitalize" routerLink="/how-it-works">How it works?</a>
                                 <a class="text-capitalize" routerLink="/blog">Blog</a>
                             </div>
@@ -105,7 +105,7 @@
         </div>
     </div>
     <div class="ct-postFooter ct-u-paddingBoth20">
-        <a href="#" class="ct-scrollUpButton ct-js-btnScrollUp">
+        <a (click)="scrolMeUp()" class="ct-scrollUpButton ct-js-btnScrollUp">
            <span class="ct-sectioButton--square">
                <i class="fa fa-angle-double-up"></i>
            </span>
