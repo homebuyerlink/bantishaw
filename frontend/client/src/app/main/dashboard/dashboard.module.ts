@@ -15,6 +15,7 @@ import { AddbookingsComponent } from './addbookings/addbookings.component';
 import { AgentsComponent } from './agents/agents.component';
 import { AddagestsComponent } from './addagests/addagests.component';
 import { AddservicesComponent } from './addservices/addservices.component';
+
 const routes:Routes=[
   {
     path:"",
@@ -71,6 +72,7 @@ const routes:Routes=[
     path:"add-service",
     component:AddservicesComponent
   }
+  
 ]
 @NgModule({
   imports: [

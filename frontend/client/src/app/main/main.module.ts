@@ -4,6 +4,7 @@ import { MainComponent } from './main.component';
 import { PartialModule } from '../partial/partial.module';
 import { Routes, RouterModule } from '@angular/router';
 import { FaqComponent } from './faq/faq.component';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,11 @@ const routes: Routes = [
         path: "faq",
         component: FaqComponent
       }
+      ,
+      {
+        path: "product-detail",
+        component: ProductdetailComponent
+      }
     ]
   }
 ]
@@ -53,7 +59,7 @@ const routes: Routes = [
 
   ],
 
-  declarations: [MainComponent, FaqComponent]
+  declarations: [MainComponent, FaqComponent, ProductdetailComponent]
 
 })
 export class MainModule { }
