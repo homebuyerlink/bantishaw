@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard.component';
 import { DefaultdashboardComponent } from './defaultdashboard/defaultdashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
-
 import { ServicesComponent } from './services/services.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ViewbookingsComponent } from './viewbookings/viewbookings.component';
@@ -15,6 +14,7 @@ import { AddbookingsComponent } from './addbookings/addbookings.component';
 import { AgentsComponent } from './agents/agents.component';
 import { AddagestsComponent } from './addagests/addagests.component';
 import { AddservicesComponent } from './addservices/addservices.component';
+
 
 const routes:Routes=[
   {

@@ -52,11 +52,9 @@ const routes: Routes = [
 @NgModule({
 
   imports: [
-
     CommonModule,
     PartialModule,
     RouterModule.forChild(routes)
-
   ],
 
   declarations: [MainComponent, FaqComponent, ProductdetailComponent]
