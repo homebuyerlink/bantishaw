@@ -12,12 +12,12 @@ export class AppComponent implements OnInit
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart){
       var body = $("html, body");
-      body.stop().animate({ scrollTop: 0 }, 500, 'swing', function () {
+      body.stop().animate({ scrollTop: 0 }, 1000, 'swing', function () {
       });}
       else if ((event instanceof NavigationEnd) || (event instanceof NavigationError) || (event instanceof NavigationCancel)) {
        
         var body = $("html, body");
-        body.stop().animate({ scrollTop: 0 }, 500, 'swing', function () {
+        body.stop().animate({ scrollTop: 0 }, 1000, 'swing', function () {
         });
         
       }

@@ -16,6 +16,7 @@ import { AgentsComponent } from './agents/agents.component';
 import { AddagestsComponent } from './addagests/addagests.component';
 import { AddservicesComponent } from './addservices/addservices.component';
 
+
 const routes:Routes=[
   {
     path:"",
