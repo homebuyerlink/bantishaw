@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard.component';
 import { DefaultdashboardComponent } from './defaultdashboard/defaultdashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
-
 import { ServicesComponent } from './services/services.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ViewbookingsComponent } from './viewbookings/viewbookings.component';
