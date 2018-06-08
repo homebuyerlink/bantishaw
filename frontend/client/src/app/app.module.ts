@@ -13,12 +13,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NgbModule
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    NgbModule.forRoot(),
+
+    RouterModule.forRoot(routes)
   
   ],
   providers: [],
