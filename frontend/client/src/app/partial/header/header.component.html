@@ -1,5 +1,37 @@
 
-
+<li class="nav-item">
+  <a id="example-popover" [ngbPopover]="messagesPopContent" placement="bottom" tabindex="0" class="btn btn-link btn-navbar"
+    role="button" data-placement="bottom">Messages</a>
+  <ng-template #messagesPopContent>
+    <div class="popover-body" id="messagePage" style="max-width: 330px; max-height: 60vh; overflow-y: auto; overflow-x: hidden">
+      <div class="nav-tabs-wrapper">
+        <ul class="nav nav-tabs dragscroll horizontal">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Me-inbox">INBOX</a>
+          </li>
+        </ul>
+      </div>
+      <span class="nav-tabs-wrapper-border" role="presentation"></span>
+      <div class="tab-content">
+        <div class="tab-pane fade show active Me-inbox">
+          <div *ngFor="let value of limitedMessages" class="row">
+            <div class="col-md-3">
+             
+            </div>
+            <div class="col-md-9">
+              
+            </div>
+          </div>
+          <footer>
+            <a routerLink="/conversations">
+              <p class="text3" align="center">See all in Messages</p>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</li>
 
 
 
