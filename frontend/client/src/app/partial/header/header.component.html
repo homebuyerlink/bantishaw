@@ -72,11 +72,11 @@
 
 
 
-            <div class="ct-panel--item ct-email">
+            <div class="ct-panel--item ct-email" *ngIf="loggedIn">
               <a routerLink="/dashboard" class="btn btn-link btn-xs btn-upper-nav">
                 <i class="fa fa-home"></i> Dashboard</a>
             </div>
-            <div class="ct-panel--item ct-email">
+            <div class="ct-panel--item ct-email" *ngIf="!loggedIn">
               <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal">
                 <i class="fa fa-user"></i> Login / Register</a>
               <div class="modal fade" id="login-modal" role="dialog">
@@ -100,9 +100,11 @@
                             <div class="clearfix"></div>
                             <!-- Tab panes -->
                             <div class="tab-content tab-content--withBorder">
+                                
                               <div role="tabpanel" class="tab-pane active" id="history32-1">
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" placeholder="Email Address" required>
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required>
+                                  <form #signInForm="ngForm" (ngSubmit)="onSubmittingSignInForm(signInForm)">
+                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="email" required ngModel   placeholder="Email Address">
+                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="password" type="Password" required ngModel  placeholder="Password" >
                                 <div class="ct-form--item">
                                   <button class="loginBtn loginBtn--facebook">
                                     Login with Facebook
@@ -117,13 +119,18 @@
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                   </div>
                                   <div class="col-md-3">
-                                    <a href="dashboard.html" class="btn btn-success">Sign In</a>
+                                    <button type="submit" class="btn btn-success">Sign In</button>
                                   </div>
                                 </div>
+</form>                              
                               </div>
+                              
                               <div role="tabpanel" class="tab-pane" id="vision32-1">
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required>
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required>
+                                  <form #signUpForm="ngForm" (ngSubmit)="onSubmittingSignupForm(signUpForm)">
+
+                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="username" type="text" placeholder="Username" ngModel required>
+                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="text" placeholder="Email" ngModel required>
+                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" name="password" placeholder="Password" ngModel required>
                                 <br>
                                 <label>Sign Up As</label>
                                 <select class="form-control input-lg text-inner-input ct-u-marginBottom10">
@@ -156,10 +163,13 @@
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                   </div>
                                   <div class="col-md-3">
-                                    <a href="registration-login.html" class="btn btn-success">Register Now</a>
+                                    <button type="submit" class="btn btn-success">Register Now</button>
                                   </div>
                                 </div>
+
+</form>
                               </div>
+                             
                             </div>
                           </div>
                         </div>
@@ -169,10 +179,10 @@
                 </div>
               </div>
             </div>
-            <div class="ct-panel--item ct-email">
+            <div class="ct-panel--item ct-email" *ngIf="loggedIn">
               <img src="assets/images/profile-snap.jpg" style="width: 40px;border-radius: 50%;margin-right: -20px;">
             </div>
-            <div class="ct-panel--item ct-email">
+            <div class="ct-panel--item ct-email" *ngIf="loggedIn">
               <div class="dropdown">
                 <button class="btn btn-default btn-custom dropdown-toggle" type="button" data-toggle="dropdown">
                   <span class="caret"></span>
@@ -188,7 +198,7 @@
                     <a routerLink="/dashboard/settings" class="no-back">Settings</a>
                   </li>
                   <li class="lis-drop-nav">
-                    <a href="#" class="no-back">Logout</a>
+                    <a (click)="logOutMe()" class="no-back">Logout</a>
                   </li>
                 </ul>
               </div>
