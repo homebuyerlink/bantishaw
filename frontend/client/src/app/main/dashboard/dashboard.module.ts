@@ -14,6 +14,7 @@ import { AddbookingsComponent } from './addbookings/addbookings.component';
 import { AgentsComponent } from './agents/agents.component';
 import { AddagestsComponent } from './addagests/addagests.component';
 import { AddservicesComponent } from './addservices/addservices.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes:Routes=[
@@ -77,7 +78,8 @@ const routes:Routes=[
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [DashboardComponent, DefaultdashboardComponent, SettingsComponent, MyprofileComponent,  ServicesComponent, ViewbookingsComponent, HblboxComponent, CharityViewComponent, MyfavouritesComponent, AddbookingsComponent, AgentsComponent, AddagestsComponent, AddservicesComponent]
 })

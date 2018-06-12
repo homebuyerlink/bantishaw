@@ -38,24 +38,25 @@
           </ul>
         </div>
 
-        <form role="form">
+        <form  #settingsForm="ngForm" (ngSubmit)="onSettingsFormsSubmission(settingsForm)">
           <div class="tab-content">
             <div class="tab-pane active" role="tabpanel" id="step1">
               <h2>Company Details</h2>
               <br>
               <br>
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Name of Country"
-                required="">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text"  name="nameOfCompany"
+               placeholder="Name of Country"
+                ngModel required>
               <div class="row">
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Address"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="address" type="text" placeholder="Address"
+                  ngModel required>
                 </div>
                 <div class="col-sm-6">
                   <div class="ct-form--item">
                     <div class="select2-container ct-js-select ct-select-lg" id="s2id_autogen13">
-                      <a href="javascript:void(0)" class="select2-choice" tabindex="-1">
-                        <span class="select2-chosen" id="select2-chosen-14">State</span>
+                      <a  class="select2-choice" tabindex="-1">
+                        <span class="select2-chosen"   id="select2-chosen-14">State</span>
                         <abbr class="select2-search-choice-close"></abbr>
                         <span class="select2-arrow" role="presentation">
                           <b role="presentation"></b>
@@ -73,7 +74,7 @@
                         <ul class="select2-results" role="listbox" id="select2-results-14"> </ul>
                       </div>
                     </div>
-                    <select class="ct-js-select ct-select-lg" tabindex="-1" title="" style="display: none;">
+                    <select name="state" class="ct-js-select ct-select-lg" tabindex="-1" title="" style="display: none;" ngModel required> 
                       <option value="any">State</option>
                       <option value="1">State 1</option>
                       <option value="2">State 2</option>
@@ -85,35 +86,36 @@
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="City"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="city" placeholder="City"
+                   ngModel required>
                 </div>
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Zip/Postal"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="zip" placeholder="Zip/Postal"
+                   ngModel required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number"
+                  name="phone" placeholder="Phone"
+                   ngModel required>
                 </div>
                 <div class="col-sm-6">
                   <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="email" placeholder="Email"
-                    required="">
+                   name="email"ngModel required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Website"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="website" placeholder="Website"
+                   ngModel required>
                 </div>
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Start Date"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="startDate" placeholder="Start Date"
+                   ngModel required>
                 </div>
               </div>
-              <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="About Company Profile"></textarea>
+              <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="aboutCompany" placeholder="About Company Profile"></textarea>
               <br>
               <br>
               <h3>Link Social Media and Other Links</h3>
@@ -121,32 +123,32 @@
               <br>
               <div class="row">
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Facebook Page"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="fbPage" placeholder="Facebook Page"
+                   ngModel required>
                 </div>
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Youtube"
-                    required="">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Google+"
-                    required="">
-                </div>
-                <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Twitter"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="youTube" placeholder="Youtube"
+                   ngModel required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Instagram"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="googlePlus" type="text" placeholder="Google+"
+                   ngModel required>
                 </div>
                 <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Associations"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="twitter" placeholder="Twitter"
+                   ngModel required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="insta" type="text" placeholder="Instagram"
+                   ngModel required>
+                </div>
+                <div class="col-sm-6">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10"  type="text" name="association" placeholder="Associations"
+                   ngModel required>
                 </div>
               </div>
               <br>
@@ -179,17 +181,17 @@
               <div class="row">
                 <div class="col-sm-6">
                   <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
-                    required="">
+                  name="inspectorName" ngModel required>
                 </div>
                 <div class="col-sm-6">
                   <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
-                    required="">
+                  name="designation" ngModel required>
                 </div>
               </div>
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="email" placeholder="Email if different from company"
-                required="">
+               name="emailIfDifferent"ngModel required>
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="phone if different from company"
-                required="">
+              name="phIfDifferent" ngModel required>
               <br>
               <button type="button" class="btn btn-primary">Add More Teams</button>
               <br>
@@ -198,7 +200,7 @@
               <br>
               <br>
               <div class="bootstrap-tagsinput">
-                <input type="text" placeholder="Enter Keywords you want to search">
+                <input type="text" name="keyWords" placeholder="Enter Keywords you want to search">
               </div>
               <input type="text" class="form-control" id="fname" placeholder="Enter Keywords you want to search" data-role="tagsinput"
                 style="display: none;">
@@ -215,15 +217,15 @@
             </div>
             <div class="tab-pane" role="tabpanel" id="step3">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name"
-                required="">
+              name="serviceName" ngModel required>
               <div class="row">
                 <div class="col-sm-6">
                   <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price"
-                    required="">
+                   name="price" ngModel required>
                 </div>
                 <div class="col-sm-6">
                   <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer"
-                    required="">
+                  name="promo" ngModel required>
                 </div>
               </div>
               <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"></textarea>
@@ -250,7 +252,7 @@
                         <ul class="select2-results" role="listbox" id="select2-results-16"> </ul>
                       </div>
                     </div>
-                    <select class="ct-js-select ct-select-lg" tabindex="-1" title="" style="display: none;">
+                    <select class="ct-js-select ct-select-lg" name="recommendServices" tabindex="-1" title="">
                       <option value="any">Recommended Services</option>
                       <option value="1">Service 1</option>
                       <option value="2">Service 2</option>
@@ -371,27 +373,44 @@
                 <div class="col-md-2">
                   <label for="notification">Notification</label>
                 </div>
-                <div class="col-md-10">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="email" placeholder="Email Address"
-                    required="">
+                <div class="col-lg-1">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""></label>
+                      </div>
+                </div>
+                <div class="col-md-9">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="emailAdress" type="email" placeholder="Email Address"
+                   ngModel required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-2">
                   <label for="notification">Text Alert</label>
                 </div>
-                <div class="col-md-10">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Text Alert"
-                    required="">
+                <div class="col-lg-1">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""></label>
+                      </div>
+                </div>
+                <div class="col-md-9">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="phForTextAlert" placeholder="Phone Number"
+                   ngModel required>
                 </div>
               </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="checkbox">
+                          <label><input type="checkbox" value="">Allow Choice of Inspector</label>
+                        </div>
+                  </div>
+              </div><br>
               <div class="row">
                 <div class="col-md-4">
                   <label for="notification">Dn't Allow Scheduling within</label>
                 </div>
                 <div class="col-md-4">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="time limit"
-                    required="">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="time limit" name="timeLimit"
+                   ngModel required >
                 </div>
               </div>
               <div class="row">
@@ -406,7 +425,7 @@
               <br>
               <ul class="list-inline pull-right">
                 <li>
-                  <button type="button" class="btn btn-primary">Save and Finish</button>
+                  <button type="submit" class="btn btn-primary">Save and Finish</button>
                 </li>
               </ul>
             </div>
