@@ -1,0 +1,9 @@
+Mlab Database
+database name: homebuyer
+database password: homebuyer1
+database user: homebuyer
+
+
+Email
+username: homebuyer@encapsulatech.com
+password: omO_z2^F.+2n
