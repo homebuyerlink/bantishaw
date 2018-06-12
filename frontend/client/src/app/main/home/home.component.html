@@ -1,840 +1,935 @@
-
-
-
 <div id="ct-js-wrapper" class="ct-pageWrapper">
-<br><br>
-<section class="pad-tp">
+  
+  
+  <section class="pad-tp">
     <div class="container color-white">
-        <div class="row pt-11">
-            <div class="col-12">
-                <div role="tabpanel">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs nav-justified" role="tablist">
-                        <li role="presentation" class="active" id="hme-expedia-stylee"><a href="#history3" id="font-expedia" aria-controls="history3" role="tab" data-toggle="tab">
-                            <i class="fa fa-home fa-2x"></i>
-                        <span class="hidden-xs"> Property</span></a></li>
-                        <li role="presentation" id="hme-expedia-stylee"><a href="#vision3" id="font-expedia" aria-controls="vision3" role="tab" data-toggle="tab">
-                            <i class="fa fa-building-o fa-2x"></i>
-                        <span class="hidden-xs"> Real Estate Agent</span></a></li>
-                        <li role="presentation" id="hme-expedia-stylee"><a href="#mission3" id="font-expedia" aria-controls="mission3" role="tab" data-toggle="tab">
-                        <i class="fa fa-money fa-2x"></i> <span class="hidden-xs"> Mortgage Advisor</span></a></li>
-                        <li role="presentation" id="hme-expedia-stylee"><a href="#mission4" id="font-expedia" aria-controls="mission4" role="tab" data-toggle="tab">
-                        <i class="fa fa-building fa-2x"></i><span class="hidden-xs"> Building Inspector</span></a></li>
-                        <li role="presentation" id="hme-expedia-stylee"><a href="#mission5" id="font-expedia" aria-controls="mission5" role="tab" data-toggle="tab">
-                            <i class="fa fa-graduation-cap fa-2x"></i><span class="hidden-xs"> Real Estate Lawyer</span></a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                    <!-- Tab panes -->
-                    <div class="tab-content tab-content--withBorder">
-                        <div role="tabpanel" class="tab-pane active" id="history3" style="background-image: url('assets/images/content/back-input.jpg');">
-                            <div class="row">
-                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
-                                    <span class="visible-xs txt-visible"><i class="fa fa-home"> Search Property</i></span>
-                                    <div role="tabpanel">
-
-                                        <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs nav-justified" role="tablist">
-                                            <li role="presentation" class="active"><a href="#history" aria-controls="history" role="tab" data-toggle="tab">Buy</a></li>
-                                            <li role="presentation"><a href="#vision" aria-controls="vision" role="tab" data-toggle="tab">Sell</a></li>
-                                            <li role="presentation"><a href="#mission" aria-controls="mission" role="tab" data-toggle="tab">Rent</a></li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history" style="background-color: #f5b92500">
-                                                <div class="input-group">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-map-marker font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-home font-hm"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
-                                                </div>
-                                               <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane" id="vision" style="background-color: #f5b92500">
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-envelope"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
-                                                </div>                                                
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
-                                                </div> 
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-tag font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
-                                                </div> 
-                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission" style="background-color: #f5b92500">
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-envelope"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
-                                                </div>                                                
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
-                                                </div> 
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-tag font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
-                                                </div> 
-                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="vision3" style="background-image: url('assets/images/content/back-input.jpg');">
-                           <div class="row">
-                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
-                                    <span class="visible-xs txt-visible">
-    <i class="fa fa-home"> Search Property</i></span>
-                                    <div role="tabpanel">
-
-                                        <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs nav-justified" role="tablist">
-                                            <li role="presentation" class="active"><a href="#history-11" aria-controls="history" role="tab" data-toggle="tab">Buyers</a></li>
-                                            <li role="presentation"><a href="#vision-22" aria-controls="vision" role="tab" data-toggle="tab">Sellers</a></li>
-                                            <li role="presentation"><a href="#mission-33" aria-controls="mission" role="tab" data-toggle="tab">Commercial</a></li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history-11" style="background-color: #f5b92500">
-                                                <div class="input-group">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-map-marker font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-home font-hm"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
-                                                </div>
-                                                <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane" id="vision-22" style="background-color: #f5b92500">
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-envelope"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
-                                                </div>                                                
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
-                                                </div> 
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-tag font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
-                                                </div> 
-                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission-33" style="background-color: #f5b92500">
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-envelope"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
-                                                </div>                                                
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
-                                                </div> 
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-tag font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
-                                                </div> 
-                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="mission3" style="background-image: url('assets/images/content/back-input.jpg');">
-                            <div class="row">
-                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
-                                    <span class="visible-xs txt-visible">
-    <i class="fa fa-home"> Search Property</i></span>
-                                    <div role="tabpanel">
-
-                                        <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs nav-justified" role="tablist">
-                                            <li role="presentation" class="active"><a href="#history-44" aria-controls="history" role="tab" data-toggle="tab">Agents</a></li>
-                                            <li role="presentation"><a href="#mission-55" aria-controls="mission" role="tab" data-toggle="tab">Commercial</a></li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history-44" style="background-color: #f5b92500">
-                                                <div class="input-group">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-map-marker font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-home font-hm"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
-                                                </div>
-                                                <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission-55" style="background-color: #f5b92500">
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-envelope"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
-                                                </div>                                                
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
-                                                </div> 
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-tag font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
-                                                </div> 
-                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="mission4" style="background-image: url('assets/images/content/back-input.jpg');">
-                            <div class="row">
-                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
-                                    <span class="visible-xs txt-visible">
-    <i class="fa fa-home"> Search Property</i></span>
-                                    <div role="tabpanel">
-
-                                        <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs nav-justified" role="tablist">
-                                            <li role="presentation" class="active"><a href="#history-66" aria-controls="history" role="tab" data-toggle="tab">Commercial</a></li>
-                                            <li role="presentation"><a href="#mission-77" aria-controls="mission" role="tab" data-toggle="tab">Residencial</a></li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history-66" style="background-color: #f5b92500">
-                                                <div class="input-group">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-map-marker font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-home font-hm"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
-                                                </div>
-                                                <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission-77" style="background-color: #f5b92500">
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-envelope"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
-                                                </div>                                                
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
-                                                </div> 
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-tag font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
-                                                </div> 
-                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="mission5" style="background-image: url('assets/images/content/back-input.jpg');">
-                            <div class="row">
-                                <div class="col-sm-7 col-xs-12 col-md-offset-2">
-                                    <span class="visible-xs txt-visible">
-    <i class="fa fa-home"> Search Property</i></span>
-                                    <div role="tabpanel">
-
-                                        <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs nav-justified" role="tablist">
-                                            <li role="presentation" class="active"><a href="#history-88" aria-controls="history" role="tab" data-toggle="tab">Commercial</a></li>
-                                            <li role="presentation"><a href="#mission-99" aria-controls="mission" role="tab" data-toggle="tab">Residencial</a></li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="history-88" style="background-color: #f5b92500">
-                                                <div class="input-group">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-map-marker font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-home font-hm"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
-                                                </div>
-                                                <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane" id="mission-99" style="background-color: #f5b92500">
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-envelope"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
-                                                </div>
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
-                                                </div>                                                
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-lock font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
-                                                </div> 
-                                                <div class="input-group field-home-pad">
-                                                      <div class="input-group-addon field-input-home">
-                                                        <i class="fa fa-tag font-marker"></i>
-                                                      </div>
-                                                      <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
-                                                </div> 
-                                                <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><br><br>
-        <div class="ct-section--products">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="ct-heading ct-u-marginBottom30">
-                        <h3 class="text-uppercase color-black">Our Services</h3>
-                        <a href="search-list.html" class="pull-right"><i class="fa fa-angle-right"></i>View More</a>
-                    </div>
+      <div class="row pt-11">
+        <div class="col-12">
+          <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active" id="hme-expedia-stylee">
+                <a href="#history3" id="font-expedia" aria-controls="history3" role="tab" data-toggle="tab">
+                  <i class="fa fa-home fa-2x"></i>
+                  <span class="hidden-xs"> Property</span>
+                </a>
+              </li>
+              <li role="presentation" id="hme-expedia-stylee">
+                <a href="#vision3" id="font-expedia" aria-controls="vision3" role="tab" data-toggle="tab">
+                  <i class="fa fa-building-o fa-2x"></i>
+                  <span class="hidden-xs"> Real Estate Agent</span>
+                </a>
+              </li>
+              <li role="presentation" id="hme-expedia-stylee">
+                <a href="#mission3" id="font-expedia" aria-controls="mission3" role="tab" data-toggle="tab">
+                  <i class="fa fa-money fa-2x"></i>
+                  <span class="hidden-xs"> Mortgage Advisor</span>
+                </a>
+              </li>
+              <li role="presentation" id="hme-expedia-stylee">
+                <a href="#mission4" id="font-expedia" aria-controls="mission4" role="tab" data-toggle="tab">
+                  <i class="fa fa-building fa-2x"></i>
+                  <span class="hidden-xs"> Building Inspector</span>
+                </a>
+              </li>
+              <li role="presentation" id="hme-expedia-stylee">
+                <a href="#mission5" id="font-expedia" aria-controls="mission5" role="tab" data-toggle="tab">
+                  <i class="fa fa-graduation-cap fa-2x"></i>
+                  <span class="hidden-xs"> Real Estate Lawyer</span>
+                </a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+            <!-- Tab panes -->
+            <div class="tab-content tab-content--withBorder">
+                <div role="tabpanel" class="tab-pane active" id="history3" style="background-image: url('assets/images/content/back-input.jpg');">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                                <label class="control-label sale">
-                                    Sale
-                                </label>
-                                <a routerLink="/product-detail">
-                                    <div class="ct-main-content">
-                                        <div class="ct-imageBox">
-                                            <img src="assets/images/content/property-1.jpg" alt=""><i class="fa fa-eye"></i>
+                        <div class="col-sm-7 col-xs-12 col-md-offset-2">
+                            <span class="visible-xs txt-visible"><i class="fa fa-home"> Search Property</i></span>
+                            <div role="tabpanel">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li role="presentation" class="active"><a href="#history" aria-controls="history" role="tab" data-toggle="tab">Buy</a></li>
+                                    <li role="presentation"><a href="#vision" aria-controls="vision" role="tab" data-toggle="tab">Sell</a></li>
+                                    <li role="presentation"><a href="#mission" aria-controls="mission" role="tab" data-toggle="tab">Rent</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="history" style="background-color: #f5b92500">
+                                        <div class="input-group">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-map-marker font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
                                         </div>
-                                        <div class="ct-main-text">
-                                            <div class="ct-product--tilte">
-                                                8553 Fallen Creek Bend, North Carolina
-                                            </div>
-                                            <div class="ct-product--price">
-                                                <span class="ct-price--Old">$ 450,000</span>
-                                                <span>$ 350,000</span>
-                                            </div>
-                                            <div class="ct-product--description">
-                                                Beautiful apartment in a great, very calm and safe place.
-                                            </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-home font-hm"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
                                         </div>
+                                       <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
                                     </div>
-                                    <div class="ct-product--meta">
-                                        <div class="ct-icons">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                            <span>
-                                                <i class="fa fa-cutlery"></i> 2
-                                            </span>
+                                    <div role="tabpanel" class="tab-pane" id="vision" style="background-color: #f5b92500">
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-envelope"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
                                         </div>
-                                        <div class="ct-text">
-                                            <span> Area: <span>105 m2</span></span>
-                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                        </div>                                                
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                        </div> 
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-tag font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                        </div> 
+                                        <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                     </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                                <a href="product-single.html">
-                                    <div class="ct-main-content">
-                                        <div class="ct-imageBox">
-                                            <img src="assets/images/content/property-2.jpg" alt=""><i class="fa fa-eye"></i>
+                                    <div role="tabpanel" class="tab-pane" id="mission" style="background-color: #f5b92500">
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-envelope"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
                                         </div>
-                                        <div class="ct-main-text">
-                                            <div class="ct-product--tilte">
-                                                9544 Umber View,<br> Inspiration
-                                            </div>
-                                            <div class="ct-product--price">
-                                                <span>$ 450,000</span>
-                                            </div>
-                                            <div class="ct-product--description">
-                                                Beautiful apartment in a great, very calm and safe place.
-                                            </div>
-                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                        </div>                                                
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                        </div> 
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-tag font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                        </div> 
+                                        <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
                                     </div>
-                                    <div class="ct-product--meta">
-                                        <div class="ct-icons">
-                                                            <span>
-                                                                <i class="fa fa-bed"></i> 3
-                                                            </span>
-                                                            <span>
-                                                                <i class="fa fa-cutlery"></i> 2
-                                                            </span>
-                                        </div>
-                                        <div class="ct-text">
-                                            <span> Area: <span>105 m2</span></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="clearfix hidden-lg"></div>
-                        <div class="col-md-3">
-                            <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                                <label class="control-label new">
-                                    New
-                                </label>
-                                <a href="product-single.html">
-                                    <div class="ct-main-content">
-                                        <div class="ct-imageBox">
-                                            <img src="assets/images/content/property-3.jpg" alt=""><i class="fa fa-eye"></i>
-                                        </div>
-                                        <div class="ct-main-text">
-                                            <div class="ct-product--tilte">
-                                                4079 Broad Falls, Turkeytown
-                                            </div>
-                                            <div class="ct-product--price">
-                                                <span>$ 450,000</span>
-                                            </div>
-                                            <div class="ct-product--description">
-                                                Beautiful apartment in a great, very calm and safe place.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ct-product--meta">
-                                        <div class="ct-icons">
-                                                            <span>
-                                                                <i class="fa fa-bed"></i> 3
-                                                            </span>
-                                                            <span>
-                                                                <i class="fa fa-cutlery"></i> 2
-                                                            </span>
-                                        </div>
-                                        <div class="ct-text">
-                                            <span> Area: <span>105 m2</span></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                                <a href="product-single.html">
-                                    <div class="ct-main-content">
-                                        <div class="ct-imageBox">
-                                            <img src="assets/images/content/property-4.jpg" alt=""><i class="fa fa-eye"></i>
-                                        </div>
-                                        <div class="ct-main-text">
-                                            <div class="ct-product--tilte">
-                                                046 Merry Landing, High Lonesome Wells
-                                            </div>
-                                            <div class="ct-product--price">
-                                                <span>$ 450,000</span>
-                                            </div>
-                                            <div class="ct-product--description">
-                                                Beautiful apartment in a great, very calm and safe place.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ct-product--meta">
-                                        <div class="ct-icons">
-                                                            <span>
-                                                                <i class="fa fa-bed"></i> 3
-                                                            </span>
-                                                            <span>
-                                                                <i class="fa fa-cutlery"></i> 2
-                                                            </span>
-                                        </div>
-                                        <div class="ct-text">
-                                            <span> Area: <span>105 m2</span></span>
-                                        </div>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+                <div role="tabpanel" class="tab-pane" id="vision3" style="background-image: url('assets/images/content/back-input.jpg');">
+                   <div class="row">
+                        <div class="col-sm-7 col-xs-12 col-md-offset-2">
+                            <span class="visible-xs txt-visible">
+<i class="fa fa-building-o"> Search Real Estate Agent</i></span>
+                            <div role="tabpanel">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li role="presentation" class="active"><a href="#history-11" aria-controls="history" role="tab" data-toggle="tab">Buyers</a></li>
+                                    <li role="presentation"><a href="#vision-22" aria-controls="vision" role="tab" data-toggle="tab">Sellers</a></li>
+                                    <li role="presentation"><a href="#mission-33" aria-controls="mission" role="tab" data-toggle="tab">Commercial</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="history-11" style="background-color: #f5b92500">
+                                        <div class="input-group">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-map-marker font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-home font-hm"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                        </div>
+                                        <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="vision-22" style="background-color: #f5b92500">
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-envelope"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                        </div>                                                
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                        </div> 
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-tag font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                        </div> 
+                                        <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="mission-33" style="background-color: #f5b92500">
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-envelope"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                        </div>                                                
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                        </div> 
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-tag font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                        </div> 
+                                        <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div role="tabpanel" class="tab-pane" id="mission3" style="background-image: url('assets/images/content/back-input.jpg');">
+                    <div class="row">
+                        <div class="col-sm-7 col-xs-12 col-md-offset-2">
+                            <span class="visible-xs txt-visible">
+<i class="fa fa-money"> Search Mortgage Advisor</i></span>
+                            <div role="tabpanel">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li role="presentation" class="active"><a href="#history-44" aria-controls="history" role="tab" data-toggle="tab">Agents</a></li>
+                                    <li role="presentation"><a href="#mission-55" aria-controls="mission" role="tab" data-toggle="tab">Commercial</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="history-44" style="background-color: #f5b92500">
+                                        <div class="input-group">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-map-marker font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-home font-hm"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                        </div>
+                                        <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="mission-55" style="background-color: #f5b92500">
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-envelope"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                        </div>                                                
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                        </div> 
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-tag font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                        </div> 
+                                        <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div role="tabpanel" class="tab-pane" id="mission4" style="background-image: url('assets/images/content/back-input.jpg');">
+                    <div class="row">
+                        <div class="col-sm-7 col-xs-12 col-md-offset-2">
+                            <span class="visible-xs txt-visible">
+<i class="fa fa-building"> Search Building Inspector</i></span>
+                            <div role="tabpanel">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li role="presentation" class="active"><a href="#history-66" aria-controls="history" role="tab" data-toggle="tab">Commercial</a></li>
+                                    <li role="presentation"><a href="#mission-77" aria-controls="mission" role="tab" data-toggle="tab">Residencial</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="history-66" style="background-color: #f5b92500">
+                                        <div class="input-group">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-map-marker font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-home font-hm"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                        </div>
+                                        <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="mission-77" style="background-color: #f5b92500">
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-envelope"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                        </div>                                                
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                        </div> 
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-tag font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                        </div> 
+                                        <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div role="tabpanel" class="tab-pane" id="mission5" style="background-image: url('assets/images/content/back-input.jpg');">
+                    <div class="row">
+                        <div class="col-sm-7 col-xs-12 col-md-offset-2">
+                            <span class="visible-xs txt-visible">
+<i class="fa fa-graduation-cap"> Search Real Estate Lawyer</i></span>
+                            <div role="tabpanel">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li role="presentation" class="active"><a href="#history-88" aria-controls="history" role="tab" data-toggle="tab">Commercial</a></li>
+                                    <li role="presentation"><a href="#mission-99" aria-controls="mission" role="tab" data-toggle="tab">Residencial</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="history-88" style="background-color: #f5b92500">
+                                        <div class="input-group">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-map-marker font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Enter City / Community">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-home font-hm"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Type of Property">
+                                        </div>
+                                        <button type="button" class="btn btn-warning center-block field-home-pad pull-right">Search</button><br><br>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="mission-99" style="background-color: #f5b92500">
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-envelope"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="email" placeholder="Email Address">
+                                        </div>
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Enter Password">
+                                        </div>                                                
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-lock font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="Password" placeholder="Confirm Password">
+                                        </div> 
+                                        <div class="input-group field-home-pad">
+                                              <div class="input-group-addon field-input-home">
+                                                <i class="fa fa-tag font-marker"></i>
+                                              </div>
+                                              <input class="form-control input-lg ct-input--border ct-u-marginBottom10" type="text" placeholder="Nickname">
+                                        </div> 
+                                        <button type="button" class="btn btn-warning pull-right field-home-pad">Search</button><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
             </div>
-        </div><br><br>
-        <section class="ct-mediaSection text-center ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="500" data-type="parallax" data-bg-image="assets/images/content/image-main-page.jpg" data-bg-image-mobile="assets/images/content/image-main-page.jpg">
-            <div class="ct-mediaSection-inner">
-                <div class="container">
-                    <div class="row text-left">
-                        <div class="col-md-6 color-white">
-                            <div class="ct-iconBox ct-u-marginBottom40 ct-iconBox--2col how-it-work-side-text">
-                                <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
-                                    <i class="fa fa-users"></i>
-                                </div>
-                                <div class="ct-iconBox--description">
-                                    <span class="ct-title text-uppercase ct-fw-600">Get more users</span>
-                                    <span class="ct-text">Thanks to our content optimization you will get more visits to your property page.</span>
-                                </div>
-                            </div>
-                            <div class="ct-iconBox ct-u-marginBottom40 ct-iconBox--2col how-it-work-side-text">
-                                <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
-                                    <i class="fa fa-bolt"></i>
-                                </div>
-                                <div class="ct-iconBox--description">
-                                    <span class="ct-title text-uppercase ct-fw-600">Convert visitors</span>
-                                    <span class="ct-text">With our design and structures you will be able to show your property in better light.</span>
-                                </div>
-                            </div>
-                            <div class="ct-iconBox ct-iconBox--2col how-it-work-side-text">
-                                <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
-                                    <i class="fa fa-trophy"></i>
-                                </div>
-                                <div class="ct-iconBox--description">
-                                    <span class="ct-title text-uppercase ct-fw-600">Reach your goal</span>
-                                    <span class="ct-text">Estato was designed to become your real estate business partner. It’s not only a tool, it’s a working ecosystem.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 ">
-                            <div class="how-it-work-side-text">
-                                <div class="ct-heading text-center color-white">
-                                    <h3 class="text-uppercase">How it works?</h3>
-                                </div>
-                                <div class="ct-heading text-center color-white  ct-u-marginBoth20">
-                                    <p align="left">The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.<br><br>
-                                    The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to each spouse. This means that the combined limit for a married couple is $20,000.The purchase does not need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but it must be the principal residence.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</section><br><br>
-<section class="ct-mediaSection text-center ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="765" data-type="parallax" style="background-color: #505254;">
-    <div class="ct-mediaSection-inner">
-        <div class="container">
-            <div class="ct-heading ct-u-marginBottom60">
-                <h3 class="text-uppercase ct-u-text--white">Why Home Buyer?</h3>
-            </div>
-            <div class="ct-decoration center-block ct-u-marginBottom60">
-                <div class="ct-decoration--inner center-block"></div>
-            </div>
-            <div class="row ct-u-text--white">
-                <div class="col-sm-6 col-md-3">
-                    <div class="ct-iconBox">
-                        <div class="ct-icon ct-iconContainer--circle ct-iconContainer--circleHoverLight center-block ct-u-marginBottom30">
-                            <i class="fa fa-bolt"></i>
-                        </div>
-                        <div class="ct-iconBox--description">
-                            <span class="ct-title ct-u-marginBottom20 ct-fw-600">Powerfull</span>
-                            <span class="ct-text ct-u-marginBottom20">Home Buyer is designed a way that it was flexible for different types of business.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="ct-iconBox">
-                        <div class="ct-icon ct-iconContainer--circle ct-iconContainer--circleHoverLight center-block ct-u-marginBottom30">
-                            <i class="fa fa-users"></i>
-                        </div>
-                        <div class="ct-iconBox--description">
-                            <span class="ct-title ct-u-marginBottom20 ct-fw-600">User Oriented</span>
-                            <span class="ct-text ct-u-marginBottom20">Home Buyer is designed a way that it was flexible for different types of business.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="ct-iconBox">
-                        <div class="ct-icon ct-iconContainer--circle ct-iconContainer--circleHoverLight center-block ct-u-marginBottom30">
-                            <i class="fa fa-heart-o"></i>
-                        </div>
-                        <div class="ct-iconBox--description">
-                            <span class="ct-title ct-u-marginBottom20 ct-fw-600">Beautiful</span>
-                            <span class="ct-text ct-u-marginBottom20">Home Buyer is designed a way that it was flexible for different types of business.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="ct-iconBox">
-                        <div class="ct-icon ct-iconContainer--circle ct-iconContainer--circleHoverLight center-block ct-u-marginBottom30">
-                            <i class="fa fa-life-ring"></i>
-                        </div>
-                        <div class="ct-iconBox--description">
-                            <span class="ct-title ct-u-marginBottom20 ct-fw-600">Fast support</span>
-                            <span class="ct-text ct-u-marginBottom20">Home Buyer is designed a way that it was flexible for different types of business.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="btn btn-primary btn-transparent--border ct-u-text--motive ct-u-marginTop80" href="">More Reasons to Use Home Buyer</a>
+          </div>
         </div>
-    </div>
-</section>
-<section class="ct-u-paddingBoth60 ct-blog--small">
-    <div class="container">
+      </div>
+      <br>
+      <br>
+      <div class="ct-section--products">
         <div class="row">
-            <div class="col-md-6">
-                <div class="ct-heading ct-u-marginBottom30">
-                    <h3 class="text-uppercase">lately on blog</h3>
-                </div>
-                <div class="ct-u-marginBottom30">
-                    <div class="ct-articleBox ct-articleBox--list">
-                        <div class="ct-calendar--day text-center">
-                            <div class="ct-day">
-                                <span>09</span>
-                            </div>
-                            <div class="ct-month">
-                                <span class="text-uppercase">jan</span>
-                            </div>
-                        </div>
-                        <div class="ct-articleBox-media">
-                            <img src="assets/images/content/blog-image-small-1.jpg" alt="">
-                        </div>
-                        <div class="ct-articleBox-titleBox text-uppercase">
-
-                            <a href="blog-single.html">Expectations for 2015</a>
-                            <div class="ct-articleBox-meta">
-                                <span>Posted on January 9th, 2015 In Loans, Real Estate</span>
-                            </div>
-                            <div class="ct-articleComments">
-                                <a href="blog-single.html">2 comments</a>
-                            </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="ct-articleBox ct-articleBox--list">
-                        <div class="ct-calendar--day text-center">
-                            <div class="ct-day">
-                                <span>05</span>
-                            </div>
-                            <div class="ct-month">
-                                <span class="text-uppercase">jan</span>
-                            </div>
-                        </div>
-                        <div class="ct-articleBox-titleBox text-uppercase">
-
-                            <a href="">Real Estate market most probably going to bloom in early 2016</a>
-                            <div class="ct-articleBox-meta">
-                                <span>Posted on January 5th, 2015 In Loans, Real Estate</span>
-                            </div>
-                            <div class="ct-articleComments">
-                                <a href="blog-single.html">2 comments</a>
-                            </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="ct-articleBox ct-articleBox--list">
-                        <div class="ct-calendar--day text-center">
-                            <div class="ct-day">
-                                <span>03</span>
-                            </div>
-                            <div class="ct-month">
-                                <span class="text-uppercase">jan</span>
-                            </div>
-                        </div>
-                        <div class="ct-articleBox-media">
-                            <img src="assets/images/content/blog-image-small-2.jpg" alt="">
-                        </div>
-                        <div class="ct-articleBox-titleBox text-uppercase">
-
-                            <a href="blog-single.html">Trending in architecture leads us towards better standards</a>
-                            <div class="ct-articleBox-meta">
-                                <span>Posted on January 3th, 2015 In Loans, Real Estate</span>
-                            </div>
-                            <div class="ct-articleComments">
-                                <a href="blog-single.html">2 comments</a>
-                            </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="ct-articleBox ct-articleBox--list">
-                        <div class="ct-calendar--day text-center">
-                            <div class="ct-day">
-                                <span>31</span>
-                            </div>
-                            <div class="ct-month">
-                                <span class="text-uppercase">dec</span>
-                            </div>
-                        </div>
-                        <div class="ct-articleBox-titleBox text-uppercase">
-
-                            <a href="blog-single.html"><i class="fa fa-long-arrow-right"></i> John Doe</a>
-                            <div class="ct-articleBox-meta">
-                                <span>Posted on January 3th, 2015 In Loans, Real Estate</span>
-                            </div>
-                            <div class="ct-articleComments">
-                                <a href="blog-single.html">2 comments</a>
-                            </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="ct-articleBox ct-articleBox--list">
-                        <div class="ct-calendar--day text-center">
-                            <div class="ct-day">
-                                <span>16</span>
-                            </div>
-                            <div class="ct-month">
-                                <span class="text-uppercase">dec</span>
-                            </div>
-                        </div>
-                        <div class="ct-articleBox-titleBox text-uppercase">
-
-                            <a href="blog-single.html">Pre-Christmas Slowdown</a>
-                            <div class="ct-articleBox-meta">
-                                <span>Posted on January 3th, 2015 In Loans, Real Estate</span>
-                            </div>
-                            <div class="ct-articleComments">
-                                <a href="blog-single.html">2 comments</a>
-                            </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <a href="blog.html" class="btn btn-primary btn-transparent--border ct-u-text--motive ct-u-marginBottom30">Read More On Blog</a>
+          <div class="col-md-12">
+            <div class="ct-heading ct-u-marginBottom30">
+              <h3 class="text-uppercase color-black">Our Services</h3>
+              <a href="search-list.html" class="pull-right">
+                <i class="fa fa-angle-right"></i>View More</a>
             </div>
-            <div class="col-sm-6 col-xs-12" style="background-color: #ecececbf;padding:15px;border: 1px solid #ecececbf;position: sticky;"><br>
-                <div role="tabpanel">
-                    <h3>Search As:</h3><br>
-                    <div class="inner-addon left-addon">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </div>
-                    <!-- Nav tabs -->
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12 search-media">
-                            <ul class="nav nav-tabs nav-justified" role="tablist">
-                                <li role="presentation" class="active"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Home Owner</a></li>
-                                <li role="presentation"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Agent</a></li>
-                                <li role="presentation"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Morg. Advisor</a></li>
-                                <li role="presentation"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Bulid. Inspector</a></li>
-                                <li role="presentation"><a href="#vision3-3" id="search-as-hme-tab" aria-controls="vision3-3" role="tab" data-toggle="tab">Estate Lawyer</a></li>
-                            </ul><br>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <label class="control-label sale">
+                    Sale
+                  </label>
+                  <a routerLink="/product-detail">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-1.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          8553 Fallen Creek Bend, North Carolina
                         </div>
+                        <div class="ct-product--price">
+                          <span class="ct-price--Old">$ 450,000</span>
+                          <span>$ 350,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
                     </div>
-                    <div class="clearfix"></div>
-                    <!-- Tab panes -->
-                    <button type="button" class="btn btn-warning pull-right">Search</button>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
                 </div>
+              </div>
+              <div class="col-md-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-2.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          9544 Umber View,
+                          <br> Inspiration
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="clearfix hidden-lg"></div>
+              <div class="col-md-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <label class="control-label new">
+                    New
+                  </label>
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-3.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          4079 Broad Falls, Turkeytown
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-4.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          046 Merry Landing, High Lonesome Wells
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
+
         </div>
+      </div>
+      <br>
+      <br>
+      <section class="ct-mediaSection text-center ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="500" data-type="parallax"
+        data-bg-image="assets/images/content/image-main-page.jpg" data-bg-image-mobile="assets/images/content/image-main-page.jpg">
+        <div class="ct-mediaSection-inner">
+          <div class="container">
+            <div class="row text-left">
+              <div class="col-md-6 color-white">
+                <div class="ct-iconBox ct-u-marginBottom40 ct-iconBox--2col how-it-work-side-text">
+                  <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <div class="ct-iconBox--description">
+                    <span class="ct-title text-uppercase ct-fw-600">Get more users</span>
+                    <span class="ct-text">Thanks to our content optimization you will get more visits to your property page.</span>
+                  </div>
+                </div>
+                <div class="ct-iconBox ct-u-marginBottom40 ct-iconBox--2col how-it-work-side-text">
+                  <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
+                    <i class="fa fa-bolt"></i>
+                  </div>
+                  <div class="ct-iconBox--description">
+                    <span class="ct-title text-uppercase ct-fw-600">Convert visitors</span>
+                    <span class="ct-text">With our design and structures you will be able to show your property in better light.</span>
+                  </div>
+                </div>
+                <div class="ct-iconBox ct-iconBox--2col how-it-work-side-text">
+                  <div class="ct-icon text-center ct-iconContainer--circle ct-iconContainer--circleLight">
+                    <i class="fa fa-trophy"></i>
+                  </div>
+                  <div class="ct-iconBox--description">
+                    <span class="ct-title text-uppercase ct-fw-600">Reach your goal</span>
+                    <span class="ct-text">Estato was designed to become your real estate business partner. It’s not only a tool, it’s a working
+                      ecosystem.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 ">
+                <div class="how-it-work-side-text">
+                  <div class="ct-heading text-center color-white">
+                    <h3 class="text-uppercase">How it works?</h3>
+                  </div>
+                  <div class="ct-heading text-center color-white  ct-u-marginBoth20">
+                    <p align="left">The purchase does not need to be a traditional home in order for the individual to qualify as a first-time
+                      homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be
+                      lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this
+                      purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to
+                      each spouse. This means that the combined limit for a married couple is $20,000.
+                      <br>
+                      <br> The purchase does not need to be a traditional home in order for the individual to qualify as a first-time
+                      homebuyer, but it must be the principal residence. For example, it could be a houseboat that will be
+                      lived in. The maximum amount that may be distributed from the IRA on a penalty-free basis for this
+                      purpose is $10,000. This is a lifetime limit. For married couples, the limit applies separately to
+                      each spouse. This means that the combined limit for a married couple is $20,000.The purchase does not
+                      need to be a traditional home in order for the individual to qualify as a first-time homebuyer, but
+                      it must be the principal residence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-</section>
-<section class="ct-u-paddingBottom60 text-center">
-  <div class="container">
-      <div class="ct-heading ct-u-marginBoth20">
-          <h3 class="text-uppercase">our partners</h3>
+  </section>
+  <br>
+  <br>
+  <section class="ct-mediaSection text-center ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="765" data-type="parallax"
+    style="background-color: #505254;">
+    <div class="ct-mediaSection-inner">
+      <div class="container">
+        <div class="ct-heading ct-u-marginBottom60">
+          <h3 class="text-uppercase ct-u-text--white">Why Home Buyer?</h3>
+        </div>
+        <div class="ct-decoration center-block ct-u-marginBottom60">
+          <div class="ct-decoration--inner center-block"></div>
+        </div>
+        <div class="row ct-u-text--white">
+          <div class="col-sm-6 col-md-3">
+            <div class="ct-iconBox">
+              <div class="ct-icon ct-iconContainer--circle ct-iconContainer--circleHoverLight center-block ct-u-marginBottom30">
+                <i class="fa fa-bolt"></i>
+              </div>
+              <div class="ct-iconBox--description">
+                <span class="ct-title ct-u-marginBottom20 ct-fw-600">Powerfull</span>
+                <span class="ct-text ct-u-marginBottom20">Home Buyer is designed a way that it was flexible for different types of business.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="ct-iconBox">
+              <div class="ct-icon ct-iconContainer--circle ct-iconContainer--circleHoverLight center-block ct-u-marginBottom30">
+                <i class="fa fa-users"></i>
+              </div>
+              <div class="ct-iconBox--description">
+                <span class="ct-title ct-u-marginBottom20 ct-fw-600">User Oriented</span>
+                <span class="ct-text ct-u-marginBottom20">Home Buyer is designed a way that it was flexible for different types of business.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="ct-iconBox">
+              <div class="ct-icon ct-iconContainer--circle ct-iconContainer--circleHoverLight center-block ct-u-marginBottom30">
+                <i class="fa fa-heart-o"></i>
+              </div>
+              <div class="ct-iconBox--description">
+                <span class="ct-title ct-u-marginBottom20 ct-fw-600">Beautiful</span>
+                <span class="ct-text ct-u-marginBottom20">Home Buyer is designed a way that it was flexible for different types of business.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="ct-iconBox">
+              <div class="ct-icon ct-iconContainer--circle ct-iconContainer--circleHoverLight center-block ct-u-marginBottom30">
+                <i class="fa fa-life-ring"></i>
+              </div>
+              <div class="ct-iconBox--description">
+                <span class="ct-title ct-u-marginBottom20 ct-fw-600">Fast support</span>
+                <span class="ct-text ct-u-marginBottom20">Home Buyer is designed a way that it was flexible for different types of business.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-primary btn-transparent--border ct-u-text--motive ct-u-marginTop80" href="">More Reasons to Use Home Buyer</a>
       </div>
-      <div class="ct-js-owl owl-carousel owl-theme" data-items="6" data-navigation="false" data-autoplay="true" data-single="false" data-pagination="false" data-snap-ignore="true" style="opacity: 1; display: block;">
-          <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3120px; left: 0px; display: block; transition: all 800ms ease; transform: translate3d(-390px, 0px, 0px); transform-origin: 435px center 0px; perspective-origin: 435px center;"><div class="owl-item" style="width: 195px; opacity: 1;"><div class="item"><img src="assets/images/content/content-partners-1.png" alt="" width="100%" style="opacity: 1;"></div></div><div class="owl-item" style="width: 195px; opacity: 1;"><div class="item"><img src="assets/images/content/content-partners-2.png" alt="" width="100%" style="opacity: 1;"></div></div><div class="owl-item active" style="width: 195px; opacity: 1;"><div class="item"><img src="assets/images/content/content-partners-3.png" alt="" width="100%" style="opacity: 1;"></div></div><div class="owl-item active" style="width: 195px; opacity: 1;"><div class="item"><img src="assets/images/content/content-partners-4.png" alt="" width="100%" style="opacity: 1;"></div></div><div class="owl-item active" style="width: 195px; opacity: 1;"><div class="item"><img src="assets/images/content/content-partners-1.png" alt="" width="100%" style="opacity: 1;"></div></div><div class="owl-item active" style="width: 195px; opacity: 1;"><div class="item"><img src="assets/images/content/content-partners-2.png" alt="" width="100%" style="opacity: 1;"></div></div><div class="owl-item active" style="width: 195px; opacity: 1;"><div class="item"><img src="assets/images/content/content-partners-3.png" alt="" width="100%" style="opacity: 1;"></div></div><div class="owl-item active" style="width: 195px; opacity: 1;"><div class="item"><img src="assets/images/content/content-partners-4.png" alt="" width="100%" style="opacity: 1;"></div></div></div></div>
-          
-          
-          
-          
-          
-          
-          
-      </div>
-  </div>
-</section>
+    </div>
+  </section>
+  <section class="ct-u-paddingBoth60 ct-blog--small">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-12">
+          <div class="ct-heading ct-u-marginBottom30">
+            <h3 class="text-uppercase">lately on blog</h3>
+          </div>
+          <div class="ct-u-marginBottom30">
+            <div class="ct-articleBox ct-articleBox--list">
+              <div class="ct-calendar--day text-center">
+                <div class="ct-day">
+                  <span>09</span>
+                </div>
+                <div class="ct-month">
+                  <span class="text-uppercase">jan</span>
+                </div>
+              </div>
+              <div class="ct-articleBox-media">
+                <img src="assets/images/content/blog-image-small-1.jpg" alt="">
+              </div>
+              <div class="ct-articleBox-titleBox text-uppercase">
 
+                <a href="blog-single.html">Expectations for 2015</a>
+                <div class="ct-articleBox-meta">
+                  <span>Posted on January 9th, 2015 In Loans, Real Estate</span>
+                </div>
+                <div class="ct-articleComments">
+                  <a href="blog-single.html">2 comments</a>
+                </div>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="ct-articleBox ct-articleBox--list">
+              <div class="ct-calendar--day text-center">
+                <div class="ct-day">
+                  <span>05</span>
+                </div>
+                <div class="ct-month">
+                  <span class="text-uppercase">jan</span>
+                </div>
+              </div>
+              <div class="ct-articleBox-titleBox text-uppercase">
+                <a href="">Real Estate market most probably going to bloom in early 2016</a>
+                <div class="ct-articleBox-meta">
+                  <span>Posted on January 5th, 2015 In Loans, Real Estate</span>
+                </div>
+                <div class="ct-articleComments">
+                  <a href="blog-single.html">2 comments</a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="ct-articleBox ct-articleBox--list">
+              <div class="ct-calendar--day text-center">
+                <div class="ct-day">
+                  <span>03</span>
+                </div>
+                <div class="ct-month">
+                  <span class="text-uppercase">jan</span>
+                </div>
+              </div>
+              <div class="ct-articleBox-media">
+                <img src="assets/images/content/blog-image-small-2.jpg" alt="">
+              </div>
+              <div class="ct-articleBox-titleBox text-uppercase">
+
+                <a href="blog-single.html">Trending in architecture leads us towards better standards</a>
+                <div class="ct-articleBox-meta">
+                  <span>Posted on January 3th, 2015 In Loans, Real Estate</span>
+                </div>
+                <div class="ct-articleComments">
+                  <a href="blog-single.html">2 comments</a>
+                </div>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="ct-articleBox ct-articleBox--list">
+              <div class="ct-calendar--day text-center">
+                <div class="ct-day">
+                  <span>31</span>
+                </div>
+                <div class="ct-month">
+                  <span class="text-uppercase">dec</span>
+                </div>
+              </div>
+              <div class="ct-articleBox-titleBox text-uppercase">
+
+                <a href="blog-single.html">
+                  <i class="fa fa-long-arrow-right"></i> John Doe</a>
+                <div class="ct-articleBox-meta">
+                  <span>Posted on January 3th, 2015 In Loans, Real Estate</span>
+                </div>
+                <div class="ct-articleComments">
+                  <a href="blog-single.html">2 comments</a>
+                </div>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="ct-articleBox ct-articleBox--list">
+              <div class="ct-calendar--day text-center">
+                <div class="ct-day">
+                  <span>16</span>
+                </div>
+                <div class="ct-month">
+                  <span class="text-uppercase">dec</span>
+                </div>
+              </div>
+              <div class="ct-articleBox-titleBox text-uppercase">
+
+                <a href="blog-single.html">Pre-Christmas Slowdown</a>
+                <div class="ct-articleBox-meta">
+                  <span>Posted on January 3th, 2015 In Loans, Real Estate</span>
+                </div>
+                <div class="ct-articleComments">
+                  <a href="blog-single.html">2 comments</a>
+                </div>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <a href="blog.html" class="btn btn-primary btn-transparent--border ct-u-text--motive ct-u-marginBottom30">Read More On Blog</a>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <br>
+          <div class="card">
+            <div class="card-header">
+              <i class="fa fa-search font-today-dash">
+                <span> &nbsp;Search As</span>
+              </i>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote">
+                <div class="row">
+                  <div class="col-md-12">
+                    <br>
+                    <select class="form-control input-lg text-inner-input ct-u-marginBottom10" style="border: 1px solid #e6e6e6">
+                      <option value="any">Property</option>
+                      <option value="1">Real Estate Agent</option>
+                      <option value="2">Mortgage Advisor</option>
+                      <option value="3">Building Inspector</option>
+                      <option value="4">Real Estate Lawyer</option>
+                    </select>
+                    <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Enter Your Postal Code"
+                      required style="margin-top: 15px;">
+                    <a href="#" class="btn btn-warning mt-3 d-block mx-auto btn-block">
+                      <i class="fa fa-search" style="font-size: 17px;">
+                        <span style="font-size: 21px;">Search</span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ct-u-paddingBottom60 text-center">
+    <div class="container">
+      <div class="ct-heading ct-u-marginBoth20">
+        <h3 class="text-uppercase">our partners</h3>
+      </div>
+      <div class="ct-js-owl owl-carousel owl-theme" data-items="6" data-navigation="true" data-autoplay="true" data-single="false"
+        data-pagination="false" data-snap-ignore="true" style="opacity: 1; display: block;">
+        <div class="owl-wrapper-outer">
+          <div class="owl-wrapper" style="width: 3120px; left: 0px; display: block; transition: all 800ms ease; transform: translate3d(-390px, 0px, 0px); transform-origin: 435px center 0px; perspective-origin: 435px center;">
+            <div class="owl-item" style="width: 195px; opacity: 1;">
+              <div class="item">
+                <img src="assets/images/content/content-partners-1.png" alt="" width="100%" style="opacity: 1;">
+              </div>
+            </div>
+            <div class="owl-item" style="width: 195px; opacity: 1;">
+              <div class="item">
+                <img src="assets/images/content/content-partners-2.png" alt="" width="100%" style="opacity: 1;">
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 195px; opacity: 1;">
+              <div class="item">
+                <img src="assets/images/content/content-partners-3.png" alt="" width="100%" style="opacity: 1;">
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 195px; opacity: 1;">
+              <div class="item">
+                <img src="assets/images/content/content-partners-4.png" alt="" width="100%" style="opacity: 1;">
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 195px; opacity: 1;">
+              <div class="item">
+                <img src="assets/images/content/content-partners-1.png" alt="" width="100%" style="opacity: 1;">
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 195px; opacity: 1;">
+              <div class="item">
+                <img src="assets/images/content/content-partners-2.png" alt="" width="100%" style="opacity: 1;">
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 195px; opacity: 1;">
+              <div class="item">
+                <img src="assets/images/content/content-partners-3.png" alt="" width="100%" style="opacity: 1;">
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 195px; opacity: 1;">
+              <div class="item">
+                <img src="assets/images/content/content-partners-4.png" alt="" width="100%" style="opacity: 1;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
