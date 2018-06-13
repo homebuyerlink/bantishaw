@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import  {HttpClientModule } from '@angular/common/http';
+import { GuestheaderComponent } from './guestheader/guestheader.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +16,7 @@ import  {HttpClientModule } from '@angular/common/http';
     HttpClientModule
     
   ],
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, GuestheaderComponent],
   
   exports:[HeaderComponent,FooterComponent]
 })

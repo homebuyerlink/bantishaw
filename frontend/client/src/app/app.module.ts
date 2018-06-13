@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
-import { AuthService } from './partial/auth.service';
+
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {
@@ -23,7 +25,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuard,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

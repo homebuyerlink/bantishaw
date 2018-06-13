@@ -5,6 +5,7 @@ import { PartialModule } from '../partial/partial.module';
 import { Routes, RouterModule } from '@angular/router';
 import { FaqComponent } from './faq/faq.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -34,7 +35,9 @@ const routes: Routes = [
       ,
       {
         path: "dashboard",
-        loadChildren: './dashboard/dashboard.module#DashboardModule'
+        loadChildren: './dashboard/dashboard.module#DashboardModule',
+        canActivate:[AuthGuard]
+      
       },
       {
         path: "faq",

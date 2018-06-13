@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
-
-
 import { Router } from '@angular/router';
 import { Config } from '../config';
 import { Utils } from '../utils';
 import { Token } from '@angular/compiler';
 import { HttpClient } from '@angular/common/http';
-
 @Injectable()
 
 
@@ -15,18 +12,19 @@ export class AuthService {
   public profile = {
 
     _id: '',
-    name: '',
+    username: '',
     email: '',
     password: '',
     authToken: '',
     createdAt: '',
     updatedAt: ''
+
   }
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   //Sign Up
-  public async signup(name, email, password) {
-    let body = { name: name, email: email, password: password };
+  public async signup(username, email, password) {
+    let body = { username: username , email: email, password: password };
 
     let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
 

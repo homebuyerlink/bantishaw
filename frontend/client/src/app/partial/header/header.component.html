@@ -23,7 +23,6 @@
     </li>
   </ul>
 </nav>
-
 <div id="ct-js-wrapper" class="ct-pageWrapper">
   <div class="ct-navbarMobile position-fix">
     <button type="button" class="navbar-toggle">
@@ -37,46 +36,12 @@
     </a>
     <span class="text-mobile-view-logo">Home Buyers</span>
   </div>
-
-
-
-
-
-  <div class="ct-topBar" style="position: fixed;">
+  <div class="ct-topBar" style="position: fixed;" *ngIf="!loggedIn">
     <div class="container">
       <div class="row">
-        <div class="col-md-offset-7 col-md-5" style="margin-left: 70%;">
-          <div class="ct-panel--user ct-panel--right">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="ct-panel--item ct-email" *ngIf="loggedIn">
-              <a routerLink="/dashboard" class="btn btn-link btn-xs btn-upper-nav">
-                <i class="fa fa-home"></i> Dashboard</a>
-            </div>
-            <div class="ct-panel--item ct-email" *ngIf="!loggedIn">
+        <div class="col-md-offset-10 col-md-2">
+          <div class="ct-panel--user ct-panel--right" style="padding-left: 40px;">
+            <div class="ct-panel--item ct-email">
               <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal">
                 <i class="fa fa-user"></i> Login / Register</a>
               <div class="modal fade" id="login-modal" role="dialog">
@@ -100,76 +65,80 @@
                             <div class="clearfix"></div>
                             <!-- Tab panes -->
                             <div class="tab-content tab-content--withBorder">
-                                
+
                               <div role="tabpanel" class="tab-pane active" id="history32-1">
-                                  <form #signInForm="ngForm" (ngSubmit)="onSubmittingSignInForm(signInForm)">
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="email" required ngModel   placeholder="Email Address">
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="password" type="Password" required ngModel  placeholder="Password" >
-                                <div class="ct-form--item">
-                                  <button class="loginBtn loginBtn--facebook">
-                                    Login with Facebook
-                                  </button>
-                                  <button class="loginBtn loginBtn--google">
-                                    Login with Google
-                                  </button>
-                                </div>
-                                <br>
-                                <div class="row">
-                                  <div class="col-md-offset-6 col-md-3">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <form #signInForm="ngForm" (ngSubmit)="onSubmittingSignInForm(signInForm)">
+                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="email" required ngModel placeholder="Email Address">
+                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="password" type="Password" required ngModel
+                                    placeholder="Password">
+                                  <div class="ct-form--item">
+                                    <button class="loginBtn loginBtn--facebook">
+                                      Login with Facebook
+                                    </button>
+                                    <button class="loginBtn loginBtn--google">
+                                      Login with Google
+                                    </button>
                                   </div>
-                                  <div class="col-md-3">
-                                    <button type="submit" class="btn btn-success">Sign In</button>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-offset-6 col-md-3">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <button type="submit" class="btn btn-success">Sign In</button>
+                                    </div>
                                   </div>
-                                </div>
-</form>                              
+                                </form>
                               </div>
-                              
+
                               <div role="tabpanel" class="tab-pane" id="vision32-1">
-                                  <form #signUpForm="ngForm" (ngSubmit)="onSubmittingSignupForm(signUpForm)">
+                                <form #signUpForm="ngForm" (ngSubmit)="onSubmittingSignupForm(signUpForm)">
 
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="username" type="text" placeholder="Username" ngModel required>
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="text" placeholder="Email" ngModel required>
-                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" name="password" placeholder="Password" ngModel required>
-                                <br>
-                                <label>Sign Up As</label>
-                                <select class="form-control input-lg text-inner-input ct-u-marginBottom10">
-                                  <option value="month">Client</option>
-                                  <option value="month">Home Owner</option>
-                                  <option value="month">Real Estate Agent</option>
-                                  <option value="January">Mortgage Advisor</option>
-                                  <option value="month">Building Inspector</option>
-                                  <option value="January">Real Estate Lawyer</option>
-                                </select>
-                                <div class="ct-form--item ct-u-marginBottom20">
-                                  <div class="checkbox">
-                                    <label>
-                                      <input type="checkbox" value=""> I read and agree to
-                                      <a href="terms.html" id="btn-lnk-terms"> terms & conditions</a>
-                                    </label>
+                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="username" type="text" placeholder="Username"
+                                    ngModel required>
+                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="text" placeholder="Email" ngModel
+                                    required>
+                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" name="password" placeholder="Password"
+                                    ngModel required>
+                                  <br>
+                                  <label>Sign Up As</label>
+                                  <select class="form-control input-lg text-inner-input ct-u-marginBottom10">
+                                    <option value="month">Client</option>
+                                    <option value="month">Home Owner</option>
+                                    <option value="month">Real Estate Agent</option>
+                                    <option value="January">Mortgage Advisor</option>
+                                    <option value="month">Building Inspector</option>
+                                    <option value="January">Real Estate Lawyer</option>
+                                  </select>
+                                  <div class="ct-form--item ct-u-marginBottom20">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" value=""> I read and agree to
+                                        <a href="terms.html" id="btn-lnk-terms"> terms & conditions</a>
+                                      </label>
+                                    </div>
                                   </div>
-                                </div>
-                                <div class="ct-form--item">
-                                  <button class="loginBtn loginBtn--facebook">
-                                    Login with Facebook
-                                  </button>
-                                  <button class="loginBtn loginBtn--google">
-                                    Login with Google
-                                  </button>
-                                </div>
-                                <br>
-                                <div class="row">
-                                  <div class="col-md-offset-5 col-md-3">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <div class="ct-form--item">
+                                    <button class="loginBtn loginBtn--facebook">
+                                      Login with Facebook
+                                    </button>
+                                    <button class="loginBtn loginBtn--google">
+                                      Login with Google
+                                    </button>
                                   </div>
-                                  <div class="col-md-3">
-                                    <button type="submit" class="btn btn-success">Register Now</button>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-offset-5 col-md-3">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <button type="submit" class="btn btn-success">Register Now</button>
+                                    </div>
                                   </div>
-                                </div>
 
-</form>
+                                </form>
                               </div>
-                             
+
                             </div>
                           </div>
                         </div>
@@ -179,10 +148,24 @@
                 </div>
               </div>
             </div>
-            <div class="ct-panel--item ct-email" *ngIf="loggedIn">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ct-topBar" style="position: fixed;" *ngIf="loggedIn">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-9 col-md-3" style="padding-left: 47px;">
+          <div class="ct-panel--user ct-panel--right">
+            <div class="ct-panel--item ct-email">
+              <a routerLink="/dashboard" class="btn btn-link btn-xs btn-upper-nav">
+                <i class="fa fa-home"></i> Dashboard</a>
+            </div>
+            <div class="ct-panel--item ct-email" style="padding-left: 35px;">
               <img src="assets/images/profile-snap.jpg" style="width: 40px;border-radius: 50%;margin-right: -20px;">
             </div>
-            <div class="ct-panel--item ct-email" *ngIf="loggedIn">
+            <div class="ct-panel--item ct-email">
               <div class="dropdown">
                 <button class="btn btn-default btn-custom dropdown-toggle" type="button" data-toggle="dropdown">
                   <span class="caret"></span>
@@ -198,7 +181,7 @@
                     <a routerLink="/dashboard/settings" class="no-back">Settings</a>
                   </li>
                   <li class="lis-drop-nav">
-                    <a (click)="logOutMe()" class="no-back">Logout</a>
+                    <a (click)="logOutMe()" style="cursor: pointer" class="no-back">Logout as {{authService.profile.username}}</a>
                   </li>
                 </ul>
               </div>
@@ -208,6 +191,9 @@
       </div>
     </div>
   </div>
+
+
+
   <nav class="navbar aaaa yamm ct-navbar--noDecoration nav-mob" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
     <div class="container">
       <div class="navbar-header ct-panel--navbar">
@@ -255,8 +241,9 @@
           <li class="dropdown">
             <a routerLink="/post-ad">Post AD</a>
           </li>
+
           <li class="dropdown">
-            <a routerLink="/how-it-works">How it works</a>
+            <a routerLink="/how-it-works">How it works </a>
           </li>
           <li class="dropdown">
             <a routerLink="/blog">Blog</a>
