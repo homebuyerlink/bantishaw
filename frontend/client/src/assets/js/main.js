@@ -1507,13 +1507,13 @@ function makekenburns($element) {
         });
     });
 
-    $(window).on('resize', function() {
-        if ($(window).width() < 768) {
-            snapper.enable();
-        } else{
-            snapper.close();
-            snapper.disable();
-        }
-    })
+    // $(window).on('resize', function() {
+    //     if ($(window).width() < 768) {
+    //         snapper.enable();
+    //     } else{
+    //         snapper.close();
+    //         snapper.disable();
+    //     }
+    // })
 
 })(jQuery);

@@ -92,12 +92,14 @@ class UserController {
     async checkLogin(req, res) {
         try {
             let token = req.body.token;
-            if (token == null)
-                throw { code: 401, message: "You are not authorized to make this request" };
+            if (token == null) {
+                res.send({ authenticated: false });
+                return;
+            }
             let decodedToken = authMiddleware.decodeJWT(token);
             let user = await User.findOne({ _id: decodedToken.sub, token: token });
             if (user == null)
-                throw { code: 401, message: "You are not authorized to make this request" };
+                res.send({ authenticated: false });
             else res.send({ authenticated: true });
         } catch (error) {
             errorHandler.sendError(res, error)
@@ -127,6 +129,35 @@ class UserController {
             else res.redirect(`${config.FRONTEND_BASE}/verify-email`)
         } catch (error) {
             errorHandler.sendError(res, error);
+        }
+    }
+    async socialLogin(req, res) {
+        try {
+            let email = req.body.email;
+            let name = req.body.name;
+            let photoUrl = req.body.photoUrl;
+            let provider = req.body.provider;
+            let user = await User.findOne({ email: req.body.email });
+            if (user != null) {
+                let token = authMiddleware.createJWT(user);
+                await User.findOneAndUpdate({ email: email }, { $set: { token: token } });
+                res.send({ token: token });
+            }
+            else {
+                user = new User({
+                    email: email,
+                    isEmailVerified: true,
+                    name: name,
+                    photoUrl: photoUrl,
+                    provider: provider
+                });
+                user = await user.save();
+                let token = authMiddleware.createJWT(user);
+                await User.findOneAndUpdate({ email: email }, { $set: { token: token } });
+                res.send({ token: token });
+            }
+        } catch (error) {
+
         }
     }
 }

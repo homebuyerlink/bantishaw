@@ -1,38 +1,18 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnChanges {
+export class HeaderComponent implements OnInit {
 
-  public loggedIn: boolean = false;
-  constructor(private authService: AuthService) { }
-  async ngOnChanges() {
+  constructor(private authService: AuthenticationService, private ngxSocialLoginAuthService: AuthService) { }
 
-    try {
-      let response = await this.authService.isLoggedIn();
-      this.loggedIn = response;
-      // await this.authService.getProfile(localStorage.getItem('token'));
-    } catch (error) {
-      console.log(error);
-    }
-  }
   async  ngOnInit() {
-    try {
-      let response = await this.authService.isLoggedIn();
-      this.loggedIn = response;
-      // await this.authService.getProfile(localStorage.getItem('token'));
-
-    } catch (error) {
-      console.log(error);
-    }
-
-
-
   }
 
 
@@ -60,5 +40,19 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
   logOutMe() {
     this.authService.logout();
+  }
+
+  async loginWithFacebook() {
+    await this.ngxSocialLoginAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.ngxSocialLoginAuthService.authState.subscribe((user) => {
+      this.authService.getAuthState(user);
+    });
+  }
+
+  async loginWithGoogle() {
+    await this.ngxSocialLoginAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.ngxSocialLoginAuthService.authState.subscribe((user) => {
+      this.authService.getAuthState(user);
+    });
   }
 }

@@ -24,7 +24,9 @@ var userSchema = new mongoose.Schema(
         },
         passwordResetToken: String,
         emailVerificationToken: String,
-        token: String
+        token: String,
+        photoUrl: String,
+        provider: String
     },
     {
         timestamps: true

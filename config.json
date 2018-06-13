@@ -9,5 +9,6 @@
     "MAIL_PASSWORD": "omO_z2^F.+2n",
     "MAIL_FROM_ADDRESS": "homebuyer@encapsulatech.com",
     "MAIL_FROM_NAME": "Homebuyer",
-    "MAIL_ENCRYPTION": false
+    "MAIL_ENCRYPTION": false,
+    "FRONTEND_BASE": "http://localhost:4200"
 }

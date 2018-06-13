@@ -8,6 +8,7 @@ const router = new Router();
 router.get('/user', userController.getUsers);
 router.post('/user/signup', userController.signup);
 router.post('/user/login', userController.login);
+router.post('/user/login/social', userController.socialLogin);
 router.post('/user/profile', userController.profile);
 router.get('/user/logout', userController.logout);
 router.post('/user/login/check', userController.checkLogin);
