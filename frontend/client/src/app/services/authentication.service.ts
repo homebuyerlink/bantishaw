@@ -13,11 +13,13 @@ export class AuthenticationService {
   public profile = {
     _id: '',
     username: '',
+    userType:'',
     email: '',
     password: '',
     authToken: '',
     createdAt: '',
-    updatedAt: ''
+    updatedAt: '',
+    
   }
   public isLogin = false;
   constructor(private httpClient: HttpClient, private router: Router) { }

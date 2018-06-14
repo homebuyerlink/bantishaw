@@ -15,6 +15,8 @@ import { AgentsComponent } from './agents/agents.component';
 import { AddagestsComponent } from './addagests/addagests.component';
 import { AddservicesComponent } from './addservices/addservices.component';
 import { FormsModule } from '@angular/forms';
+import { UserTypeGuard } from '../../guards/usertype.guard';
+import { ServiceProviderGuard } from '../../guards/serviceprovider.guard';
 
 
 const routes:Routes=[
@@ -24,7 +26,8 @@ const routes:Routes=[
   },
   {
     path:"edit-profile",
-    component:MyprofileComponent
+    component:MyprofileComponent,
+    canActivate:[UserTypeGuard]
   },
   {
     path:"view-bookings",
@@ -37,12 +40,15 @@ const routes:Routes=[
   } ,
   {
     path:"settings",
-    component:SettingsComponent
+    component:SettingsComponent,
+    canActivate:[UserTypeGuard]
   }
   ,
   {
     path:"charity-view",
-    component:CharityViewComponent
+    component:CharityViewComponent,
+    
+    canActivate:[UserTypeGuard]
   }
   ,
   {
@@ -53,27 +59,29 @@ const routes:Routes=[
   {
     path:"add-booking",
     component:AddbookingsComponent
-  
   }
   ,
   {
     path:"agents",
-    component:AgentsComponent
-  },
+    component:AgentsComponent,
+    canActivate:[ServiceProviderGuard]
+  }
+  ,
   {
     path:"services",
-    component:ServicesComponent
+    component:ServicesComponent,
+    canActivate:[ServiceProviderGuard]
   }
   ,
   {
     path:"add-agent",
     component:AddagestsComponent
-  },
+  }
+  ,
   {
     path:"add-service",
     component:AddservicesComponent
   }
-  
 ]
 @NgModule({
   imports: [
