@@ -158,18 +158,11 @@
       <div class="row">
         <div class="col-md-offset-9 col-md-3" style="padding-left: 47px;">
           <div class="ct-panel--user ct-panel--right">
-            <div class="ct-panel--item ct-email">
-              <a routerLink="/dashboard" class="btn btn-link btn-xs btn-upper-nav">
-                <i class="fa fa-home"></i> Dashboard</a>
-            </div>
-            <div class="ct-panel--item ct-email" style="padding-left: 35px;">
-              <img src="assets/images/profile-snap.jpg" style="width: 40px;border-radius: 50%;margin-right: -20px;">
-            </div>
-            <div class="ct-panel--item ct-email">
+            <div class="ct-panel--item ct-email pull-right">
               <div class="dropdown">
-                <button class="btn btn-default btn-custom dropdown-toggle" type="button" data-toggle="dropdown">
-                  <span class="caret"></span>
-                </button>
+                <div class="ct-panel--item ct-email" style="padding-left: 35px;" data-toggle="dropdown">
+                  <img src="assets/images/profile-snap.jpg" class="user-profile">
+                </div>
                 <ul class="dropdown-menu" style="left: -109px;">
                   <li class="lis-drop-nav">
                     <a routerLink="/dashboard/edit-profile" class="no-back">Profile</a>
@@ -186,6 +179,10 @@
                 </ul>
               </div>
             </div>
+            <div class="ct-panel--item ct-email pull-right">
+              <a routerLink="/dashboard" class="btn btn-link btn-xs btn-upper-nav">
+                <i class="fa fa-home"></i> Dashboard</a>
+            </div>
           </div>
         </div>
       </div>
@@ -198,7 +195,7 @@
     <div class="container">
       <div class="navbar-header ct-panel--navbar">
         <a routerLink="/">
-          <img src="assets/images/content/logo.jpg" alt="logo" width="70px">
+          <img src="assets/images/content/logo.jpg" alt="logo" width="55">
         </a>
       </div>
       <div class="ct-panelBox">
