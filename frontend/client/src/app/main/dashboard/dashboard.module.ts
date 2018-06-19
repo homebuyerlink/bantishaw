@@ -17,70 +17,96 @@ import { AddservicesComponent } from './addservices/addservices.component';
 import { FormsModule } from '@angular/forms';
 import { UserTypeGuard } from '../../guards/usertype.guard';
 import { ServiceProviderGuard } from '../../guards/serviceprovider.guard';
+import { Addagentsstep2Component } from './addagentsstep2/addagentsstep2.component';
+import { Settings2Component } from './settings2/settings2.component';
+import { Settings3Component } from './settings3/settings3.component';
+import { Settings4Component } from './settings4/settings4.component';
 
 
-const routes:Routes=[
+const routes: Routes = [
   {
-    path:"",
-    component:DashboardComponent
+    path: "",
+    component: DashboardComponent
   },
   {
-    path:"edit-profile",
-    component:MyprofileComponent,
-    canActivate:[UserTypeGuard]
+    path: "edit-profile",
+    component: MyprofileComponent
+    // canActivate:[UserTypeGuard]
   },
   {
-    path:"view-bookings",
-    component:ViewbookingsComponent
+    path: "view-bookings",
+    component: ViewbookingsComponent
   }
   ,
   {
-    path:"hbl-box",
-    component:HblboxComponent
-  } ,
+    path: "hbl-box",
+    component: HblboxComponent
+  },
   {
-    path:"settings",
-    component:SettingsComponent,
-    canActivate:[UserTypeGuard]
+    path: "settings",
+    component: SettingsComponent
+    // canActivate:[UserTypeGuard]
   }
   ,
   {
-    path:"charity-view",
-    component:CharityViewComponent,
-    
-    canActivate:[UserTypeGuard]
+    path:"settings/step2",
+    component:Settings2Component
+    // canActivate:[UserTypeGuard]
   }
   ,
   {
-    path:"my-favourites",
-    component:MyfavouritesComponent
+    path:"settings/step3",
+    component:Settings3Component
+    // canActivate:[UserTypeGuard]
   }
   ,
   {
-    path:"add-booking",
-    component:AddbookingsComponent
+    path:"settings/step4",
+    component:Settings4Component
+    // canActivate:[UserTypeGuard]
   }
   ,
   {
-    path:"agents",
-    component:AgentsComponent,
-    canActivate:[ServiceProviderGuard]
+    path: "charity-view",
+    component: CharityViewComponent
+
+    // canActivate:[UserTypeGuard]
   }
   ,
   {
-    path:"services",
-    component:ServicesComponent,
-    canActivate:[ServiceProviderGuard]
+    path: "my-favourites",
+    component: MyfavouritesComponent
   }
   ,
   {
-    path:"add-agent",
-    component:AddagestsComponent
+    path: "add-booking",
+    component: AddbookingsComponent
   }
   ,
   {
-    path:"add-service",
-    component:AddservicesComponent
+    path: "agents",
+    component: AgentsComponent,
+    // canActivate:[ServiceProviderGuard]
+  }
+  ,
+  {
+    path: "services",
+    component: ServicesComponent,
+    // canActivate:[ServiceProviderGuard]
+  }
+  ,
+  {
+    path: "add-agent",
+    component: AddagestsComponent
+  },
+  {
+    path: "add-agent/step-2",
+    component: Addagentsstep2Component
+  }
+  ,
+  {
+    path: "add-service",
+    component: AddservicesComponent
   }
 ]
 @NgModule({
@@ -89,6 +115,6 @@ const routes:Routes=[
     RouterModule.forChild(routes),
     FormsModule
   ],
-  declarations: [DashboardComponent, DefaultdashboardComponent, SettingsComponent, MyprofileComponent,  ServicesComponent, ViewbookingsComponent, HblboxComponent, CharityViewComponent, MyfavouritesComponent, AddbookingsComponent, AgentsComponent, AddagestsComponent, AddservicesComponent]
+  declarations: [DashboardComponent, DefaultdashboardComponent, SettingsComponent, MyprofileComponent, ServicesComponent, ViewbookingsComponent, HblboxComponent, CharityViewComponent, MyfavouritesComponent, AddbookingsComponent, AgentsComponent, AddagestsComponent, AddservicesComponent, Addagentsstep2Component, Settings2Component, Settings3Component, Settings4Component]
 })
 export class DashboardModule { }
