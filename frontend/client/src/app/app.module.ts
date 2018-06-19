@@ -7,6 +7,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
+import { UserTypeGuard } from './guards/usertype.guard';
+import { ServiceProviderGuard } from './guards/serviceprovider.guard';
+
 
 const routes: Routes = [
   {
@@ -25,7 +28,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [AuthenticationService, AuthGuard, AuthGuard],
+  providers: [AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

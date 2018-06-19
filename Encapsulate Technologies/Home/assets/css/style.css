@@ -11480,7 +11480,7 @@ header {
 }
 .nav.nav-tabs li.active a:hover,
 .nav.nav-tabs.nav-justified li.active a:hover {
-  background-color: #ca930e;
+  background-color: #ea8825;
   color: #fff;
 }
 .nav.nav-tabs li a,
@@ -11494,7 +11494,7 @@ header {
 }
 .nav.nav-tabs li a:hover,
 .nav.nav-tabs.nav-justified li a:hover {
-  background-color: #ca930e;
+  background-color: #ea8825;
   color: #fff;
 }
 .nav-tabs.nav-justified li:last-child a {
@@ -14050,7 +14050,7 @@ span.round-tab:hover {
 /*the new dashboard CSS*/
 /*the further css lines*/
 .card-header{
-  background-color: #f3a822;
+  background-color: #f19f24;
   color: white;
 }
 .card-body{

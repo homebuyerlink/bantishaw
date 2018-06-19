@@ -6,6 +6,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { FaqComponent } from './faq/faq.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { SelectUserTypeComponent } from './select-user-type/select-user-type.component';
+import { UserTypeGuard } from '../guards/usertype.guard';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -18,7 +22,8 @@ const routes: Routes = [
       },
       {
         path: "services",
-        loadChildren: './services/services.module#ServicesModule'
+        loadChildren: './services/services.module#ServicesModule',
+        canActivate:[UserTypeGuard]
       },
       {
         path: "how-it-works",
@@ -26,7 +31,8 @@ const routes: Routes = [
       },
       {
         path: "post-ad",
-        loadChildren: './postad/postad.module#PostadModule'
+        loadChildren: './postad/postad.module#PostadModule',
+         canActivate:[UserTypeGuard]
       },
       {
         path: "blog",
@@ -47,6 +53,14 @@ const routes: Routes = [
       {
         path: "product-detail",
         component: ProductdetailComponent
+      },
+      {
+        path:"unauthorized",
+        component:UnauthorizedComponent
+      },
+      {
+        path:"select-type",
+        component:SelectUserTypeComponent
       }
     ]
   }
@@ -57,10 +71,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     PartialModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
 
-  declarations: [MainComponent, FaqComponent, ProductdetailComponent]
+  declarations: [MainComponent, FaqComponent, ProductdetailComponent, UnauthorizedComponent, SelectUserTypeComponent]
 
 })
 export class MainModule { }
