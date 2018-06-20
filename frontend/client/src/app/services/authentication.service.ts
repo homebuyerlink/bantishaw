@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Config } from '../config';
-import { Utils } from '../utils';
-import { Token } from '@angular/compiler';
 import { HttpClient } from '@angular/common/http';
+import { config } from 'rxjs';
 declare var JQuery: any;
 @Injectable()
 
@@ -13,35 +12,27 @@ export class AuthenticationService {
   public profile = {
     _id: '',
     username: '',
-    userType:'',
+    userType: '',
     email: '',
     password: '',
     authToken: '',
     createdAt: '',
     updatedAt: '',
-    
+
   }
   public isLogin = false;
   constructor(private httpClient: HttpClient, private router: Router) { }
-
   //Sign Up
-  public async signup(username, email, password,userType) {
-    let body = { username: username, email: email, password: password,userType:userType};
-
+  public async signup(username, email, password, userType) {
+    let body = { username: username, email: email, password: password, userType: userType };
     let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
-
-    console.log(response)
-    //return this.loginWithToken((<any>response).token);
+    return response;
   }
-
-
   //for logIn 
-
   public async login(email, password) {
     let body = { email: email, password: password };
     let response = await this.httpClient.post(`${Config.API_BASE}/user/login`, body, Config.HEADERS).toPromise();
     return this.loginWithToken((<any>response).token);
-
   }
   //Im making this method for checking  Login Check
   public async isLoggedIn() {
@@ -51,6 +42,9 @@ export class AuthenticationService {
       if ((<any>response).authenticated) {
         await this.getProfile(token);
         this.isLogin = true;
+        if (this.profile.userType===undefined) {
+          this.router.navigate(['/select-type']);
+        }
         return true;
       }
       else return false;
@@ -68,13 +62,33 @@ export class AuthenticationService {
       console.log(error);
     }
   }
+
   public loginWithToken(token) {
     localStorage.setItem("token", token);
     (<any>$('#login-modal')).modal('hide');
     this.getProfile(token);
-    this.isLogin = true;
+    this.isLogin = true
+    if (this.profile.userType===undefined) {
+      this.router.navigate(['/select-type']);
+    }
+  }
+  //upDate User name
+
+  public  updateUserName(userId, username) {
+    let body = { userId: userId, username: username };   
+    let response =  this.httpClient.put(`${Config.API_BASE}/user/username`, body, Config.HEADERS).toPromise();
+    return response;
   }
 
+  //upDate User Type
+
+  public  updateUserType(userId, userType) {
+   
+    let body = { userId: userId, userType: userType };
+    let response =  this.httpClient.put(`${Config.API_BASE}/user/usertype`, body, Config.HEADERS).toPromise();
+    return response;
+  }
+  //Log out 
   public logout() {
     try {
       let response = localStorage.removeItem("token");
@@ -89,5 +103,4 @@ export class AuthenticationService {
     let response = await this.httpClient.post(`${Config.API_BASE}/user/login/social`, user).toPromise();
     return this.loginWithToken((<any>response).token);
   }
-
 }
