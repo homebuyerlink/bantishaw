@@ -44,101 +44,104 @@
             <div class="ct-panel--item ct-email">
               <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal">
                 <i class="fa fa-user"></i> Login / Register</a>
+
+
+
+
+
+
+
               <div class="modal fade" id="login-modal" role="dialog">
                 <div class="modal-dialog">
-                  <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;">
-                    <div class="modal-body">
+                  <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;background-color: white;border: none;">
+                    <div class="modal-body" style="padding: 0px;">
+                      <button type="button" class="close" data-dismiss="modal" style="position: absolute;right: -18px;top: -25px;color: #f3a822;font-size: 27px;text-shadow: none;opacity: 10;">&times;</button>
                       <div class="row">
                         <div class="col-sm-12">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <br>
+
                           <div role="tabpanel">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs nav-justified" role="tablist">
                               <li role="presentation" class="active">
-                                <a href="#history32-1" aria-controls="history32-1" role="tab" data-toggle="tab">LOGIN</a>
+                                <a href="#history32-1" aria-controls="history32-1" role="tab" data-toggle="tab" style="padding: 15px;">LOGIN</a>
                               </li>
                               <li role="presentation">
-                                <a href="#vision32-1" aria-controls="vision32-1" role="tab" data-toggle="tab">REGISTER</a>
+                                <a href="#vision32-1" aria-controls="vision32-1" role="tab" data-toggle="tab" style="padding: 15px;">REGISTER</a>
                               </li>
                             </ul>
                             <div class="clearfix"></div>
                             <!-- Tab panes -->
-                            <div class="tab-content tab-content--withBorder">
+                            <div class="tab-content tab-content--withBorder" style="background-color: white;color: black;">
+                              <div role="tabpanel" class="tab-pane active" id="history32-1" style="border: none !important;">
 
-                              <div role="tabpanel" class="tab-pane active" id="history32-1">
-                                <form #signInForm="ngForm" (ngSubmit)="onSubmittingSignInForm(signInForm)">
-                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="email" required ngModel placeholder="Email Address">
-                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="password" type="Password" required ngModel
-                                    placeholder="Password">
-                                  <div class="ct-form--item">
-                                    <button type="button" (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
-                                      Login with Facebook
-                                    </button>
-                                    <button type="button" (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
-                                      Login with Google
-                                    </button>
+
+<form #signInForm="ngForm" (click)="onSubmittingSignInForm(signInForm)">
+
+
+
+                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="email" placeholder="Email Address" ngModel required>
+                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="password" type="Password" placeholder="Password" ngModel required>
+                                <div>
+                                  <button (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
+                                    Login with Facebook
+                                  </button>
+                                  <button (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
+                                    Login with Google
+                                  </button>
+                                </div>
+                                <br>
+                                <div class="row">
+                                  <div class="col-md-offset-9 col-sm-3">
+                                    <button type="submit" class="btn btn-warning" style="padding-right: 13px;">Sign In</button>
                                   </div>
-                                  <br>
-                                  <div class="row">
-                                    <div class="col-md-offset-6 col-md-3">
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                      <button type="submit" class="btn btn-success">Sign In</button>
-                                    </div>
-                                  </div>
-                                </form>
+                                </div>
+                              </form>
                               </div>
+                              <div role="tabpanel" class="tab-pane" id="vision32-1" style="border: none !important;">
 
-                              <div role="tabpanel" class="tab-pane" id="vision32-1">
-                                <form #signUpForm="ngForm" (ngSubmit)="onSubmittingSignupForm(signUpForm)">
+                                <form #signUpForm="ngForm" (click)="registerNow(signUpForm)">
 
-                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="username" type="text" placeholder="Username"
+                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" name="username" placeholder="Username"
                                     ngModel required>
-                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="email" placeholder="Email" ngModel
-                                    required>
+                                  <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" name="email" placeholder="Email"
+                                    ngModel required>
                                   <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" name="password" placeholder="Password"
                                     ngModel required>
                                   <br>
-                                  <label>Sign Up As</label>
-                                  <select class="form-control input-lg text-inner-input ct-u-marginBottom10">
-                                    <option value="month">Client</option>
-                                    <option value="month">Home Owner</option>
-                                    <option value="month">Real Estate Agent</option>
-                                    <option value="January">Mortgage Advisor</option>
-                                    <option value="month">Building Inspector</option>
-                                    <option value="January">Real Estate Lawyer</option>
+                                  <select class="form-control" ngModel name="userType" style="border:1px solid grey;">
+                                    <option value="">Signup As</option>
+                                    <option value="client">Client</option>
+                                    <option value="agent">Real Estate Agent</option>
+                                    <option value="advisor">Mortgage Advisor</option>
+                                    <option value="inspector">Building Inspector</option>
+                                    <option value="lawyer">Real Estate Lawyer</option>
                                   </select>
-                                  <div class="ct-form--item ct-u-marginBottom20">
+                                  <div class="ct-form--item ct-u-marginBottom20" style="padding-top: 22px;">
+
                                     <div class="checkbox">
                                       <label>
-                                        <input type="checkbox" value=""> I read and agree to
+                                        <input type="checkbox" value="" style="margin-top: -7px;"> I read and agree to
                                         <a href="terms.html" id="btn-lnk-terms"> terms & conditions</a>
                                       </label>
                                     </div>
                                   </div>
-                                  <div class="ct-form--item">
-                                    <button type="button" (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
+                                  <div>
+                                    <button (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
                                       Login with Facebook
                                     </button>
-                                    <button type="button" (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
+                                    <button (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
                                       Login with Google
                                     </button>
                                   </div>
                                   <br>
                                   <div class="row">
-                                    <div class="col-md-offset-5 col-md-3">
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                      <button type="submit" class="btn btn-success">Register Now</button>
+                                    <br>
+                                    <div class="col-md-offset-8 col-sm-4">
+                                      <button class="btn btn-warning" type="submit" style="padding-left: 10px;padding-right: 10px;">Register Now</button>
                                     </div>
                                   </div>
-
                                 </form>
                               </div>
-
                             </div>
                           </div>
                         </div>
@@ -153,99 +156,100 @@
       </div>
     </div>
   </div>
-  <div class="ct-topBar" style="position: fixed;" *ngIf="authService.isLogin">
-    <div>
-      <div class="row">
-        <div class="col-md-offset-9 col-md-3" style="padding-left: 47px;">
-          <div class="ct-panel--user ct-panel--right">
-            <div class="ct-panel--item ct-email pull-right">
-              <div class="dropdown">
-                <div class="ct-panel--item ct-email" style="padding-left: 35px;" data-toggle="dropdown">
-                  <img src="assets/images/profile-snap.jpg" class="user-profile">
-                </div>
-                <ul class="dropdown-menu" style="left: -109px;">
-                  <li class="lis-drop-nav">
-                    <a routerLink="/dashboard/edit-profile" class="no-back">Profile</a>
-                  </li>
-                  <li class="lis-drop-nav">
-                    <a routerLink="/dashboard/charity-view" class="no-back">Charity</a>
-                  </li>
-                  <li class="lis-drop-nav">
-                    <a routerLink="/dashboard/settings" class="no-back">Settings</a>
-                  </li>
-                  <li class="lis-drop-nav">
-                    <a (click)="logOutMe()" style="cursor: pointer" class="no-back">Logout as {{authService.profile.username}}</a>
-                  </li>
-                </ul>
+</div>
+<div class="ct-topBar" style="position: fixed;" *ngIf="authService.isLogin">
+  <div>
+    <div class="row">
+      <div class="col-md-offset-9 col-md-3" style="padding-left: 47px;">
+        <div class="ct-panel--user ct-panel--right" style="padding-right: 97px">
+          <div class="ct-panel--item ct-email pull-right">
+            <div class="dropdown">
+              <div class="ct-panel--item ct-email" style="padding-left: 35px;" data-toggle="dropdown">
+                <img src="assets/images/profile-snap.jpg" class="user-profile">
               </div>
+              <ul class="dropdown-menu" style="left: -109px;">
+                <li class="lis-drop-nav">
+                  <a routerLink="/dashboard/edit-profile" class="no-back">Profile</a>
+                </li>
+                <li class="lis-drop-nav">
+                  <a routerLink="/dashboard/charity-view" class="no-back">Charity</a>
+                </li>
+                <li class="lis-drop-nav">
+                  <a routerLink="/dashboard/settings" class="no-back">Settings</a>
+                </li>
+                <li class="lis-drop-nav">
+                  <a (click)="logOutMe()" style="cursor: pointer" class="no-back">Logout as {{authService.profile.username}}</a>
+                </li>
+              </ul>
             </div>
-            <div class="ct-panel--item ct-email pull-right">
-              <a routerLink="/dashboard" class="btn btn-link btn-xs btn-upper-nav">
-                <i class="fa fa-home"></i> Dashboard</a>
-            </div>
+          </div>
+          <div class="ct-panel--item ct-email pull-right">
+            <a routerLink="/dashboard" class="btn btn-link btn-xs btn-upper-nav">
+              <i class="fa fa-home"></i> Dashboard</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 
 
-  <nav class="navbar ct-navbar--noDecoration nav-mob" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
-        <div class="container">
-          <div class="navbar-header ct-panel--navbar">
-            <a routerLink="/">
-              <img src="assets/images/content/logo.jpg" alt="logo" width="55">
-            </a>
-          </div>
-          <div class="ct-panelBox">
-            <div class="ct-panel--text ct-panel--navbar ct-fw-600">
-              <a routerLink="/">Home Buyers</a>
+<nav class="navbar ct-navbar--noDecoration nav-mob" role="navigation" data-heighttopbar="40px" data-startnavbar="0">
+  <div class="container">
+    <div class="navbar-header ct-panel--navbar">
+      <a routerLink="/">
+        <img src="assets/images/content/logo.jpg" alt="logo" width="55">
+      </a>
+    </div>
+    <div class="ct-panelBox">
+      <div class="ct-panel--text ct-panel--navbar ct-fw-600">
+        <a routerLink="/">Home Buyers</a>
+      </div>
+      <ul class="ct-panel--socials ct-panel--navbar list-inline list-unstyled">
+        <li>
+          <a href="#">
+            <div class="ct-socials ct-socials--circle">
+              <i class="fa fa-facebook"></i>
             </div>
-            <ul class="ct-panel--socials ct-panel--navbar list-inline list-unstyled">
-              <li>
-                <a href="#">
-                  <div class="ct-socials ct-socials--circle">
-                    <i class="fa fa-facebook"></i>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="ct-socials ct-socials--circle">
-                    <i class="fa fa-twitter"></i>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="ct-socials ct-socials--circle">
-                    <i class="fa fa-instagram"></i>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-    
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav ct-navbar--fadeInUp navbar-right">
-              <li class="dropdown">
-                <a routerLink="/" routerLinkActiveOptions="{ exact: true }" routerLinkActive="dropdown active" >Home</a>
-              </li>
-              <li class="dropdown">
-                <a routerLink="/services" routerLinkActive="dropdown active">Services</a>
-              </li>
-              <li class="dropdown">
-                <a routerLink="/post-ad" routerLinkActive="dropdown active">Post AD</a>
-              </li>
-    
-              <li class="dropdown">
-                <a routerLink="/how-it-works" routerLinkActive="dropdown active">How it works </a>
-              </li>
-              <li class="dropdown">
-                <a routerLink="/blog" routerLinkActive="dropdown active">Blog</a>
-              </li> 
-            </ul>
-          </div>
-        </div>
-      </nav>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ct-socials ct-socials--circle">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="ct-socials ct-socials--circle">
+              <i class="fa fa-instagram"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav ct-navbar--fadeInUp navbar-right">
+        <li class="dropdown">
+          <a routerLink="/" routerLinkActiveOptions="{ exact: true }" routerLinkActive="dropdown active">Home</a>
+        </li>
+        <li class="dropdown">
+          <a routerLink="/services" routerLinkActive="dropdown active">Services</a>
+        </li>
+        <li class="dropdown">
+          <a routerLink="/post-ad" routerLinkActive="dropdown active">Post AD</a>
+        </li>
+
+        <li class="dropdown">
+          <a routerLink="/how-it-works" routerLinkActive="dropdown active">How it works </a>
+        </li>
+        <li class="dropdown">
+          <a routerLink="/blog" routerLinkActive="dropdown active">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

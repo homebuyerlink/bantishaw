@@ -25,8 +25,8 @@ export class AuthenticationService {
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   //Sign Up
-  public async signup(username, email, password) {
-    let body = { username: username, email: email, password: password };
+  public async signup(username, email, password,userType) {
+    let body = { username: username, email: email, password: password,userType:userType};
 
     let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
 

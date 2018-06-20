@@ -8,7 +8,7 @@ export class UserTypeGuard implements CanActivate {
   async canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot) {
-    if (await this.authService.profile.userType==null) {
+    if (await this.authService.profile.userType==undefined) { 
       this.router.navigate(['/select-type']);
       return false;
     }

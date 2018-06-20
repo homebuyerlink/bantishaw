@@ -30,8 +30,8 @@ const routes: Routes = [
   },
   {
     path: "edit-profile",
-    component: MyprofileComponent
-    // canActivate:[UserTypeGuard]
+    component: MyprofileComponent,
+    canActivate:[UserTypeGuard]
   },
   {
     path: "view-bookings",
@@ -44,33 +44,33 @@ const routes: Routes = [
   },
   {
     path: "settings",
-    component: SettingsComponent
-    // canActivate:[UserTypeGuard]
+    component: SettingsComponent,
+    canActivate:[UserTypeGuard]
   }
   ,
   {
     path:"settings/step2",
-    component:Settings2Component
-    // canActivate:[UserTypeGuard]
+    component:Settings2Component,
+    canActivate:[UserTypeGuard]
   }
   ,
   {
     path:"settings/step3",
-    component:Settings3Component
-    // canActivate:[UserTypeGuard]
+    component:Settings3Component,
+    canActivate:[UserTypeGuard]
   }
   ,
   {
     path:"settings/step4",
-    component:Settings4Component
-    // canActivate:[UserTypeGuard]
+    component:Settings4Component,
+    canActivate:[UserTypeGuard]
   }
   ,
   {
     path: "charity-view",
-    component: CharityViewComponent
+    component: CharityViewComponent,
 
-    // canActivate:[UserTypeGuard]
+    canActivate:[UserTypeGuard]
   }
   ,
   {
@@ -86,13 +86,13 @@ const routes: Routes = [
   {
     path: "agents",
     component: AgentsComponent,
-    // canActivate:[ServiceProviderGuard]
+    canActivate:[ServiceProviderGuard]
   }
   ,
   {
     path: "services",
     component: ServicesComponent,
-    // canActivate:[ServiceProviderGuard]
+    canActivate:[ServiceProviderGuard]
   }
   ,
   {

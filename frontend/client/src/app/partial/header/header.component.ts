@@ -13,27 +13,26 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthenticationService, private ngxSocialLoginAuthService: AuthService) { }
 
   async  ngOnInit() {
+
   }
 
-
-  async onSubmittingSignupForm(signUpForm: NgForm) {
-    try {
-      let username = signUpForm.value['username'];
+  registerNow(signUpForm: NgForm) {
+    
+    let username = signUpForm.value['username'];
       let email = signUpForm.value['email'];
       let password = signUpForm.value['password'];
-      let response = await this.authService.signup(username, email, password);
-      signUpForm.reset();
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+      let userType=signUpForm.value['userType'];
+      
+      // let response = await this.authService.signup(username, email, password,userType);   
   }
   async onSubmittingSignInForm(signInForm: NgForm) {
     try {
-      let email = signInForm.value['email'];
-      let password = signInForm.value['password'];
-      await this.authService.login(email, password);
-      signInForm.reset();
+    
+      
+      // let email = signInForm.value['email'];
+      // let password = signInForm.value['password'];
+      // await this.authService.login(email, password);
+      // signInForm.reset();
     } catch (error) {
       console.log(error);
     }

@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { GuestheaderComponent } from './guestheader/guestheader.component';
+
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from "angularx-social-login";
 
@@ -31,7 +31,7 @@ let config = new AuthServiceConfig([
     SocialLoginModule
 
   ],
-  declarations: [HeaderComponent, FooterComponent, GuestheaderComponent],
+  declarations: [HeaderComponent, FooterComponent],
   providers: [
     {
       provide: AuthServiceConfig,
