@@ -65,24 +65,25 @@
                         <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i> Login / Register</a>
                         <div class="modal fade" id="login-modal" role="dialog">
                             <div class="modal-dialog">
-                                 <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;">
-                                    <div class="modal-body">
+                                 <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;background-color: white;border: none;">
+                                    <div class="modal-body" style="padding: 0px;">
+                                        <button type="button" class="close" data-dismiss="modal" style="position: absolute;right: -18px;top: -25px;color: #f3a822;font-size: 27px;text-shadow: none;opacity: 10;">&times;</button>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+                                                
                                                 <div role="tabpanel">
                                                     <!-- Nav tabs -->
                                                     <ul class="nav nav-tabs nav-justified" role="tablist">
-                                                        <li role="presentation" class="active"><a href="#history32-1" aria-controls="history32-1" role="tab" data-toggle="tab">LOGIN</a></li>
-                                                        <li role="presentation"><a href="#vision32-1" aria-controls="vision32-1" role="tab" data-toggle="tab">REGISTER</a></li>
+                                                        <li role="presentation" class="active"><a href="#history32-1" aria-controls="history32-1" role="tab" data-toggle="tab" style="padding: 15px;">LOGIN</a></li>
+                                                        <li role="presentation"><a href="#vision32-1" aria-controls="vision32-1" role="tab" data-toggle="tab" style="padding: 15px;">REGISTER</a></li>
                                                     </ul>
                                                     <div class="clearfix"></div>
                                                     <!-- Tab panes -->
-                                                    <div class="tab-content tab-content--withBorder">
-                                                        <div role="tabpanel" class="tab-pane active" id="history32-1">
+                                                    <div class="tab-content tab-content--withBorder" style="background-color: white;color: black;">
+                                                        <div role="tabpanel" class="tab-pane active" id="history32-1" style="border: none !important;">
                                                             <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" placeholder="Email Address" required>
                                                             <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required>
-                                                            <div class="ct-form--item">
+                                                            <div>
                                                                 <button class="loginBtn loginBtn--facebook">
                                                                   Login with Facebook
                                                                 </button>
@@ -91,15 +92,12 @@
                                                                 </button>
                                                            </div><br>
                                                             <div class="row">
-                                                                <div class="col-md-offset-6 col-md-3">
-                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                </div>
-                                                                <div class="col-md-3">
-                                                                    <a href="dashboard.html" class="btn btn-success">Sign In</a>
+                                                                <div class="col-md-offset-9 col-sm-3">
+                                                                    <a href="dashboard.html" class="btn btn-warning" style="padding-right: 13px;">Sign In</a>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div role="tabpanel" class="tab-pane" id="vision32-1">
+                                                        <div role="tabpanel" class="tab-pane" id="vision32-1" style="border: none !important;">
                                                               <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" placeholder="Username" required>
                                                                <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="Password" placeholder="Password" required><br>
                                                                <label>Sign Up As</label>
@@ -119,7 +117,7 @@
                                                                         </label>
                                                                     </div>
                                                                 </div>
-                                                               <div class="ct-form--item">
+                                                               <div>
                                                                     <button class="loginBtn loginBtn--facebook">
                                                                       Login with Facebook
                                                                     </button>
@@ -128,13 +126,10 @@
                                                                     </button>
                                                                </div><br>
                                                                <div class="row">
-                                                                <div class="col-md-offset-5 col-md-3">
-                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                </div>
-                                                                <div class="col-md-3">
-                                                                    <a href="registration-login.html" class="btn btn-success">Register Now</a>
-                                                                </div>
-                                                            </div>
+                                                                    <div class="col-md-offset-8 col-sm-4">
+                                                                        <a href="registration-login.html" class="btn btn-warning" style="padding-left: 10px;padding-right: 10px;">Register Now</a>
+                                                                    </div>
+                                                               </div>
                                                         </div>
                                                     </div>
                                                 </div>

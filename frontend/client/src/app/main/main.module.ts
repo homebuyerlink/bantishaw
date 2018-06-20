@@ -15,6 +15,7 @@ const routes: Routes = [
   {
     path: "",
     component: MainComponent,
+    
     children: [
       {
         path: "",
@@ -42,7 +43,7 @@ const routes: Routes = [
       {
         path: "dashboard",
         loadChildren: './dashboard/dashboard.module#DashboardModule',
-        canActivate:[AuthGuard]
+        // canActivate:[AuthGuard]
       
       },
       {
