@@ -5,7 +5,7 @@ var userSchema = new mongoose.Schema(
         username: String,
         userType: {
             type: String,
-            enum: ["client", "owner", "agent", "advisor", "inspector", "lawyer"]
+            enum: ["client", "agent", "advisor", "inspector", "lawyer"]
         },
         name: String,
         email: {
@@ -26,7 +26,15 @@ var userSchema = new mongoose.Schema(
         emailVerificationToken: String,
         token: String,
         photoUrl: String,
-        provider: String
+        provider: String,
+        profileWizardStep: {
+            type: Number,
+            default: 0
+        },
+        profileWizardTotalSteps: {
+            type: Number,
+            default: 1
+        }
     },
     {
         timestamps: true

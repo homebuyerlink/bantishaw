@@ -46,10 +46,14 @@ class UserController {
             let email = req.body.email;
             let password = req.body.password;
             let emailVerificationToken = uuidv1();
+            let userType = req.body.userType;
             let user = await User.findOne({ email: email });
             if (user != null)
                 throw { code: 400, message: "Email already exists" };
             else {
+                user = await User.findOne({ username: username });
+                if (user != null)
+                    throw { code: 400, message: "Username already exists" };
                 user = new User({
                     username: username,
                     email: email,
@@ -69,11 +73,11 @@ class UserController {
                         console.log(error);
                     }
                 });
+                await UserController.prototype.chooseUserType(userType, user);
                 let token = authMiddleware.createJWT(user);
                 await User.findOneAndUpdate({ email: email }, { $set: { token: token } });
                 res.send({ "token": token });
             }
-
         } catch (error) {
             errorHandler.sendError(res, error);
         }
@@ -158,6 +162,57 @@ class UserController {
             }
         } catch (error) {
 
+        }
+    }
+    async updateUserType(req, res) {
+        try {
+            let user = await User.findById(req.body.userId);
+            let userTypeRes = await UserController.prototype.chooseUserType(req.body.userType, user);
+            if (userTypeRes) {
+                user = await User.findById(req.body.userId);
+                let response = { success: userTypeRes, updatedProfile: user }
+                res.send(response);
+            }
+            else res.send({ success: false, updatedProfile: user });
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+    async chooseUserType(userType, user) {
+        if (user.userType == null) {
+            if (userType == "client" || userType == "agent" || userType == "advisor" || userType == "inspector" || userType == "lawyer") {
+                let profileWizardTotalSteps = 1, profileWizardStep = 0;
+                if (userType == 'client')
+                    profileWizardStep = 1;
+                else if (userType == 'inspector' || userType == 'lawyer')
+                    profileWizardTotalSteps = 5;
+                await User.findByIdAndUpdate(user._id, {
+                    $set: {
+                        userType: userType,
+                        profileWizardStep: profileWizardStep,
+                        profileWizardTotalSteps: profileWizardTotalSteps
+                    }
+                });
+            }
+            else throw { code: 400, message: "Invalid User Type" }
+            return true;
+        }
+        else return false;
+    }
+    async updateUsername(req, res) {
+        try {
+            let username = req.body.username;
+            let userId = req.body.userId;
+            let user = await User.findOne({ username: username });
+            if (user != null)
+                throw { code: 400, message: "Username already taken!" };
+            else {
+                await User.findByIdAndUpdate(userId, { $set: { username: username } });
+                let user = await User.findById(userId);
+                res.send(user);
+            }
+        } catch (error) {
+            errorHandler.sendError(res, error);
         }
     }
 }
