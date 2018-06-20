@@ -18,6 +18,8 @@ app.use(cors({
 
 app.use('/api', api);
 
+app.use('/public/uploads', express.static(path.join(__dirname, 'public/uploads')));
+
 app.use(express.static(path.join(__dirname, '/frontend/client/dist/home')));
 
 app.get('*', (req, res) => {
