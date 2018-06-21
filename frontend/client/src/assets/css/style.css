@@ -4528,7 +4528,7 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
 }
 .navbar .navbar-nav li:hover > a,
 .navbar .navbar-nav li:focus > a {
-  background-color: white;
+  background-color:#eeeeee;
   color: #f19f24;
 }
 .navbar .navbar-nav li .dropdown-menu {
@@ -11480,7 +11480,7 @@ header {
 }
 .nav.nav-tabs li.active a:hover,
 .nav.nav-tabs.nav-justified li.active a:hover {
-  background-color: #ca930e;
+  background-color: #ea8825;
   color: #fff;
 }
 .nav.nav-tabs li a,
@@ -11494,7 +11494,7 @@ header {
 }
 .nav.nav-tabs li a:hover,
 .nav.nav-tabs.nav-justified li a:hover {
-  background-color: #ca930e;
+  background-color: #ea8825;
   color: #fff;
 }
 .nav-tabs.nav-justified li:last-child a {
@@ -14050,7 +14050,7 @@ span.round-tab:hover {
 /*the new dashboard CSS*/
 /*the further css lines*/
 .card-header{
-  background-color: #f3a822;
+  background-color: #f19f24;
   color: white;
 }
 .card-body{
@@ -14219,35 +14219,7 @@ span.round-tab:hover {
 .gap-top{
   margin-top: 6px;
 }
-.dropdown-toggle.btn-default {
-  color: #333333;
-  background-color: white;
-  border: none !important;
-  outline: none;
-}
-.dropdown-toggle.btn-default:hover {
-  color: #333333;
-  background-color: white;
-  border: none !important;
-  outline: none;
-}
-.lis-drop-nav{
-  padding: 15px;
-  text-align: center;
-  background-color: white;
-}
-.lis-drop-nav:hover{
-  padding: 15px;
-  text-align: center;
-  background-color: #f3a822;
-}
-.no-back{
-  background-color: none!important;
-  color: white;
-}
-.no-back:hover{
-  background-color: #f3a822!important;
-}
+
 
 
 

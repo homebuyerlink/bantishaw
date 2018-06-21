@@ -3,18 +3,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { UserTypeGuard } from './guards/usertype.guard';
 import { ServiceProviderGuard } from './guards/serviceprovider.guard';
-
-
 const routes: Routes = [
   {
     path: "",
-    loadChildren: './main/main.module#MainModule',
+    loadChildren: './main/main.module#MainModule'
   }
 ]
 
