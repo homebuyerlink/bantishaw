@@ -14,7 +14,7 @@ import { AddbookingsComponent } from './addbookings/addbookings.component';
 import { AgentsComponent } from './agents/agents.component';
 import { AddagestsComponent } from './addagests/addagests.component';
 import { AddservicesComponent } from './addservices/addservices.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserTypeGuard } from '../../guards/usertype.guard';
 import { ServiceProviderGuard } from '../../guards/serviceprovider.guard';
 import { Addagentsstep2Component } from './addagentsstep2/addagentsstep2.component';
@@ -113,7 +113,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [DashboardComponent, DefaultdashboardComponent, SettingsComponent, MyprofileComponent, ServicesComponent, ViewbookingsComponent, HblboxComponent, CharityViewComponent, MyfavouritesComponent, AddbookingsComponent, AgentsComponent, AddagestsComponent, AddservicesComponent, Addagentsstep2Component, Settings2Component, Settings3Component, Settings4Component]
 })

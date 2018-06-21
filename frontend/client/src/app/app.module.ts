@@ -8,10 +8,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { UserTypeGuard } from './guards/usertype.guard';
 import { ServiceProviderGuard } from './guards/serviceprovider.guard';
+import { CompanyService } from './services/inspector.service';
 const routes: Routes = [
   {
     path: "",
     loadChildren: './main/main.module#MainModule'
+    // canActivate:[UserTypeGuard]
   }
 ]
 
@@ -25,7 +27,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
+  providers: [CompanyService,AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
