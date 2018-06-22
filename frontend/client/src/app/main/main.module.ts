@@ -38,7 +38,12 @@ const routes: Routes = [
       {
         path: "inspector/wizard",
         loadChildren: './inspector/inspector.module#InspectorModule',
-        canActivate: [AuthGuard, UserTypeGuard,inspectrGuard]
+         canActivate:[AuthGuard,UserTypeGuard,inspectrGuard]
+      },
+      {
+        path: "lawyer",
+        loadChildren: './lawyer/lawyer.module#LawyerModule',
+         canActivate:[AuthGuard]
       },
       {
         path: "blog",

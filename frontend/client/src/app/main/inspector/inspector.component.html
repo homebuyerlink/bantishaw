@@ -160,15 +160,10 @@
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="founded" type="date" placeholder="Founded"
                 ngModel required>
             </div>
-            <!--For image upload-->
-            <!-- <div class="form-group">
-              <label class="control-label" for="image">Upload Image
-                <span class="text-danger">*</span>
-              </label>
-              <input type="file" ng2FileSelect [uploader]="uploader" name="images" class="form-control-file">
-              <button class="btn btn-default form-control" (click)="discardFiles()" *ngIf="uploader.queue.length > 0">{{uploader.queue.length}} Files! Click To Discard!</button>
-            </div> -->
-            <!-- <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="About Company Profile"></textarea><br><br> -->
+            <div class="form-group">
+              <label for="image">Profile Picture</label>
+              <input type="file" ng2FileSelect [uploader]="uploader" name="image" class="form-control-file">
+            </div>
             <h3>Link Social Media and Other Links</h3>
             <br>
             <br>
@@ -316,7 +311,10 @@
                   formControlName="phone">
                 <br>
 
-
+                <div class="form-group">
+                    <label for="image">Profile Picture</label>
+                    <input type="file" ng2FileSelect [uploader]="uploader" class="form-control-file">
+                  </div>
               </div>
             </div>
             <hr>
@@ -414,7 +412,7 @@
   <br>
   <section class="ct-u-paddingTop50 ct-u-paddingBottom100">
     <div class="container">
-      <form [formGroup]="servicesFormStep3"  (ngSubmit)="saveServices(inspectorDetailFormStep3)">
+      <form [formGroup]="servicesFormStep3"  (ngSubmit)="saveServices(servicesFormStep3)">
         <div formArrayName="servicesArray">
           <div *ngFor="let ctrl of  servicesFormStep3.get('servicesArray').controls; let i=index" [formGroupName]="i">
             <div class="row">
@@ -434,6 +432,10 @@
                 <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"
                   formControlName="details"></textarea>
                 <br>
+                <div class="form-group">
+                    <label for="image">Profile Picture</label>
+                    <input type="file" ng2FileSelect [uploader]="uploader" name="image" class="form-control-file">
+                  </div>
 
               </div>
             </div>
@@ -444,7 +446,7 @@
         <br>
         <ul class="list-inline pull-right">
           <li>
-            <a routerLink="/dashboard/settings/step4" class="btn btn-primary next-step">Save and continue</a>
+            <button type="submit" class="btn btn-primary next-step">Save and continue</button>
           </li>
         </ul>
       </form>
