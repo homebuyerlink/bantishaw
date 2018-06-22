@@ -40,7 +40,7 @@ const routes: Routes = [
       {
         path: "inspector/wizard",
         loadChildren: './inspector/inspector.module#InspectorModule',
-        //  canActivate:[AuthGuard,UserTypeGuard]
+         canActivate:[AuthGuard,UserTypeGuard]
       },
       {
         path: "blog",
