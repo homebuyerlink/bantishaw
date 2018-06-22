@@ -15,26 +15,22 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   public latitude: any;
   public longitude: any;
   public address = '';
-  public teamMembers = [];
-
+  public teams = [];
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public cityCircle: any;
-  public step1: boolean = true;
+  public step1: boolean = false;
   public step2: boolean = false;
-  public step3: boolean = false;
+  public step3: boolean = true;
   public step4: boolean = false;
   public inspectorDetailForm: FormGroup;
   public inspectorDetailFormStep3: FormGroup;
-
   public URL = `${Config.API_BASE}/utils/upload`;
   public uploader: FileUploader = new FileUploader({
     url: this.URL,
   });
   public image = "";
-
   constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private company: CompanyService) { }
-
   ngAfterViewInit() {
     this.initmap();
   }
@@ -125,6 +121,8 @@ export class InspectorComponent implements OnInit, AfterViewInit {
     console.log(values);
 
     console.log("value of tag array", this.inspectorDetailForm.value['tags']);
+    let teamMembers = this.teams.push(values);
+    console.log(teamMembers);
 
     // const val: Array<any> = [
     //   // this.purchaseForm.value['sD'],
@@ -139,14 +137,14 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   //3rd step
   saveStep3() {
     let values = this.inspectorDetailFormStep3.value['inspectorDetailArrayStep3'];
-    console.log(this.teamMembers.push(values));
+
   }
 
   initinspectorDetail() {
     return this._fb.group({
       name: ['', Validators.required],
       designation: ['', Validators.required],
-      email: ['', Validators.required, EmailValidator],
+      email: ['', Validators.required],
       phone: ['', Validators.required],
       image: [Validators.required],
 
@@ -179,8 +177,7 @@ export class InspectorComponent implements OnInit, AfterViewInit {
 
   //google map cred
   initmap() {
-    // this.latitude = 50.186769;
-    // this.longitude = 8.698247;
+
     var mapProp = new google.maps.Map(this.gmapElement.nativeElement, {
       zoom: 12,
       center: new google.maps.LatLng(this.latitude, this.longitude),
