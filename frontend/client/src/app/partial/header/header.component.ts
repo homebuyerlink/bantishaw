@@ -2,7 +2,6 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { AuthenticationService } from '../../services/authentication.service';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,12 +10,9 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   public errormessage: any;
-  constructor(private authService: AuthenticationService, private ngxSocialLoginAuthService: AuthService,private router:Router) { }
+  constructor(private authService: AuthenticationService, private ngxSocialLoginAuthService: AuthService) { }
 
-  async  ngOnInit() {
-    // if (this.authService.profile.username===undefined || this.authService.profile.userType===undefined) {
-    //   this.router.navigate(['/select-type'])
-    // }
+  ngOnInit() {
   }
 
   async registerNow(signUpForm: NgForm) {
