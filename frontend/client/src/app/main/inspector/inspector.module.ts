@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { InspectorComponent } from './inspector.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FileUploadModule } from 'ng2-file-upload';
+import { TagInputModule } from 'ngx-chips'
 const routes: Routes = [
   {
     path: "",
@@ -13,7 +15,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FileUploadModule,
+    TagInputModule
   ],
   declarations: [InspectorComponent]
 })

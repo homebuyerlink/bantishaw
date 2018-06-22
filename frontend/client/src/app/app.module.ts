@@ -9,6 +9,8 @@ import { AuthenticationService } from './services/authentication.service';
 import { UserTypeGuard } from './guards/usertype.guard';
 import { ServiceProviderGuard } from './guards/serviceprovider.guard';
 import { CompanyService } from './services/inspector.service';
+import { TagInputModule } from 'ngx-chips';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   {
     path: "",
@@ -25,7 +27,9 @@ const routes: Routes = [
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    TagInputModule,
+    BrowserAnimationsModule
   ],
   providers: [CompanyService,AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
   bootstrap: [AppComponent]

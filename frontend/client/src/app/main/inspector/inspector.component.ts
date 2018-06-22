@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren } from '@angular/core';
 import { NgForm, FormArray, Validators, EmailValidator, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
 import { CompanyService } from '../../services/inspector.service';
 declare const google: any;
+import { FileUploader, FileItem } from 'ng2-file-upload';
+import { Config } from '../../config';
 @Component({
   selector: 'app-inspector',
   templateUrl: './inspector.component.html',
@@ -13,6 +15,8 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   public latitude: any;
   public longitude: any;
   public address = '';
+  public teamMembers = [];
+
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public cityCircle: any;
@@ -22,6 +26,13 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   public step4: boolean = false;
   public inspectorDetailForm: FormGroup;
   public inspectorDetailFormStep3: FormGroup;
+
+  public URL = `${Config.API_BASE}/utils/upload`;
+  public uploader: FileUploader = new FileUploader({
+    url: this.URL,
+  });
+  public image = "";
+
   constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private company: CompanyService) { }
 
   ngAfterViewInit() {
@@ -30,17 +41,53 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     let ctrl = new FormControl(null, Validators.required);
     this.inspectorDetailForm = new FormGroup({
-      'inspectorDetailArray': this._fb.array([this.initinspectorDetail()])
+      'tags': new FormControl('', Validators.required),
+      'inspectorDetailArray': this._fb.array([this.initinspectorDetail()],
+      )
     });
     //3rd step
     this.inspectorDetailFormStep3 = new FormGroup({
       'inspectorDetailArrayStep3': this._fb.array([this.initinspectorDetail3rd()])
     })
+  }
 
+  private async afterPictureUpload(companyBasicInfo) {
+    // try {
+    //   let name = companyBasicInfo.value['name'];
+    //   let addressLine1 = companyBasicInfo.value['addressLine1'];
+    //   let addressLine2 = companyBasicInfo.value['addressLine2'];
+    //   let city = companyBasicInfo.value['city'];
+    //   let state = companyBasicInfo.value['state'];
+    //   let zip = companyBasicInfo.value['zip'];
+    //   let phone = companyBasicInfo.value['phone'];
+    //   let email = companyBasicInfo.value['email'];
+    //   let website = companyBasicInfo.value['website'];
+    //   let founded = companyBasicInfo.value['founded'];
+    //   let lat = this.latitude;
+    //   let lng = this.longitude;
+    //   let radius = 50;
+    //   let userId = this.authservice.profile._id;
+    //   let facebook = companyBasicInfo.value['facebook'];
+    //   let youtube = companyBasicInfo.value['youtube'];
+    //   let instagram = companyBasicInfo.value['instagram'];
+    //   let gplus = companyBasicInfo.value['gplus'];
+    //   let twitter = companyBasicInfo.value['twitter'];
+    //   let associations = companyBasicInfo.value['associations'];
+    //   let response = await this.company.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId,
+    //     facebook, youtube, instagram, gplus, twitter, associations);
+    //   console.log(response);
+    // } catch (error) {
+    //   alert(error);
+    // }
   }
 
   //1st  step form
   async onSubmittingBasicInfoForm(companyBasicInfo: NgForm) {
+    // this.uploader.uploadAll();
+    // this.uploader.queue[0].onSuccess = (response, status, headers) => {
+    //   this.image = JSON.parse(response)[0];
+    //   this.afterPictureUpload(companyBasicInfo);
+    // }
 
 
     try {
@@ -54,10 +101,10 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       let email = companyBasicInfo.value['email'];
       let website = companyBasicInfo.value['website'];
       let founded = companyBasicInfo.value['founded'];
-      let image = "http://encapsulatech.com/images/";
       let lat = this.latitude;
       let lng = this.longitude;
       let radius = 50;
+      let image = "abc";
       let userId = this.authservice.profile._id;
       let facebook = companyBasicInfo.value['facebook'];
       let youtube = companyBasicInfo.value['youtube'];
@@ -71,16 +118,14 @@ export class InspectorComponent implements OnInit, AfterViewInit {
     } catch (error) {
       alert(error);
     }
-
-
-
-
-
   }
   //2nd step
   save() {
     let values = this.inspectorDetailForm.value['inspectorDetailArray'];
     console.log(values);
+
+    console.log("value of tag array", this.inspectorDetailForm.value['tags']);
+
     // const val: Array<any> = [
     //   // this.purchaseForm.value['sD'],
     //   // this.purchaseForm.value['ref'],
@@ -94,7 +139,7 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   //3rd step
   saveStep3() {
     let values = this.inspectorDetailFormStep3.value['inspectorDetailArrayStep3'];
-    console.log(values);
+    console.log(this.teamMembers.push(values));
   }
 
   initinspectorDetail() {
@@ -134,8 +179,8 @@ export class InspectorComponent implements OnInit, AfterViewInit {
 
   //google map cred
   initmap() {
-    this.latitude = 50.186769;
-    this.longitude = 8.698247;
+    // this.latitude = 50.186769;
+    // this.longitude = 8.698247;
     var mapProp = new google.maps.Map(this.gmapElement.nativeElement, {
       zoom: 12,
       center: new google.maps.LatLng(this.latitude, this.longitude),
