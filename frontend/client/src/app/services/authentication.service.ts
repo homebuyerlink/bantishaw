@@ -61,11 +61,13 @@ export class AuthenticationService {
     localStorage.setItem("token", token);
     (<any>$('#login-modal')).modal('hide');
     this.getProfile(token);
+    console.log(this.profile.username);
+    console.log(this.profile.userType);
+    
     if(this.profile.username===undefined || this.profile.userType===undefined){
       this.router.navigate(['/select-type']);
     }
     this.isLogin = true
-    
   }
   //upDate User name
 

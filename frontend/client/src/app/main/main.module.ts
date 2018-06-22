@@ -10,6 +10,7 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { SelectUserTypeComponent } from './select-user-type/select-user-type.component';
 import { UserTypeGuard } from '../guards/usertype.guard';
 import { FormsModule } from '@angular/forms';
+import { inspectrGuard } from '../guards/inspector.guard';
 
 const routes: Routes = [
   {
@@ -37,7 +38,7 @@ const routes: Routes = [
       {
         path: "inspector/wizard",
         loadChildren: './inspector/inspector.module#InspectorModule',
-        canActivate: [AuthGuard, UserTypeGuard]
+        canActivate: [AuthGuard, UserTypeGuard,inspectrGuard]
       },
       {
         path: "blog",

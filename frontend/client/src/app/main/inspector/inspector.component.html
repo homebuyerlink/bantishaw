@@ -75,9 +75,10 @@
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="city" placeholder="City"
                 ngModel required>
             </div>
-            <div class="col-sm-6">
-              <div class="ct-form--item">
-                <select name="state" ngModel required>
+            <div class="row">
+              <div class="col-sm-6 ">
+
+                <select name="state" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ngModel required>
                   <option value="">State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
@@ -131,8 +132,10 @@
                   <option value="WI">Wisconsin</option>
                   <option value="WY">Wyoming</option>
                 </select>
+
               </div>
             </div>
+
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="zip" type="text" placeholder="Zip/Postal"
                 ngModel required>
@@ -157,7 +160,6 @@
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="founded" type="date" placeholder="Founded"
                 ngModel required>
             </div>
-
             <!--For image upload-->
             <!-- <div class="form-group">
               <label class="control-label" for="image">Upload Image
@@ -286,51 +288,51 @@
   <br>
   <br>
   <div class="container">
-    <form [formGroup]="inspectorDetailForm" novalidate (ngSubmit)="save(inspectorDetailForm)">
-      <div >
+    <form [formGroup]="inspectorDetailForm" novalidate (ngSubmit)="saveInspectorDetail(inspectorDetailForm)">
+      <div>
         <h3>Inspector's Details</h3>
         <br>
         <br>
         <div formArrayName="inspectorDetailArray">
-        <div *ngFor="let ctrl of  inspectorDetailForm.get('inspectorDetailArray').controls; let i=index" [formGroupName]="i">
+          <div *ngFor="let ctrl of  inspectorDetailForm.get('inspectorDetailArray').controls; let i=index" [formGroupName]="i">
 
 
-          <div class="row">
-            <div class="col-md-11 offset-md-1">
+            <div class="row">
+              <div class="col-md-11 offset-md-1">
 
-              <div class="row">
-                <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
-                    formControlName="name">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
+                      formControlName="name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
+                      formControlName="designation">
+                  </div>
                 </div>
-                <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
-                    formControlName="designation">
-                </div>
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Email"
+                  formControlName="email">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
+                  formControlName="phone">
+                <br>
+
+
               </div>
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Email"
-                formControlName="email">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
-                formControlName="phone">
-              <br>
-
-
             </div>
+            <hr>
           </div>
-          <hr>
-        </div>
-      
-      </div>
 
-      <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button> 
-      <!--Tags-->
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button>
+        <!--Tags-->
         <br>
         <br>
         <br>
         <br>
         <div class="form-group">
           <label class="control-label" for="tags">Tags</label>
-          
+
           <br>
           <br>
           <br>
@@ -345,7 +347,7 @@
         <br>
         <!--End of tags-->
 
-       
+
         <ul class="list-inline pull-right">
           <li>
             <button type="submit" class="btn btn-primary next-step">Save and continue</button>
@@ -412,11 +414,9 @@
   <br>
   <section class="ct-u-paddingTop50 ct-u-paddingBottom100">
     <div class="container">
-      <form [formGroup]="inspectorDetailFormStep3" novalidate (ngSubmit)="saveStep3(inspectorDetailFormStep3)">
-        <div formArrayName="inspectorDetailArrayStep3">
-          <div *ngFor="let ctrl of  inspectorDetailFormStep3.get('inspectorDetailArrayStep3').controls; let i=index" [formGroupName]="i">
-
-
+      <form [formGroup]="servicesFormStep3"  (ngSubmit)="saveServices(inspectorDetailFormStep3)">
+        <div formArrayName="servicesArray">
+          <div *ngFor="let ctrl of  servicesFormStep3.get('servicesArray').controls; let i=index" [formGroupName]="i">
             <div class="row">
               <div class="col-md-11 offset-md-1">
                 <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name"
@@ -463,5 +463,380 @@
 </ng-container>
 <!--End step 3-->
 <!--step4-->
-<ng-container *ngIf="step4"></ng-container>
+<ng-container *ngIf="step4">
+
+ 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <header style="background-color: #393939;padding: 13px;">
+      <div class="ct-mediaSection-inner">
+        <div class="container">
+          <div class="ct-steps--submission center-block ct-u-marginBottom20">
+            <div class="ct-steps--item ct-steps--past">
+              <div class="ct-steps--counter">
+                <span>1</span>
+              </div>
+            </div>
+            <div class="ct-steps--item ct-steps--past">
+              <div class="ct-steps--counter">
+                <span>2</span>
+              </div>
+            </div>
+            <div class="ct-steps--item ct-steps--progress">
+              <div class="ct-steps--counter">
+                <span>3</span>
+              </div>
+            </div>
+            <div class="ct-steps--item">
+              <div class="ct-steps--counter ct-steps--active">
+                <span>4</span>
+              </div>
+            </div>
+          </div>
+          <div class="ct-u-displayTable ct-steps--title text-center">
+            <div class="ct-u-displayTableCell">
+              <span>Company Details</span>
+            </div>
+            <div class="ct-u-displayTableCell">
+              <span>Inspector Details</span>
+            </div>
+            <div class="ct-u-displayTableCell">
+              <span>Services</span>
+            </div>
+            <div class="ct-u-displayTableCell">
+              <span>Time Slot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <form [formGroup]="inspectorDetailFormStep4" (ngSubmit)="saveStep4(inspectorDetailFormStep4)">
+        <div class="row">
+          <div class="col col-md-2">
+            <div formArrayName="mondaySchedule">
+              <div>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Mon</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let ctrl of  inspectorDetailFormStep4.get('mondaySchedule').controls; let i=index" [formGroupName]="i">
+                    <tr>
+                      <td>Start</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="mondayStartTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Finish</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="mondayEndTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                      <hr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button type="button" (click)="addMoretoMondaySchedule()" class="btn btn-primary">
+                <span style="text-align: left">+Block</span>
+              </button>
+            </div>
+          </div>
+          <!--Tuesday starts from here-->
+          <div class="col col-md-2">
+            <div formArrayName="tuesdaySchedule">
+              <div>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Tuesday</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let ctrl of  inspectorDetailFormStep4.get('tuesdaySchedule').controls; let i=index" [formGroupName]="i">
+                    <tr>
+                      <td>Start</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="tuesdayStartTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Finish</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="tuesdayEndTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                      <hr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button type="button" (click)="addMoretoTuesdaySchedule()" class="btn btn-primary">
+                <span style="text-align: left">+Block</span>
+              </button>
+            </div>
+          </div>
+          <!--Wednesday Schedule starts from here-->
+          <div class="col col-md-2">
+            <div formArrayName="wednesdaySchedule">
+              <div>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Wednesday</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let ctrl of  inspectorDetailFormStep4.get('wednesdaySchedule').controls; let i=index" [formGroupName]="i">
+                    <tr>
+                      <td>Start</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="wednesdayStartTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Finish</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="wednesdayEndTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                      <hr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button type="button" (click)="addMoretoWednesdaySchedule()" class="btn btn-primary">
+                <span style="text-align: left">+Block</span>
+              </button>
+            </div>
+          </div>
+          <!--Thursday Schedule-->
+          <div class="col col-md-2">
+            <div formArrayName="thursdaySchedule">
+              <div>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Thursday</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let ctrl of  inspectorDetailFormStep4.get('thursdaySchedule').controls; let i=index" [formGroupName]="i">
+                    <tr>
+                      <td>Start</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="thursdayStartTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Finish</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="thursdayEndTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                      <hr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button type="button" (click)="addMoretoThursdaySchedule()" class="btn btn-primary">
+                <span style="text-align: left">+Block</span>
+              </button>
+            </div>
+          </div>
+          <!--Friday Schedule -->
+           <div class="col col-md-2"> 
+              <div formArrayName="firdaySchedule">
+                <div>
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Friday</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let ctrl of  inspectorDetailFormStep4.get('firdaySchedule').controls; let i=index" [formGroupName]="i">
+                      <tr>
+                        <td>Start</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input formControlName="firdayStartTime" class="form-control" type="number" min="0" max="23">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Finish</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input formControlName="firdayEndTime" class="form-control" type="number" min="0" max="23">
+                        </td>
+                        <hr>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <button type="button" (click)="addMoretoFridaySchedule()" class="btn btn-primary">
+                  <span style="text-align: left">+Block</span>
+                </button>
+              </div>
+            </div> 
+          <!--Saturday Schedule-->
+          <div class="col col-md-2">
+            <div formArrayName="saturdaySchedule">
+              <div>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Saturday</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let ctrl of  inspectorDetailFormStep4.get('saturdaySchedule').controls; let i=index" [formGroupName]="i">
+                    <tr>
+                      <td>Start</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="saturdayStartTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Finish</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="saturdayEndTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                      <hr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button type="button" (click)="addMoretoSaturdaySchedule()" class="btn btn-primary">
+                <span style="text-align: left">+Block</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-offset-4 col col-md-2">
+            <div formArrayName="sundaySchedule">
+              <div>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Sunday</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let ctrl of  inspectorDetailFormStep4.get('sundaySchedule').controls; let i=index" [formGroupName]="i">
+                    <tr>
+                      <td>Start</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="sundayStartTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Finish</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input formControlName="sundayEndTime" class="form-control" type="number" min="0" max="23">
+                      </td>
+                      <hr>
+                    </tr>
+    
+                  </tbody>
+                </table>
+              </div>
+              <button type="button" (click)="addMoretoSundaySchedule()" class="btn btn-primary">
+                <span style="text-align: left">+Block</span>
+              </button>
+            </div>
+          </div>
+    
+        </div>
+    
+    
+      </form>
+      <div class="row">
+        <div class="col-md-12 ">
+          <h3>Time Slot</h3>
+          <br>
+          <br>
+    
+          <h3>Calender</h3>
+          <small>Calender here</small>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-2">
+              <label for="notification">Notification</label>
+            </div>
+            <div class="col-md-10">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="email" placeholder="Email Address"
+                required="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <label for="notification">Text Alert</label>
+            </div>
+            <div class="col-md-10">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Text Alert"
+                required="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label for="notification">Dn't Allow Scheduling within</label>
+            </div>
+            <div class="col-md-4">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="time limit"
+                required="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label for="notification">Stand-Alone Scheduler Page</label>
+            </div>
+            <div class="col-md-8">
+              <button type="button" class="btn btn-primary">My Online Schedule</button>
+            </div>
+          </div>
+          <br>
+          <ul class="list-inline pull-right">
+            <li>
+              <button type="submit" class="btn btn-primary">Save and Finish</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+
+</ng-container>
 <!--End step 4-->

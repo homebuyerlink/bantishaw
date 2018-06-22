@@ -1,17 +1,18 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren } from '@angular/core';
 import { NgForm, FormArray, Validators, EmailValidator, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
-import { CompanyService } from '../../services/inspector.service';
+
 declare const google: any;
 import { FileUploader, FileItem } from 'ng2-file-upload';
 import { Config } from '../../config';
+import { InspectorService } from '../../services/inspector.service';
 @Component({
   selector: 'app-inspector',
   templateUrl: './inspector.component.html',
   styleUrls: ['./inspector.component.css']
 })
 export class InspectorComponent implements OnInit, AfterViewInit {
-
+  public inspectorDetailFormStep4: FormGroup;
   public latitude: any;
   public longitude: any;
   public address = '';
@@ -19,18 +20,18 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public cityCircle: any;
-  public step1: boolean = false;
+  public step1: boolean = true;
   public step2: boolean = false;
-  public step3: boolean = true;
+  public step3: boolean = false;
   public step4: boolean = false;
   public inspectorDetailForm: FormGroup;
-  public inspectorDetailFormStep3: FormGroup;
+  public servicesFormStep3: FormGroup;
   public URL = `${Config.API_BASE}/utils/upload`;
   public uploader: FileUploader = new FileUploader({
     url: this.URL,
   });
   public image = "";
-  constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private company: CompanyService) { }
+  constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private inspector: InspectorService) { }
   ngAfterViewInit() {
     this.initmap();
   }
@@ -42,9 +43,19 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       )
     });
     //3rd step
-    this.inspectorDetailFormStep3 = new FormGroup({
-      'inspectorDetailArrayStep3': this._fb.array([this.initinspectorDetail3rd()])
-    })
+    this.servicesFormStep3 = new FormGroup({
+      'servicesArray': this._fb.array([this.initinspectorServicesDetail()])
+    });
+    //4th step
+    this.inspectorDetailFormStep4 = new FormGroup({
+      'mondaySchedule': this._fb.array([this.initmondaySchedule()]),
+      'tuesdaySchedule': this._fb.array([this.initTuesdaySchedule()]),
+      'wednesdaySchedule': this._fb.array([this.initWednesdaySchedule()]),
+      'thursdaySchedule': this._fb.array([this.initThursdaySchedule()]),
+      'firdaySchedule': this._fb.array([this.initFridaySchedule()]),
+      'saturdaySchedule': this._fb.array([this.initSaturdaySchedule()]),
+      'sundaySchedule': this._fb.array([this.initSundaySchedule()])
+    });
   }
 
   private async afterPictureUpload(companyBasicInfo) {
@@ -108,7 +119,7 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       let gplus = companyBasicInfo.value['gplus'];
       let twitter = companyBasicInfo.value['twitter'];
       let associations = companyBasicInfo.value['associations'];
-      let response = await this.company.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, image, lat, lng, radius, userId,
+      let response = await this.inspector.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, image, lat, lng, radius, userId,
         facebook, youtube, instagram, gplus, twitter, associations);
       console.log(response);
     } catch (error) {
@@ -116,14 +127,14 @@ export class InspectorComponent implements OnInit, AfterViewInit {
     }
   }
   //2nd step
-  save() {
+  async saveInspectorDetail() {
     let values = this.inspectorDetailForm.value['inspectorDetailArray'];
     console.log(values);
-
     console.log("value of tag array", this.inspectorDetailForm.value['tags']);
     let teamMembers = this.teams.push(values);
     console.log(teamMembers);
-
+    //call the service here
+    // let response=await this.company.saveDetailsStep2()
     // const val: Array<any> = [
     //   // this.purchaseForm.value['sD'],
     //   // this.purchaseForm.value['ref'],
@@ -135,9 +146,12 @@ export class InspectorComponent implements OnInit, AfterViewInit {
     // console.log(this.purchaseForm.valid);
   }
   //3rd step
-  saveStep3() {
-    let values = this.inspectorDetailFormStep3.value['inspectorDetailArrayStep3'];
-
+  saveServices() {
+    let values = this.servicesFormStep3.value['servicesArray'];
+  }
+  //4th
+  saveStep4(inspectorDetailFormStep4) {
+    console.log();
   }
 
   initinspectorDetail() {
@@ -146,8 +160,7 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       designation: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
-      image: [Validators.required],
-
+      image: [Validators.required]
     });
   }
   addMoreDetail() {
@@ -159,22 +172,19 @@ export class InspectorComponent implements OnInit, AfterViewInit {
     control.removeAt(i);
   }
 
-  initinspectorDetail3rd() {
+  initinspectorServicesDetail() {
     return this._fb.group({
       name: ['', Validators.required],
       image: ['', Validators.required],
       price: ['', Validators.required],
       promo: ['', Validators.required],
       details: ['', Validators.required],
-
     });
   }
   addMoreDetailStep3() {
-    const control = <FormArray>this.inspectorDetailFormStep3.controls['inspectorDetailArrayStep3'];
-    control.push(this.initinspectorDetail3rd());
+    const control = <FormArray>this.servicesFormStep3.controls['servicesArray'];
+    control.push(this.initinspectorServicesDetail());
   }
-
-
   //google map cred
   initmap() {
 
@@ -222,7 +232,6 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       console.log(this.latitude, this.longitude);
     });
   }
-
   private setMap(mapProp) {
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
     var input = document.getElementById('address');
@@ -234,11 +243,9 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       });
       searchBox.addListener('places_changed', () => {
         var places = searchBox.getPlaces();
-
         if (places.length == 0) {
           return;
         }
-
         // For each place, get the icon, name and location.
         var bounds = new google.maps.LatLngBounds();
         places.forEach((place) => {
@@ -253,10 +260,8 @@ export class InspectorComponent implements OnInit, AfterViewInit {
             anchor: new google.maps.Point(17, 34),
             scaledSize: new google.maps.Size(25, 25)
           };
-
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
-
           if (place.geometry.viewport) {
             // Only geocodes have viewport.
             bounds.union(place.geometry.viewport);
@@ -281,5 +286,81 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   //   });
   //   this.map.fitBounds(this.cityCircle.getBounds());
   // }
-
+  //monday block
+  initmondaySchedule() {
+    return this._fb.group({
+      mondayStartTime: ['', Validators.required],
+      mondayEndTime: ['', Validators.required]
+    });
+  }
+  addMoretoMondaySchedule() {
+    const control = <FormArray>this.inspectorDetailFormStep4.controls['mondaySchedule'];
+    control.push(this.initmondaySchedule());
+  }
+  //tuesday block
+  initTuesdaySchedule() {
+    return this._fb.group({
+      tuesdayStartTime: ['', Validators.required],
+      tuesdayEndTime: ['', Validators.required]
+    });
+  }
+  addMoretoTuesdaySchedule() {
+    const control = <FormArray>this.inspectorDetailFormStep4.controls['tuesdaySchedule'];
+    control.push(this.initTuesdaySchedule());
+  }
+  //wednesday block
+  initWednesdaySchedule() {
+    return this._fb.group({
+      wednesdayStartTime: ['', Validators.required],
+      wednesdayEndTime: ['', Validators.required]
+    });
+  }
+  addMoretoWednesdaySchedule() {
+    const control = <FormArray>this.inspectorDetailFormStep4.controls['wednesdaySchedule'];
+    control.push(this.initWednesdaySchedule());
+  }
+  //thursday block
+  initThursdaySchedule() {
+    return this._fb.group({
+      thursdayStartTime: ['', Validators.required],
+      thursdayEndTime: ['', Validators.required]
+    });
+  }
+  addMoretoThursdaySchedule() {
+    const control = <FormArray>this.inspectorDetailFormStep4.controls['thursdaySchedule'];
+    control.push(this.initThursdaySchedule());
+  }
+  //friday block
+  initFridaySchedule() {
+    return this._fb.group({
+      firdayStartTime: ['', Validators.required],
+      firdayEndTime: ['', Validators.required]
+    });
+  }
+  addMoretoFridaySchedule() {
+    const control = <FormArray>this.inspectorDetailFormStep4.controls['firdaySchedule'];
+    control.push(this.initFridaySchedule());
+  }
+  //saturday block
+  initSaturdaySchedule() {
+    return this._fb.group({
+      saturdayStartTime: ['', Validators.required],
+      saturdayEndTime: ['', Validators.required]
+    });
+  }
+  addMoretoSaturdaySchedule() {
+    const control = <FormArray>this.inspectorDetailFormStep4.controls['saturdaySchedule'];
+    control.push(this.initSaturdaySchedule());
+  }
+  //sunday block
+  initSundaySchedule() {
+    return this._fb.group({
+      sundayStartTime: ['', Validators.required],
+      sundayEndTime: ['', Validators.required]
+    });
+  }
+  addMoretoSundaySchedule() {
+    const control = <FormArray>this.inspectorDetailFormStep4.controls['sundaySchedule'];
+    control.push(this.initSundaySchedule());
+  }
 }

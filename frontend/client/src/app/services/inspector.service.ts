@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 
-export class CompanyService {
+export class InspectorService {
 
   constructor(private httpClient: HttpClient, private router: Router) { }
   //step 1
