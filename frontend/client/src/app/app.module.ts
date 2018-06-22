@@ -11,6 +11,7 @@ import { ServiceProviderGuard } from './guards/serviceprovider.guard';
 import { CompanyService } from './services/inspector.service';
 import { TagInputModule } from 'ngx-chips';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LawyerService } from './services/lawyer.service';
 const routes: Routes = [
   {
     path: "",
@@ -31,7 +32,7 @@ const routes: Routes = [
     TagInputModule,
     BrowserAnimationsModule
   ],
-  providers: [CompanyService,AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
+  providers: [LawyerService, CompanyService, AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

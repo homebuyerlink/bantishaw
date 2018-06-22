@@ -157,16 +157,10 @@
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="founded" type="date" placeholder="Founded"
                 ngModel required>
             </div>
-
-            <!--For image upload-->
-            <!-- <div class="form-group">
-              <label class="control-label" for="image">Upload Image
-                <span class="text-danger">*</span>
-              </label>
-              <input type="file" ng2FileSelect [uploader]="uploader" name="images" class="form-control-file">
-              <button class="btn btn-default form-control" (click)="discardFiles()" *ngIf="uploader.queue.length > 0">{{uploader.queue.length}} Files! Click To Discard!</button>
-            </div> -->
-            <!-- <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="About Company Profile"></textarea><br><br> -->
+            <div class="form-group">
+              <label for="image">Profile Picture</label>
+              <input type="file" ng2FileSelect [uploader]="uploader" name="image" class="form-control-file">
+            </div>
             <h3>Link Social Media and Other Links</h3>
             <br>
             <br>
@@ -287,50 +281,50 @@
   <br>
   <div class="container">
     <form [formGroup]="inspectorDetailForm" novalidate (ngSubmit)="save(inspectorDetailForm)">
-      <div >
+      <div>
         <h3>Inspector's Details</h3>
         <br>
         <br>
         <div formArrayName="inspectorDetailArray">
-        <div *ngFor="let ctrl of  inspectorDetailForm.get('inspectorDetailArray').controls; let i=index" [formGroupName]="i">
+          <div *ngFor="let ctrl of  inspectorDetailForm.get('inspectorDetailArray').controls; let i=index" [formGroupName]="i">
 
 
-          <div class="row">
-            <div class="col-md-11 offset-md-1">
+            <div class="row">
+              <div class="col-md-11 offset-md-1">
 
-              <div class="row">
-                <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
-                    formControlName="name">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
+                      formControlName="name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
+                      formControlName="designation">
+                  </div>
                 </div>
-                <div class="col-sm-6">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
-                    formControlName="designation">
-                </div>
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Email"
+                  formControlName="email">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
+                  formControlName="phone">
+                <br>
+
+
               </div>
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Email"
-                formControlName="email">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
-                formControlName="phone">
-              <br>
-
-
             </div>
+            <hr>
           </div>
-          <hr>
-        </div>
-      
-      </div>
 
-      <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button> 
-      <!--Tags-->
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button>
+        <!--Tags-->
         <br>
         <br>
         <br>
         <br>
         <div class="form-group">
           <label class="control-label" for="tags">Tags</label>
-          
+
           <br>
           <br>
           <br>
@@ -345,7 +339,7 @@
         <br>
         <!--End of tags-->
 
-       
+
         <ul class="list-inline pull-right">
           <li>
             <button type="submit" class="btn btn-primary next-step">Save and continue</button>

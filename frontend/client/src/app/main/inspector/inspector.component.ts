@@ -3,13 +3,15 @@ import { NgForm, FormArray, Validators, EmailValidator, FormBuilder, FormGroup, 
 import { AuthenticationService } from '../../services/authentication.service';
 import { CompanyService } from '../../services/inspector.service';
 declare const google: any;
-import { FileUploader, FileItem } from 'ng2-file-upload';
+import { FileUploader } from 'ng2-file-upload';
 import { Config } from '../../config';
+
 @Component({
   selector: 'app-inspector',
   templateUrl: './inspector.component.html',
   styleUrls: ['./inspector.component.css']
 })
+
 export class InspectorComponent implements OnInit, AfterViewInit {
 
   public latitude: any;
@@ -20,20 +22,23 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   map: any;
   public cityCircle: any;
   public step1: boolean = false;
-  public step2: boolean = false;
-  public step3: boolean = true;
+  public step2: boolean = true;
+  public Step2: boolean = false;
   public step4: boolean = false;
   public inspectorDetailForm: FormGroup;
-  public inspectorDetailFormStep3: FormGroup;
+  public inspectorDetailFormStep2: FormGroup;
   public URL = `${Config.API_BASE}/utils/upload`;
   public uploader: FileUploader = new FileUploader({
     url: this.URL,
   });
-  public image = "";
+  public image = '';
+
   constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private company: CompanyService) { }
+
   ngAfterViewInit() {
     this.initmap();
   }
+
   ngOnInit() {
     let ctrl = new FormControl(null, Validators.required);
     this.inspectorDetailForm = new FormGroup({
@@ -41,51 +46,22 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       'inspectorDetailArray': this._fb.array([this.initinspectorDetail()],
       )
     });
-    //3rd step
-    this.inspectorDetailFormStep3 = new FormGroup({
-      'inspectorDetailArrayStep3': this._fb.array([this.initinspectorDetail3rd()])
+    //2nd step
+    this.inspectorDetailFormStep2 = new FormGroup({
+      'inspectorDetailArrayStep2': this._fb.array([this.initinspectorDetail2nd()])
     })
-  }
-
-  private async afterPictureUpload(companyBasicInfo) {
-    // try {
-    //   let name = companyBasicInfo.value['name'];
-    //   let addressLine1 = companyBasicInfo.value['addressLine1'];
-    //   let addressLine2 = companyBasicInfo.value['addressLine2'];
-    //   let city = companyBasicInfo.value['city'];
-    //   let state = companyBasicInfo.value['state'];
-    //   let zip = companyBasicInfo.value['zip'];
-    //   let phone = companyBasicInfo.value['phone'];
-    //   let email = companyBasicInfo.value['email'];
-    //   let website = companyBasicInfo.value['website'];
-    //   let founded = companyBasicInfo.value['founded'];
-    //   let lat = this.latitude;
-    //   let lng = this.longitude;
-    //   let radius = 50;
-    //   let userId = this.authservice.profile._id;
-    //   let facebook = companyBasicInfo.value['facebook'];
-    //   let youtube = companyBasicInfo.value['youtube'];
-    //   let instagram = companyBasicInfo.value['instagram'];
-    //   let gplus = companyBasicInfo.value['gplus'];
-    //   let twitter = companyBasicInfo.value['twitter'];
-    //   let associations = companyBasicInfo.value['associations'];
-    //   let response = await this.company.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId,
-    //     facebook, youtube, instagram, gplus, twitter, associations);
-    //   console.log(response);
-    // } catch (error) {
-    //   alert(error);
-    // }
   }
 
   //1st  step form
   async onSubmittingBasicInfoForm(companyBasicInfo: NgForm) {
-    // this.uploader.uploadAll();
-    // this.uploader.queue[0].onSuccess = (response, status, headers) => {
-    //   this.image = JSON.parse(response)[0];
-    //   this.afterPictureUpload(companyBasicInfo);
-    // }
+    this.uploader.uploadAll();
+    this.uploader.queue[0].onSuccess = (response, status, headers) => {
+      this.image = JSON.parse(response).url;
+      this.afterPictureUpload(companyBasicInfo);
+    }
+  }
 
-
+  private async afterPictureUpload(companyBasicInfo) {
     try {
       let name = companyBasicInfo.value['name'];
       let addressLine1 = companyBasicInfo.value['addressLine1'];
@@ -100,7 +76,6 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       let lat = this.latitude;
       let lng = this.longitude;
       let radius = 50;
-      let image = "abc";
       let userId = this.authservice.profile._id;
       let facebook = companyBasicInfo.value['facebook'];
       let youtube = companyBasicInfo.value['youtube'];
@@ -108,35 +83,17 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       let gplus = companyBasicInfo.value['gplus'];
       let twitter = companyBasicInfo.value['twitter'];
       let associations = companyBasicInfo.value['associations'];
-      let response = await this.company.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, image, lat, lng, radius, userId,
+      let response = await this.company.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId,
         facebook, youtube, instagram, gplus, twitter, associations);
       console.log(response);
     } catch (error) {
       alert(error);
     }
   }
+
   //2nd step
-  save() {
-    let values = this.inspectorDetailForm.value['inspectorDetailArray'];
-    console.log(values);
-
-    console.log("value of tag array", this.inspectorDetailForm.value['tags']);
-    let teamMembers = this.teams.push(values);
-    console.log(teamMembers);
-
-    // const val: Array<any> = [
-    //   // this.purchaseForm.value['sD'],
-    //   // this.purchaseForm.value['ref'],
-    //   // this.purchaseForm.value['pL'],
-    //   // this.purchaseForm.value['email'],
-    //   this.purchaseForm.value['newRowArray']
-    // ]
-    // console.log(JSON.stringify(val));
-    // console.log(this.purchaseForm.valid);
-  }
-  //3rd step
-  saveStep3() {
-    let values = this.inspectorDetailFormStep3.value['inspectorDetailArrayStep3'];
+  saveStep2() {
+    let values = this.inspectorDetailFormStep2.value['inspectorDetailArrayStep2'];
 
   }
 
@@ -159,7 +116,7 @@ export class InspectorComponent implements OnInit, AfterViewInit {
     control.removeAt(i);
   }
 
-  initinspectorDetail3rd() {
+  initinspectorDetail2nd() {
     return this._fb.group({
       name: ['', Validators.required],
       image: ['', Validators.required],
@@ -169,15 +126,15 @@ export class InspectorComponent implements OnInit, AfterViewInit {
 
     });
   }
-  addMoreDetailStep3() {
-    const control = <FormArray>this.inspectorDetailFormStep3.controls['inspectorDetailArrayStep3'];
-    control.push(this.initinspectorDetail3rd());
+  addMoreDetailStep2() {
+    const control = <FormArray>this.inspectorDetailFormStep2.controls['inspectorDetailArrayStep2'];
+    control.push(this.initinspectorDetail2nd());
   }
-
 
   //google map cred
   initmap() {
-
+    this.latitude = 50.186769;
+    this.longitude = 8.698247;
     var mapProp = new google.maps.Map(this.gmapElement.nativeElement, {
       zoom: 12,
       center: new google.maps.LatLng(this.latitude, this.longitude),
@@ -219,7 +176,6 @@ export class InspectorComponent implements OnInit, AfterViewInit {
     google.maps.event.addListener(marker, 'dragend', (event) => {
       this.latitude = event.latLng.lat();
       this.longitude = event.latLng.lng();
-      console.log(this.latitude, this.longitude);
     });
   }
 
@@ -268,18 +224,5 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       });
     }
   }
-  // setRadius() {
-  //   this.cityCircle = new google.maps.Circle({
-  //     strokeColor: '#FF0000',
-  //     strokeOpacity: 0.8,
-  //     strokeWeight: 2,
-  //     fillColor: '#FF0000',
-  //     fillOpacity: 0.35,
-  //     map: this.map,
-  //     center: { lat: this.latitude, lng: this.longitude },
-  //     radius: 5 * 1000
-  //   });
-  //   this.map.fitBounds(this.cityCircle.getBounds());
-  // }
 
 }

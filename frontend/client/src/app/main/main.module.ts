@@ -40,6 +40,11 @@ const routes: Routes = [
          canActivate:[AuthGuard,UserTypeGuard]
       },
       {
+        path: "lawyer",
+        loadChildren: './lawyer/lawyer.module#LawyerModule',
+         canActivate:[AuthGuard]
+      },
+      {
         path: "blog",
         loadChildren: './blog/blog.module#BlogModule'
       }
