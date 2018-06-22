@@ -15,31 +15,25 @@ export class SelectUserTypeComponent implements OnInit {
   constructor(private autheticationService: AuthenticationService,private router:Router) { }
 
   ngOnInit() {
-    
-
-    if (this.autheticationService.profile.username===undefined) {
-      this.step1 = true;
-      this.step2=false;   
+    if (this.autheticationService.profile.username==null) {
+      this.step1 = true; 
     }
-
     else{
-      this.step1 = false;
+      this.step1=false;
       this.step2=true; 
-    }
-   
-    console.log(this.autheticationService.profile._id);
-    
+    }    
   }
   //for updating the name
   async onSubmittingUserTypeStep1(userTypeStep1: NgForm) {
-    try {
-     
-      
-      await this.autheticationService.updateUserName(this.autheticationService.profile._id, userTypeStep1.value['username']);
+    try { 
+    await this.autheticationService.updateUserName(this.autheticationService.profile._id, userTypeStep1.value['username']);
+    if(this.autheticationService.profile.userType===undefined){
       this.step1 = false;
       this.step2=true; 
-    
-     
+    }
+    else{
+      this.router.navigate(['/']);
+    }
     } catch (error) {
       alert(error.error.message)
     }

@@ -76,30 +76,19 @@
                                   <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="password" type="Password" placeholder="Password"
                                     ngModel required>
                                   <div>
-
-
-
-
-
-
-                                    <button (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
+                                    <button type="button" (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
                                       Login with Facebook
                                     </button>
-                                    <button (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
+                                    <button type="button" (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
                                       Login with Google
                                     </button>
                                   </div>
                                   <br>
                                   <br>
                                   <br>
-
-                                 <span class="alert-danger">
-
-
+                                  <span class="alert-danger">
                                     <p style="color: red">{{errormessage}}</p>
-                                 </span>
-                                   
-                                  
+                                  </span>
                                   <div class="row">
                                     <div class="col-md-offset-9 col-sm-3">
 
@@ -137,10 +126,10 @@
                                     </div>
                                   </div>
                                   <div>
-                                    <button (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
+                                    <button type="button" (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
                                       Login with Facebook
                                     </button>
-                                    <button (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
+                                    <button type="button" (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
                                       Login with Google
                                     </button>
                                   </div>
@@ -186,7 +175,7 @@
                   <a routerLink="/dashboard/charity-view" class="no-back">Charity</a>
                 </li>
                 <li class="lis-drop-nav">
-                  <a routerLink="/dashboard/settings" class="no-back">Settings</a>
+                  <a routerLink="/inspector/wizard" class="no-back">Settings</a>
                 </li>
                 <li class="lis-drop-nav">
                   <a (click)="logOutMe()" style="cursor: pointer" class="no-back">Logout as {{authService.profile.username}}</a>

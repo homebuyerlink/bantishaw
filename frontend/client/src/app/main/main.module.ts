@@ -16,10 +16,12 @@ const routes: Routes = [
     path: "",
     component: MainComponent,
     
+    
     children: [
       {
         path: "",
-        loadChildren: './home/home.module#HomeModule'
+        loadChildren: './home/home.module#HomeModule',
+        
       },
       {
         path: "services",
@@ -33,7 +35,12 @@ const routes: Routes = [
       {
         path: "post-ad",
         loadChildren: './postad/postad.module#PostadModule',
-         canActivate:[UserTypeGuard]
+         canActivate:[AuthGuard,UserTypeGuard]
+      },
+      {
+        path: "inspector/wizard",
+        loadChildren: './inspector/inspector.module#InspectorModule',
+        //  canActivate:[AuthGuard,UserTypeGuard]
       },
       {
         path: "blog",
@@ -43,7 +50,7 @@ const routes: Routes = [
       {
         path: "dashboard",
         loadChildren: './dashboard/dashboard.module#DashboardModule',
-        canActivate:[AuthGuard]
+        canActivate:[AuthGuard,UserTypeGuard]
       
       },
       {
@@ -61,7 +68,8 @@ const routes: Routes = [
       },
       {
         path:"select-type",
-        component:SelectUserTypeComponent
+        component:SelectUserTypeComponent,
+        canActivate:[AuthGuard]
       }
     ]
   }
