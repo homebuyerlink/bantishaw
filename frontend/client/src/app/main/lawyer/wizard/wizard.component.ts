@@ -23,7 +23,7 @@ export class WizardComponent implements OnInit {
   public step2: boolean = false;
   public Step3: boolean = false;
   public inspectorDetailForm: FormGroup;
-  public inspectorDetailFormStep2: FormGroup;
+  public servicesForm: FormGroup;
   public URL = `${Config.API_BASE}/utils/upload`;
   public uploader: FileUploader = new FileUploader({
     url: this.URL,
@@ -33,12 +33,14 @@ export class WizardComponent implements OnInit {
   constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private lawyerService: LawyerService) { }
 
   ngAfterViewInit() {
-    this.initmap();
+    if (this.step1 == true) {
+      this.initmap();
+    }
   }
 
   ngOnInit() {
-    this.inspectorDetailFormStep2 = new FormGroup({
-      'inspectorDetailArrayStep2': this._fb.array([this.initinspectorDetail2nd()])
+    this.servicesForm = new FormGroup({
+      'servicesArray': this._fb.array([this.initService()])
     })
   }
 
@@ -82,7 +84,7 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  initinspectorDetail2nd() {
+  initService() {
     return this._fb.group({
       name: ['', Validators.required],
       image: ['', Validators.required],
@@ -93,9 +95,19 @@ export class WizardComponent implements OnInit {
     });
   }
 
-  addMoreDetailStep2() {
-    const control = <FormArray>this.inspectorDetailFormStep2.controls['inspectorDetailArrayStep2'];
-    control.push(this.initinspectorDetail2nd());
+  addMoreService() {
+    const control = <FormArray>this.servicesForm.controls['servicesArray'];
+    control.push(this.initService());
+  }
+
+  async setService() {
+    this.uploader.uploadAll();
+    this.uploader.queue[0].onSuccess = (response, status, headers) => {
+      this.image = JSON.parse(response).url;
+      console.log(this.image);
+    }
+
+    await this.lawyerService.setService(this.servicesForm.value.servicesArray);
   }
 
   initmap() {

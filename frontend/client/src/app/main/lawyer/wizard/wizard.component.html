@@ -50,8 +50,8 @@
           <h2>Company Details</h2>
           <br>
           <br>
-          <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="companyName" placeholder="Name of Company"
-            ngModel required>
+          <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="companyName"
+            placeholder="Name of Company" ngModel required>
           <div class="row">
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="lawyerName" placeholder="Lawyer Name"
@@ -243,12 +243,12 @@
     <div class="ct-mediaSection-inner">
       <div class="container">
         <div class="ct-steps--submission center-block ct-u-marginBottom20">
-          <div class="ct-steps--item ct-steps--progress" style="width: 44%;">
+          <div class="ct-steps--item ct-steps--progress" style="width: 50%;">
             <div class="ct-steps--counter">
               <span>1</span>
             </div>
           </div>
-          <div class="ct-steps--item" style="width: 56%;">
+          <div class="ct-steps--item" style="width: 50%;">
             <div class="ct-steps--counter ct-steps--active">
               <span>2</span>
             </div>
@@ -277,21 +277,24 @@
   <br>
   <section class="ct-u-paddingTop50 ct-u-paddingBottom100">
     <div class="container">
-      <form [formGroup]="inspectorDetailFormStep2" novalidate (ngSubmit)="saveStep2(inspectorDetailFormStep2)">
-        <div formArrayName="inspectorDetailArrayStep2">
-          <div *ngFor="let ctrl of  inspectorDetailFormStep2.get('inspectorDetailArrayStep2').controls; let i=index" [formGroupName]="i">
+      <form [formGroup]="servicesForm" novalidate (ngSubmit)="setService(servicesForm)">
+        <div formArrayName="servicesArray">
+          <div *ngFor="let ctrl of  servicesForm.get('servicesArray').controls; let i=index" [formGroupName]="i">
             <div class="row">
               <div class="col-md-11 offset-md-1">
                 <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name"
                   formControlName="name">
                 <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-4">
                     <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price"
                       formControlName="price">
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-4">
                     <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer"
                       formControlName="promo">
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="file" ng2FileSelect [uploader]="uploader" name="images" class="form-control-file">
                   </div>
                 </div>
                 <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"
@@ -301,12 +304,11 @@
             </div>
           </div>
         </div>
-
-        <button type="button" (click)="addMoreDetailStep2()" class="btn btn-primary">Add More Services</button>
+        <button type="button" (click)="addMoreService()" class="btn btn-primary">Add More Services</button>
         <br>
         <ul class="list-inline pull-right">
           <li>
-            <a routerLink="/dashboard/settings/step4" class="btn btn-primary next-step">Save and continue</a>
+            <button type="submit" class="btn btn-primary next-step">Save and continue</button>
           </li>
         </ul>
       </form>
@@ -327,12 +329,12 @@
     <div class="ct-mediaSection-inner">
       <div class="container">
         <div class="ct-steps--submission center-block ct-u-marginBottom20">
-          <div class="ct-steps--item ct-steps--past" style="width: 44%;">
+          <div class="ct-steps--item ct-steps--past" style="width: 50%;">
             <div class="ct-steps--counter">
               <span>1</span>
             </div>
           </div>
-          <div class="ct-steps--item ct-steps--progress" style="width: 56%;">
+          <div class="ct-steps--item ct-steps--progress" style="width: 50%;">
             <div class="ct-steps--counter">
               <span>2</span>
             </div>

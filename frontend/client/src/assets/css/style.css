@@ -10480,7 +10480,7 @@ header {
 .ct-steps--submission .ct-steps--item:after {
   content: "";
   height: 16px;
-  width: 86%;
+  width: 88%;
   background-color: #fff;
   position: absolute;
   top: 50%;
