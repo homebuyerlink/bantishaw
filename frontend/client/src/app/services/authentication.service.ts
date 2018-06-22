@@ -44,7 +44,7 @@ export class AuthenticationService {
       }
       else return false;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
   //done
@@ -53,9 +53,7 @@ export class AuthenticationService {
       let body = { token: token };
       let response = await this.httpClient.post(`${Config.API_BASE}/user/profile`, body, Config.HEADERS).toPromise();
       this.profile = <any>response;
-     
     } catch (error) {
-      console.log(error);
     }
   }
 
