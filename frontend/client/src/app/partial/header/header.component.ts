@@ -10,7 +10,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 export class HeaderComponent implements OnInit {
 
   public errormessage: any;
-  constructor(private authService: AuthenticationService, private ngxSocialLoginAuthService: AuthService) { }
+  constructor(public authService: AuthenticationService, private ngxSocialLoginAuthService: AuthService) { }
 
   ngOnInit() {
   }

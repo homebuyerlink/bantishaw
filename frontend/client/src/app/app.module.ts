@@ -10,7 +10,7 @@ import { UserTypeGuard } from './guards/usertype.guard';
 import { ServiceProviderGuard } from './guards/serviceprovider.guard';
 import { InspectorService } from './services/inspector.service';
 import { TagInputModule } from 'ngx-chips';
-import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { inspectrGuard } from './guards/inspector.guard';
 const routes: Routes = [
   {
@@ -32,7 +32,14 @@ const routes: Routes = [
     TagInputModule,
     BrowserAnimationsModule
   ],
-  providers: [InspectorService,inspectrGuard,AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
+  providers: [
+    InspectorService,
+    inspectrGuard,
+    AuthenticationService,
+    AuthGuard,
+    UserTypeGuard,
+    ServiceProviderGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

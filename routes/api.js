@@ -11,6 +11,7 @@ const router = new Router();
 router.get('/user', userController.getUsers);
 router.get('/user/logout', userController.logout);
 router.get('/user/verify-email', userController.verifyEmail);
+router.get('/user/company', userController.getCompanyDetails);
 router.post('/user/signup', userController.signup);
 router.post('/user/login', userController.login);
 router.post('/user/login/social', userController.socialLogin);

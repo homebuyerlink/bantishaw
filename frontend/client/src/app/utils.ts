@@ -1,7 +1,5 @@
 
-import * as $ from 'jquery';
-declare const showLoader: any;
-declare const hideLoader: any;
+declare const mApp: any;
 
 export const Utils = Object.freeze({
     constructor() {
@@ -14,21 +12,22 @@ export const Utils = Object.freeze({
     //         timeout: 2000,
     //     }).show();
     // },
-    handleAuthError: function (error) {
-        if (error.status == 401) {
-            // this.authService.logout();
-        }
-    },
-    showErrorMessage: function (text, error) {
-        this.handleAuthError(error);
-        console.log(error);
-        // this.notification(`${text} ${JSON.stringify(error)}`, "error");
-        this.notification(`${text}`, "error");
-    },
+    // showErrorMessage: function (text, error) {
+    //     this.handleAuthError(error);
+    //     console.log(error);
+    //     // this.notification(`${text} ${JSON.stringify(error)}`, "error");
+    //     this.notification(`${text}`, "error");
+    // },
     showLoader: function (element) {
-        showLoader(element)
+        mApp.showLoader(element)
     },
     hideLoader: function (element) {
-        hideLoader(element);
+        mApp.hideLoader(element);
+    },
+    blockPage: function () {
+        mApp.blockPage();
+    },
+    unblockPage: function () {
+        mApp.unblockPage();
     }
 });

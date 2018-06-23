@@ -9,14 +9,20 @@ declare var JQuery: any;
 export class AuthenticationService {
 
   public profile = {
-    _id: '',
-    username: '',
-    userType: '',
-    email: '',
-    password: '',
-    authToken: '',
-    createdAt: '',
-    updatedAt: '',
+    isActive: false,
+    isEmailVerified: false,
+    profileWizardStep: 0,
+    profileWizardTotalSteps: 1,
+    _id: "",
+    email: "",
+    name: "",
+    photoUrl: "",
+    provider: "",
+    createdAt: "",
+    updatedAt: "",
+    token: "",
+    username: "",
+    userType: ""
   }
   public isLogin = false;
   constructor(private httpClient: HttpClient, private router: Router) { }
@@ -39,12 +45,12 @@ export class AuthenticationService {
       let response = await this.httpClient.post(`${Config.API_BASE}/user/login/check`, { token: token }, Config.HEADERS).toPromise();
       if ((<any>response).authenticated) {
         await this.getProfile(token);
-        this.isLogin = true;  
+        this.isLogin = true;
         return true;
       }
       else return false;
     } catch (error) {
-      // console.log(error);
+      return false;
     }
   }
   //done
@@ -54,35 +60,36 @@ export class AuthenticationService {
       let response = await this.httpClient.post(`${Config.API_BASE}/user/profile`, body, Config.HEADERS).toPromise();
       this.profile = <any>response;
     } catch (error) {
+      //
     }
   }
 
-  public loginWithToken(token) {
+  public async loginWithToken(token) {
     localStorage.setItem("token", token);
     (<any>$('#login-modal')).modal('hide');
-    this.getProfile(token);
-    console.log(this.profile.username);
-    console.log(this.profile.userType);
-    
-    if(this.profile.username===undefined || this.profile.userType===undefined){
+    await this.getProfile(token);
+    if (this.profile.username == null || this.profile.userType == null) {
       this.router.navigate(['/select-type']);
+    }
+    else if (this.profile.profileWizardTotalSteps - this.profile.profileWizardStep > 0) {
+      this.navigateToWizard();
     }
     this.isLogin = true
   }
   //upDate User name
 
-  public  updateUserName(userId, username) {
-    let body = { userId: userId, username: username };   
-    let response =  this.httpClient.put(`${Config.API_BASE}/user/username`, body, Config.HEADERS).toPromise();
+  public updateUserName(userId, username) {
+    let body = { userId: userId, username: username };
+    let response = this.httpClient.put(`${Config.API_BASE}/user/username`, body, Config.HEADERS).toPromise();
     return response;
   }
 
   //upDate User Type
 
-  public  updateUserType(userId, userType) {
-   
+  public updateUserType(userId, userType) {
+
     let body = { userId: userId, userType: userType };
-    let response =  this.httpClient.put(`${Config.API_BASE}/user/usertype`, body, Config.HEADERS).toPromise();
+    let response = this.httpClient.put(`${Config.API_BASE}/user/usertype`, body, Config.HEADERS).toPromise();
     return response;
   }
   //Log out 
@@ -98,5 +105,14 @@ export class AuthenticationService {
   public async getAuthState(user) {
     let response = await this.httpClient.post(`${Config.API_BASE}/user/login/social`, user).toPromise();
     return this.loginWithToken((<any>response).token);
+  }
+
+  private navigateToWizard() {
+    if (this.profile.userType == 'inspector') {
+      this.router.navigate(['/inspector/wizard']);
+    }
+    else if (this.profile.userType == 'lawyer') {
+      this.router.navigate(['/lawyer/wizard']);
+    }
   }
 }

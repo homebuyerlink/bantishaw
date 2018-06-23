@@ -11,6 +11,7 @@ import { SelectUserTypeComponent } from './select-user-type/select-user-type.com
 import { UserTypeGuard } from '../guards/usertype.guard';
 import { FormsModule } from '@angular/forms';
 import { inspectrGuard } from '../guards/inspector.guard';
+import { WizardGuard } from '../guards/wizard.guard';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        loadChildren: './home/home.module#HomeModule'
+        loadChildren: './home/home.module#HomeModule',
+        canActivate: [WizardGuard]
       },
       {
         path: "services",
@@ -38,12 +40,12 @@ const routes: Routes = [
       {
         path: "inspector/wizard",
         loadChildren: './inspector/inspector.module#InspectorModule',
-         canActivate:[AuthGuard,UserTypeGuard,inspectrGuard]
+        canActivate: [AuthGuard, UserTypeGuard, inspectrGuard]
       },
       {
         path: "lawyer",
         loadChildren: './lawyer/lawyer.module#LawyerModule',
-         canActivate:[AuthGuard]
+        canActivate: [AuthGuard]
       },
       {
         path: "blog",
@@ -85,6 +87,9 @@ const routes: Routes = [
     PartialModule,
     RouterModule.forChild(routes),
     FormsModule
+  ],
+  providers: [
+    WizardGuard
   ],
 
   declarations: [MainComponent, FaqComponent, ProductdetailComponent, UnauthorizedComponent, SelectUserTypeComponent]

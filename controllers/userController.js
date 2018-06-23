@@ -1,4 +1,5 @@
 const { User } = require('./../schema/user');
+const { InspectionCompany } = require('./../schema/inspectionCompany');
 const { errorHandler } = require('./../utils/errorHandler');
 const { authMiddleware } = require('./../middleware/authMiddleware');
 const bcrypt = require('bcrypt');
@@ -184,8 +185,11 @@ class UserController {
                 let profileWizardTotalSteps = 1, profileWizardStep = 0;
                 if (userType == 'client')
                     profileWizardStep = 1;
-                else if (userType == 'inspector' || userType == 'lawyer')
-                    profileWizardTotalSteps = 5;
+                else if (userType == 'inspector')
+                    profileWizardTotalSteps = 3;
+                else if (userType == 'lawyer') {
+                    profileWizardTotalSteps = 2;
+                }
                 await User.findByIdAndUpdate(user._id, {
                     $set: {
                         userType: userType,
@@ -213,6 +217,24 @@ class UserController {
             }
         } catch (error) {
             errorHandler.sendError(res, error);
+        }
+    }
+    async getCompanyDetails(req, res) {
+        try {
+            let userId = req.query.userId;
+            let user = await User.findById(userId);
+            if (user == null)
+                throw { code: 400, message: "User not found!" };
+            else {
+                let company = {};
+                if (user.userType == 'inspector') {
+                    company = await InspectionCompany.findOne({ userId: userId });
+                }
+                //TODO: Other Company types
+                res.send(company);
+            }
+        } catch (error) {
+
         }
     }
 }

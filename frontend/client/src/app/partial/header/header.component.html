@@ -83,15 +83,11 @@
                                       Login with Google
                                     </button>
                                   </div>
-                                  <br>
-                                  <br>
-                                  <br>
                                   <span class="alert-danger">
                                     <p style="color: red">{{errormessage}}</p>
                                   </span>
                                   <div class="row">
                                     <div class="col-md-offset-9 col-sm-3">
-
                                       <button type="submit" class="btn btn-warning" style="padding-right: 13px;">Sign In</button>
                                     </div>
                                   </div>
@@ -165,7 +161,7 @@
           <div class="ct-panel--item ct-email pull-right">
             <div class="dropdown">
               <div class="ct-panel--item ct-email" style="padding-left: 35px;" data-toggle="dropdown">
-                <img src="assets/images/profile-snap.jpg" class="user-profile">
+                <img src="{{authService.profile.photoUrl}}" class="user-profile">
               </div>
               <ul class="dropdown-menu" style="left: -109px;">
                 <li class="lis-drop-nav">
@@ -178,7 +174,7 @@
                   <a routerLink="/inspector/wizard" class="no-back">Settings</a>
                 </li>
                 <li class="lis-drop-nav">
-                  <a (click)="logOutMe()" style="cursor: pointer" class="no-back">Logout as {{authService.profile.username}}</a>
+                  <a (click)="logOutMe()" style="cursor: pointer" class="no-back">Logout</a>
                 </li>
               </ul>
             </div>
@@ -203,7 +199,7 @@
       </a>
     </div>
     <div class="ct-panelBox">
-      
+
       <ul class="ct-panel--socials ct-panel--navbar list-inline list-unstyled">
         <li>
           <a href="#">

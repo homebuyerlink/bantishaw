@@ -18,28 +18,29 @@ export class InspectorComponent implements OnInit, AfterViewInit {
   public latitude: any;
   public longitude: any;
   public address = '';
+  public location = '';
   public teams = [];
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public cityCircle: any;
-  public step1: boolean = false;
-  public step2: boolean = false;
-  public step3: boolean = false;
-  public step4: boolean = true;
+  public step = 0;
   public inspectorDetailForm: FormGroup;
   public servicesFormStep3: FormGroup;
-
   public inspectorDetailFormStep2: FormGroup;
   public URL = `${Config.API_BASE}/utils/upload`;
   public uploader: FileUploader = new FileUploader({
     url: this.URL,
   });
   public image = '';
-
-  constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private inspector: InspectorService) { }
+  public companyDetails = {
+    _id: null
+  };
+  constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private inspector: InspectorService) {
+    this.step = authservice.profile.profileWizardStep;
+  }
 
   ngAfterViewInit() {
-    if (this.step1)
+    if (this.step == 0)
       this.initmap();
   }
 
@@ -99,7 +100,7 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       let associations = companyBasicInfo.value['associations'];
       let response = await this.inspector.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId,
         facebook, youtube, instagram, gplus, twitter, associations);
-      console.log(response);
+      this.companyDetails = (<any>response).inspectionCompany;
     } catch (error) {
       alert(error);
     }
@@ -118,16 +119,16 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       tags: tags
     };
     console.log(obj);
-  
+
   }
   //3rd step
- 
+
   saveServices() {
     console.log("abc");
-    
+
     console.log(this.servicesFormStep3.value['servicesArray']);
     let services = this.servicesFormStep3.value['servicesArray'];
-   
+
     let obj = {
       companyId: "",
       userId: "",
@@ -210,12 +211,25 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       draggable: true,
       animation: google.maps.Animation.DROP,
     });
-
+    this.getLocation({ lat: this.latitude, lng: this.longitude });
     google.maps.event.addListener(marker, 'dragend', (event) => {
       this.latitude = event.latLng.lat();
       this.longitude = event.latLng.lng();
+      this.getLocation(event.latLng);
     });
   }
+
+  private getLocation(latLng) {
+    var geocoder = new google.maps.Geocoder;
+    geocoder.geocode({ 'location': latLng }, (results, status) => {
+      if (status === 'OK') {
+        this.location = results[0];
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+
   private setMap(mapProp) {
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
     var input = document.getElementById('address');
