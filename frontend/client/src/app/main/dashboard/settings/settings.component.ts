@@ -12,7 +12,7 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSettingsFormsSubmission(settingsForm:NgForm){
-    console.log(settingsForm.value)
+  onSubmittingBasicInfoForm(companyBasicInfo:NgForm){
+    console.log(companyBasicInfo.value);
   }
 }

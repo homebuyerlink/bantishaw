@@ -8,10 +8,14 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { UserTypeGuard } from './guards/usertype.guard';
 import { ServiceProviderGuard } from './guards/serviceprovider.guard';
+import { CompanyService } from './services/inspector.service';
+import { TagInputModule } from 'ngx-chips';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   {
     path: "",
     loadChildren: './main/main.module#MainModule'
+    // canActivate:[UserTypeGuard]
   }
 ]
 
@@ -23,9 +27,11 @@ const routes: Routes = [
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    TagInputModule,
+    BrowserAnimationsModule
   ],
-  providers: [AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
+  providers: [CompanyService,AuthenticationService, AuthGuard, AuthGuard,UserTypeGuard,ServiceProviderGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,7 +6,6 @@ import { config } from 'rxjs';
 declare var JQuery: any;
 @Injectable()
 
-
 export class AuthenticationService {
 
   public profile = {
@@ -18,7 +17,6 @@ export class AuthenticationService {
     authToken: '',
     createdAt: '',
     updatedAt: '',
-
   }
   public isLogin = false;
   constructor(private httpClient: HttpClient, private router: Router) { }
@@ -41,15 +39,12 @@ export class AuthenticationService {
       let response = await this.httpClient.post(`${Config.API_BASE}/user/login/check`, { token: token }, Config.HEADERS).toPromise();
       if ((<any>response).authenticated) {
         await this.getProfile(token);
-        this.isLogin = true;
-        if (this.profile.userType===undefined) {
-          this.router.navigate(['/select-type']);
-        }
+        this.isLogin = true;  
         return true;
       }
       else return false;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
   //done
@@ -59,7 +54,6 @@ export class AuthenticationService {
       let response = await this.httpClient.post(`${Config.API_BASE}/user/profile`, body, Config.HEADERS).toPromise();
       this.profile = <any>response;
     } catch (error) {
-      console.log(error);
     }
   }
 
@@ -67,10 +61,11 @@ export class AuthenticationService {
     localStorage.setItem("token", token);
     (<any>$('#login-modal')).modal('hide');
     this.getProfile(token);
-    this.isLogin = true
-    if (this.profile.userType===undefined) {
+    if(this.profile.username===undefined || this.profile.userType===undefined){
       this.router.navigate(['/select-type']);
     }
+    this.isLogin = true
+    
   }
   //upDate User name
 
@@ -98,7 +93,6 @@ export class AuthenticationService {
       console.log(error);
     }
   }
-
   public async getAuthState(user) {
     let response = await this.httpClient.post(`${Config.API_BASE}/user/login/social`, user).toPromise();
     return this.loginWithToken((<any>response).token);

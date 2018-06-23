@@ -12,9 +12,7 @@ export class HeaderComponent implements OnInit {
   public errormessage: any;
   constructor(private authService: AuthenticationService, private ngxSocialLoginAuthService: AuthService) { }
 
-  async  ngOnInit() {
-   console.log(this.authService.profile.userType);
- 
+  ngOnInit() {
   }
 
   async registerNow(signUpForm: NgForm) {

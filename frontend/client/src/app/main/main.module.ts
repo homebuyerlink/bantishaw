@@ -15,7 +15,6 @@ const routes: Routes = [
   {
     path: "",
     component: MainComponent,
-    
     children: [
       {
         path: "",
@@ -24,7 +23,7 @@ const routes: Routes = [
       {
         path: "services",
         loadChildren: './services/services.module#ServicesModule',
-        canActivate:[UserTypeGuard]
+        canActivate: [UserTypeGuard]
       },
       {
         path: "how-it-works",
@@ -33,7 +32,12 @@ const routes: Routes = [
       {
         path: "post-ad",
         loadChildren: './postad/postad.module#PostadModule',
-         canActivate:[UserTypeGuard]
+        canActivate: [AuthGuard, UserTypeGuard]
+      },
+      {
+        path: "inspector/wizard",
+        loadChildren: './inspector/inspector.module#InspectorModule',
+         canActivate:[AuthGuard,UserTypeGuard]
       },
       {
         path: "blog",
@@ -43,8 +47,8 @@ const routes: Routes = [
       {
         path: "dashboard",
         loadChildren: './dashboard/dashboard.module#DashboardModule',
-        canActivate:[AuthGuard]
-      
+        canActivate: [AuthGuard, UserTypeGuard]
+
       },
       {
         path: "faq",
@@ -56,12 +60,13 @@ const routes: Routes = [
         component: ProductdetailComponent
       },
       {
-        path:"unauthorized",
-        component:UnauthorizedComponent
+        path: "unauthorized",
+        component: UnauthorizedComponent
       },
       {
-        path:"select-type",
-        component:SelectUserTypeComponent
+        path: "select-type",
+        component: SelectUserTypeComponent,
+        canActivate: [AuthGuard]
       }
     ]
   }
