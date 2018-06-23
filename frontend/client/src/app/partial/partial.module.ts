@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from "angularx-social-login";
+import { environment } from '../../environments/environment';
 
 let config = new AuthServiceConfig([
   {
@@ -17,7 +18,7 @@ let config = new AuthServiceConfig([
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("252632908092092")
+    provider: new FacebookLoginProvider(environment.facebookId)
   }
 ]);
 
