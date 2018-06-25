@@ -1,19 +1,20 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren } from '@angular/core';
 import { NgForm, FormArray, Validators, EmailValidator, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { AuthenticationService } from '../../services/authentication.service';
+import { AuthenticationService } from '../../../services/authentication.service';
 
 declare const google: any;
 import { FileUploader } from 'ng2-file-upload';
-import { Config } from '../../config';
-import { InspectorService } from '../../services/inspector.service';
+import { Config } from './../../../config';
+import { InspectorService } from '../../../services/inspector.service';
+import { Utils } from '../../../utils';
 
 @Component({
-  selector: 'app-inspector',
-  templateUrl: './inspector.component.html',
-  styleUrls: ['./inspector.component.css']
+  selector: 'app-inspector-wizard',
+  templateUrl: './inspector-wizard.component.html',
+  styleUrls: ['./inspector-wizard.component.css']
 })
+export class InspectorWizardComponent implements OnInit, AfterViewInit {
 
-export class InspectorComponent implements OnInit, AfterViewInit {
   public inspectorDetailFormStep4: FormGroup;
   public latitude: any;
   public longitude: any;
@@ -69,6 +70,7 @@ export class InspectorComponent implements OnInit, AfterViewInit {
 
   //1st  step form
   async onSubmittingBasicInfoForm(companyBasicInfo: NgForm) {
+    Utils.showLoader('#companyForm');
     this.uploader.uploadAll();
     this.uploader.queue[0].onSuccess = (response, status, headers) => {
       this.image = JSON.parse(response).url;
@@ -101,41 +103,53 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       let response = await this.inspector.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId,
         facebook, youtube, instagram, gplus, twitter, associations);
       this.companyDetails = (<any>response).inspectionCompany;
+      this.step = 1;
     } catch (error) {
       alert(error);
     }
+    Utils.hideLoader('#companyForm');
   }
+
   //2nd step
   async saveInspectorDetail() {
-    let teamMembers = this.inspectorDetailForm.value['inspectorDetailArray'];
-    // console.log(values);
-    // console.log("value of tag array", this.inspectorDetailForm.value['tags']);
-    let tags = this.inspectorDetailForm.value.tags
-    // console.log(teamMembers);
-    let obj = {
-      companyId: "",
-      userId: "",
-      teamMembers: teamMembers,
-      tags: tags
-    };
-    console.log(obj);
-
+    Utils.showLoader('#inspectorForm');
+    try {
+      let teamMembers = this.inspectorDetailForm.value['inspectorDetailArray'];
+      let tags = this.inspectorDetailForm.value.tags
+      this.companyDetails = (<any>await this.inspector.getCompanyDetails());
+      let obj = {
+        companyId: this.companyDetails._id,
+        userId: this.authservice.profile._id,
+        teamMembers: teamMembers,
+        tags: tags
+      };
+      await this.inspector.setInspectorDetails(obj);
+      this.step = 2;
+    } catch (error) {
+      console.log(error);
+    }
+    Utils.hideLoader('#inspectorForm');
   }
+
   //3rd step
-
-  saveServices() {
-    console.log("abc");
-
-    console.log(this.servicesFormStep3.value['servicesArray']);
-    let services = this.servicesFormStep3.value['servicesArray'];
-
-    let obj = {
-      companyId: "",
-      userId: "",
-      services: services
-    };
-    console.log(obj);
+  async saveServices() {
+    Utils.showLoader('#serviceForm');
+    try {
+      let services = this.servicesFormStep3.value['servicesArray'];
+      this.companyDetails = (<any>await this.inspector.getCompanyDetails());
+      let obj = {
+        companyId: this.companyDetails._id,
+        userId: this.authservice.profile._id,
+        services: services
+      };
+      await this.inspector.setServicesDetails(obj);
+      this.step = 3;
+    } catch (error) {
+      console.log(error);
+    }
+    Utils.hideLoader('#serviceForm');
   }
+
   //4th
   saveStep4(inspectorDetailFormStep4) {
     console.log();
@@ -271,19 +285,7 @@ export class InspectorComponent implements OnInit, AfterViewInit {
       });
     }
   }
-  // setRadius() {
-  //   this.cityCircle = new google.maps.Circle({
-  //     strokeColor: '#FF0000',
-  //     strokeOpacity: 0.8,
-  //     strokeWeight: 2,
-  //     fillColor: '#FF0000',
-  //     fillOpacity: 0.35,
-  //     map: this.map,
-  //     center: { lat: this.latitude, lng: this.longitude },
-  //     radius: 5 * 1000
-  //   });
-  //   this.map.fitBounds(this.cityCircle.getBounds());
-  // }
+
   //monday block
   initmondaySchedule() {
     return this._fb.group({
@@ -361,4 +363,5 @@ export class InspectorComponent implements OnInit, AfterViewInit {
     const control = <FormArray>this.inspectorDetailFormStep4.controls['sundaySchedule'];
     control.push(this.initSundaySchedule());
   }
+
 }

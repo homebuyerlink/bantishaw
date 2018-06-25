@@ -5,6 +5,7 @@ declare const google: any;
 import { FileUploader } from 'ng2-file-upload';
 import { Config } from '../../../config';
 import { LawyerService } from '../../../services/lawyer.service';
+import { Utils } from '../../../utils';
 
 @Component({
   selector: 'app-wizard',
@@ -19,9 +20,7 @@ export class WizardComponent implements OnInit {
   public tags = [];
   @ViewChild('gmap') gmapElement: any;
   map: any;
-  public step1: boolean = true;
-  public step2: boolean = false;
-  public Step3: boolean = false;
+  public step = 0;
   public inspectorDetailForm: FormGroup;
   public servicesForm: FormGroup;
   public URL = `${Config.API_BASE}/utils/upload`;
@@ -30,10 +29,12 @@ export class WizardComponent implements OnInit {
   });
   public image = '';
 
-  constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private lawyerService: LawyerService) { }
+  constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private lawyerService: LawyerService) {
+    this.step = authservice.profile.profileWizardStep;
+  }
 
   ngAfterViewInit() {
-    if (this.step1 == true) {
+    if (this.step == 0) {
       this.initmap();
     }
   }
@@ -45,6 +46,7 @@ export class WizardComponent implements OnInit {
   }
 
   setCompanyDetails(companyDetailsForm: NgForm) {
+    Utils.showLoader('#companyForm');
     this.uploader.uploadAll();
     this.uploader.queue[0].onSuccess = (response, status, headers) => {
       this.image = JSON.parse(response).url;
@@ -79,9 +81,11 @@ export class WizardComponent implements OnInit {
       let twitter = companyDetailsForm.value['twitter'];
       let associations = companyDetailsForm.value['associations'];
       await this.lawyerService.setCompanyDetails(companyName, lawyerName, designation, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, tags, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      this.step = 1;
     } catch (error) {
       console.log(error);
     }
+    Utils.hideLoader('#companyForm');
   }
 
   initService() {
@@ -101,13 +105,19 @@ export class WizardComponent implements OnInit {
   }
 
   async setService() {
-    this.uploader.uploadAll();
-    this.uploader.queue[0].onSuccess = (response, status, headers) => {
-      this.image = JSON.parse(response).url;
-      console.log(this.image);
+    Utils.showLoader('#serviceForm');
+    try {
+      this.uploader.uploadAll();
+      this.uploader.queue[0].onSuccess = (response, status, headers) => {
+        this.image = JSON.parse(response).url;
+        console.log(this.image);
+      }
+      await this.lawyerService.setService(this.servicesForm.value.servicesArray);
+      this.step = 2;
+    } catch (error) {
+      console.log(error);
     }
-
-    await this.lawyerService.setService(this.servicesForm.value.servicesArray);
+    Utils.hideLoader('#serviceForm');
   }
 
   initmap() {

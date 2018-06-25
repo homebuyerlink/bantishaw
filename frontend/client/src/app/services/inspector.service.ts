@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Config } from '../config';
 import { HttpClient } from '@angular/common/http';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable()
 
 export class InspectorService {
 
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private httpClient: HttpClient, private router: Router, private authService: AuthenticationService) { }
   //step 1
   public async saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, image, lat, lng, radius, userId,
     facebook, youtube, instagram, gplus, twitter, associations) {
@@ -40,5 +41,17 @@ export class InspectorService {
   //   let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
   //   return response;
   // }
+
+  getCompanyDetails() {
+    return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
+  }
+
+  setInspectorDetails(obj) {
+    return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-2`, obj, Config.HEADERS).toPromise();
+  }
+
+  setServicesDetails(obj) {
+    return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-3`, obj, Config.HEADERS).toPromise();
+  }
 
 }

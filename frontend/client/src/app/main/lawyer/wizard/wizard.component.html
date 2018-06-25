@@ -1,5 +1,5 @@
 <!-- step1-->
-<ng-container *ngIf="step1">
+<ng-container *ngIf="step == 0">
   <br>
   <br>
   <br>
@@ -11,7 +11,7 @@
       <div class="container">
         <div class="ct-steps--submission center-block ct-u-marginBottom20">
           <div class="ct-steps--item" style="width: 50%;">
-            <div class="ct-steps--counter ct-steps--actives">
+            <div class="ct-steps--counter ct-steps--active">
               <span>1</span>
             </div>
           </div>
@@ -41,7 +41,7 @@
       </div>
     </div>
   </header>
-  <div class="container">
+  <div class="container" id="companyForm">
     <div class="row">
       <br>
       <br>
@@ -232,7 +232,7 @@
 <!--End step 1 -->
 
 <!--step2-->
-<ng-container *ngIf="step2">
+<ng-container *ngIf="step == 1">
   <br>
   <br>
   <br>
@@ -276,7 +276,7 @@
   <br>
   <br>
   <section class="ct-u-paddingTop50 ct-u-paddingBottom100">
-    <div class="container">
+    <div class="container" id="serviceForm">
       <form [formGroup]="servicesForm" novalidate (ngSubmit)="setService(servicesForm)">
         <div formArrayName="servicesArray">
           <div *ngFor="let ctrl of  servicesForm.get('servicesArray').controls; let i=index" [formGroupName]="i">
@@ -318,7 +318,7 @@
 <!--End step 2-->
 
 <!--Step3-->
-<ng-container *ngIf="Step3">
+<ng-container *ngIf="step == 2">
   <br>
   <br>
   <br>

@@ -7,8 +7,8 @@ export class inspectrGuard implements CanActivate {
   async canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot) {
-    if (await this.authService.profile.userType!=='inspector') { 
-      this.router.navigate(['/unauthorized']);
+    if (await this.authService.profile.userType != 'inspector') {
+      this.router.navigate(['/dashboard']);
       return false;
     }
     else return true;

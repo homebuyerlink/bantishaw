@@ -17,6 +17,13 @@ export class WizardGuard implements CanActivate {
           this.router.navigate(['/inspector/wizard']);
           return false;
         }
+        else if (this.authenticationService.profile.userType == 'lawyer') {
+          this.router.navigate(['/lawyer/wizard']);
+          return false;
+        }
+      }
+      else {
+        return true;
       }
     }
     else

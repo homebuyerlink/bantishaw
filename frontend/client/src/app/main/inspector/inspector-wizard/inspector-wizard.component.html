@@ -48,7 +48,7 @@
       </div>
     </div>
   </header>
-  <div class="container">
+  <div class="container" id="companyForm">
     <div class="row">
       <br>
       <br>
@@ -272,7 +272,7 @@
   </header>
   <br>
   <br>
-  <div class="container">
+  <div class="container" id="inspectorForm">
     <form [formGroup]="inspectorDetailForm" novalidate (ngSubmit)="saveInspectorDetail(inspectorDetailForm)">
       <div>
         <h3>Inspector's Details</h3>
@@ -280,11 +280,8 @@
         <br>
         <div formArrayName="inspectorDetailArray">
           <div *ngFor="let ctrl of  inspectorDetailForm.get('inspectorDetailArray').controls; let i=index" [formGroupName]="i">
-
-
             <div class="row">
               <div class="col-md-11 offset-md-1">
-
                 <div class="row">
                   <div class="col-sm-6">
                     <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
@@ -300,42 +297,24 @@
                 <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
                   formControlName="phone">
                 <br>
-
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="image">Profile Picture</label>
                   <input type="file" ng2FileSelect [uploader]="uploader" class="form-control-file">
-                </div>
+                </div> -->
               </div>
             </div>
             <hr>
           </div>
-
         </div>
-
         <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button>
         <!--Tags-->
         <br>
-        <br>
-        <br>
-        <br>
         <div class="form-group">
           <label class="control-label" for="tags">Tags</label>
-
-          <br>
-          <br>
-          <br>
           <tag-input type="text" [modelAsStrings]="true" formControlName="tags" class="form-control"></tag-input>
-          <br>
-          <br>
-          <br>
         </div>
         <br>
-        <br>
-        <br>
-        <br>
         <!--End of tags-->
-
-
         <ul class="list-inline pull-right">
           <li>
             <button type="submit" class="btn btn-primary next-step">Save and continue</button>
@@ -346,6 +325,7 @@
   </div>
 </ng-container>
 <!--End step 2-->
+
 <!--step3-->
 <ng-container *ngIf="step == 2">
   <br>
@@ -396,11 +376,10 @@
       </div>
     </div>
   </header>
-
   <br>
   <br>
   <section class="ct-u-paddingTop50 ct-u-paddingBottom100">
-    <div class="container">
+    <div class="container" id="serviceForm">
       <form [formGroup]="servicesFormStep3" (ngSubmit)="saveServices(servicesFormStep3)">
         <div formArrayName="servicesArray">
           <div *ngFor="let ctrl of  servicesFormStep3.get('servicesArray').controls; let i=index" [formGroupName]="i">
@@ -410,11 +389,11 @@
                   formControlName="name">
                 <div class="row">
                   <div class="col-sm-6">
-                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price"
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Price"
                       formControlName="price">
                   </div>
                   <div class="col-sm-6">
-                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer"
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Promo/Special Offer"
                       formControlName="promo">
                   </div>
                 </div>
@@ -441,18 +420,9 @@
       </form>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
-
 </ng-container>
 <!--End step 3-->
+
 <!--step4-->
 <ng-container *ngIf="step == 3">
 

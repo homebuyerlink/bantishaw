@@ -1,0 +1,770 @@
+<div class="ct-headroom--scrollUpBoth cssAnimate">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--POPUP FORMS-->
+    <div class="container">
+      <div class="ct-popupForm ct-js-productForm--agents infinite-left">
+        <form role="form" class="center-block">
+          <div class="form-group">
+            <div class="ct-form-content">
+              <div class="row">
+                <div class="col-md-12">
+                  <h3 class="text-uppercase">Edit Agent Details</h3>
+                </div>
+                <div class="col-md-6">
+                  <label>First Name</label>
+                  <input type="text" required class="form-control input-lg" value="Kristine" placeholder="">
+                  <label>Last Name</label>
+                  <input type="text" required class="form-control input-lg" value="Black" placeholder="">
+                  <label>Number of Properties</label>
+                  <input type="text" required class="form-control input-lg" value="15" placeholder="">
+                  <label>Include contact form?</label>
+                  <select class="ct-js-select ct-select-lg">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label>Phone</label>
+                  <input type="text" required class="form-control input-lg" value="(123) 456 7890" placeholder="">
+                  <label>Mobile</label>
+                  <input type="text" required class="form-control input-lg" value="888 999 000" placeholder="">
+                  <label>Skype</label>
+                  <input type="text" required class="form-control input-lg" value="kristine.black" placeholder="">
+                  <label>Email</label>
+                  <input type="text" required class="form-control input-lg" value="kristine.black@example.com" placeholder="">
+                </div>
+                <div class="col-md-12">
+                  <h3 class="text-uppercase">Socials</h3>
+                </div>
+                <div class="col-md-6">
+                  <label>Facebook</label>
+                  <input type="text" required class="form-control input-lg" value="" placeholder="">
+                  <label>Instagram</label>
+                  <input type="text" required class="form-control input-lg" value="" placeholder="">
+                  <button type="button" class="btn btn-primary">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <label>Twitter</label>
+                  <input type="text" required class="form-control input-lg" value="" placeholder="">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success center-block">Save changes</button>
+            </div>
+            <div class="ct-form-close">
+              <i class="fa fa-times"></i>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="ct-popupForm ct-js-productForm--properties infinite-left">
+        <form role="form">
+          <div class="form-group">
+            <div class="ct-form-content">
+              <div class="col-md-6">
+                <h3 class="text-uppercase">Edit Property Details</h3>
+                <label>Property Name</label>
+                <input type="text" required class="form-control input-lg" value="15421 Southwest 39th Terrace" placeholder="">
+                <label>Property Price</label>
+                <input type="text" required class="form-control input-lg" value="$ 350 000" placeholder="">
+                <label>Old Price</label>
+                <input type="text" required class="form-control input-lg" value="$ 450 000" placeholder="">
+                <label>Description</label>
+                <textarea placeholder="" class="form-control" name="field[]" required="">Beautiful apartment in a great, very calm and safe place.</textarea>
+                <button type="submit" class="btn btn-success">Save changes</button>
+              </div>
+              <div class="col-md-6">
+                <h3 class="text-uppercase">Edit Property Meta</h3>
+                <label>Bedrooms</label>
+                <input type="text" required class="form-control input-lg" value="3" placeholder="">
+                <label>Baths</label>
+                <input type="text" required class="form-control input-lg" value="2" placeholder="">
+                <label>Area (m2)</label>
+                <input type="text" required class="form-control input-lg" value="105" placeholder="">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="ct-form-close">
+              <i class="fa fa-times"></i>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  
+    <div class="mask infinite-left"></div>
+  
+    <!--END-->
+  
+    <div id="ct-js-wrapper" class="ct-pageWrapper">
+  
+  
+  
+      <header class="ct-mediaSection ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="470" data-type="parallax"
+        data-bg-image="assets/images/content/profile-dashboard-snap.jpg" data-bg-image-mobile="assets/images/content/profile-dashboard-snap.jpg">
+        <div class="container" id="profilePage">
+          <div class="ct-personBox ct-personBox--extended ct-personBox--extendedLight text-left">
+            <div class="ct-imagePerson">
+              <img src="{{companyDetails.image}}" alt="">
+              <a class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
+              <ul class="ct-panel--socials list-inline list-unstyled">
+                <li>
+                  <a href="https://www.facebook.com/createITpl">
+                    <div class="ct-socials ct-socials--circle">
+                      <i class="fa fa-facebook"></i>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/createitpl">
+                    <div class="ct-socials ct-socials--circle">
+                      <i class="fa fa-twitter"></i>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="ct-socials ct-socials--circle">
+                      <i class="fa fa-instagram"></i>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="ct-personContent">
+              <div class="ct-personName ct-u-paddingBoth10 text-uppercase">
+                <h2>{{companyDetails.name}}
+                  <a class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
+                </h2>
+                <a href="">{{companyDetails.addressLine1}}
+                  <i class="fa fa-external-link"></i>
+                </a>
+              </div>
+              <div class="ct-personDescription pull-right ct-u-paddingBoth20">
+                <ul class="list-unstyled ct-contactPerson pull-right">
+                  <li>
+                    <i class="fa fa-phone"></i>
+                    <span>{{companyDetails.phone}}</span>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i class="fa fa-skype"></i> kristine.black</a>
+                  </li>
+                  <li>
+                    <i class="fa fa-mobile"></i>
+                    <span>888 999 000</span>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i class="fa fa-envelope-o"></i> kristine.black@example.com</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="ct-buttonPanel text-capitalize ct-u-paddingBoth20 pull-right">
+                <a href="agent.html" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Agents</a>
+                <a href="service.html" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="ct-u-paddingTop60 ct-u-paddingBottom30 text-center">
+        <div class="container">
+          <div class="ct-heading ct-u-marginBottom60">
+            <h3 class="text-uppercase">Our agents</h3>
+            <a class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <div class="ct-personBox text-left">
+                <div class="ct-imagePerson">
+                  <img src="assets/images/content/agents-1.jpg" alt="">
+                  <ul class="ct-panel--socials list-inline list-unstyled">
+                    <li>
+                      <a href="https://www.facebook.com/createITpl">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-facebook"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/createitpl">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-twitter"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-instagram"></i>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ct-personContent">
+                  <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
+                    <h5 class="ct-fw-600">Kristine Black</h5>
+                    <a href="">15 Properties</a>
+                  </div>
+                  <div class="ct-personDescription">
+                    <ul class="list-unstyled ct-contactPerson">
+                      <li>
+                        <i class="fa fa-phone"></i>
+                        <span>(123) 456 7890</span>
+                      </li>
+                      <li>
+                        <i class="fa fa-mobile"></i>
+                        <span>888 999 000</span>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-skype"></i> kristine.black</a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-envelope-o"></i> kristine.black@example.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="ct-personBox text-left">
+                <div class="ct-imagePerson">
+                  <img src="assets/images/content/agents-2.jpg" alt="">
+                  <ul class="ct-panel--socials list-inline list-unstyled">
+                    <li>
+                      <a href="https://www.facebook.com/createITpl">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-facebook"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/createitpl">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-twitter"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-instagram"></i>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ct-personContent">
+                  <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
+                    <h5 class="ct-fw-600">Bob Donser</h5>
+                    <a href="">15 Properties</a>
+                  </div>
+                  <div class="ct-personDescription">
+                    <ul class="list-unstyled ct-contactPerson">
+                      <li>
+                        <i class="fa fa-phone"></i>
+                        <span>(123) 456 7890</span>
+                      </li>
+                      <li>
+                        <i class="fa fa-mobile"></i>
+                        <span>888 999 000</span>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-skype"></i> bob.donser</a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-envelope-o"></i> bob.donser@example.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="ct-personBox text-left">
+                <div class="ct-imagePerson">
+                  <img src="assets/images/content/agents-3.jpg" alt="">
+                  <ul class="ct-panel--socials list-inline list-unstyled">
+                    <li>
+                      <a href="https://www.facebook.com/createITpl">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-facebook"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/createitpl">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-twitter"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-instagram"></i>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ct-personContent">
+                  <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
+                    <h5 class="ct-fw-600">Mia Gonzales</h5>
+                    <a href="">15 Properties</a>
+                  </div>
+                  <div class="ct-personDescription">
+                    <ul class="list-unstyled ct-contactPerson">
+                      <li>
+                        <i class="fa fa-phone"></i>
+                        <span>(123) 456 7890</span>
+                      </li>
+                      <li>
+                        <i class="fa fa-mobile"></i>
+                        <span>888 999 000</span>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-skype"></i> mia.gonzales</a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-envelope-o"></i> mia.gonzales@example.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="ct-personBox text-left">
+                <div class="ct-imagePerson">
+                  <img src="assets/images/content/agents-4.jpg" alt="">
+                  <ul class="ct-panel--socials list-inline list-unstyled">
+                    <li>
+                      <a href="https://www.facebook.com/createITpl">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-facebook"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/createitpl">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-twitter"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="ct-socials ct-socials--circle">
+                          <i class="fa fa-instagram"></i>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ct-personContent">
+                  <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
+                    <h5 class="ct-fw-600">Robert S. Morris</h5>
+                    <a href="">15 Properties</a>
+                  </div>
+                  <div class="ct-personDescription">
+                    <ul class="list-unstyled ct-contactPerson">
+                      <li>
+                        <i class="fa fa-phone"></i>
+                        <span>(123) 456 7890</span>
+                      </li>
+                      <li>
+                        <i class="fa fa-mobile"></i>
+                        <span>888 999 000</span>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-skype"></i> robert.morris</a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-envelope-o"></i> robert.morris@example.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ct-u-paddingTop30 ct-u-paddingBottom60">
+        <div class="container">
+          <div class="ct-heading ct-u-marginBottom60 text-center">
+            <h3 class="text-uppercase">Our Services</h3>
+            <a class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Properties">edit</a>
+          </div>
+          <div class="ct-section--products">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <label class="control-label sale">
+                    Sale
+                  </label>
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-1.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          1724 Clear Hills Rise, Farewells
+                        </div>
+                        <div class="ct-product--price">
+                          <span class="ct-price--Old">$ 450,000</span>
+                          <span>$ 350,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-2.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          1856 Misty Concession, Colonsay
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <label class="control-label new">
+                    New
+                  </label>
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-3.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          3046 Merry Landing, High Lonesome Wells
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-4.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          5454 Fallen Deer Wood, Flat Nose
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-5.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          2501 Heather Pine Round, Terramuggus
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-6.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          9541 Rustic Forest Crescent, Falmouth
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-7.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          916 Umber Run, Skookumchuck
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
+                  <a href="product-single.html">
+                    <div class="ct-main-content">
+                      <div class="ct-imageBox">
+                        <img src="assets/images/content/property-8.jpg" alt="">
+                        <i class="fa fa-eye"></i>
+                      </div>
+                      <div class="ct-main-text">
+                        <div class="ct-product--tilte">
+                          8553 Fallen Creek Bend, North Carolina
+                        </div>
+                        <div class="ct-product--price">
+                          <span>$ 450,000</span>
+                        </div>
+                        <div class="ct-product--description">
+                          Beautiful apartment in a great, very calm and safe place.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ct-product--meta">
+                      <div class="ct-icons">
+                        <span>
+                          <i class="fa fa-bed"></i> 3
+                        </span>
+                        <span>
+                          <i class="fa fa-cutlery"></i> 2
+                        </span>
+                      </div>
+                      <div class="ct-text">
+                        <span> Area:
+                          <span>105 m2</span>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ct-pagination text-center">
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">
+                    <i class="fa fa-angle-left"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="active">
+                <a href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">4</a>
+              </li>
+              <li>
+                <a href="#">5</a>
+              </li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+  
+    </div>
+    <!-- JavaScripts -->
+  </div>

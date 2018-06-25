@@ -38,7 +38,7 @@ const routes: Routes = [
         canActivate: [AuthGuard, UserTypeGuard]
       },
       {
-        path: "inspector/wizard",
+        path: "inspector",
         loadChildren: './inspector/inspector.module#InspectorModule',
         canActivate: [AuthGuard, UserTypeGuard, inspectrGuard]
       },

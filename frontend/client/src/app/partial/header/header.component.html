@@ -47,7 +47,7 @@
 
               <div class="modal fade" id="login-modal" role="dialog">
                 <div class="modal-dialog">
-                  <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;background-color: white;border: none;">
+                  <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;background-color: white;border: none;" id="modal">
                     <div class="modal-body" style="padding: 0px;">
                       <button type="button" class="close" data-dismiss="modal" style="position: absolute;right: -18px;top: -25px;color: #f3a822;font-size: 27px;text-shadow: none;opacity: 10;">&times;</button>
                       <div class="row">
@@ -68,8 +68,6 @@
                             <!-- Tab panes -->
                             <div class="tab-content tab-content--withBorder" style="background-color: white;color: black;">
                               <div role="tabpanel" class="tab-pane active" id="history32-1" style="border: none !important;">
-
-
                                 <form #signInForm="ngForm" (submit)="onSubmittingSignInForm(signInForm)">
                                   <input class="form-control input-lg text-inner-input ct-u-marginBottom10" name="email" type="email" placeholder="Email Address"
                                     ngModel required>
@@ -161,11 +159,14 @@
           <div class="ct-panel--item ct-email pull-right">
             <div class="dropdown">
               <div class="ct-panel--item ct-email" style="padding-left: 35px;" data-toggle="dropdown">
-                <img src="{{authService.profile.photoUrl}}" class="user-profile">
+                <img *ngIf="authService.profile.photoUrl; else elseBlock" src="{{authService.profile.photoUrl}}" class="user-profile">
+                <ng-template #elseBlock>
+                  <img src="./../../../assets/images/user.png" class="user-profile">
+                </ng-template>
               </div>
               <ul class="dropdown-menu" style="left: -109px;">
                 <li class="lis-drop-nav">
-                  <a routerLink="/dashboard/edit-profile" class="no-back">Profile</a>
+                  <a routerLink="/{{authService.profile.userType}}/profile/{{companyDetails.slug}}" class="no-back">Profile</a>
                 </li>
                 <li class="lis-drop-nav">
                   <a routerLink="/dashboard/charity-view" class="no-back">Charity</a>
