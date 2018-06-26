@@ -1,12 +1,11 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren } from '@angular/core';
 import { NgForm, FormArray, Validators, EmailValidator, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthenticationService } from '../../../services/authentication.service';
-
-declare const google: any;
 import { FileUploader } from 'ng2-file-upload';
 import { Config } from './../../../config';
 import { InspectorService } from '../../../services/inspector.service';
 import { Utils } from '../../../utils';
+declare const google: any;
 
 @Component({
   selector: 'app-inspector-wizard',

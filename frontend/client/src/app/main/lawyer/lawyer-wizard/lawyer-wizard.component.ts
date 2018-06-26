@@ -1,19 +1,18 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren } from '@angular/core';
 import { NgForm, FormArray, Validators, EmailValidator, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthenticationService } from '../../../services/authentication.service';
-declare const google: any;
 import { FileUploader } from 'ng2-file-upload';
 import { Config } from '../../../config';
 import { LawyerService } from '../../../services/lawyer.service';
 import { Utils } from '../../../utils';
+declare const google: any;
 
 @Component({
-  selector: 'app-wizard',
-  templateUrl: './wizard.component.html',
-  styleUrls: ['./wizard.component.css']
+  selector: 'app-lawyer-wizard',
+  templateUrl: './lawyer-wizard.component.html',
+  styleUrls: ['./lawyer-wizard.component.css']
 })
-
-export class WizardComponent implements OnInit {
+export class LawyerWizardComponent implements OnInit {
 
   public latitude: any;
   public longitude: any;

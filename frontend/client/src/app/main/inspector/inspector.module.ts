@@ -11,6 +11,14 @@ const routes: Routes = [
     path: "profile/:slug",
     loadChildren: './inspector-profile/inspector-profile.module#InspectorProfileModule'
   },
+  {
+    path: "dashboard",
+    loadChildren: './inspector-dashboard/inspector-dashboard.module#InspectorDashboardModule'
+  },
+  {
+    path: "edit",
+    loadChildren: './inspector-edit/inspector-edit.module#InspectorEditModule'
+  },
 ]
 
 @NgModule({

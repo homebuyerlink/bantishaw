@@ -1,0 +1,66 @@
+<ng-container>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container" id="inspectorForm">
+    <form [formGroup]="inspectorDetailForm" novalidate (ngSubmit)="saveInspectorDetail(inspectorDetailForm)">
+      <div>
+        <h2> Edit Inspector Details</h2>
+        <br>
+        <br>
+        <div formArrayName="inspectorDetailArray">
+          <div *ngFor="let ctrl of  inspectorDetailForm.get('inspectorDetailArray').controls; let i=index" [formGroupName]="i">
+            <div class="row">
+              <div class="col-md-11 offset-md-1">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
+                      formControlName="name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
+                      formControlName="designation">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Email"
+                      formControlName="email">
+                  </div>
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
+                      formControlName="phone">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="image">Profile Picture</label>
+                    <input type="file" ng2FileSelect [uploader]="uploader" class="form-control-file">
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button>
+        <!--Tags-->
+        <br>
+        <br>
+        <tag-input type="text" [modelAsStrings]="true" formControlName="tags"></tag-input>
+        <br>
+        <!--End of tags-->
+        <ul class="list-inline pull-right">
+          <li>
+            <button type="submit" class="btn btn-primary next-step">Save</button>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</ng-container>

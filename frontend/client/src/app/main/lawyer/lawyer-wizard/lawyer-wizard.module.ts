@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WizardComponent } from './wizard.component';
+import { LawyerWizardComponent } from './lawyer-wizard.component';
 import { Routes, RouterModule } from "@angular/router";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
@@ -9,7 +9,7 @@ import { TagInputModule } from 'ngx-chips';
 const routes: Routes = [
   {
     path: "",
-    component: WizardComponent
+    component: LawyerWizardComponent
   }
 ]
 
@@ -17,11 +17,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
     FormsModule,
     FileUploadModule,
     TagInputModule
   ],
-  declarations: [WizardComponent]
+  declarations: [LawyerWizardComponent]
 })
-export class WizardModule { }
+export class LawyerWizardModule { }

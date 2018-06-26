@@ -6256,7 +6256,7 @@ button {
   border-color: #f19f24;
 }
 .btn-warning {
-  color: #ffffff !important;
+  color: #ffffff;
   background-color: #f3a822;
   border-color: #f19f24;
 }
@@ -6264,7 +6264,7 @@ button {
 .btn-warning:focus,
 .btn-warning:active,
 .btn-warning.active {
-  color: #f19f24 !important;
+  color: #f19f24;
   background-color: white;
   border-color: #333333;
   color: #f3a822;

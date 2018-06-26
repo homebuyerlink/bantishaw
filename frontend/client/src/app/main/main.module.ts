@@ -21,7 +21,7 @@ const routes: Routes = [
       {
         path: "",
         loadChildren: './home/home.module#HomeModule',
-        canActivate: [WizardGuard]
+        canActivate: [WizardGuard, UserTypeGuard]
       },
       {
         path: "services",
@@ -40,12 +40,12 @@ const routes: Routes = [
       {
         path: "inspector",
         loadChildren: './inspector/inspector.module#InspectorModule',
-        canActivate: [AuthGuard, UserTypeGuard, inspectrGuard]
+        canActivate: [AuthGuard, UserTypeGuard]
       },
       {
         path: "lawyer",
         loadChildren: './lawyer/lawyer.module#LawyerModule',
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard, UserTypeGuard]
       },
       {
         path: "blog",

@@ -1,0 +1,18 @@
+.btn {
+    border: 2px solid #f19f24;
+    background-color: white;
+    color: #f19f24;
+    /* padding: 14px 28px; */
+    /* font-size: 16px; */
+    cursor: pointer;
+}
+/* Orange */
+.btn-warning {
+    border-color: #f19f24;
+    /* color: #ff9800; */
+}
+
+.btn-warning:hover {
+    background: #f19f24;
+    color: #f5f3f3;
+}
