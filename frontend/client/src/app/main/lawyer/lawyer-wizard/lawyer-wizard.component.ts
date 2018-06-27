@@ -47,7 +47,7 @@ export class LawyerWizardComponent implements OnInit {
   setCompanyDetails(companyDetailsForm: NgForm) {
     Utils.showLoader('#companyForm');
     this.uploader.uploadAll();
-    this.uploader.queue[0].onSuccess = (response, status, headers) => {
+    this.uploader.queue[this.uploader.queue.length - 1].onSuccess = (response, status, headers) => {
       this.image = JSON.parse(response).url;
       this.afterPictureUpload(companyDetailsForm);
     }

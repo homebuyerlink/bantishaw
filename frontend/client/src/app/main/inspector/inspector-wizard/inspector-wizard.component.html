@@ -297,32 +297,36 @@
                 <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
                   formControlName="phone">
                 <br>
-                <!-- <div class="form-group">
+                <div class="form-group">
                   <label for="image">Profile Picture</label>
                   <input type="file" ng2FileSelect [uploader]="uploader" class="form-control-file">
-                </div> -->
+                </div>
               </div>
             </div>
             <hr>
           </div>
         </div>
         <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button>
-        <!--Tags-->
         <br>
-        <div class="form-group">
-          <label class="control-label" for="tags">Tags</label>
-          <tag-input type="text" [modelAsStrings]="true" formControlName="tags" class="form-control"></tag-input>
+        <br>
+        <div class="row">
+          <div class="col-sm-6">
+            <tag-input type="text" [modelAsStrings]="true" formControlName="tags" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10"
+              style="padding-top: 2px;"></tag-input>
+          </div>
+          <div class="col-sm-6">
+            <ul class="list-inline pull-right">
+              <li>
+                <button type="submit" class="btn btn-primary next-step">Save and continue</button>
+              </li>
+            </ul>
+          </div>
         </div>
-        <br>
-        <!--End of tags-->
-        <ul class="list-inline pull-right">
-          <li>
-            <button type="submit" class="btn btn-primary next-step">Save and continue</button>
-          </li>
-        </ul>
       </div>
     </form>
   </div>
+  <br>
+  <br>
 </ng-container>
 <!--End step 2-->
 

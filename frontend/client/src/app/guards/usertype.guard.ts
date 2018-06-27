@@ -12,7 +12,8 @@ export class UserTypeGuard implements CanActivate {
         this.router.navigate(['/select-type']);
         return false;
       }
-      else return true;
+      else
+        return true;
     }
     else
       return true;

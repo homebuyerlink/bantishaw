@@ -21,7 +21,7 @@ const routes: Routes = [
       {
         path: "",
         loadChildren: './home/home.module#HomeModule',
-        canActivate: [WizardGuard, UserTypeGuard]
+        canActivate: [WizardGuard]
       },
       {
         path: "services",

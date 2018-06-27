@@ -78,7 +78,7 @@
                 ngModel required>
             </div>
             <div class="col-sm-6">
-              <select class="form-control" name="state" ngModel required>
+              <select class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="state" ngModel required>
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -156,18 +156,23 @@
           </div>
           <div class="row">
             <div class="col-sm-6">
-              <input type="file" ng2FileSelect [uploader]="uploader" name="image" class="form-control-file input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="zip" type="text" placeholder="Zip/Postal"
+                ngModel required>
             </div>
             <div class="col-sm-6">
-              <tag-input type="text" [(ngModel)]='tags' name="tags" class="form-control"></tag-input>
+              <tag-input type="text" [(ngModel)]='tags' name="tags" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10"
+                style="padding-top: 2px;"></tag-input>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="zip" type="text" placeholder="Zip/Postal"
-                ngModel required>
+              <label class="btn btn-primary"> Upload Image
+                <input type="file" ng2FileSelect [uploader]="uploader" name="image" style="display: none">
+              </label>&nbsp;
+              <strong>{{ uploader.queue[uploader.queue.length - 1]?.file?.name }}</strong>
             </div>
           </div>
+          <hr>
           <h3>Link Social Media and Other Links</h3>
           <br>
           <div class="row">
@@ -200,7 +205,7 @@
                 ngModel required>
             </div>
           </div>
-          <br>
+          <hr>
           <div class="row">
             <div class="col-md-6">
               <h3>Localization</h3>

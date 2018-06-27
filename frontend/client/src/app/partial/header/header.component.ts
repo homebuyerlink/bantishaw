@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
     slug: null,
     _id: null
   }
-  
+
   constructor(public authService: AuthenticationService, private ngxSocialLoginAuthService: AuthService, private inspectorService: InspectorService) { }
 
   ngOnInit() {
@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
     try {
       let email = signInForm.value['email'];
       let password = signInForm.value['password'];
-      let Response = await this.authService.login(email, password);
+      await this.authService.login(email, password);
       signInForm.reset();
     } catch (error) {
       this.errormessage = error.error.message + " Please try again";
@@ -51,8 +51,12 @@ export class HeaderComponent implements OnInit {
     Utils.hideLoader('#modal');
   }
 
-  logOutMe() {
-    this.authService.logout();
+  async logOutMe() {
+    try {
+      await this.authService.logout();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async loginWithFacebook() {
