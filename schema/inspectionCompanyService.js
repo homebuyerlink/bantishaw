@@ -15,7 +15,7 @@ var inspectionCompanyServiceSchema = new mongoose.Schema(
     }
 );
 
-// inspectionCompanyServiceSchema.plugin(URLSlugs('name'));
+inspectionCompanyServiceSchema.plugin(URLSlugs('name'));
 let InspectionCompanyService = mongoose.model('InspectionCompanyService', inspectionCompanyServiceSchema);
 
 module.exports = { InspectionCompanyService }
