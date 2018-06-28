@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { UserTypeGuard } from './guards/usertype.guard';
@@ -12,6 +12,7 @@ import { InspectorService } from './services/inspector.service';
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { inspectrGuard } from './guards/inspector.guard';
+import { TokenInterceptor } from './partial/token.interceptor';
 const routes: Routes = [
   {
     path: "",
@@ -38,7 +39,12 @@ const routes: Routes = [
     AuthenticationService,
     AuthGuard,
     UserTypeGuard,
-    ServiceProviderGuard
+    ServiceProviderGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
