@@ -24,7 +24,7 @@ var inspectionCompanySchema = new mongoose.Schema(
     }
 );
 
-inspectionCompanySchema.plugin(URLSlugs('name'));
+// inspectionCompanySchema.plugin(URLSlugs('name'));
 let InspectionCompany = mongoose.model('InspectionCompany', inspectionCompanySchema);
 
 module.exports = { InspectionCompany }
