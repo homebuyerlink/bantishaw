@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { WizardGuard } from '../../guards/wizard.guard';
+
 
 const routes: Routes = [
   {
@@ -9,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: "profile/:slug",
-    loadChildren: './inspector-profile/inspector-profile.module#InspectorProfileModule'
+    loadChildren: './inspector-profile/inspector-profile.module#InspectorProfileModule',
+    canActivate: [WizardGuard]
   },
   {
     path: "dashboard",
@@ -18,6 +21,16 @@ const routes: Routes = [
   {
     path: "edit",
     loadChildren: './inspector-edit/inspector-edit.module#InspectorEditModule'
+  },
+  
+  {
+    path: "agent",
+    loadChildren: './edit-agent/edit-agent.module#EditAgentModule'
+  }
+  ,
+  {
+    path: "service",
+    loadChildren: './edit-service/edit-service.module#EditServiceModule'
   }
 ]
 
