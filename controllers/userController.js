@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const ejs = require('ejs');
 const nodeMailer = require('./../utils/nodeMailer');
 const config = require('./../config');
+const mongoose = require('mongoose');
 
 const uuidv1 = require('uuid/v1');
 
@@ -222,7 +223,7 @@ class UserController {
     }
     async getCompanyDetails(req, res) {
         try {
-            let userId = req.query.userId;
+            let userId = mongoose.Types.ObjectId(req.query.userId);
             let user = await User.findById(userId);
             if (user == null)
                 throw { code: 400, message: "User not found!" };
@@ -240,7 +241,7 @@ class UserController {
                 res.send(company[0]);
             }
         } catch (error) {
-
+            errorHandler.sendError(res, error);
         }
     }
 }
