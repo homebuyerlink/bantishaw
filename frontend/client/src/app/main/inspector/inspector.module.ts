@@ -22,7 +22,6 @@ const routes: Routes = [
     path: "edit",
     loadChildren: './inspector-edit/inspector-edit.module#InspectorEditModule'
   },
-  
   {
     path: "agent",
     loadChildren: './edit-agent/edit-agent.module#EditAgentModule'
