@@ -6,7 +6,6 @@ import {
     HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 @Injectable()
 
 export class TokenInterceptor implements HttpInterceptor {
