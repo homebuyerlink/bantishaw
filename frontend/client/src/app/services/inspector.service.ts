@@ -41,16 +41,19 @@ export class InspectorService {
   //   let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
   //   return response;
   // }
+
   getCompanyDetails() {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
   }
+
   setInspectorDetails(obj) {
     return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-2`, obj, Config.HEADERS).toPromise();
   }
+
   setServicesDetails(obj) {
     return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-3`, obj, Config.HEADERS).toPromise();
   }
-  //for updating Company Information
+
   public updateCompanyInfo(companyId, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, image, lat, lng, radius, userId,
     facebook, youtube, instagram, gplus, twitter, associations) {
     let body = {
@@ -60,10 +63,18 @@ export class InspectorService {
     let response = this.httpClient.put(`${Config.API_BASE}/inspector`, body, Config.HEADERS).toPromise();
     return response;
   }
-  //get company Id by userID
-  getCompanyIdByUserId() {
-    
-    let response = this.httpClient.get(`${Config.API_BASE}/user/company?userId=5b34b47329cac53de047f01e`, Config.HEADERS).toPromise();
-    return response;
+
+  getInspectorCompanyBySlug(slug){
+    return this.httpClient.get(`${Config.API_BASE}/inspector/slug?slug=${slug}`, Config.HEADERS).toPromise();
   }
+
+  getInspectorCompanyById(){
+    return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
+  }
+
+  editAgentDetails(name, designation, phone, email, image){
+    let body = { name: name, designation: designation, phone: phone, email: email, image: image };
+    return this.httpClient.put(`${Config.API_BASE}`, body, Config.HEADERS).toPromise();
+  }  
+
 }
