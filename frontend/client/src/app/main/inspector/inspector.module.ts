@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { WizardGuard } from '../../guards/wizard.guard';
 
 const routes: Routes = [
   {
@@ -9,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: "profile/:slug",
-    loadChildren: './inspector-profile/inspector-profile.module#InspectorProfileModule'
+    loadChildren: './inspector-profile/inspector-profile.module#InspectorProfileModule',
+    canActivate: [WizardGuard]
   },
   {
     path: "dashboard",

@@ -54,4 +54,12 @@ export class InspectorService {
     return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-3`, obj, Config.HEADERS).toPromise();
   }
 
+  getInspectorCompanyBySlug(slug){
+    return this.httpClient.get(`${Config.API_BASE}/inspector/slug?slug=${slug}`, Config.HEADERS).toPromise();
+  }
+
+  getInspectorCompanyById(){
+    return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
+  }
+
 }

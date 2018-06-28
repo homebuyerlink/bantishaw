@@ -19,10 +19,54 @@ export class EditInspectorComponent implements OnInit {
     url: this.URL,
   });
   public image = '';
+  inspectorCompanyDetails = {
+    "_id": null,
+    "slug": null,
+    "name": null,
+    "addressLine1": null,
+    "addressLine2": null,
+    "city": null,
+    "state": null,
+    "zip": null,
+    "phone": null,
+    "email": null,
+    "website": null,
+    "founded": null,
+    "image": null,
+    "lat": null,
+    "lng": null,
+    "radius": null,
+    "userId": null,
+    "createdAt": null,
+    "updatedAt": null,
+    "__v": null,
+    "user": {
+      "_id": null,
+      "isActive": null,
+      "isEmailVerified": null,
+      "profileWizardStep": null,
+      "profileWizardTotalSteps": null,
+      "email": null,
+      "name": null,
+      "photoUrl": null,
+      "provider": null,
+      "createdAt": null,
+      "updatedAt": null,
+      "__v": null,
+      "token": null,
+      "username": null,
+      "userType": null
+    },
+    "tags": [],
+    "team": [],
+    "services": [],
+    "social": []
+  }
 
   constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private inspectorService: InspectorService) { }
 
   ngOnInit() {
+    this.getInspectorCompanyDetailsById();
     this.inspectorDetailForm = new FormGroup({
       'tags': new FormControl('', Validators.required),
       'inspectorDetailArray': this._fb.array([this.initinspectorDetail()],
@@ -61,6 +105,18 @@ export class EditInspectorComponent implements OnInit {
       console.log(error);
     }
     Utils.hideLoader('#inspectorForm');
+  }
+
+  async getInspectorCompanyDetailsById() {
+    Utils.showLoader('#agentDetais');
+    try {
+      this.inspectorCompanyDetails = (<any>await this.inspectorService.getInspectorCompanyById());
+      console.log(this.inspectorCompanyDetails);
+      
+    } catch (error) {
+      console.log(error);
+    }
+    Utils.hideLoader('#agentDetais');
   }
 
 }
