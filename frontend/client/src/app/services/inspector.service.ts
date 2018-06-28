@@ -41,28 +41,29 @@ export class InspectorService {
   //   let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
   //   return response;
   // }
-
   getCompanyDetails() {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
   }
-
   setInspectorDetails(obj) {
     return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-2`, obj, Config.HEADERS).toPromise();
   }
-
   setServicesDetails(obj) {
-   return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-3`, obj, Config.HEADERS).toPromise();
+    return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-3`, obj, Config.HEADERS).toPromise();
   }
-
-
-//for updating Company Information
-  public async updateCompanyInfo(companyId, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, image, lat, lng, radius, userId,
+  //for updating Company Information
+  public updateCompanyInfo(companyId, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, image, lat, lng, radius, userId,
     facebook, youtube, instagram, gplus, twitter, associations) {
     let body = {
       companyId: companyId, name: name, addressLine1: addressLine1, addressLine2: addressLine2, city: city, state: state, zip: zip, phone: phone, email: email, website: website, founded: founded, image: image, lat: lat, lng: lng, radius: radius, userId: userId,
       facebook: facebook, youtube: youtube, instagram: instagram, gplus: gplus, twitter: twitter, associations: associations
     };
-    let response = await this.httpClient.put(`${Config.API_BASE}/inspector`, body, Config.HEADERS).toPromise();
+    let response = this.httpClient.put(`${Config.API_BASE}/inspector`, body, Config.HEADERS).toPromise();
+    return response;
+  }
+  //get company Id by userID
+  getCompanyIdByUserId() {
+    
+    let response = this.httpClient.get(`${Config.API_BASE}/user/company?userId=5b34b47329cac53de047f01e`, Config.HEADERS).toPromise();
     return response;
   }
 }

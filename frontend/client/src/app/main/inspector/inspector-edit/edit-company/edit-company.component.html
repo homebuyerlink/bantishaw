@@ -15,25 +15,26 @@
           <br>
           <br>
           <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="name" placeholder="Name of Company"
-            ngModel required>
+            ngModel="{{companyDretails.name}}" required>
           <div class="row">
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine1"
-                placeholder="Address Line 1" ngModel required>
+                placeholder="Address Line 1" ngModel="{{companyDretails.addressLine1}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine2"
-                placeholder="Address Line 2" ngModel required>
+                placeholder="Address Line 2" ngModel="{{companyDretails.addressLine2}}" required>
             </div>
 
           </div>
           <div class="row">
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="city" placeholder="City"
-                ngModel required>
+                ngModel="{{companyDretails.city}}" required>
             </div>
             <div class="col-sm-6 ">
-              <select name="state" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ngModel required>
+              <select name="state" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ngModel="{{companyDretails.state}}"
+                required>
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -87,32 +88,33 @@
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
               </select>
-
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="zip" type="text" placeholder="Zip/Postal"
-                ngModel required>
+                ngModel="{{companyDretails.zip}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="phone" type="number" placeholder="Phone"
-                ngModel required>
+                ngModel="{{companyDretails.phone}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                type="email" placeholder="Email" ngModel required>
+                type="email" placeholder="Email" ngModel="{{companyDretails.email}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="website" type="text" placeholder="Website"
-                ngModel required>
+                ngModel="{{companyDretails.website}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="founded" type="date" placeholder="Founded"
-                ngModel required>
+                ngModel="{{companyDretails.founded | date: 'yyyy-MM-dd'}}" required>
             </div>
             <div class="col-sm-12">
               <div class="form-group">
-                <label for="image">Profile Picture</label>
+                <label for="image"  >Profile Picture</label>
+                
                 <input type="file" ng2FileSelect [uploader]="uploader" name="image" class="form-control-file">
+              <img src="{{companyDretails.image}}" width="10%" height="5%">
               </div>
               <br>
               <br>
@@ -120,29 +122,36 @@
               <br>
               <br>
             </div>
+
+
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="facebook" placeholder="Facebook Page"
-                ngModel required>
+                required>
+
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="youtube" placeholder="Youtube"
-                ngModel required>
+                ngModel="{{companyDretails.name}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="instagram" placeholder="Instagram"
-                ngModel required>
+                ngModel="{{companyDretails.name}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="gplus" placeholder="Google+"
-                ngModel required>
+                ngModel="{{companyDretails.name}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="twitter" placeholder="Twitter"
-                ngModel required>
+                ngModel="{{companyDretails.name}}" required>
             </div>
+
+
+
+
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="associations"
-                placeholder="Associations" ngModel required>
+                placeholder="Associations" ngModel="{{companyDretails.associations}}" required>
             </div>
           </div>
           <br>
@@ -158,10 +167,10 @@
             </div>
             <div class="col-md-6">
               <h3>Services Area Redius KM</h3>
-            
+              <div class="col-sm-6">
                 <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="radius" type="number" placeholder="Radius"
-                  ngModel required>
-             
+                  ngModel="{{companyDretails.radius}}" required>
+              </div>
               <br>
               <div id="map" #gmap></div>
             </div>

@@ -5,19 +5,68 @@ import { Config } from './../../../../config';
 import { InspectorService } from '../../../../services/inspector.service';
 import { Utils } from '../../../../utils';
 import { AuthenticationService } from '../../../../services/authentication.service';
+import { ActivatedRoute } from '@angular/router';
 declare const google: any;
 
 @Component({
+
   selector: 'app-edit-company',
   templateUrl: './edit-company.component.html',
   styleUrls: ['./edit-company.component.css']
+
 })
+
 export class EditCompanyComponent implements OnInit {
+
   public latitude: any;
   public longitude: any;
   public address = '';
   public location = '';
-  public companyDretails={
+  public companyDretails = {
+    "_id": null,
+    "slug": null,
+    "name": null,
+    "addressLine1": null,
+    "addressLine2": null,
+    "city": null,
+    "state": null,
+    "zip": null,
+    "phone": null,
+    "email": null,
+    "website": null,
+    "founded": null,
+    "image": null,
+    "lat": null,
+    "lng": null,
+    "radius": null,
+    "userId": null,
+    "createdAt": null,
+    "updatedAt": null,
+    "__v": null,
+    "user": {
+      "_id": null,
+      "isActive": null,
+      "isEmailVerified": null,
+      "profileWizardStep": null,
+      "profileWizardTotalSteps": null,
+      "email": null,
+      "name": null,
+      "photoUrl": null,
+      "provider": null,
+      "createdAt": null,
+      "updatedAt": null,
+      "__v": null,
+      "token": null,
+      "username": null,
+      "userType": null
+    },
+    "tags": [],
+    "team": [],
+    "services": [],
+    "social": [
+      { url: null }
+    ],
+
   }
   @ViewChild('gmap') gmapElement: any;
   map: any;
@@ -26,10 +75,18 @@ export class EditCompanyComponent implements OnInit {
     url: this.URL,
   });
   public image = '';
-  constructor(private inspectorService: InspectorService, private authService: AuthenticationService) { }
+  constructor(private route: ActivatedRoute, private inspectorService: InspectorService, private authService: AuthenticationService) { }
   ngOnInit() {
+    this.getCompanyDetails();
     this.initmap();
-    
+  }
+  async getCompanyDetails() {
+    let response = await this.inspectorService.getCompanyIdByUserId();
+    console.log(response);
+    this.companyDretails = <any>response;
+    console.log(this.companyDretails);
+    console.log(this.companyDretails.social[0]);
+    return response;
   }
 
   async editCompanyDetails(editCompanyForm: NgForm) {
@@ -62,7 +119,7 @@ export class EditCompanyComponent implements OnInit {
       let gplus = editCompanyForm.value['gplus'];
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
-      await this.inspectorService.updateCompanyInfo(124,name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      await this.inspectorService.updateCompanyInfo( this.companyDretails._id,name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
     } catch (error) {
       alert(error);
     }
@@ -70,8 +127,8 @@ export class EditCompanyComponent implements OnInit {
   }
 
   initmap() {
-    this.latitude = 50.186769;
-    this.longitude = 8.698247;
+    this.latitude = this.companyDretails.lat;
+    this.longitude = this.companyDretails.lng;
     var mapProp = new google.maps.Map(this.gmapElement.nativeElement, {
       zoom: 12,
       center: new google.maps.LatLng(this.latitude, this.longitude),
@@ -169,5 +226,4 @@ export class EditCompanyComponent implements OnInit {
       });
     }
   }
-
 }
