@@ -157,7 +157,7 @@ class InspectorController {
                     }
                 }
             ].concat(Inspector.prototype.inspectionCompanyPipeline()));
-            res.send(inspectionCompany);
+            res.send(inspectionCompany[0]);
         } catch (error) {
             errorHandler.sendError(res, error);
         }
