@@ -7,7 +7,7 @@ var searchTagSchema = new mongoose.Schema(
             type: String,
             enum: ["agent", "advisor", "inspector", "lawyer"]
         },
-        refId: mongoose.Schema.Types.ObjectId
+        refSlug: String
     },
     {
         timestamps: true
