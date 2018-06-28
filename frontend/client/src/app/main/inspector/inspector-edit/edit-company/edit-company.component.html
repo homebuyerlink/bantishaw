@@ -158,7 +158,10 @@
             </div>
             <div class="col-md-6">
               <h3>Services Area Redius KM</h3>
-              <!-- <input type="text" ngModel name="address" id="address" class="form-control" placeholder="Search location"> -->
+            
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="radius" type="number" placeholder="Radius"
+                  ngModel required>
+             
               <br>
               <div id="map" #gmap></div>
             </div>
@@ -167,7 +170,7 @@
           <br>
           <ul class="list-inline pull-right">
             <li>
-              <button type="submit" class="btn btn-primary next-step">Save</button>
+              <button type="submit" class="btn btn-primary next-step">Update</button>
             </li>
           </ul>
         </div>

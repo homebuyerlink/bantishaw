@@ -50,13 +50,11 @@ const routes: Routes = [
       {
         path: "blog",
         loadChildren: './blog/blog.module#BlogModule'
-      }
-      ,
+      } ,
       {
         path: "dashboard",
         loadChildren: './dashboard/dashboard.module#DashboardModule',
         canActivate: [AuthGuard, UserTypeGuard]
-
       },
       {
         path: "faq",
@@ -81,7 +79,6 @@ const routes: Routes = [
 ]
 
 @NgModule({
-
   imports: [
     CommonModule,
     PartialModule,

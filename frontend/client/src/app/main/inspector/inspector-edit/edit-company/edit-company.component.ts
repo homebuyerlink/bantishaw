@@ -13,11 +13,12 @@ declare const google: any;
   styleUrls: ['./edit-company.component.css']
 })
 export class EditCompanyComponent implements OnInit {
-
   public latitude: any;
   public longitude: any;
   public address = '';
   public location = '';
+  public companyDretails={
+  }
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public URL = `${Config.API_BASE}/utils/upload`;
@@ -25,11 +26,10 @@ export class EditCompanyComponent implements OnInit {
     url: this.URL,
   });
   public image = '';
-
   constructor(private inspectorService: InspectorService, private authService: AuthenticationService) { }
-
   ngOnInit() {
     this.initmap();
+    
   }
 
   async editCompanyDetails(editCompanyForm: NgForm) {
@@ -40,7 +40,6 @@ export class EditCompanyComponent implements OnInit {
       this.afterPictureUpload(editCompanyForm);
     }
   }
-
   private async afterPictureUpload(editCompanyForm) {
     try {
       let name = editCompanyForm.value['name'];
@@ -55,7 +54,7 @@ export class EditCompanyComponent implements OnInit {
       let founded = editCompanyForm.value['founded'];
       let lat = this.latitude;
       let lng = this.longitude;
-      let radius = 50;
+      let radius = editCompanyForm.value['radius'];
       let userId = this.authService.profile._id;
       let facebook = editCompanyForm.value['facebook'];
       let youtube = editCompanyForm.value['youtube'];
@@ -63,7 +62,7 @@ export class EditCompanyComponent implements OnInit {
       let gplus = editCompanyForm.value['gplus'];
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
-      await this.inspectorService.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      await this.inspectorService.updateCompanyInfo(124,name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
     } catch (error) {
       alert(error);
     }

@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: "edit",
     loadChildren: './inspector-edit/inspector-edit.module#InspectorEditModule'
-  },
+  }
 ]
 
 @NgModule({
