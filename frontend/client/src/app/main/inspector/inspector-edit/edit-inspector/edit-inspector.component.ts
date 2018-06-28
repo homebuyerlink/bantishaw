@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren } from '@angular/core';
-import { FormArray, Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { AuthenticationService } from '../../../../services/authentication.service';
 import { FileUploader } from 'ng2-file-upload';
 import { Config } from './../../../../config';
@@ -13,7 +13,6 @@ import { Utils } from '../../../../utils';
 })
 export class EditInspectorComponent implements OnInit {
 
-  public inspectorDetailForm: FormGroup;
   public URL = `${Config.API_BASE}/utils/upload`;
   public uploader: FileUploader = new FileUploader({
     url: this.URL,
@@ -63,56 +62,42 @@ export class EditInspectorComponent implements OnInit {
     "social": []
   }
 
-  constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private inspectorService: InspectorService) { }
+  constructor(private authservice: AuthenticationService, private inspectorService: InspectorService) { }
 
   ngOnInit() {
     this.getInspectorCompanyDetailsById();
-    this.inspectorDetailForm = new FormGroup({
-      'tags': new FormControl('', Validators.required),
-      'inspectorDetailArray': this._fb.array([this.initinspectorDetail()],
-      )
-    });
   }
 
-  initinspectorDetail() {
-    return this._fb.group({
-      name: ['', Validators.required],
-      designation: ['', Validators.required],
-      email: ['', Validators.required],
-      phone: ['', Validators.required]
-    });
-  }
-
-  addMoreDetail() {
-    const control = <FormArray>this.inspectorDetailForm.controls['inspectorDetailArray'];
-    control.push(this.initinspectorDetail());
-  }
-
-  async saveInspectorDetail() {
-    Utils.showLoader('#inspectorForm');
+  async editAgent(editAgentForm: NgForm) {
+    Utils.showLoader('#myModal');
     try {
-      let teamMembers = this.inspectorDetailForm.value['inspectorDetailArray'];
-      let tags = this.inspectorDetailForm.value.tags;
-      let obj = {
-        userId: this.authservice.profile._id,
-        teamMembers: teamMembers,
-        tags: tags
-      };
-      console.log(obj);
-      
-      // await this.inspectorService.setInspectorDetails(obj);
+      this.uploader.uploadAll();
+      this.uploader.queue[this.uploader.queue.length - 1].onSuccess = (response, status, headers) => {
+        this.image = JSON.parse(response).url;
+        this.afterPictureUpload(editAgentForm);
+      }
     } catch (error) {
       console.log(error);
     }
-    Utils.hideLoader('#inspectorForm');
+  }
+
+  async afterPictureUpload(editAgentForm) {
+    try {
+      let name = editAgentForm.value.name;
+      let designation = editAgentForm.value.designation;
+      let phone = editAgentForm.value.phone;
+      let email = editAgentForm.value.email;
+      await this.inspectorService.editAgentDetails(name, designation, phone, email, this.image);
+    } catch (error) {
+      console.log(error);
+    }
+    Utils.hideLoader('#myModal');
   }
 
   async getInspectorCompanyDetailsById() {
     Utils.showLoader('#agentDetais');
     try {
       this.inspectorCompanyDetails = (<any>await this.inspectorService.getInspectorCompanyById());
-      console.log(this.inspectorCompanyDetails);
-      
     } catch (error) {
       console.log(error);
     }

@@ -62,4 +62,9 @@ export class InspectorService {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
   }
 
+  editAgentDetails(name, designation, phone, email, image){
+    let body = { name: name, designation: designation, phone: phone, email: email, image: image };
+    return this.httpClient.put(`${Config.API_BASE}`, body, Config.HEADERS).toPromise();
+  }  
+
 }

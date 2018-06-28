@@ -45,52 +45,42 @@
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <form [formGroup]="inspectorDetailForm" novalidate (ngSubmit)="saveInspectorDetail(inspectorDetailForm)">
+        <form #editAgentForm="ngForm" (submit)="editAgent(editAgentForm)">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Edit Agent Details</h4>
           </div>
           <div class="modal-body">
-            <div formArrayName="inspectorDetailArray">
-              <div *ngFor="let ctrl of  inspectorDetailForm.get('inspectorDetailArray').controls; let i=index" [formGroupName]="i">
+            <div class="row">
+              <div *ngFor="let value of inspectorCompanyDetails.team" class="col-md-11 offset-md-1">
                 <div class="row">
-                  <div *ngFor="let value of inspectorCompanyDetails.team" class="col-md-11 offset-md-1">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
-                          formControlName="name">
-                      </div>
-                      <div class="col-sm-6">
-                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
-                          formControlName="designation">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Email"
-                          formControlName="email">
-                      </div>
-                      <div class="col-sm-6">
-                        <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
-                          formControlName="phone">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <label for="image">Profile Picture</label>
-                        <input type="file" ng2FileSelect [uploader]="uploader" class="form-control-file">
-                      </div>
-                    </div>
-                    <hr>
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
+                      ngModel="{{value.name}}" name="name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
+                      ngModel="{{value.designation}}" name="designation">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Email"
+                      ngModel="{{value.email}}" name="email">
+                  </div>
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
+                      ngModel="{{value.phone}}" name="phone">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="image">Profile Picture</label>
+                    <input type="file" ng2FileSelect [uploader]="uploader" class="form-control-file">
                   </div>
                 </div>
               </div>
             </div>
-            <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button>
-            <br>
-            <br>
-            <tag-input type="text" [modelAsStrings]="true" formControlName="tags"></tag-input>
-            <br>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
