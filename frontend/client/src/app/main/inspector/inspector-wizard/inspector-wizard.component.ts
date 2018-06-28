@@ -91,7 +91,7 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
       let founded = companyBasicInfo.value['founded'];
       let lat = this.latitude;
       let lng = this.longitude;
-      let radius = 50;
+      let radius = companyBasicInfo.value['radius'];
       let userId = this.authservice.profile._id;
       let facebook = companyBasicInfo.value['facebook'];
       let youtube = companyBasicInfo.value['youtube'];

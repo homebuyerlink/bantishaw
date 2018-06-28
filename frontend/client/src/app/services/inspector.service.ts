@@ -54,6 +54,16 @@ export class InspectorService {
     return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-3`, obj, Config.HEADERS).toPromise();
   }
 
+  public updateCompanyInfo(companyId, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, image, lat, lng, radius, userId,
+    facebook, youtube, instagram, gplus, twitter, associations) {
+    let body = {
+      companyId: companyId, name: name, addressLine1: addressLine1, addressLine2: addressLine2, city: city, state: state, zip: zip, phone: phone, email: email, website: website, founded: founded, image: image, lat: lat, lng: lng, radius: radius, userId: userId,
+      facebook: facebook, youtube: youtube, instagram: instagram, gplus: gplus, twitter: twitter, associations: associations
+    };
+    let response = this.httpClient.put(`${Config.API_BASE}/inspector`, body, Config.HEADERS).toPromise();
+    return response;
+  }
+
   getInspectorCompanyBySlug(slug){
     return this.httpClient.get(`${Config.API_BASE}/inspector/slug?slug=${slug}`, Config.HEADERS).toPromise();
   }

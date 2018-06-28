@@ -48,10 +48,11 @@ export class SelectUserTypeComponent implements OnInit {
   async  onSubmittingUserTypeStep2(userTypeStep2: NgForm) {
     Utils.showLoader('#step2');
     if (userTypeStep2.valid) {
-      try {
+      try {   
         let userID = this.autheticationService.profile._id;
         let userType = userTypeStep2.value['userType'];
-        await this.autheticationService.updateUserType(userID, userType);
+       await this.autheticationService.updateUserType(userID, userType);
+     
         this.router.navigate(['/']);
       } catch (error) {
         alert(error.error.message)

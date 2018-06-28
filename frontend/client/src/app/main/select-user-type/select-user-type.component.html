@@ -102,13 +102,13 @@
                 <div class="checkbox">
                     <label>
                         <input ngModel name="terms" type="checkbox" value="accept" required> I read and agree to
-                        <a href="" id="btn-lnk-terms"> terms & conditions</a>
+                        <a  id="btn-lnk-terms"> terms & conditions</a>
                     </label>
                 </div>
             </div>
             <br>
             <div class="col-md-offset-3 col-md-5">
-                <button type="submit" class="btn btn-success btn-block">Save my Role!</button>
+                <button type="submit" class="btn btn-success btn-block"[disabled]="!userTypeStep2.valid" >Save my Role!</button>
                 <br>
                 <br>
             </div>
