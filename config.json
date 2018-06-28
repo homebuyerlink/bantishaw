@@ -2,7 +2,7 @@
     "PORT": 3000,
     "BASE_URL": "http://localhost:3000",
     "TOKEN_SECRET": "uj669590tYGry",
-    "MONGO_CONNECTION": "mongodb+srv://homebuyer:homebuyer@cluster0-id13t.mongodb.net/test?retryWrites=true",
+    "MONGO_CONNECTION": "mongodb+srv://homebuyer:homebuyer@cluster0-id13t.mongodb.net/test",
     "MAIL_HOST": "mail.encapsulatech.com",
     "MAIL_USERNAME": "homebuyer@encapsulatech.com",
     "MAIL_PORT": 25,

@@ -27,6 +27,7 @@ router.get('/inspector/service', inspectorController.getInspectorServices);
 router.post('/inspector/registration/wizard/step-1', inspectorController.registrationWizardStep1);
 router.post('/inspector/registration/wizard/step-2', inspectorController.registrationWizardStep2);
 router.post('/inspector/registration/wizard/step-3', inspectorController.registrationWizardStep3);
+router.put('/inspector', inspectorController.editCompanyDetails);
 
 //UTILITY ROUTES
 router.post('/utils/upload', utilsController.uploadFile, utilsController.sendResponse);

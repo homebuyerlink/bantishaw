@@ -157,7 +157,82 @@ class InspectorController {
                     }
                 }
             ].concat(Inspector.prototype.inspectionCompanyPipeline()));
-            res.send(inspectionCompany);
+            res.send(inspectionCompany[0]);
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+
+    async editCompanyDetails(req, res) {
+        try {
+            let inspectionCompany = await InspectionCompany.findById(req.body.companyId);
+            if (inspectionCompany == null)
+                throw { code: 400, message: "companyId is incorrect" };
+            else {
+                await InspectionCompany.findByIdAndUpdate(req.body.companyId, {
+                    $set: {
+                        name: req.body.name,
+                        addressLine1: req.body.addressLine1,
+                        addressLine2: req.body.addressLine2,
+                        city: req.body.city,
+                        state: req.body.state,
+                        zip: req.body.zip,
+                        phone: req.body.phone,
+                        email: req.body.email,
+                        website: req.body.website,
+                        founded: req.body.founded,
+                        image: req.body.image,
+                        lat: req.body.lat,
+                        lng: req.body.lng,
+                        radius: req.body.radius
+                    }
+                });
+
+                let socialNetworks = [
+                    {
+                        provider: "facebook",
+                        url: req.body.facebook,
+                        type: "inspector",
+                        refId: inspectionCompany._id
+                    },
+                    {
+                        provider: "youtube",
+                        url: req.body.youtube,
+                        type: "inspector",
+                        refId: inspectionCompany._id
+                    },
+                    {
+                        provider: "instagram",
+                        url: req.body.instagram,
+                        type: "inspector",
+                        refId: inspectionCompany._id
+                    },
+                    {
+                        provider: "gplus",
+                        url: req.body.gplus,
+                        type: "inspector",
+                        refId: inspectionCompany._id
+                    },
+                    {
+                        provider: "twitter",
+                        url: req.body.twitter,
+                        type: "inspector",
+                        refId: inspectionCompany._id
+                    },
+                    {
+                        provider: "associations",
+                        url: req.body.associations,
+                        type: "inspector",
+                        refId: inspectionCompany._id
+                    }
+                ]
+                for (const network of socialNetworks) {
+                    await SocialNetwork.findOneAndUpdate({ provider: network.provider, refId: network.refId, type: network.type }, {
+                        $set: network
+                    });
+                }
+                res.send({ success: true, inspectionCompany: inspectionCompany });
+            }
         } catch (error) {
             errorHandler.sendError(res, error);
         }

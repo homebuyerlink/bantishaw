@@ -2,6 +2,7 @@ const { User } = require('./../schema/user');
 const { InspectionCompany } = require('./../schema/inspectionCompany');
 const { errorHandler } = require('./../utils/errorHandler');
 const { authMiddleware } = require('./../middleware/authMiddleware');
+const { Inspector } = require('./../models/inspector');
 const bcrypt = require('bcrypt');
 const ejs = require('ejs');
 const nodeMailer = require('./../utils/nodeMailer');
@@ -228,10 +229,15 @@ class UserController {
             else {
                 let company = {};
                 if (user.userType == 'inspector') {
-                    company = await InspectionCompany.findOne({ userId: userId });
+                    company = await InspectionCompany.aggregate([
+                        {
+                            $match: {
+                                userId: userId
+                            }
+                        }
+                    ].concat(Inspector.prototype.inspectionCompanyPipeline()));
                 }
-                //TODO: Other Company types
-                res.send(company);
+                res.send(company[0]);
             }
         } catch (error) {
 
