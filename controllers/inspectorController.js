@@ -5,6 +5,7 @@ const { TeamMember } = require('./../schema/teamMember');
 const { SearchTag } = require('./../schema/searchTag');
 const { InspectionCompanyService } = require('./../schema/inspectionCompanyService');
 const { errorHandler } = require('./../utils/errorHandler');
+const { Inspector } = require('./../models/inspector');
 class InspectorController {
 
     async registrationWizardStep1(req, res) {
@@ -32,37 +33,37 @@ class InspectorController {
                     provider: "facebook",
                     url: req.body.facebook,
                     type: "inspector",
-                    refId: inspectionCompany._id
+                    refSlug: inspectionCompany.slug
                 },
                 {
                     provider: "youtube",
                     url: req.body.youtube,
                     type: "inspector",
-                    refId: inspectionCompany._id
+                    refSlug: inspectionCompany.slug
                 },
                 {
                     provider: "instagram",
                     url: req.body.instagram,
                     type: "inspector",
-                    refId: inspectionCompany._id
+                    refSlug: inspectionCompany.slug
                 },
                 {
                     provider: "gplus",
                     url: req.body.gplus,
                     type: "inspector",
-                    refId: inspectionCompany._id
+                    refSlug: inspectionCompany.slug
                 },
                 {
                     provider: "twitter",
                     url: req.body.twitter,
                     type: "inspector",
-                    refId: inspectionCompany._id
+                    refSlug: inspectionCompany.slug
                 },
                 {
                     provider: "associations",
                     url: req.body.associations,
                     type: "inspector",
-                    refId: inspectionCompany._id
+                    refSlug: inspectionCompany.slug
                 }
             ]
             await SocialNetwork.insertMany(socialNetworks);
@@ -86,14 +87,14 @@ class InspectorController {
                     phone: x.phone,
                     image: x.image,
                     type: "inspector",
-                    refId: req.body.companyId
+                    refSlug: inspectionCompany.slug
                 }
             });
             let tagUpsert = tags.map(x => {
                 return {
                     text: x,
                     type: "inspector",
-                    refId: req.body.companyId
+                    refSlug: inspectionCompany.slug
                 }
             });
             await TeamMember.insertMany(teamMemberUpsertArray);
@@ -122,6 +123,41 @@ class InspectorController {
             await InspectionCompanyService.insertMany(servicesUpsertArray);
             let user = await User.findByIdAndUpdate(req.body.userId, { profileWizardStep: 3 });
             res.send({ success: true, nextStep: 3 });
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+
+    async getInspectorServices(req, res) {
+        try {
+            let services = await InspectionCompanyService.find({
+                inspectionCompanyId: req.query.companyId
+            });
+            res.send(services);
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+
+    async getAllInspectors(req, res) {
+        try {
+            let inspectors = await InspectionCompany.aggregate([].concat(Inspector.prototype.inspectionCompanyPipeline()));
+            res.send(inspectors)
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+
+    async getInspectorCompanyBySlug(req, res) {
+        try {
+            let inspectionCompany = await InspectionCompany.aggregate([
+                {
+                    $match: {
+                        slug: req.query.slug
+                    }
+                }
+            ].concat(Inspector.prototype.inspectionCompanyPipeline()));
+            res.send(inspectionCompany);
         } catch (error) {
             errorHandler.sendError(res, error);
         }

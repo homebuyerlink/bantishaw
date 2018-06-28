@@ -21,6 +21,9 @@ router.put('/user/username', userController.updateUsername);
 router.put('/user/usertype', userController.updateUserType);
 
 //INSPECTOR
+router.get('/inspector', inspectorController.getAllInspectors);
+router.get('/inspector/slug', inspectorController.getInspectorCompanyBySlug);
+router.get('/inspector/service', inspectorController.getInspectorServices);
 router.post('/inspector/registration/wizard/step-1', inspectorController.registrationWizardStep1);
 router.post('/inspector/registration/wizard/step-2', inspectorController.registrationWizardStep2);
 router.post('/inspector/registration/wizard/step-3', inspectorController.registrationWizardStep3);
