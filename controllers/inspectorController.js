@@ -33,37 +33,37 @@ class InspectorController {
                     provider: "facebook",
                     url: req.body.facebook,
                     type: "inspector",
-                    refSlug: inspectionCompany.slug
+                    refId: inspectionCompany._id
                 },
                 {
                     provider: "youtube",
                     url: req.body.youtube,
                     type: "inspector",
-                    refSlug: inspectionCompany.slug
+                    refId: inspectionCompany._id
                 },
                 {
                     provider: "instagram",
                     url: req.body.instagram,
                     type: "inspector",
-                    refSlug: inspectionCompany.slug
+                    refId: inspectionCompany._id
                 },
                 {
                     provider: "gplus",
                     url: req.body.gplus,
                     type: "inspector",
-                    refSlug: inspectionCompany.slug
+                    refId: inspectionCompany._id
                 },
                 {
                     provider: "twitter",
                     url: req.body.twitter,
                     type: "inspector",
-                    refSlug: inspectionCompany.slug
+                    refId: inspectionCompany._id
                 },
                 {
                     provider: "associations",
                     url: req.body.associations,
                     type: "inspector",
-                    refSlug: inspectionCompany.slug
+                    refId: inspectionCompany._id
                 }
             ]
             await SocialNetwork.insertMany(socialNetworks);
@@ -87,14 +87,14 @@ class InspectorController {
                     phone: x.phone,
                     image: x.image,
                     type: "inspector",
-                    refSlug: inspectionCompany.slug
+                    refId: req.body.companyId
                 }
             });
             let tagUpsert = tags.map(x => {
                 return {
                     text: x,
                     type: "inspector",
-                    refSlug: inspectionCompany.slug
+                    refId: req.body.companyId
                 }
             });
             await TeamMember.insertMany(teamMemberUpsertArray);

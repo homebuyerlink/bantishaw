@@ -10,7 +10,6 @@ var userSchema = new mongoose.Schema(
         name: String,
         email: {
             type: String,
-            unique: true,
             required: true
         },
         password: String,
@@ -42,5 +41,13 @@ var userSchema = new mongoose.Schema(
 );
 
 let User = mongoose.model('User', userSchema);
+User.createIndexes([
+    {
+        key: { email: 1 },
+        name: 'user_email',
+        unique: true
+    }
+])
+
 
 module.exports = { User }

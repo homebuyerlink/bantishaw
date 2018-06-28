@@ -8,7 +8,7 @@ var socialNetworkSchema = new mongoose.Schema(
             type: String,
             enum: ["agent", "advisor", "inspector", "lawyer"]
         },
-        refSlug: String
+        refId: mongoose.Schema.Types.ObjectId
     },
     {
         timestamps: true
