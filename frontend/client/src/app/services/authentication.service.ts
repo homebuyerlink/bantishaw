@@ -58,6 +58,7 @@ export class AuthenticationService {
   }
 
   //done
+  
   public async getProfile(token) {
     try {
       let body = { token: token };
@@ -70,9 +71,9 @@ export class AuthenticationService {
   }
 
   public async loginWithToken(token) {
-    await this.getProfile(token);
     localStorage.setItem("token", token);
     (<any>$('#login-modal')).modal('hide');
+    await this.getProfile(token);
     if (this.profile.username == null || this.profile.userType == null) {
       this.router.navigate(['/select-type']);
     }

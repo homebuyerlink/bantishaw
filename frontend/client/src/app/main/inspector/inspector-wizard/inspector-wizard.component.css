@@ -10,3 +10,14 @@ input.ng-valid.ng-touched {
     width: 100%;
     height: 300px
 }
+#forStyle { 
+    width: 70%;
+}
+#sunday{
+    float: left;
+    position: absolute;
+    
+    padding-left: 831px;
+    width: 71%;
+
+}
