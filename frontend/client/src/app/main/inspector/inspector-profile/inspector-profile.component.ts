@@ -69,7 +69,7 @@ export class InspectorProfileComponent implements OnInit {
   async getInspectorCompanyDetailsBySlug() {
     Utils.showLoader('#profilePage');
     try {
-      this.inspectorCompanyDetails = (<any>await this.inspectorService.getInspectorCompanyBySlugAbc(this.slug));
+      this.inspectorCompanyDetails = (<any>await this.inspectorService.getInspectorCompanyBySlug(this.slug));
     } catch (error) {
       console.log(error);
     }

@@ -76,5 +76,4 @@ export class InspectorService {
     let body = { name: name, designation: designation, phone: phone, email: email, image: image };
     return this.httpClient.put(`${Config.API_BASE}`, body, Config.HEADERS).toPromise();
   }  
-
 }

@@ -22,7 +22,7 @@ export class EditCompanyComponent implements OnInit {
   public longitude: any;
   public address = '';
   public location = '';
-  public companyDretails = {
+  public companyDetails = {
     "_id": null,
     "slug": null,
     "name": null,
@@ -81,11 +81,11 @@ export class EditCompanyComponent implements OnInit {
     this.initmap();
   }
   async getCompanyDetails() {
-    let response = await this.inspectorService.getCompanyIdByUserId();
+    let response = await this.inspectorService.getInspectorCompanyById();
     console.log(response);
-    this.companyDretails = <any>response;
-    console.log(this.companyDretails);
-    console.log(this.companyDretails.social[0]);
+    this.companyDetails = <any>response;
+    console.log(this.companyDetails);
+    console.log(this.companyDetails.social[0]);
     return response;
   }
 
@@ -119,7 +119,7 @@ export class EditCompanyComponent implements OnInit {
       let gplus = editCompanyForm.value['gplus'];
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
-      await this.inspectorService.updateCompanyInfo( this.companyDretails._id,name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      await this.inspectorService.updateCompanyInfo( this.companyDetails._id,name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
     } catch (error) {
       alert(error);
     }
@@ -127,36 +127,19 @@ export class EditCompanyComponent implements OnInit {
   }
 
   initmap() {
-    this.latitude = this.companyDretails.lat;
-    this.longitude = this.companyDretails.lng;
+    this.latitude = this.companyDetails.lat;
+    this.longitude = this.companyDetails.lng;
+    console.log(this.latitude);
+    console.log(this.longitude);
+    
+    
     var mapProp = new google.maps.Map(this.gmapElement.nativeElement, {
       zoom: 12,
       center: new google.maps.LatLng(this.latitude, this.longitude),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     this.setMap(mapProp);
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        this.latitude = pos.lat;
-        this.longitude = pos.lng;
-        mapProp.setCenter(pos);
-        this.setMap(mapProp);
-        this.setMarker(mapProp);
-        // this.getCurrentAddresss(this.latitude, this.longitude);
-      }, () => {
-        mapProp.setCenter({ lat: this.latitude, lng: this.longitude });
-        this.setMap(mapProp);
-        this.setMarker(mapProp);
-      });
-    }
-    else {
-      console.log("Does not has geo location");
-      this.setMarker(mapProp);
-    }
+    this.setMarker(mapProp);
   }
 
   public setMarker(mapProp) {
