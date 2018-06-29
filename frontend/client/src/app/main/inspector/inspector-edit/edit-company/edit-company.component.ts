@@ -22,7 +22,7 @@ export class EditCompanyComponent implements OnInit {
   public latitude: number;
   public longitude: number;
   public address = '';
-  public location = '';
+  public location:any = null;
   public companyDetails = {
     "_id": null,
     "slug": null,

@@ -24,6 +24,9 @@ export class EditCompanyComponent implements OnInit {
     "_id": null,
     "slug": null,
     "name": null,
+    "lawyerName": null,
+    "designation": null,
+    "experience": null,
     "addressLine1": null,
     "addressLine2": null,
     "city": null,
@@ -61,9 +64,7 @@ export class EditCompanyComponent implements OnInit {
     "tags": [],
     "team": [],
     "services": [],
-    "social": [
-
-    ],
+    "social": [],
 
   }
   @ViewChild('gmap') gmapElement: any;
@@ -74,7 +75,7 @@ export class EditCompanyComponent implements OnInit {
   });
   public image = '';
 
-  constructor(private inspectorService: InspectorService,private lawyerService:LawyerService, private authService: AuthenticationService) { }
+  constructor(private lawyerService:LawyerService, public authService: AuthenticationService) { }
 
   ngOnInit() {
     this.getCompanyDetails();
