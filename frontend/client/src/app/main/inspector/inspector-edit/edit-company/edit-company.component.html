@@ -5,7 +5,7 @@
   <br>
   <br>
   <br>
-  <div class="container" id="companyForm">
+  <div class="container">
     <div class="row">
       <br>
       <br>
@@ -25,9 +25,8 @@
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine2"
                 placeholder="Address Line 2" ngModel="{{companyDetails.addressLine2}}" required>
             </div>
-
           </div>
-          <div class="row">
+          <div class="row" id="editCompanyForm">
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="city" placeholder="City"
                 ngModel="{{companyDetails.city}}" required>
@@ -121,29 +120,9 @@
               <br>
               <br>
             </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="facebook" placeholder="Facebook Page"
-                required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="youtube" placeholder="Youtube"
-                ngModel="{{companyDetails.name}}" required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="instagram" placeholder="Instagram"
-                ngModel="{{companyDetails.name}}" required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="gplus" placeholder="Google+"
-                ngModel="{{companyDetails.name}}" required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="twitter" placeholder="Twitter"
-                ngModel="{{companyDetails.name}}" required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="associations"
-                placeholder="Associations" ngModel="{{companyDetails.associations}}" required>
+            <div *ngFor="let value of companyDetails.social" class="col-sm-6">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" ngModel={{value.url}}
+                name="{{value.provider}}" placeholder="{{value.provider}}" required>
             </div>
           </div>
           <br>

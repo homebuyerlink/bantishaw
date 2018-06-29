@@ -5,9 +5,10 @@ import { Config } from './../../../../config';
 import { InspectorService } from '../../../../services/inspector.service';
 import { Utils } from '../../../../utils';
 import { AuthenticationService } from '../../../../services/authentication.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TNodeFlags } from '@angular/core/src/render3/interfaces/node';
 declare const google: any;
-
+declare const swal:any;
 @Component({
 
   selector: 'app-edit-company',
@@ -76,19 +77,25 @@ export class EditCompanyComponent implements OnInit {
   });
   public image = '';
 
-  constructor(private route: ActivatedRoute, private inspectorService: InspectorService, private authService: AuthenticationService) { }
-  
-  ngOnInit() {
+  constructor(private route: ActivatedRoute,private router: Router, private inspectorService: InspectorService, private authService: AuthenticationService) { }
+
+   ngOnInit() {
     this.getCompanyDetails();
+   
   }
 
   async getCompanyDetails() {
-    let response = await this.inspectorService.getInspectorCompanyById();
-    this.companyDetails = <any>response;
-    this.latitude = parseFloat(this.companyDetails.lat);
-    this.longitude = parseFloat(this.companyDetails.lng);
-    this.initmap();
-    return response;
+    Utils.showLoader('#editCompanyForm');
+    try {
+      let response = await this.inspectorService.getInspectorCompanyById();
+      this.companyDetails = <any>response;
+      this.latitude = parseFloat(this.companyDetails.lat);
+      this.longitude = parseFloat(this.companyDetails.lng);
+      this.initmap();
+    } catch (error) {
+      console.log(error);
+    }
+    Utils.hideLoader('#editCompanyForm');
   }
 
   async editCompanyDetails(editCompanyForm: NgForm) {
@@ -108,6 +115,7 @@ export class EditCompanyComponent implements OnInit {
   }
 
   private async afterPictureUpload(editCompanyForm) {
+    Utils.showLoader('#editCompanyForm');
     try {
       let name = editCompanyForm.value['name'];
       let addressLine1 = editCompanyForm.value['addressLine1'];
@@ -125,11 +133,15 @@ export class EditCompanyComponent implements OnInit {
       let facebook = editCompanyForm.value['facebook'];
       let youtube = editCompanyForm.value['youtube'];
       let instagram = editCompanyForm.value['instagram'];
-      let gplus = editCompanyForm.value['gplus'];
+      let gplus = editCompanyForm.value['google-plus'];
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
       let companyId=this.companyDetails._id;
       await this.inspectorService.updateCompanyInfo(companyId, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius,  facebook, youtube, instagram, gplus, twitter, associations);
+      swal("Great!", "Updated Sucessfully!", "success");
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 3000);
     } catch (error) {
       alert(error);
     }
@@ -161,7 +173,6 @@ export class EditCompanyComponent implements OnInit {
       this.getLocation(event.latLng);
     });
   }
-
   private getLocation(latLng) {
     var geocoder = new google.maps.Geocoder;
     geocoder.geocode({ 'location': latLng }, (results, status) => {
@@ -171,47 +182,5 @@ export class EditCompanyComponent implements OnInit {
         window.alert('Geocoder failed due to: ' + status);
       }
     });
-  }
-
-  private setMap(mapProp) {
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-    var input = document.getElementById('address');
-    if (input != null) {
-      var searchBox = new google.maps.places.SearchBox(input);
-      // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-      this.map.addListener('bounds_changed', () => {
-        searchBox.setBounds(this.map.getBounds());
-      });
-      searchBox.addListener('places_changed', () => {
-        var places = searchBox.getPlaces();
-        if (places.length == 0) {
-          return;
-        }
-        // For each place, get the icon, name and location.
-        var bounds = new google.maps.LatLngBounds();
-        places.forEach((place) => {
-          if (!place.geometry) {
-            console.log("Returned place contains no geometry");
-            return;
-          }
-          var icon = {
-            url: place.icon,
-            size: new google.maps.Size(71, 71),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(25, 25)
-          };
-          this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
-          if (place.geometry.viewport) {
-            // Only geocodes have viewport.
-            bounds.union(place.geometry.viewport);
-          } else {
-            bounds.extend(place.geometry.location);
-          }
-        });
-        this.map.fitBounds(bounds);
-      });
-    }
-  }
+ }
 }
