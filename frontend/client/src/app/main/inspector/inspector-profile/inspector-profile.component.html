@@ -13,7 +13,7 @@
             <img src="{{inspectorCompanyDetails?.image}}" alt="">
             <ul class="ct-panel--socials list-inline list-unstyled">
               <li *ngFor="let value of inspectorCompanyDetails.social">
-                <a href="{{value.url}}">
+                <a href="http://{{value.url}}">
                   <div *ngIf="value.provider != 'associations'" class="ct-socials ct-socials--circle">
                     <i class="fa fa-{{value.provider}}"></i>
                   </div>
@@ -24,7 +24,7 @@
           <div class="ct-personContent">
             <div class="ct-personName ct-u-paddingBoth10 text-uppercase">
               <h2>{{inspectorCompanyDetails?.name}}
-                <a *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
+                <a routerLink="/inspector/edit/company-details" *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
               </h2>
               <a href="">{{inspectorCompanyDetails?.addressLine1}}
                 <i class="fa fa-external-link"></i>
@@ -52,8 +52,8 @@
               </ul>
             </div>
             <div class="ct-buttonPanel text-capitalize ct-u-paddingBoth20 pull-right">
-              <a href="agent.html" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Agents</a>
-              <a href="service.html" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Services</a>
+              <a href="" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Agents</a>
+              <a href="" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Services</a>
             </div>
           </div>
         </div>
@@ -63,14 +63,14 @@
       <div class="container">
         <div class="ct-heading ct-u-marginBottom60">
           <h3 class="text-uppercase">Our agents</h3>
-          <a *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
+          <a routerLink="/inspector/agent" *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
         </div>
         <div class="row">
           <div *ngFor="let value of inspectorCompanyDetails?.team" class="col-sm-6 col-md-3">
             <div class="ct-personBox text-left">
               <div class="ct-imagePerson">
                 <img src="assets/images/content/agents-1.jpg" alt="">
-                <ul class="ct-panel--socials list-inline list-unstyled">
+                <!-- <ul class="ct-panel--socials list-inline list-unstyled">
                   <li>
                     <a href="https://www.facebook.com/createITpl">
                       <div class="ct-socials ct-socials--circle">
@@ -92,7 +92,7 @@
                       </div>
                     </a>
                   </li>
-                </ul>
+                </ul> -->
               </div>
               <div class="ct-personContent">
                 <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">

@@ -58,7 +58,7 @@ export class AuthenticationService {
   }
 
   //done
-  
+
   public async getProfile(token) {
     try {
       let body = { token: token };
@@ -101,13 +101,11 @@ export class AuthenticationService {
   //Log out 
   public logout() {
     try {
-       let response = this.httpClient.get(`${Config.API_BASE}/user/logout?userId=${this.profile._id}`, Config.HEADERS).toPromise();
+      let response = this.httpClient.get(`${Config.API_BASE}/user/logout?userId=${this.profile._id}`, Config.HEADERS).toPromise();
       localStorage.removeItem("token");
       this.router.navigate(['/']);
       this.isLogin = false;
-      console.log(response);
-      
-     return response;
+      return response;
     } catch (error) {
       console.log(error);
     }

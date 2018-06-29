@@ -5,6 +5,7 @@ const { userController } = require('./../controllers/userController');
 const { authMiddleware } = require('./../middleware/authMiddleware');
 const { utilsController } = require('./../controllers/utilsController');
 const { inspectorController } = require('./../controllers/inspectorController');
+const { lawyerController } = require('./../controllers/lawyerController');
 const router = new Router();
 
 //USER ROUTES
@@ -28,6 +29,11 @@ router.post('/inspector/registration/wizard/step-1', inspectorController.registr
 router.post('/inspector/registration/wizard/step-2', inspectorController.registrationWizardStep2);
 router.post('/inspector/registration/wizard/step-3', inspectorController.registrationWizardStep3);
 router.put('/inspector', inspectorController.editCompanyDetails);
+
+//LAWYER
+router.get('/lawyer/slug', lawyerController.getLawyerCompanyBySlug);
+router.post('/lawyer/registration/wizard/step-1', lawyerController.registrationWizardStep1);
+router.post('/lawyer/registration/wizard/step-2', lawyerController.registrationWizardStep2);
 
 //UTILITY ROUTES
 router.post('/utils/upload', utilsController.uploadFile, utilsController.sendResponse);

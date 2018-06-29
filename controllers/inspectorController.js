@@ -48,7 +48,7 @@ class InspectorController {
                     refId: inspectionCompany._id
                 },
                 {
-                    provider: "gplus",
+                    provider: "google-plus",
                     url: req.body.gplus,
                     type: "inspector",
                     refId: inspectionCompany._id
@@ -208,7 +208,7 @@ class InspectorController {
                         refId: inspectionCompany._id
                     },
                     {
-                        provider: "gplus",
+                        provider: "google-plus",
                         url: req.body.gplus,
                         type: "inspector",
                         refId: inspectionCompany._id
