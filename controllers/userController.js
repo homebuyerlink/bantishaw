@@ -1,8 +1,10 @@
 const { User } = require('./../schema/user');
 const { InspectionCompany } = require('./../schema/inspectionCompany');
+const { LawyerCompany } = require('./../schema/lawyerCompany');
 const { errorHandler } = require('./../utils/errorHandler');
 const { authMiddleware } = require('./../middleware/authMiddleware');
 const { Inspector } = require('./../models/inspector');
+const { Lawyer } = require('./../models/lawyer');
 const bcrypt = require('bcrypt');
 const ejs = require('ejs');
 const nodeMailer = require('./../utils/nodeMailer');
@@ -237,6 +239,15 @@ class UserController {
                             }
                         }
                     ].concat(Inspector.prototype.inspectionCompanyPipeline()));
+                }
+                else if (user.userType == 'lawyer') {
+                    company = await LawyerCompany.aggregate([
+                        {
+                            $match: {
+                                userId: userId
+                            }
+                        }
+                    ].concat(Lawyer.prototype.lawyerCompanyPipeline()));
                 }
                 res.send(company[0]);
             }
