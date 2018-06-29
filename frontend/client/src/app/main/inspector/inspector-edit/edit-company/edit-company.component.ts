@@ -63,9 +63,11 @@ export class EditCompanyComponent implements OnInit {
     "tags": [],
     "team": [],
     "services": [],
-    "social": [],
-  }
+    "social": [
 
+    ],
+
+  }
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public URL = `${Config.API_BASE}/utils/upload`;
@@ -91,11 +93,18 @@ export class EditCompanyComponent implements OnInit {
 
   async editCompanyDetails(editCompanyForm: NgForm) {
     Utils.showLoader('#editCompanyForm');
+   if(this.uploader.queue.length==0){   
+    this.image=this.companyDetails.image;
+    this.afterPictureUpload(editCompanyForm);
+   }
+   else{
     this.uploader.uploadAll();
     this.uploader.queue[0].onSuccess = (response, status, headers) => {
       this.image = JSON.parse(response).url;
-      this.afterPictureUpload(editCompanyForm);
+        this.afterPictureUpload(editCompanyForm);
     }
+  }
+    Utils.hideLoader('#editCompanyForm');
   }
 
   private async afterPictureUpload(editCompanyForm) {
@@ -113,7 +122,6 @@ export class EditCompanyComponent implements OnInit {
       let lat = this.latitude;
       let lng = this.longitude;
       let radius = editCompanyForm.value['radius'];
-      let userId = this.authService.profile._id;
       let facebook = editCompanyForm.value['facebook'];
       let youtube = editCompanyForm.value['youtube'];
       let instagram = editCompanyForm.value['instagram'];
@@ -121,8 +129,7 @@ export class EditCompanyComponent implements OnInit {
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
       let companyId=this.companyDetails._id;
-      let response= await this.inspectorService.updateCompanyInfo(companyId, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius,  facebook, youtube, instagram, gplus, twitter, associations);
-      console.log(response);
+      await this.inspectorService.updateCompanyInfo(companyId, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius,  facebook, youtube, instagram, gplus, twitter, associations);
     } catch (error) {
       alert(error);
     }
