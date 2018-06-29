@@ -121,6 +121,35 @@ class LawyerController {
             errorHandler.sendError(res, error);
         }
     }
+
+    async editService(req, res) {
+        try {
+            let serviceId = req.body.serviceId;
+            let service = await LawyerCompanyService.findById(serviceId);
+            if (service == null)
+                throw { code: 400, message: "Service ID is not valid" };
+            else {
+                let name = req.body.name;
+                let image = req.body.image;
+                let price = req.body.price;
+                let promo = req.body.promo;
+                let details = req.body.details;
+                await LawyerCompanyService.findByIdAndUpdate(serviceId, {
+                    $set: {
+                        name: name,
+                        image: image,
+                        price: price,
+                        promo: promo,
+                        details: details,
+                    }
+                });
+                service = await LawyerCompanyService.findById(serviceId);
+                res.send(service);
+            }
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
 }
 
 const lawyerController = new LawyerController();

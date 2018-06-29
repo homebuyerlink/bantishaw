@@ -238,6 +238,64 @@ class InspectorController {
         }
     }
 
+    async editService(req, res) {
+        try {
+            let serviceId = req.body.serviceId;
+            let service = await InspectionCompanyService.findById(serviceId);
+            if (service == null)
+                throw { code: 400, message: "Service ID is not valid" };
+            else {
+                let name = req.body.name;
+                let image = req.body.image;
+                let price = req.body.price;
+                let promo = req.body.promo;
+                let details = req.body.details;
+                await InspectionCompanyService.findByIdAndUpdate(serviceId, {
+                    $set: {
+                        name: name,
+                        image: image,
+                        price: price,
+                        promo: promo,
+                        details: details,
+                    }
+                });
+                service = await InspectionCompanyService.findById(serviceId);
+                res.send(service);
+            }
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+
+    async editAgent(req, res) {
+        try {
+            let agentId = req.body.agentId;
+            let teamMember = await TeamMember.findById(agentId);
+            if (teamMember == null)
+                throw { code: 400, message: "Agent not found!" };
+            else {
+                let name = req.body.name,
+                    designation = req.body.designation,
+                    email = req.body.email,
+                    phone = req.body.phone,
+                    image = req.body.image;
+                await TeamMember.findByIdAndUpdate(agentId, {
+                    $set: {
+                        name: name,
+                        designation: designation,
+                        email: email,
+                        phone: phone,
+                        image: image,
+                    }
+                });
+                teamMember = await TeamMember.findById(agentId);
+                res.send(teamMember);
+            }
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+
 }
 
 const inspectorController = new InspectorController();
