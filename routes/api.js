@@ -36,6 +36,7 @@ router.put('/inspector/service', inspectorController.editService);
 router.get('/lawyer/slug', lawyerController.getLawyerCompanyBySlug);
 router.post('/lawyer/registration/wizard/step-1', lawyerController.registrationWizardStep1);
 router.post('/lawyer/registration/wizard/step-2', lawyerController.registrationWizardStep2);
+router.put('/lawyer', lawyerController.editCompanyDetails);
 router.put('/lawyer/service', lawyerController.editService);
 
 //UTILITY ROUTES

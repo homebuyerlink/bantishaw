@@ -150,6 +150,89 @@ class LawyerController {
             errorHandler.sendError(res, error);
         }
     }
+
+    async editCompanyDetails(req, res) {
+        try {
+            let companyId = req.body.companyId;
+            let tags = req.body.tags;
+            let lawyerCompany = await LawyerCompany.findByIdAndUpdate(companyId, {
+                $set: {
+                    name: req.body.name,
+                    lawyerName: req.body.lawyerName,
+                    designation: req.body.designation,
+                    experience: req.body.experience,
+                    addressLine1: req.body.addressLine1,
+                    addressLine2: req.body.addressLine2,
+                    city: req.body.city,
+                    state: req.body.state,
+                    zip: req.body.zip,
+                    phone: req.body.phone,
+                    email: req.body.email,
+                    website: req.body.website,
+                    founded: req.body.founded,
+                    image: req.body.image,
+                    lat: req.body.lat,
+                    lng: req.body.lng,
+                    radius: req.body.radius
+                }
+            });
+            let tagUpsert = tags.map(x => {
+                return {
+                    text: x,
+                    type: "lawyer",
+                    refId: lawyerCompany._id
+                }
+            });
+            let socialNetworks = [
+                {
+                    provider: "facebook",
+                    url: req.body.facebook,
+                    type: "lawyer",
+                    refId: lawyerCompany._id
+                },
+                {
+                    provider: "youtube",
+                    url: req.body.youtube,
+                    type: "lawyer",
+                    refId: lawyerCompany._id
+                },
+                {
+                    provider: "instagram",
+                    url: req.body.instagram,
+                    type: "lawyer",
+                    refId: lawyerCompany._id
+                },
+                {
+                    provider: "google-plus",
+                    url: req.body.gplus,
+                    type: "lawyer",
+                    refId: lawyerCompany._id
+                },
+                {
+                    provider: "twitter",
+                    url: req.body.twitter,
+                    type: "lawyer",
+                    refId: lawyerCompany._id
+                },
+                {
+                    provider: "associations",
+                    url: req.body.associations,
+                    type: "lawyer",
+                    refId: lawyerCompany._id
+                }
+            ];
+            for (const network of socialNetworks) {
+                await SocialNetwork.findOneAndUpdate({ provider: network.provider, refId: network.refId, type: network.type }, {
+                    $set: network
+                });
+            }
+            await SearchTag.deleteMany({ type: "lawyer", refId: lawyerCompany._id })
+            await SearchTag.insertMany(tagUpsert);
+            res.send({ success: true, lawyerCompany: lawyerCompany });
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
 }
 
 const lawyerController = new LawyerController();
