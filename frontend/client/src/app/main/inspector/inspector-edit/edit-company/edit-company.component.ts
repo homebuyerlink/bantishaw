@@ -18,8 +18,8 @@ declare const google: any;
 
 export class EditCompanyComponent implements OnInit {
 
-  public latitude: any;
-  public longitude: any;
+  public latitude: number;
+  public longitude: number;
   public address = '';
   public location = '';
   public companyDetails = {
@@ -75,17 +75,19 @@ export class EditCompanyComponent implements OnInit {
     url: this.URL,
   });
   public image = '';
+
   constructor(private route: ActivatedRoute, private inspectorService: InspectorService, private authService: AuthenticationService) { }
+  
   ngOnInit() {
     this.getCompanyDetails();
-    this.initmap();
   }
+
   async getCompanyDetails() {
     let response = await this.inspectorService.getInspectorCompanyById();
-    console.log(response);
     this.companyDetails = <any>response;
-    console.log(this.companyDetails);
-    console.log(this.companyDetails.social[0]);
+    this.latitude = parseFloat(this.companyDetails.lat);
+    this.longitude = parseFloat(this.companyDetails.lng);
+    this.initmap();
     return response;
   }
 
@@ -97,6 +99,7 @@ export class EditCompanyComponent implements OnInit {
       this.afterPictureUpload(editCompanyForm);
     }
   }
+
   private async afterPictureUpload(editCompanyForm) {
     try {
       let name = editCompanyForm.value['name'];
@@ -119,7 +122,7 @@ export class EditCompanyComponent implements OnInit {
       let gplus = editCompanyForm.value['gplus'];
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
-      await this.inspectorService.updateCompanyInfo( this.companyDetails._id,name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      await this.inspectorService.updateCompanyInfo(this.companyDetails._id, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
     } catch (error) {
       alert(error);
     }
@@ -127,19 +130,14 @@ export class EditCompanyComponent implements OnInit {
   }
 
   initmap() {
-    this.latitude = this.companyDetails.lat;
-    this.longitude = this.companyDetails.lng;
-    console.log(this.latitude);
-    console.log(this.longitude);
-    
-    
-    var mapProp = new google.maps.Map(this.gmapElement.nativeElement, {
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, {
+      center: { lat: this.latitude, lng: this.longitude },
       zoom: 12,
-      center: new google.maps.LatLng(this.latitude, this.longitude),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    this.setMap(mapProp);
-    this.setMarker(mapProp);
+    this.map.setCenter({ lat: this.latitude, lng: this.longitude });
+    this.getLocation({ lat: this.latitude, lng: this.longitude });
+    this.setMarker(this.map);
   }
 
   public setMarker(mapProp) {
