@@ -19,7 +19,7 @@ export class EditCompanyComponent implements OnInit {
   public latitude: number;
   public longitude: number;
   public address = '';
-  public location = '';
+  public location: any = null;
   public companyDetails = {
     "_id": null,
     "slug": null,
@@ -67,6 +67,7 @@ export class EditCompanyComponent implements OnInit {
     "social": [],
 
   }
+  tags = [];
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public URL = `${Config.API_BASE}/utils/upload`;
@@ -75,7 +76,7 @@ export class EditCompanyComponent implements OnInit {
   });
   public image = '';
 
-  constructor(private lawyerService:LawyerService, public authService: AuthenticationService) { }
+  constructor(private lawyerService:LawyerService, public inspectorService: InspectorService, public authService: AuthenticationService) { }
 
   ngOnInit() {
     this.getCompanyDetails();

@@ -27,7 +27,7 @@ export class EditTimeslotComponent implements OnInit {
     });
   }
 
-  saveStep4() {
+  saveStep4(abc) {
     console.log("form works");
   }
 

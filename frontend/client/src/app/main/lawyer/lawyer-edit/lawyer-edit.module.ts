@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditCompanyComponent } from './edit-company/edit-company.component';
-import { EditServiceComponent } from './edit-service/edit-service.component';
 import { EditTimeslotComponent } from './edit-timeslot/edit-timeslot.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -12,10 +11,6 @@ const routes: Routes = [
   {
     path: "company-details",
     component: EditCompanyComponent
-  },
-  {
-    path: "service",
-    component: EditServiceComponent
   },
   {
     path: "timeslot",
@@ -32,6 +27,6 @@ const routes: Routes = [
     FileUploadModule,
     TagInputModule
   ],
-  declarations: [EditCompanyComponent, EditServiceComponent, EditTimeslotComponent]
+  declarations: [EditCompanyComponent, EditTimeslotComponent]
 })
 export class LawyerEditModule { }
