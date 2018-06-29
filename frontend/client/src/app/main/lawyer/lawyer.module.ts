@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: "edit",
     loadChildren: './lawyer-edit/lawyer-edit.module#LawyerEditModule',
-  },
+  }
 ]
 
 @NgModule({

@@ -52,8 +52,8 @@
               </ul>
             </div>
             <div class="ct-buttonPanel text-capitalize ct-u-paddingBoth20 pull-right">
-              <a href="" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Agents</a>
-              <a href="" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Services</a>
+              <a (click)="scrollDowntoAgents()" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Agents</a>
+              <a (click)="scrollDowntoServices()" class="btn btn-default btn-transparent--border ct-u-text--white btn-hoverWhite">Our Services</a>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
     </header>
     <section class="ct-u-paddingTop60 ct-u-paddingBottom30 text-center">
       <div class="container">
-        <div class="ct-heading ct-u-marginBottom60">
+        <div class="ct-heading ct-u-marginBottom60" id="agents">
           <h3 class="text-uppercase">Our agents</h3>
           <a routerLink="/inspector/agent" *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
         </div>
@@ -119,7 +119,7 @@
     </section>
     <section class="ct-u-paddingTop30 ct-u-paddingBottom60">
       <div class="container">
-        <div class="ct-heading ct-u-marginBottom60 text-center">
+        <div class="ct-heading ct-u-marginBottom60 text-center" id="services">
           <h3 class="text-uppercase">Our Services</h3>
           <a *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Properties">edit</a>
         </div>

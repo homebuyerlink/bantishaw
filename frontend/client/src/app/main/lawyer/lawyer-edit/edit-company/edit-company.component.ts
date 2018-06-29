@@ -5,7 +5,9 @@ import { Config } from './../../../../config';
 import { InspectorService } from '../../../../services/inspector.service';
 import { Utils } from '../../../../utils';
 import { AuthenticationService } from '../../../../services/authentication.service';
+import { LawyerService } from '../../../../services/lawyer.service';
 declare const google: any;
+declare const swal:any;
 
 @Component({
   selector: 'app-edit-company',
@@ -14,10 +16,56 @@ declare const google: any;
 })
 export class EditCompanyComponent implements OnInit {
 
-  public latitude: any;
-  public longitude: any;
+  public latitude: number;
+  public longitude: number;
   public address = '';
   public location = '';
+  public companyDetails = {
+    "_id": null,
+    "slug": null,
+    "name": null,
+    "addressLine1": null,
+    "addressLine2": null,
+    "city": null,
+    "state": null,
+    "zip": null,
+    "phone": null,
+    "email": null,
+    "website": null,
+    "founded": null,
+    "image": null,
+    "lat": null,
+    "lng": null,
+    "radius": null,
+    "userId": null,
+    "createdAt": null,
+    "updatedAt": null,
+    "__v": null,
+    "user": {
+      "_id": null,
+      "isActive": null,
+      "isEmailVerified": null,
+      "profileWizardStep": null,
+      "profileWizardTotalSteps": null,
+      "email": null,
+      "name": null,
+      "photoUrl": null,
+      "provider": null,
+      "createdAt": null,
+      "updatedAt": null,
+      "__v": null,
+      "token": null,
+      "username": null,
+      "userType": null
+    },
+    "tags": [],
+    "team": [],
+    "services": [],
+    "social": [
+
+    ],
+
+  }
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public URL = `${Config.API_BASE}/utils/upload`;
@@ -26,24 +74,51 @@ export class EditCompanyComponent implements OnInit {
   });
   public image = '';
 
-  constructor(private inspectorService: InspectorService, private authService: AuthenticationService) { }
+  constructor(private inspectorService: InspectorService,private lawyerService:LawyerService, private authService: AuthenticationService) { }
 
   ngOnInit() {
+    this.getCompanyDetails();
     this.initmap();
+  }
+  async getCompanyDetails() {
+    Utils.showLoader('#editCompanyForm');
+    try {
+      let response = await this.inspectorService.getInspectorCompanyById();
+      this.companyDetails = <any>response;
+      console.log(this.companyDetails);
+      this.latitude = parseFloat(this.companyDetails.lat);
+      this.longitude = parseFloat(this.companyDetails.lng);
+      this.initmap();
+    } catch (error) {
+      console.log(error);
+    }
+    Utils.hideLoader('#editCompanyForm');
   }
 
   async editCompanyDetails(editCompanyForm: NgForm) {
     Utils.showLoader('#editCompanyForm');
-    this.uploader.uploadAll();
-    this.uploader.queue[0].onSuccess = (response, status, headers) => {
-      this.image = JSON.parse(response).url;
+
+    if (this.uploader.queue.length == 0) {
+      this.image = this.companyDetails.image;
       this.afterPictureUpload(editCompanyForm);
+    }
+
+    else {
+
+      this.uploader.uploadAll();
+      this.uploader.queue[0].onSuccess = (response, status, headers) => {
+        this.image = JSON.parse(response).url;
+        this.afterPictureUpload(editCompanyForm);
+      }
     }
   }
 
   private async afterPictureUpload(editCompanyForm) {
     try {
       let name = editCompanyForm.value['name'];
+      let lawyerName = editCompanyForm.value['lawyerName'];
+      let designation = editCompanyForm.value['designation'];
+      let experience = editCompanyForm.value['experience'];
       let addressLine1 = editCompanyForm.value['addressLine1'];
       let addressLine2 = editCompanyForm.value['addressLine2'];
       let city = editCompanyForm.value['city'];
@@ -63,7 +138,10 @@ export class EditCompanyComponent implements OnInit {
       let gplus = editCompanyForm.value['gplus'];
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
-      await this.inspectorService.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      let tags = editCompanyForm.value['tags'];
+      
+     await this.lawyerService.updatelawyerCompanyDetails(this.companyDetails._id,name, lawyerName, designation, experience, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations, tags)
+     swal("Great!", "Updated Sucessfully!", "success");
     } catch (error) {
       alert(error);
     }
@@ -71,36 +149,14 @@ export class EditCompanyComponent implements OnInit {
   }
 
   initmap() {
-    this.latitude = 50.186769;
-    this.longitude = 8.698247;
-    var mapProp = new google.maps.Map(this.gmapElement.nativeElement, {
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, {
+      center: { lat: this.latitude, lng: this.longitude },
       zoom: 12,
-      center: new google.maps.LatLng(this.latitude, this.longitude),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    this.setMap(mapProp);
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        this.latitude = pos.lat;
-        this.longitude = pos.lng;
-        mapProp.setCenter(pos);
-        this.setMap(mapProp);
-        this.setMarker(mapProp);
-        // this.getCurrentAddresss(this.latitude, this.longitude);
-      }, () => {
-        mapProp.setCenter({ lat: this.latitude, lng: this.longitude });
-        this.setMap(mapProp);
-        this.setMarker(mapProp);
-      });
-    }
-    else {
-      console.log("Does not has geo location");
-      this.setMarker(mapProp);
-    }
+    this.map.setCenter({ lat: this.latitude, lng: this.longitude });
+    this.getLocation({ lat: this.latitude, lng: this.longitude });
+    this.setMarker(this.map);
   }
 
   public setMarker(mapProp) {
@@ -117,7 +173,6 @@ export class EditCompanyComponent implements OnInit {
       this.getLocation(event.latLng);
     });
   }
-
   private getLocation(latLng) {
     var geocoder = new google.maps.Geocoder;
     geocoder.geocode({ 'location': latLng }, (results, status) => {
@@ -127,48 +182,6 @@ export class EditCompanyComponent implements OnInit {
         window.alert('Geocoder failed due to: ' + status);
       }
     });
-  }
-
-  private setMap(mapProp) {
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-    var input = document.getElementById('address');
-    if (input != null) {
-      var searchBox = new google.maps.places.SearchBox(input);
-      // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-      this.map.addListener('bounds_changed', () => {
-        searchBox.setBounds(this.map.getBounds());
-      });
-      searchBox.addListener('places_changed', () => {
-        var places = searchBox.getPlaces();
-        if (places.length == 0) {
-          return;
-        }
-        // For each place, get the icon, name and location.
-        var bounds = new google.maps.LatLngBounds();
-        places.forEach((place) => {
-          if (!place.geometry) {
-            console.log("Returned place contains no geometry");
-            return;
-          }
-          var icon = {
-            url: place.icon,
-            size: new google.maps.Size(71, 71),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(25, 25)
-          };
-          this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
-          if (place.geometry.viewport) {
-            // Only geocodes have viewport.
-            bounds.union(place.geometry.viewport);
-          } else {
-            bounds.extend(place.geometry.location);
-          }
-        });
-        this.map.fitBounds(bounds);
-      });
-    }
   }
 
 }

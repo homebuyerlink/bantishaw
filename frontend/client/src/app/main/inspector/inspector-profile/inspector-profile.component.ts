@@ -75,5 +75,14 @@ export class InspectorProfileComponent implements OnInit {
     }
     Utils.hideLoader('#profilePage');
   }
-
+  scrollDowntoAgents() {
+    $('html, body').animate({
+      scrollTop: $("#agents").offset().top - 150
+    }, 1000);
+  }
+  scrollDowntoServices() {
+    $('html, body').animate({
+      scrollTop: $("#services").offset().top - 150
+    }, 1000);
+  }
 }

@@ -15,25 +15,48 @@
           <br>
           <br>
           <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="name" placeholder="Name of Company"
-            ngModel required>
-          <div class="row">
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine1"
-                placeholder="Address Line 1" ngModel required>
+            ngModel="{{companyDetails.name}}" required>
+
+
+            <div class="row">
+              <div class="col-sm-4">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="lawyerName"
+                  placeholder="LawyerName" ngModel="{{companyDetails.lawyerName}}" required>
+              </div>
+              <div class="col-sm-4">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="designation"
+                  placeholder="designation" ngModel="{{companyDetails.designation}}" required>
+              </div>
+              <div class="col-sm-4">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="experience"
+                  placeholder="Experience" ngModel="{{companyDetails.experience}}" required>
+              </div>
+  
             </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine2"
-                placeholder="Address Line 2" ngModel required>
+            <div class="row">
+              <div class="col-sm-6">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine1"
+                  placeholder="Address Line 1" ngModel="{{companyDetails.addressLine1}}" required>
+              </div>
+              <div class="col-sm-6">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine2"
+                  placeholder="Address Line 2" ngModel="{{companyDetails.addressLine2}}" required>
+              </div>
             </div>
 
-          </div>
+
+
+
+
+
+
           <div class="row">
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="city" placeholder="City"
-                ngModel required>
+                ngModel="{{companyDetails.city}}" required>
             </div>
             <div class="col-sm-6 ">
-              <select name="state" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ngModel required>
+              <select name="state" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ngModel="{{companyDetails.state}}" required>
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -91,28 +114,29 @@
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="zip" type="text" placeholder="Zip/Postal"
-                ngModel required>
+                ngModel="{{companyDetails.zip}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="phone" type="number" placeholder="Phone"
-                ngModel required>
+                ngModel="{{companyDetails.phone}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                type="email" placeholder="Email" ngModel required>
+                type="email" placeholder="Email" ngModel="{{companyDetails.email}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="website" type="text" placeholder="Website"
-                ngModel required>
+                ngModel="{{companyDetails.website}}" required>
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="founded" type="date" placeholder="Founded"
-                ngModel required>
+                ngModel="{{companyDetails.founded | date: 'yyyy-MM-dd' }}" required>
             </div>
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="image">Profile Picture</label>
-                <input type="file" ng2FileSelect [uploader]="uploader" name="image" class="form-control-file">
+                <input type="file" ng2FileSelect [uploader]="uploader"  ngModel="companyDetails.image" required name="image" class="form-control-file">
+                <img src="{{companyDetails.image}}" width="10%" height="5%">
               </div>
               <br>
               <br>
@@ -120,29 +144,9 @@
               <br>
               <br>
             </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="facebook" placeholder="Facebook Page"
-                ngModel required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="youtube" placeholder="Youtube"
-                ngModel required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="instagram" placeholder="Instagram"
-                ngModel required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="gplus" placeholder="Google+"
-                ngModel required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="twitter" placeholder="Twitter"
-                ngModel required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="associations"
-                placeholder="Associations" ngModel required>
+            <div *ngFor="let value of companyDetails.social" class="col-sm-6">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" ngModel={{value.url}}
+                name="{{value.provider}}" placeholder="{{value.provider}}" required>
             </div>
           </div>
           <br>
@@ -158,10 +162,14 @@
             </div>
             <div class="col-md-6">
               <h3>Services Area Redius KM</h3>
-              <!-- <input type="text" ngModel name="address" id="address" class="form-control" placeholder="Search location"> -->
+              <!-- <input type="text" ngModel="companyDetails." name="address" id="address" class="form-control" placeholder="Search location"> -->
               <br>
               <div id="map" #gmap></div>
             </div>
+          </div>
+          <div class="col-sm-6">
+            <tag-input type="text" [(ngModel)]='tags' [modelAsStrings]="true" name="tags" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10"
+              style="padding-top: 2px;"></tag-input>
           </div>
           <br>
           <br>

@@ -27,7 +27,9 @@ export class LawyerWizardComponent implements OnInit {
     url: this.URL,
   });
   public image = '';
-
+  public companyDetails = {
+    _id: null
+  };
   constructor(private _fb: FormBuilder, private authservice: AuthenticationService, private lawyerService: LawyerService) {
     this.step = authservice.profile.profileWizardStep;
   }
@@ -39,6 +41,9 @@ export class LawyerWizardComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    console.log(this.companyDetails._id);
+
     this.servicesForm = new FormGroup({
       'servicesArray': this._fb.array([this.initService()])
     })
@@ -58,6 +63,7 @@ export class LawyerWizardComponent implements OnInit {
       let companyName = companyDetailsForm.value['companyName'];
       let lawyerName = companyDetailsForm.value['lawyerName'];
       let designation = companyDetailsForm.value['designation'];
+      let experience = companyDetailsForm.value['experience'];
       let addressLine1 = companyDetailsForm.value['addressLine1'];
       let addressLine2 = companyDetailsForm.value['addressLine2'];
       let city = companyDetailsForm.value['city'];
@@ -69,17 +75,18 @@ export class LawyerWizardComponent implements OnInit {
       let founded = companyDetailsForm.value['founded'];
       let lat = this.latitude;
       let lng = this.longitude;
-      let radius = 50;
-      this.tags = companyDetailsForm.value.tags;
-      let tags = this.tags.map(el => el.value).toString();
+      let radius = companyDetailsForm.value['radius'];
+      // this.tags = companyDetailsForm.value.tags;
+      // let tags = this.tags.map(el => el.value).toString();
+      let tags = companyDetailsForm.value['tags'];
       let userId = this.authservice.profile._id;
       let facebook = companyDetailsForm.value['facebook'];
       let youtube = companyDetailsForm.value['youtube'];
       let instagram = companyDetailsForm.value['instagram'];
-      let gplus = companyDetailsForm.value['gplus'];
+      let gplus = companyDetailsForm.value['google-plus'];
       let twitter = companyDetailsForm.value['twitter'];
       let associations = companyDetailsForm.value['associations'];
-      await this.lawyerService.setCompanyDetails(companyName, lawyerName, designation, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, tags, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      await this.lawyerService.setCompanyDetails(companyName, lawyerName, designation, experience, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations, tags);
       this.step = 1;
     } catch (error) {
       console.log(error);
@@ -93,8 +100,7 @@ export class LawyerWizardComponent implements OnInit {
       image: ['', Validators.required],
       price: ['', Validators.required],
       promo: ['', Validators.required],
-      details: ['', Validators.required],
-
+      details: ['', Validators.required]
     });
   }
 
@@ -109,16 +115,22 @@ export class LawyerWizardComponent implements OnInit {
       this.uploader.uploadAll();
       this.uploader.queue[0].onSuccess = (response, status, headers) => {
         this.image = JSON.parse(response).url;
-        console.log(this.image);
       }
-      await this.lawyerService.setService(this.servicesForm.value.servicesArray);
+      this.companyDetails = (<any>await this.lawyerService.getCompanyDetails());
+      let obj = {
+        companyId: this.companyDetails._id,
+        userId: this.authservice.profile._id,
+        services: this.servicesForm.value.servicesArray,
+      };
+      console.log(obj);
+      await this.lawyerService.setService(obj);
       this.step = 2;
     } catch (error) {
       console.log(error);
     }
     Utils.hideLoader('#serviceForm');
   }
-
+  
   initmap() {
     this.latitude = 50.186769;
     this.longitude = 8.698247;
@@ -139,7 +151,6 @@ export class LawyerWizardComponent implements OnInit {
         mapProp.setCenter(pos);
         this.setMap(mapProp);
         this.setMarker(mapProp);
-        // this.getCurrentAddresss(this.latitude, this.longitude);
       }, () => {
         mapProp.setCenter({ lat: this.latitude, lng: this.longitude });
         this.setMap(mapProp);
@@ -151,7 +162,6 @@ export class LawyerWizardComponent implements OnInit {
       this.setMarker(mapProp);
     }
   }
-
   setMarker(mapProp) {
     var marker = new google.maps.Marker({
       position: { lat: this.latitude, lng: this.longitude },
@@ -165,9 +175,7 @@ export class LawyerWizardComponent implements OnInit {
       this.longitude = event.latLng.lng();
     });
   }
-
   setMap(mapProp) {
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
   }
-
 }

@@ -10,7 +10,7 @@ import { TagInputModule } from 'ngx-chips';
 
 const routes: Routes = [
   {
-    path: "company",
+    path: "company-details",
     component: EditCompanyComponent
   },
   {
