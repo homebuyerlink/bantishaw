@@ -48,7 +48,7 @@ Last change:	30 April 2015
 
 
 -------------------------------------------------------------------*/
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
@@ -10972,7 +10972,7 @@ header {
   display: inline-block;
   float: right;
   padding-right: 0;
-  width: 64%;
+  width: 75%;
   padding-bottom: 0;
 }
 .ct-personBox--extended .ct-personContent .ct-personDescription,
