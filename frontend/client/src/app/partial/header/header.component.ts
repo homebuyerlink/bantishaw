@@ -89,7 +89,7 @@ export class HeaderComponent implements OnInit {
     try {
       this.companyDetails = (<any>await this.inspectorService.getCompanyDetails());
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
 

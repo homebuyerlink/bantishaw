@@ -13,6 +13,7 @@ import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { inspectrGuard } from './guards/inspector.guard';
 import { TokenInterceptor } from './partial/token.interceptor';
+import { WizardGuard } from './guards/wizard.guard';
 const routes: Routes = [
   {
     path: "",
@@ -40,6 +41,7 @@ const routes: Routes = [
     AuthGuard,
     UserTypeGuard,
     ServiceProviderGuard,
+    WizardGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

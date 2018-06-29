@@ -5,19 +5,67 @@ import { Config } from './../../../../config';
 import { InspectorService } from '../../../../services/inspector.service';
 import { Utils } from '../../../../utils';
 import { AuthenticationService } from '../../../../services/authentication.service';
+import { ActivatedRoute } from '@angular/router';
 declare const google: any;
 
 @Component({
+
   selector: 'app-edit-company',
   templateUrl: './edit-company.component.html',
   styleUrls: ['./edit-company.component.css']
+
 })
+
 export class EditCompanyComponent implements OnInit {
 
-  public latitude: any;
-  public longitude: any;
+  public latitude: number;
+  public longitude: number;
   public address = '';
   public location = '';
+  public companyDetails = {
+    "_id": null,
+    "slug": null,
+    "name": null,
+    "addressLine1": null,
+    "addressLine2": null,
+    "city": null,
+    "state": null,
+    "zip": null,
+    "phone": null,
+    "email": null,
+    "website": null,
+    "founded": null,
+    "image": null,
+    "lat": null,
+    "lng": null,
+    "radius": null,
+    "userId": null,
+    "createdAt": null,
+    "updatedAt": null,
+    "__v": null,
+    "user": {
+      "_id": null,
+      "isActive": null,
+      "isEmailVerified": null,
+      "profileWizardStep": null,
+      "profileWizardTotalSteps": null,
+      "email": null,
+      "name": null,
+      "photoUrl": null,
+      "provider": null,
+      "createdAt": null,
+      "updatedAt": null,
+      "__v": null,
+      "token": null,
+      "username": null,
+      "userType": null
+    },
+    "tags": [],
+    "team": [],
+    "services": [],
+    "social": [],
+  }
+
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public URL = `${Config.API_BASE}/utils/upload`;
@@ -26,10 +74,24 @@ export class EditCompanyComponent implements OnInit {
   });
   public image = '';
 
-  constructor(private inspectorService: InspectorService, private authService: AuthenticationService) { }
+  constructor(private route: ActivatedRoute, private inspectorService: InspectorService, private authService: AuthenticationService) { }
 
   ngOnInit() {
-    this.initmap();
+    this.getCompanyDetails();
+  }
+
+  async getCompanyDetails() {
+    Utils.showLoader('#editCompanyForm');
+    try {
+      let response = await this.inspectorService.getInspectorCompanyById();
+      this.companyDetails = <any>response;
+      this.latitude = parseFloat(this.companyDetails.lat);
+      this.longitude = parseFloat(this.companyDetails.lng);
+      this.initmap();
+    } catch (error) {
+      console.log(error);
+    }
+    Utils.hideLoader('#editCompanyForm');
   }
 
   async editCompanyDetails(editCompanyForm: NgForm) {
@@ -55,15 +117,15 @@ export class EditCompanyComponent implements OnInit {
       let founded = editCompanyForm.value['founded'];
       let lat = this.latitude;
       let lng = this.longitude;
-      let radius = 50;
+      let radius = editCompanyForm.value['radius'];
       let userId = this.authService.profile._id;
       let facebook = editCompanyForm.value['facebook'];
       let youtube = editCompanyForm.value['youtube'];
       let instagram = editCompanyForm.value['instagram'];
-      let gplus = editCompanyForm.value['gplus'];
+      let gplus = editCompanyForm.value['google-plus'];
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
-      await this.inspectorService.saveDetailsStep1(name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      await this.inspectorService.updateCompanyInfo(this.companyDetails._id, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
     } catch (error) {
       alert(error);
     }
@@ -71,36 +133,14 @@ export class EditCompanyComponent implements OnInit {
   }
 
   initmap() {
-    this.latitude = 50.186769;
-    this.longitude = 8.698247;
-    var mapProp = new google.maps.Map(this.gmapElement.nativeElement, {
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, {
+      center: { lat: this.latitude, lng: this.longitude },
       zoom: 12,
-      center: new google.maps.LatLng(this.latitude, this.longitude),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    this.setMap(mapProp);
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        this.latitude = pos.lat;
-        this.longitude = pos.lng;
-        mapProp.setCenter(pos);
-        this.setMap(mapProp);
-        this.setMarker(mapProp);
-        // this.getCurrentAddresss(this.latitude, this.longitude);
-      }, () => {
-        mapProp.setCenter({ lat: this.latitude, lng: this.longitude });
-        this.setMap(mapProp);
-        this.setMarker(mapProp);
-      });
-    }
-    else {
-      console.log("Does not has geo location");
-      this.setMarker(mapProp);
-    }
+    this.map.setCenter({ lat: this.latitude, lng: this.longitude });
+    this.getLocation({ lat: this.latitude, lng: this.longitude });
+    this.setMarker(this.map);
   }
 
   public setMarker(mapProp) {
@@ -127,48 +167,6 @@ export class EditCompanyComponent implements OnInit {
         window.alert('Geocoder failed due to: ' + status);
       }
     });
-  }
-
-  private setMap(mapProp) {
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-    var input = document.getElementById('address');
-    if (input != null) {
-      var searchBox = new google.maps.places.SearchBox(input);
-      // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-      this.map.addListener('bounds_changed', () => {
-        searchBox.setBounds(this.map.getBounds());
-      });
-      searchBox.addListener('places_changed', () => {
-        var places = searchBox.getPlaces();
-        if (places.length == 0) {
-          return;
-        }
-        // For each place, get the icon, name and location.
-        var bounds = new google.maps.LatLngBounds();
-        places.forEach((place) => {
-          if (!place.geometry) {
-            console.log("Returned place contains no geometry");
-            return;
-          }
-          var icon = {
-            url: place.icon,
-            size: new google.maps.Size(71, 71),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(25, 25)
-          };
-          this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
-          if (place.geometry.viewport) {
-            // Only geocodes have viewport.
-            bounds.union(place.geometry.viewport);
-          } else {
-            bounds.extend(place.geometry.location);
-          }
-        });
-        this.map.fitBounds(bounds);
-      });
-    }
   }
 
 }

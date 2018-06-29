@@ -1,38 +1,37 @@
 <ng-container *ngIf="step1">
-    <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <header style="background-color: #393939;padding: 13px;">
-            <div class="ct-mediaSection-inner">
-                <div class="container">
-                    <div class="ct-steps--submission center-block ct-u-marginBottom20">
-                        <div class="ct-steps--item " style="width: 105% !important;">
-                            <div class="ct-steps--counter ct-steps--active">
-                                <span>1</span>
-                            </div>
-                        </div>
-                        <div class="ct-steps--item">
-                            <div class="ct-steps--counter">
-                                <span>2</span>
-                            </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <header style="background-color: #393939;padding: 13px;">
+        <div class="ct-mediaSection-inner">
+            <div class="container">
+                <div class="ct-steps--submission center-block ct-u-marginBottom20">
+                    <div class="ct-steps--item " style="width: 105% !important;">
+                        <div class="ct-steps--counter ct-steps--active">
+                            <span>1</span>
                         </div>
                     </div>
-                    <div class="ct-u-displayTable ct-steps--title text-center">
-                        <div class="ct-u-displayTableCell">
-                            <span>User Name</span>
-                        </div>
-                        <div class="ct-u-displayTableCell">
-                            <span>User Type</span>
+                    <div class="ct-steps--item">
+                        <div class="ct-steps--counter">
+                            <span>2</span>
                         </div>
                     </div>
                 </div>
+                <div class="ct-u-displayTable ct-steps--title text-center">
+                    <div class="ct-u-displayTableCell">
+                        <span>User Name</span>
+                    </div>
+                    <div class="ct-u-displayTableCell">
+                        <span>User Type</span>
+                    </div>
+                </div>
             </div>
-        </header>
+        </div>
+    </header>
+    <div class="container" id="step1">
         <div class="row">
             <br>
             <br>
@@ -53,45 +52,40 @@
     </div>
 </ng-container>
 
-<!--step 2-->
 <ng-container *ngIf="step2">
-    <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <header style="background-color: #393939;padding: 13px;">
-            <div class="ct-mediaSection-inner">
-                <div class="container">
-                    <div class="ct-steps--submission center-block ct-u-marginBottom20">
-                        <div class="ct-steps--item ct-steps--progress" style="width: 105% !important;">
-                            <div class="ct-steps--counter">
-                                <span>1</span>
-                            </div>
-                        </div>
-                        <div class="ct-steps--item">
-                            <div class="ct-steps--counter ct-steps--active">
-                                <span>2</span>
-                            </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <header style="background-color: #393939;padding: 13px;">
+        <div class="ct-mediaSection-inner">
+            <div class="container">
+                <div class="ct-steps--submission center-block ct-u-marginBottom20">
+                    <div class="ct-steps--item ct-steps--progress" style="width: 105% !important;">
+                        <div class="ct-steps--counter">
+                            <span>1</span>
                         </div>
                     </div>
-                    <div class="ct-u-displayTable ct-steps--title text-center">
-                        <div class="ct-u-displayTableCell">
-                            <span>User Name</span>
-                        </div>
-                        <div class="ct-u-displayTableCell">
-                            <span>User Type</span>
+                    <div class="ct-steps--item">
+                        <div class="ct-steps--counter ct-steps--active">
+                            <span>2</span>
                         </div>
                     </div>
                 </div>
+                <div class="ct-u-displayTable ct-steps--title text-center">
+                    <div class="ct-u-displayTableCell">
+                        <span>User Name</span>
+                    </div>
+                    <div class="ct-u-displayTableCell">
+                        <span>User Type</span>
+                    </div>
+                </div>
             </div>
-        </header>
-        <br>
-        <br>
+        </div>
+    </header>
+    <div class="container" id="step2">
         <br>
         <p>Please Select your Account Type!</p>
         <form #userTypeStep2="ngForm" (submit)="onSubmittingUserTypeStep2(userTypeStep2)">
@@ -108,19 +102,16 @@
                 <div class="checkbox">
                     <label>
                         <input ngModel name="terms" type="checkbox" value="accept" required> I read and agree to
-                        <a href="" id="btn-lnk-terms"> terms & conditions</a>
+                        <a  id="btn-lnk-terms"> terms & conditions</a>
                     </label>
                 </div>
             </div>
             <br>
             <div class="col-md-offset-3 col-md-5">
-                <button type="submit" class="btn btn-success btn-block">Save my Role!</button>
+                <button type="submit" class="btn btn-success btn-block"[disabled]="!userTypeStep2.valid" >Save my Role!</button>
                 <br>
                 <br>
             </div>
         </form>
     </div>
-
 </ng-container>
-
-<!--End of second step-->

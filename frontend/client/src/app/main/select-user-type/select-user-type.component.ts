@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
 import { Router } from '@angular/router';
+import { Utils } from '../../utils';
 
 @Component({
   selector: 'app-select-user-type',
@@ -25,6 +26,7 @@ export class SelectUserTypeComponent implements OnInit {
   }
   //for updating the name
   async onSubmittingUserTypeStep1(userTypeStep1: NgForm) {
+    Utils.showLoader('#step1');
     if (userTypeStep1.valid) {
       try {
         await this.autheticationService.updateUserName(this.autheticationService.profile._id, userTypeStep1.value['username']);
@@ -39,18 +41,23 @@ export class SelectUserTypeComponent implements OnInit {
         alert(error.error.message)
       }
     }
+    Utils.hideLoader('#step1');
   }
+
   //for updating the userType
   async  onSubmittingUserTypeStep2(userTypeStep2: NgForm) {
+    Utils.showLoader('#step2');
     if (userTypeStep2.valid) {
-      try {
+      try {   
         let userID = this.autheticationService.profile._id;
         let userType = userTypeStep2.value['userType'];
-        await this.autheticationService.updateUserType(userID, userType);
+       await this.autheticationService.updateUserType(userID, userType);
+     
         this.router.navigate(['/']);
       } catch (error) {
         alert(error.error.message)
       }
     }
+    Utils.hideLoader('#step2');
   }
 }
