@@ -122,7 +122,9 @@ export class EditCompanyComponent implements OnInit {
       let gplus = editCompanyForm.value['gplus'];
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
-      await this.inspectorService.updateCompanyInfo(this.companyDetails._id, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations);
+      let companyId=this.companyDetails._id;
+      let response= await this.inspectorService.updateCompanyInfo(companyId, name, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius,  facebook, youtube, instagram, gplus, twitter, associations);
+      console.log(response);
     } catch (error) {
       alert(error);
     }
