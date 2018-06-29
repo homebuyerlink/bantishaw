@@ -31,17 +31,9 @@ export class InspectorService {
   public async saveServicesDetails(companyId, userId, services) {
     let body = { companyId: companyId, userId: userId, services: services };
     let response = await this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-3`, body, Config.HEADERS).toPromise();
-    console.log(response);
-
     return response;
   }
-  // //step 4
-  // public async saveDetailsStep4(username, email, password, userType) {
-  //   let body = { username: username, email: email, password: password, userType: userType };
-  //   let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
-  //   return response;
-  // }
-
+  
   getCompanyDetails() {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
   }
@@ -72,8 +64,13 @@ export class InspectorService {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
   }
 
-  editAgentDetails(name, designation, phone, email, image){
-    let body = { name: name, designation: designation, phone: phone, email: email, image: image };
-    return this.httpClient.put(`${Config.API_BASE}`, body, Config.HEADERS).toPromise();
+  editAgentDetails(agentId, name, designation, phone, email, image){
+    let body = { agentId: agentId, name: name, designation: designation, phone: phone, email: email, image: image };
+    return this.httpClient.put(`${Config.API_BASE}/inspector/agent`, body, Config.HEADERS).toPromise();
+  }
+
+  editServiceDetails(serviceId, name, price, promo, details, image){
+    let body = { serviceId: serviceId, name: name, price: price, promo: promo, details: details, image: image };
+    return this.httpClient.put(`${Config.API_BASE}/inspector/service`, body, Config.HEADERS).toPromise();
   }  
 }

@@ -61,6 +61,15 @@ export class EditAgentComponent implements OnInit {
     "services": [],
     "social": []
   }
+  selectedAgent = {
+    "_id": null,
+    "designation": null,
+    "email": null,
+    "image": null,
+    "name": null,
+    "phone": null,
+    "type": null
+  }
 
   constructor(private authservice: AuthenticationService, private inspectorService: InspectorService) { }
 
@@ -69,11 +78,16 @@ export class EditAgentComponent implements OnInit {
   }
 
   async editAgent(editAgentForm: NgForm) {
-    Utils.showLoader('#myModal');
+    Utils.showLoader('#editAgentForm');
     try {
-      this.uploader.uploadAll();
-      this.uploader.queue[this.uploader.queue.length - 1].onSuccess = (response, status, headers) => {
-        this.image = JSON.parse(response).url;
+      if (this.uploader.queue.length > 0) {
+        this.uploader.uploadAll();
+        this.uploader.queue[this.uploader.queue.length - 1].onSuccess = (response, status, headers) => {
+          this.image = JSON.parse(response).url;
+          this.afterPictureUpload(editAgentForm);
+        }
+      } else {
+        this.image = this.selectedAgent.image;
         this.afterPictureUpload(editAgentForm);
       }
     } catch (error) {
@@ -87,11 +101,18 @@ export class EditAgentComponent implements OnInit {
       let designation = editAgentForm.value.designation;
       let phone = editAgentForm.value.phone;
       let email = editAgentForm.value.email;
-      await this.inspectorService.editAgentDetails(name, designation, phone, email, this.image);
+      await this.inspectorService.editAgentDetails(this.selectedAgent._id, name, designation, phone, email, this.image);
+      (<any>$('#myModal')).modal('hide');
+      this.uploader.queue.length = 0;
+      this.getInspectorCompanyDetailsById();
     } catch (error) {
       console.log(error);
     }
-    Utils.hideLoader('#myModal');
+    Utils.hideLoader('#editAgentForm');
+  }
+
+  getAgentId(value) {
+    this.selectedAgent = value;
   }
 
   async getInspectorCompanyDetailsById() {
