@@ -1,3 +1,42 @@
-<p>
-  edit-services works!
-</p>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <section class="ct-u-paddingTop50 ct-u-paddingBottom100">
+    <div class="container" id="serviceForm">
+      <form #editFormServices="ngForm" (submit)="submitEditServices(editFormServices)">
+        <div>
+          <div>
+            <div class="row">
+              <div class="col-md-11 offset-md-1">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name"
+                  ngModel required name="name">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price"
+                      required name="price">
+                  </div>
+                  <div class="col-sm-4">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer"
+                      name="promo">
+                  </div>
+                </div>
+                <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"
+                  ngModel name="details"></textarea>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <ul class="list-inline pull-right">
+          <li>
+            <button type="submit" class="btn btn-primary next-step">Update</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </section>
