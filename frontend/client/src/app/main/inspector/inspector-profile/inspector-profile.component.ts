@@ -57,7 +57,7 @@ export class InspectorProfileComponent implements OnInit {
   }
   slug: any;
 
-  constructor(private authService: AuthenticationService, private inspectorService: InspectorService, private activatedRoute: ActivatedRoute) { }
+  constructor(public authService: AuthenticationService, private inspectorService: InspectorService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {

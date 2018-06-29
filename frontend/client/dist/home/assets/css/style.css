@@ -48,7 +48,7 @@ Last change:	30 April 2015
 
 
 -------------------------------------------------------------------*/
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
@@ -6256,7 +6256,7 @@ button {
   border-color: #f19f24;
 }
 .btn-warning {
-  color: #ffffff !important;
+  color: #ffffff;
   background-color: #f3a822;
   border-color: #f19f24;
 }
@@ -6264,7 +6264,7 @@ button {
 .btn-warning:focus,
 .btn-warning:active,
 .btn-warning.active {
-  color: #f19f24 !important;
+  color: #f19f24;
   background-color: white;
   border-color: #333333;
   color: #f3a822;
@@ -10972,7 +10972,7 @@ header {
   display: inline-block;
   float: right;
   padding-right: 0;
-  width: 64%;
+  width: 75%;
   padding-bottom: 0;
 }
 .ct-personBox--extended .ct-personContent .ct-personDescription,
@@ -11001,7 +11001,7 @@ header {
   margin-right: 20px;
 }
 .ct-personBox--extended {
-  width: 66%;
+  width: 100%;
 }
 /*.ct-personBox--extended {
   width: 66%;
