@@ -1,42 +1,98 @@
-
+<ng-container>
   <br>
   <br>
   <br>
   <br>
   <br>
   <br>
-  <section class="ct-u-paddingTop50 ct-u-paddingBottom100">
-    <div class="container" id="serviceForm">
-      <form #editFormServices="ngForm" (submit)="submitEditServices(editFormServices)">
-        <div>
-          <div>
-            <div class="row">
-              <div class="col-md-11 offset-md-1">
-                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name"
-                  ngModel required name="name">
-                <div class="row">
-                  <div class="col-sm-4">
-                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price"
-                      required name="price">
-                  </div>
-                  <div class="col-sm-4">
-                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer"
-                      name="promo">
-                  </div>
-                </div>
-                <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"
-                  ngModel name="details"></textarea>
-                <br>
-              </div>
-            </div>
+  <br>
+  <br>
+  <div class="container" id="agentDetais">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Serive Name</th>
+          <th>Serive Image</th>
+          <th>Service Price</th>
+          <th>Service Promo</th>
+          <th>Action</th>
+          
+        </tr>
+      </thead>
+      <tbody *ngFor="let value of allServices.services; let i = index">
+        <tr>
+          <th scope=row>{{i+1}}</th>
+          <td>{{value.name}}</td>
+          <td>{{value.image}}</td>
+          <td>{{value.price}}</td>
+          <td>{{value.promo}}</td>
+          <td>
+            <button (click)="getAgentId(value)" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+              <i class="fa fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Modal -->
+  <div  class="modal fade" id="myModal" role="dialog">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <form #editFormServices="ngForm" (submit)="submitEditServices(editFormServices)">
+         
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Edit Lawyer Services</h4>
           </div>
-        </div>
-        <br>
-        <ul class="list-inline pull-right">
-          <li>
-            <button type="submit" class="btn btn-primary next-step">Update</button>
-          </li>
-        </ul>
-      </form>
+            <div  class="modal-body">
+              <div class="row">
+                <div class="col-md-11 offset-md-1">
+                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name"
+                    ngModel="{{selectedService.name}}" required name="name">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price"
+                      ngModel="{{selectedService.price}}"  
+                      required name="price">
+                    </div>
+                    <div class="col-sm-4">
+                      <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer"
+                      ngModel="{{selectedService.promo}}"  
+                      name="promo">
+                    </div>
+                  </div>
+                  <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"
+                  ngModel="{{selectedService.details}}"  
+                  ngModel name="details"></textarea>
+                  <br>
+                </div>
+              </div>
+            
+          </div>
+          <br>
+          <ul class="list-inline pull-right">
+            <li>
+              <button type="submit" class="btn btn-primary next-step">Update</button>
+            </li>
+          </ul>
+        </form>
+      </div>
     </div>
-  </section>
+  </div>
+
+
+
+
+
+
+
+  
+</ng-container>

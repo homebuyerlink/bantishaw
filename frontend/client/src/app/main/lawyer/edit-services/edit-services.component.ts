@@ -9,8 +9,24 @@ import { AuthenticationService } from '../../../services/authentication.service'
   styleUrls: ['./edit-services.component.css']
 })
 export class EditServicesComponent implements OnInit {
+  public allServices=[];
+
+  selectedService = {
+
+    "name": null,
+    "image": null,
+    "price":null,
+    "promo":null 
+  }
   constructor(private lawyerService: LawyerService,private authService:AuthenticationService) { }
-  ngOnInit() {
+  async  ngOnInit() {
+  let response=await this.lawyerService.getInspectorCompanyById();
+  this.allServices=<any>response;
+  console.log(this.allServices);
+  }
+  
+  getAgentId(value) {
+    this.selectedService = value;
   }
   submitEditServices(editFormServices: NgForm) {
     console.log(editFormServices);

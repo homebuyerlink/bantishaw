@@ -116,13 +116,14 @@ export class EditAgentComponent implements OnInit {
   }
 
   async getInspectorCompanyDetailsById() {
-    Utils.showLoader('#agentDetais');
+ 
     try {
       this.inspectorCompanyDetails = (<any>await this.inspectorService.getInspectorCompanyById());
+      console.log(this.inspectorCompanyDetails);
     } catch (error) {
       console.log(error);
     }
-    Utils.hideLoader('#agentDetais');
+    
   }
 
 }

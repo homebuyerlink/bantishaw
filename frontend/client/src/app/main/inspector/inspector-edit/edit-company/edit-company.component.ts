@@ -6,7 +6,7 @@ import { InspectorService } from '../../../../services/inspector.service';
 import { Utils } from '../../../../utils';
 import { AuthenticationService } from '../../../../services/authentication.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TNodeFlags } from '@angular/core/src/render3/interfaces/node';
+
 declare const google: any;
 declare const swal:any;
 @Component({

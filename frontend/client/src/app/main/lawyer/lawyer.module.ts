@@ -17,10 +17,13 @@ const routes: Routes = [
   },
   {
     path: "edit",
-    loadChildren: './lawyer-edit/lawyer-edit.module#LawyerEditModule',
+    loadChildren: './lawyer-edit/lawyer-edit.module#LawyerEditModule'
+  },
+  {
+    path: "edit-services",
+    loadChildren: './edit-services/edit-services.module#EditServicesModule'
   }
 ]
-
 @NgModule({
   imports: [
     CommonModule,

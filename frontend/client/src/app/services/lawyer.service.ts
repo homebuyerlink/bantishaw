@@ -33,6 +33,10 @@ export class LawyerService {
     this.httpClient.put(`${Config.API_BASE}/lawyer`, body, Config.HEADERS).toPromise();
   }
 
+  getInspectorCompanyById(){
+    return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authservice.profile._id}`, Config.HEADERS).toPromise();
+  }
+  
   updatelawyerService(serviceId, name, image, price, promo, details) {
     let body = {
       serviceId: serviceId,
