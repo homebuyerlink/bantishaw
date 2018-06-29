@@ -115,7 +115,7 @@ export class EditCompanyComponent implements OnInit {
 
   private async afterPictureUpload(editCompanyForm) {
     try {
-      let name = editCompanyForm.value['name'];
+      let companyName = editCompanyForm.value['name'];
       let lawyerName = editCompanyForm.value['lawyerName'];
       let designation = editCompanyForm.value['designation'];
       let experience = editCompanyForm.value['experience'];
@@ -139,8 +139,7 @@ export class EditCompanyComponent implements OnInit {
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
       let tags = editCompanyForm.value['tags'];
-      
-     await this.lawyerService.updatelawyerCompanyDetails(this.companyDetails._id,name, lawyerName, designation, experience, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations, tags)
+      await this.lawyerService.updatelawyerCompanyDetails(this.companyDetails._id,companyName, lawyerName, designation, experience, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations, tags)
      swal("Great!", "Updated Sucessfully!", "success");
     } catch (error) {
       alert(error);
