@@ -27,7 +27,7 @@
           <td>{{value.email}}</td>
           <td>{{value.phone}}</td>
           <td>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+            <button (click)="getAgentId(value)" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
               <i class="fa fa-edit"></i>
             </button>
           </td>
@@ -45,38 +45,40 @@
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <form #editAgentForm="ngForm" (submit)="editAgent(editAgentForm)">
+        <form id="editAgentForm" #editAgentForm="ngForm" (submit)="editAgent(editAgentForm)">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Edit Agent Details</h4>
           </div>
           <div class="modal-body">
             <div class="row">
-              <div *ngFor="let value of inspectorCompanyDetails.team" class="col-md-11 offset-md-1">
+              <div class="col-md-11 offset-md-1">
                 <div class="row">
                   <div class="col-sm-6">
                     <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Inspector Name"
-                      ngModel="{{value.name}}" name="name">
+                      ngModel="{{selectedAgent.name}}" name="name">
                   </div>
                   <div class="col-sm-6">
                     <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Designation/Association"
-                      ngModel="{{value.designation}}" name="designation">
+                      ngModel="{{selectedAgent.designation}}" name="designation">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
                     <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Email"
-                      ngModel="{{value.email}}" name="email">
+                      ngModel="{{selectedAgent.email}}" name="email">
                   </div>
                   <div class="col-sm-6">
                     <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="number" placeholder="Phone"
-                      ngModel="{{value.phone}}" name="phone">
+                      ngModel="{{selectedAgent.phone}}" name="phone">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
-                    <label for="image">Profile Picture</label>
-                    <input type="file" ng2FileSelect [uploader]="uploader" class="form-control-file">
+                    <label class="btn btn-primary"> Upload Image
+                      <input type="file" ng2FileSelect [uploader]="uploader" name="image" style="display: none">
+                    </label>&nbsp;
+                    <strong>{{ uploader.queue[uploader.queue.length - 1]?.file?.name }}</strong>
                   </div>
                 </div>
               </div>

@@ -61,6 +61,15 @@ export class EditServiceComponent implements OnInit {
     "services": [],
     "social": []
   }
+  selectedService = {
+    "_id": null,
+    "name": null,
+    "image": null,
+    "price": null,
+    "promo": null,
+    "details": null,
+    "inspectionCompanyId": null
+  }
 
   constructor(private authservice: AuthenticationService, private inspectorService: InspectorService) { }
 
@@ -68,40 +77,52 @@ export class EditServiceComponent implements OnInit {
     this.getInspectorCompanyDetailsById();
   }
 
-  async editAgent(editAgentForm: NgForm) {
-    Utils.showLoader('#myModal');
+  async editService(editServiceForm: NgForm) {
+    Utils.showLoader('#editServiceForm');
     try {
-      this.uploader.uploadAll();
-      this.uploader.queue[this.uploader.queue.length - 1].onSuccess = (response, status, headers) => {
-        this.image = JSON.parse(response).url;
-        this.afterPictureUpload(editAgentForm);
+      if (this.uploader.queue.length > 0) {
+        this.uploader.uploadAll();
+        this.uploader.queue[this.uploader.queue.length - 1].onSuccess = (response, status, headers) => {
+          this.image = JSON.parse(response).url;
+          this.afterPictureUpload(editServiceForm);
+        }
+      } else {
+        this.image = this.selectedService.image;
+        this.afterPictureUpload(editServiceForm);
       }
     } catch (error) {
       console.log(error);
     }
   }
 
-  async afterPictureUpload(editAgentForm) {
+  async afterPictureUpload(editServiceForm) {
     try {
-      let name = editAgentForm.value.name;
-      let designation = editAgentForm.value.designation;
-      let phone = editAgentForm.value.phone;
-      let email = editAgentForm.value.email;
-      await this.inspectorService.editAgentDetails(name, designation, phone, email, this.image);
+      let name = editServiceForm.value.name;
+      let price = editServiceForm.value.price;
+      let promo = editServiceForm.value.promo;
+      let details = editServiceForm.value.details;
+      await this.inspectorService.editServiceDetails(this.selectedService._id, name, price, promo, details, this.image);
+      (<any>$('#myModal')).modal('hide');
+      this.uploader.queue.length = 0;
+      this.getInspectorCompanyDetailsById();
     } catch (error) {
       console.log(error);
     }
-    Utils.hideLoader('#myModal');
+    Utils.hideLoader('#editServiceForm');
+  }
+
+  getServiceId(value) {
+    this.selectedService = value;
   }
 
   async getInspectorCompanyDetailsById() {
-    Utils.showLoader('#agentDetais');
+    Utils.showLoader('#serviceDetails');
     try {
       this.inspectorCompanyDetails = (<any>await this.inspectorService.getInspectorCompanyById());
     } catch (error) {
       console.log(error);
     }
-    Utils.hideLoader('#agentDetais');
+    Utils.hideLoader('#serviceDetails');
   }
 
 }

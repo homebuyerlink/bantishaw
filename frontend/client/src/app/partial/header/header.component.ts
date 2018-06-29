@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
       let userType = signUpForm.value['userType'];
       await this.authService.signup(username, email, password, userType);
       signUpForm.reset();
+      (<any>$('#login-modal')).modal('hide');
     } catch (error) {
       console.error(error);
     }
@@ -44,6 +45,7 @@ export class HeaderComponent implements OnInit {
       let email = signInForm.value['email'];
       let password = signInForm.value['password'];
       await this.authService.login(email, password);
+      // await this.getCompanyDetails();
       signInForm.reset();
     } catch (error) {
       this.errormessage = error.error.message + " Please try again";
@@ -63,8 +65,9 @@ export class HeaderComponent implements OnInit {
     Utils.showLoader('#modal');
     try {
       await this.ngxSocialLoginAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
-      this.ngxSocialLoginAuthService.authState.subscribe((user) => {
-        this.authService.getAuthState(user);
+      this.ngxSocialLoginAuthService.authState.subscribe(async (user) => {
+        await this.authService.getAuthState(user);
+        await this.getCompanyDetails();
       });
     } catch (error) {
       console.error(error);
@@ -76,8 +79,9 @@ export class HeaderComponent implements OnInit {
     Utils.showLoader('#modal');
     try {
       await this.ngxSocialLoginAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
-      this.ngxSocialLoginAuthService.authState.subscribe((user) => {
-        this.authService.getAuthState(user);
+      this.ngxSocialLoginAuthService.authState.subscribe(async (user) => {
+        await this.authService.getAuthState(user);
+        await this.getCompanyDetails();
       });
     } catch (error) {
       console.error(error);
@@ -86,10 +90,12 @@ export class HeaderComponent implements OnInit {
   }
 
   async getCompanyDetails() {
-    try {
-      this.companyDetails = (<any>await this.inspectorService.getCompanyDetails());
-    } catch (error) {
-      // console.log(error);
+    if (this.authService.profile._id != "") {
+      try {
+        this.companyDetails = (<any>await this.inspectorService.getCompanyDetails());
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
