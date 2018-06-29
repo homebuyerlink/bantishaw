@@ -63,11 +63,9 @@ export class EditCompanyComponent implements OnInit {
     "tags": [],
     "team": [],
     "services": [],
-    "social": [
-      { url: null }
-    ],
-
+    "social": [],
   }
+  
   @ViewChild('gmap') gmapElement: any;
   map: any;
   public URL = `${Config.API_BASE}/utils/upload`;
