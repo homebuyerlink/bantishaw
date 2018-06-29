@@ -123,11 +123,18 @@
               <br>
             </div>
 
-
+<div  *ngFor="let value of companyDetails.social">
+  <div class="col-sm-6">
+    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10"
+    
+    ngModel="{{value.url}}"
+    type="text"  name="facebook" placeholder="Facebook Page"
+      required>
+  </div>
+</div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="facebook" placeholder="Facebook Page"
                 required>
-
             </div>
             <div class="col-sm-6">
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="youtube" placeholder="Youtube"

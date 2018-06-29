@@ -64,7 +64,7 @@ export class EditCompanyComponent implements OnInit {
     "team": [],
     "services": [],
     "social": [
-      { url: null }
+
     ],
 
   }
@@ -84,8 +84,7 @@ export class EditCompanyComponent implements OnInit {
     let response = await this.inspectorService.getInspectorCompanyById();
     console.log(response);
     this.companyDetails = <any>response;
-    console.log(this.companyDetails);
-    console.log(this.companyDetails.social[0]);
+    console.log(this.companyDetails.social);
     return response;
   }
 
