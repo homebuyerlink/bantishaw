@@ -23,7 +23,7 @@ class UtilsController {
     }
     async sendResponse(req, res, next) {
         try {
-            res.send({ url: `${config.BASE_URL}/public/uploads/${req.file.filename}` })
+            res.send({ url: `${req.protocol + '://' + req.get('host')}/public/uploads/${req.file.filename}` })
         } catch (error) {
             console.log(error);
         }
