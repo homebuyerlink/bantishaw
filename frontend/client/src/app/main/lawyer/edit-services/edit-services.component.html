@@ -7,7 +7,7 @@
   <br>
   <br>
   <br>
-  <div class="container" id="agentDetais">
+  <div class="container" id="serviceDetails">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -17,10 +17,10 @@
           <th>Service Price</th>
           <th>Service Promo</th>
           <th>Action</th>
-          
+
         </tr>
       </thead>
-      <tbody *ngFor="let value of allServices.services; let i = index">
+      <tbody *ngFor="let value of allServices; let i = index">
         <tr>
           <th scope=row>{{i+1}}</th>
           <td>{{value.name}}</td>
@@ -37,7 +37,7 @@
     </table>
   </div>
   <!-- Modal -->
-  <div  class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="myModal" role="dialog">
     <br>
     <br>
     <br>
@@ -47,42 +47,48 @@
       <!-- Modal content-->
       <div class="modal-content">
         <form #editFormServices="ngForm" (submit)="submitEditServices(editFormServices)">
-         
+
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Edit Lawyer Services</h4>
           </div>
-            <div  class="modal-body">
-              <div class="row">
-                <div class="col-md-11 offset-md-1">
-                  <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name"
-                    ngModel="{{selectedService.name}}" required name="name">
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price"
-                      ngModel="{{selectedService.price}}"  
-                      required name="price">
-                    </div>
-                    <div class="col-sm-4">
-                      <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer"
-                      ngModel="{{selectedService.promo}}"  
-                      name="promo">
-                    </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Service Name"
+                  ngModel="{{selectedService.name}}" required name="name">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Price"
+                      ngModel="{{selectedService.price}}" required name="price">
                   </div>
-                  <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"
-                  ngModel="{{selectedService.details}}"  
-                  ngModel name="details"></textarea>
-                  <br>
+                  <div class="col-sm-6">
+                    <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" placeholder="Promo/Special Offer"
+                      ngModel="{{selectedService.promo}}" name="promo">
+                  </div>
+                  <div class="col-md-12">
+                    <label class="btn btn-primary ct-u-marginBottom10"> Upload Image
+                      <input type="file" ng2FileSelect [uploader]="uploader" name="image" style="display: none">
+                    </label>&nbsp;
+                    <strong>{{ uploader.queue[uploader.queue.length - 1]?.file?.name }}</strong>
+                  </div>
+                  <div class="col-md-12">
+                    <textarea rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"
+                      ngModel="{{selectedService.details}}" ngModel name="details"></textarea>
+                  </div>
                 </div>
+                <br>
               </div>
-            
+            </div>
+
           </div>
-          <br>
-          <ul class="list-inline pull-right">
-            <li>
-              <button type="submit" class="btn btn-primary next-step">Update</button>
-            </li>
-          </ul>
+          <div class="modal-footer">
+            <ul class="list-inline pull-right">
+              <li>
+                <button type="submit" class="btn btn-primary next-step">Update</button>
+              </li>
+            </ul>
+          </div>
         </form>
       </div>
     </div>
@@ -94,5 +100,5 @@
 
 
 
-  
+
 </ng-container>

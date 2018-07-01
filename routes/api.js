@@ -28,6 +28,7 @@ router.get('/inspector/service', inspectorController.getInspectorServices);
 router.post('/inspector/registration/wizard/step-1', inspectorController.registrationWizardStep1);
 router.post('/inspector/registration/wizard/step-2', inspectorController.registrationWizardStep2);
 router.post('/inspector/registration/wizard/step-3', inspectorController.registrationWizardStep3);
+router.post('/inspector/registration/wizard/step-4', inspectorController.registrationWizardStep4);
 router.put('/inspector', inspectorController.editCompanyDetails);
 router.put('/inspector/agent', inspectorController.editAgent);
 router.put('/inspector/service', inspectorController.editService);
@@ -36,6 +37,7 @@ router.put('/inspector/service', inspectorController.editService);
 router.get('/lawyer/slug', lawyerController.getLawyerCompanyBySlug);
 router.post('/lawyer/registration/wizard/step-1', lawyerController.registrationWizardStep1);
 router.post('/lawyer/registration/wizard/step-2', lawyerController.registrationWizardStep2);
+router.post('/lawyer/registration/wizard/step-3', lawyerController.registrationWizardStep3);
 router.put('/lawyer', lawyerController.editCompanyDetails);
 router.put('/lawyer/service', lawyerController.editService);
 

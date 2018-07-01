@@ -6,7 +6,8 @@
   <br>
   <div id="ct-js-wrapper" class="ct-pageWrapper">
     <header class="ct-mediaSection ct-u-paddingBoth100" data-stellar-background-ratio="0.3" data-height="470" data-type="parallax"
-      data-bg-image="assets/images/content/profile-dashboard-snap.jpg" data-bg-image-mobile="assets/images/content/profile-dashboard-snap.jpg" id="profilePage">
+      data-bg-image="assets/images/content/profile-dashboard-snap.jpg" data-bg-image-mobile="assets/images/content/profile-dashboard-snap.jpg"
+      id="profilePage">
       <div class="container">
         <div class="ct-personBox ct-personBox--extended ct-personBox--extendedLight text-left">
           <div class="ct-imagePerson">
@@ -69,30 +70,7 @@
           <div *ngFor="let value of inspectorCompanyDetails?.team" class="col-sm-6 col-md-3">
             <div class="ct-personBox text-left">
               <div class="ct-imagePerson">
-                <img src="assets/images/content/agents-1.jpg" alt="">
-                <!-- <ul class="ct-panel--socials list-inline list-unstyled">
-                  <li>
-                    <a href="https://www.facebook.com/createITpl">
-                      <div class="ct-socials ct-socials--circle">
-                        <i class="fa fa-facebook"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/createitpl">
-                      <div class="ct-socials ct-socials--circle">
-                        <i class="fa fa-twitter"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="ct-socials ct-socials--circle">
-                        <i class="fa fa-instagram"></i>
-                      </div>
-                    </a>
-                  </li>
-                </ul> -->
+                <img src="{{value.image}}" alt="">
               </div>
               <div class="ct-personContent">
                 <div class="ct-personName ct-u-paddingBottom10 ct-u-marginBottom20">
@@ -121,19 +99,16 @@
       <div class="container">
         <div class="ct-heading ct-u-marginBottom60 text-center" id="services">
           <h3 class="text-uppercase">Our Services</h3>
-          <a *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Properties">edit</a>
+          <a routerLink="/inspector/service" *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Properties">edit</a>
         </div>
         <div class="ct-section--products">
           <div class="row">
             <div *ngFor="let value of inspectorCompanyDetails?.services" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
               <div class="ct-itemProducts ct-u-marginBottom30 ct-hover">
-                <label class="control-label new">
-                  New
-                </label>
                 <a href="">
                   <div class="ct-main-content">
                     <div class="ct-imageBox">
-                      <img src="assets/images/content/property-1.jpg" alt="">
+                      <img src="{{value.image}}" alt="">
                       <i class="fa fa-eye"></i>
                     </div>
                     <div class="ct-main-text">
@@ -154,39 +129,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="ct-pagination text-center">
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">
-                  <i class="fa fa-angle-left"></i>
-                </span>
-              </a>
-            </li>
-            <li class="active">
-              <a href="#">1</a>
-            </li>
-            <li>
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
-            </li>
-            <li>
-              <a href="#">4</a>
-            </li>
-            <li>
-              <a href="#">5</a>
-            </li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">
-                  <i class="fa fa-angle-right"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </section>

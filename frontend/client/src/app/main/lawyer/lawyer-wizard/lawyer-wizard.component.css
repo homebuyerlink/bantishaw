@@ -4,3 +4,9 @@ input.ng-invalid.ng-touched{
 input.ng-valid.ng-touched{
     border: 1px solid green;
 }
+
+.schedule-column{
+    width: 14%;
+    float: left;
+    padding: 10px;
+}

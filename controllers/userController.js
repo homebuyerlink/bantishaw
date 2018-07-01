@@ -190,9 +190,9 @@ class UserController {
                 if (userType == 'client')
                     profileWizardStep = 1;
                 else if (userType == 'inspector')
-                    profileWizardTotalSteps = 3;
+                    profileWizardTotalSteps = 4;
                 else if (userType == 'lawyer') {
-                    profileWizardTotalSteps = 2;
+                    profileWizardTotalSteps = 3;
                 }
                 await User.findByIdAndUpdate(user._id, {
                     $set: {
@@ -210,12 +210,13 @@ class UserController {
     async updateUsername(req, res) {
         try {
             let username = req.body.username;
+            let password = bcrypt.hashSync(req.body.password, 8);
             let userId = req.body.userId;
             let user = await User.findOne({ username: username });
             if (user != null)
                 throw { code: 400, message: "Username already taken!" };
             else {
-                await User.findByIdAndUpdate(userId, { $set: { username: username } });
+                await User.findByIdAndUpdate(userId, { $set: { username: username, password: password } });
                 let user = await User.findById(userId);
                 res.send(user);
             }

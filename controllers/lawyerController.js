@@ -2,6 +2,7 @@ const { LawyerCompanyService } = require('./../schema/lawyerCompanyService');
 const { LawyerCompany } = require('./../schema/lawyerCompany');
 const { SocialNetwork } = require('./../schema/socialNetwork');
 const { SearchTag } = require('./../schema/searchTag');
+const { Schedule } = require('./../schema/schedule');
 const { User } = require('./../schema/user');
 const { Lawyer } = require('./../models/lawyer')
 const { errorHandler } = require('./../utils/errorHandler');
@@ -102,6 +103,24 @@ class LawyerController {
             await LawyerCompanyService.insertMany(servicesUpsertArray);
             let user = await User.findByIdAndUpdate(req.body.userId, { profileWizardStep: 2 });
             res.send({ success: true, nextStep: 2 });
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+
+    async registrationWizardStep3(req, res) {
+        try {
+            let schedule = req.body.schedule;
+            let emailNotification = req.body.emailNotification;
+            let companyId = req.body.companyId;
+            let userId = req.body.userId;
+            schedule.forEach(day => {
+                day.refId = companyId;
+                day.type = 'lawyer';
+            });
+            await Schedule.insertMany(schedule);
+            await User.findByIdAndUpdate(userId, { $set: { profileWizardStep: 3, emailNotification: emailNotification } });
+            res.send({ success: true, nextStep: null });
         } catch (error) {
             errorHandler.sendError(res, error);
         }

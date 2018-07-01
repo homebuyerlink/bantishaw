@@ -84,8 +84,8 @@ export class AuthenticationService {
   }
 
   //upDate User name
-  public updateUserName(userId, username) {
-    let body = { userId: userId, username: username };
+  public updateUserName(userId, username, password) {
+    let body = { userId: userId, username: username, password: password };
     let response = this.httpClient.put(`${Config.API_BASE}/user/username`, body, Config.HEADERS).toPromise();
     return response;
   }

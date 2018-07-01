@@ -1,11 +1,12 @@
+const { InspectionCompanyService } = require('./../schema/inspectionCompanyService');
 const { InspectionCompany } = require('./../schema/inspectionCompany');
 const { SocialNetwork } = require('./../schema/socialNetwork');
-const { User } = require('./../schema/user');
-const { TeamMember } = require('./../schema/teamMember');
-const { SearchTag } = require('./../schema/searchTag');
-const { InspectionCompanyService } = require('./../schema/inspectionCompanyService');
 const { errorHandler } = require('./../utils/errorHandler');
+const { TeamMember } = require('./../schema/teamMember');
 const { Inspector } = require('./../models/inspector');
+const { SearchTag } = require('./../schema/searchTag');
+const { Schedule } = require('./../schema/schedule');
+const { User } = require('./../schema/user');
 class InspectorController {
 
     async registrationWizardStep1(req, res) {
@@ -123,6 +124,24 @@ class InspectorController {
             await InspectionCompanyService.insertMany(servicesUpsertArray);
             let user = await User.findByIdAndUpdate(req.body.userId, { profileWizardStep: 3 });
             res.send({ success: true, nextStep: 3 });
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
+
+    async registrationWizardStep4(req, res) {
+        try {
+            let schedule = req.body.schedule;
+            let emailNotification = req.body.emailNotification;
+            let companyId = req.body.companyId;
+            let userId = req.body.userId;
+            schedule.forEach(day => {
+                day.refId = companyId;
+                day.type = 'inspector'
+            });
+            await Schedule.insertMany(schedule);
+            await User.findByIdAndUpdate(userId, { $set: { profileWizardStep: 4, emailNotification: emailNotification } });
+            res.send({ success: true, nextStep: null });
         } catch (error) {
             errorHandler.sendError(res, error);
         }

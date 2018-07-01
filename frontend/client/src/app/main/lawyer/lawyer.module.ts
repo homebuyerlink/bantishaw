@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: './lawyer-edit/lawyer-edit.module#LawyerEditModule'
   },
   {
-    path: "edit-services",
+    path: "service",
     loadChildren: './edit-services/edit-services.module#EditServicesModule'
   }
 ]

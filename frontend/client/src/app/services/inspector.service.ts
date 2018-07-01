@@ -33,7 +33,11 @@ export class InspectorService {
     let response = await this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-3`, body, Config.HEADERS).toPromise();
     return response;
   }
-  
+  //step 4
+  setTimeslots(body) {
+    return this.httpClient.post(`${Config.API_BASE}/inspector/registration/wizard/step-4`, body).toPromise();
+  }
+
   getCompanyDetails() {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
   }
@@ -56,21 +60,21 @@ export class InspectorService {
     return response;
   }
 
-  getInspectorCompanyBySlug(slug){
+  getInspectorCompanyBySlug(slug) {
     return this.httpClient.get(`${Config.API_BASE}/inspector/slug?slug=${slug}`, Config.HEADERS).toPromise();
   }
 
-  getInspectorCompanyById(){
+  getInspectorCompanyById() {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authService.profile._id}`, Config.HEADERS).toPromise();
   }
 
-  editAgentDetails(agentId, name, designation, phone, email, image){
+  editAgentDetails(agentId, name, designation, phone, email, image) {
     let body = { agentId: agentId, name: name, designation: designation, phone: phone, email: email, image: image };
     return this.httpClient.put(`${Config.API_BASE}/inspector/agent`, body, Config.HEADERS).toPromise();
   }
 
-  editServiceDetails(serviceId, name, price, promo, details, image){
+  editServiceDetails(serviceId, name, price, promo, details, image) {
     let body = { serviceId: serviceId, name: name, price: price, promo: promo, details: details, image: image };
     return this.httpClient.put(`${Config.API_BASE}/inspector/service`, body, Config.HEADERS).toPromise();
-  }  
+  }
 }

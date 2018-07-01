@@ -23,6 +23,9 @@ export class LawyerService {
     let response = this.httpClient.post(`${Config.API_BASE}/lawyer/registration/wizard/step-2`, obj, Config.HEADERS).toPromise();
     return response;
   }
+  setTimeslots(body) {
+    return this.httpClient.post(`${Config.API_BASE}/lawyer/registration/wizard/step-3`, body).toPromise();
+  }
   getCompanyDetails() {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authservice.profile._id}`, Config.HEADERS).toPromise();
   }
@@ -33,10 +36,14 @@ export class LawyerService {
     this.httpClient.put(`${Config.API_BASE}/lawyer`, body, Config.HEADERS).toPromise();
   }
 
-  getInspectorCompanyById(){
+  getLawyerCompanyById() {
     return this.httpClient.get(`${Config.API_BASE}/user/company?userId=${this.authservice.profile._id}`, Config.HEADERS).toPromise();
   }
-  
+
+  getLawyerCompanyBySlug(slug) {
+    return this.httpClient.get(`${Config.API_BASE}/lawyer/slug`, { params: { slug: slug } }).toPromise();
+  }
+
   updatelawyerService(serviceId, name, image, price, promo, details) {
     let body = {
       serviceId: serviceId,

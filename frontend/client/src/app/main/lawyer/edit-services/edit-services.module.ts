@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditServicesComponent } from './edit-services.component';
-import {  RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileUploadModule } from 'ng2-file-upload';
 
-const routes:Routes=[
+const routes: Routes = [
   {
-    path:"",
-    component:EditServicesComponent
+    path: "",
+    component: EditServicesComponent
   }
 ]
 @NgModule({
@@ -15,7 +16,8 @@ const routes:Routes=[
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FileUploadModule
   ],
   declarations: [EditServicesComponent]
 })

@@ -33,7 +33,8 @@ var userSchema = new mongoose.Schema(
         profileWizardTotalSteps: {
             type: Number,
             default: 1
-        }
+        },
+        emailNotification: String
     },
     {
         timestamps: true

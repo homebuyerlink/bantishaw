@@ -27,9 +27,14 @@ export class SelectUserTypeComponent implements OnInit {
   //for updating the name
   async onSubmittingUserTypeStep1(userTypeStep1: NgForm) {
     Utils.showLoader('#step1');
+    let password = userTypeStep1.value.password;
+    let confirmPassword = userTypeStep1.value.confirmPassword;
+    if (password != confirmPassword) {
+      userTypeStep1.controls['confirmPassword'].setErrors({ confirm: true });
+    }
     if (userTypeStep1.valid) {
       try {
-        await this.autheticationService.updateUserName(this.autheticationService.profile._id, userTypeStep1.value['username']);
+        await this.autheticationService.updateUserName(this.autheticationService.profile._id, userTypeStep1.value['username'], password);
         if (this.autheticationService.profile.userType === undefined) {
           this.step1 = false;
           this.step2 = true;
@@ -48,11 +53,11 @@ export class SelectUserTypeComponent implements OnInit {
   async  onSubmittingUserTypeStep2(userTypeStep2: NgForm) {
     Utils.showLoader('#step2');
     if (userTypeStep2.valid) {
-      try {   
+      try {
         let userID = this.autheticationService.profile._id;
         let userType = userTypeStep2.value['userType'];
-       await this.autheticationService.updateUserType(userID, userType);
-     
+        await this.autheticationService.updateUserType(userID, userType);
+
         this.router.navigate(['/']);
       } catch (error) {
         alert(error.error.message)
