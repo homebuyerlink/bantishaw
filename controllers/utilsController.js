@@ -1,5 +1,6 @@
 const multer = require('multer');
 const config = require('./../config');
+const fs = require('fs');
 const errorHandler = require('./../utils/errorHandler');
 class UtilsController {
     constructor() {
@@ -7,6 +8,9 @@ class UtilsController {
     }
     uploadFile(req, res, next) {
         try {
+            if (!fs.existsSync('public/uploads')) {
+                fs.mkdirSync('public/uploads');
+            }
             let storage = multer.diskStorage({
                 destination: (req, file, cb) => {
                     cb(null, 'public/uploads')
