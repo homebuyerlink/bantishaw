@@ -30,7 +30,8 @@ export class HeaderComponent implements OnInit {
       let email = signUpForm.value['email'];
       let password = signUpForm.value['password'];
       let userType = signUpForm.value['userType'];
-      await this.authService.signup(username, email, password, userType);
+      let token = (<any>await this.authService.signup(username, email, password, userType)).token;
+      await this.authService.loginWithToken(token);
       signUpForm.reset();
       (<any>$('#login-modal')).modal('hide');
     } catch (error) {
