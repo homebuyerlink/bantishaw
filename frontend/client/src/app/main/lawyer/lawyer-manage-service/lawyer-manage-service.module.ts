@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ManageServiceComponent } from './manage-service.component';
+import { LawyerManageServiceComponent } from './lawyer-manage-service.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
@@ -8,7 +8,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 const routes: Routes = [
   {
     path: "",
-    component: ManageServiceComponent
+    component: LawyerManageServiceComponent
   }
 ]
 
@@ -19,6 +19,6 @@ const routes: Routes = [
     FormsModule,
     FileUploadModule
   ],
-  declarations: [ManageServiceComponent]
+  declarations: [LawyerManageServiceComponent]
 })
-export class ManageServiceModule { }
+export class LawyerManageServiceModule { }

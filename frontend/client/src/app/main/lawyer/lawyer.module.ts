@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: "service",
-    loadChildren: './manage-service/manage-service.module#ManageServiceModule'
+    loadChildren: './lawyer-manage-service/lawyer-manage-service.module#LawyerManageServiceModule'
   }
 ]
 

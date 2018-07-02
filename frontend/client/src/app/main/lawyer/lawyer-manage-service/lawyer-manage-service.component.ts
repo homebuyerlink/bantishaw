@@ -7,11 +7,11 @@ import { LawyerService } from '../../../services/lawyer.service';
 import { Utils } from '../../../utils';
 
 @Component({
-  selector: 'app-manage-service',
-  templateUrl: './manage-service.component.html',
-  styleUrls: ['./manage-service.component.css']
+  selector: 'app-lawyer-manage-service',
+  templateUrl: './lawyer-manage-service.component.html',
+  styleUrls: ['./lawyer-manage-service.component.css']
 })
-export class ManageServiceComponent implements OnInit {
+export class LawyerManageServiceComponent implements OnInit {
 
   public allServices = [];
 
@@ -83,5 +83,6 @@ export class ManageServiceComponent implements OnInit {
     }
     Utils.hideLoader('#editFormServices');
   }
+
 
 }
