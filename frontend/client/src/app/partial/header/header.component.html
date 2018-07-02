@@ -168,32 +168,12 @@
                 <li class="lis-drop-nav">
                   <a routerLink="/{{authService.profile.userType}}/profile/{{companyDetails?.slug}}" class="no-back">Profile</a>
                 </li>
-
-
-                <li class="lis-drop-nav" *ngIf="authService.profile.profileWizardStep===3">
-                    <a routerLink="/{{authService.profile.userType}}/service" class="no-back">Services</a>
-                  </li>
-
-
-                  <li class="lis-drop-nav" *ngIf="!authService.profile.userType=='lawyer' || authService.profile.profileWizardStep===4">
-                      <a  routerLink="/{{authService.profile.userType}}/agent" class="no-back">Agents</a>
-                    </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <li class="lis-drop-nav" *ngIf="authService.profile.profileWizardStep >= 3">
+                  <a routerLink="/{{authService.profile.userType}}/service" class="no-back">Services</a>
+                </li>
+                <li class="lis-drop-nav" *ngIf="authService.profile.userType == 'inspector' && authService.profile.profileWizardStep >= 3">
+                  <a routerLink="/{{authService.profile.userType}}/agent" class="no-back">Agents</a>
+                </li>
                 <li class="lis-drop-nav">
                   <a routerLink="/dashboard/charity-view" class="no-back">Charity</a>
                 </li>

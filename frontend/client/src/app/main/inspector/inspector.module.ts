@@ -24,11 +24,11 @@ const routes: Routes = [
   },
   {
     path: "agent",
-    loadChildren: './edit-agent/edit-agent.module#EditAgentModule'
+    loadChildren: './manage-agent/manage-agent.module#ManageAgentModule'
   },
   {
     path: "service",
-    loadChildren: './edit-service/edit-service.module#EditServiceModule'
+    loadChildren: './manage-service/manage-service.module#ManageServiceModule'
   }
 ]
 
