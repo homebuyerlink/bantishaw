@@ -138,6 +138,10 @@ export class LawyerWizardComponent implements OnInit {
     const control = <FormArray>this.servicesForm.controls['servicesArray'];
     control.push(this.initService());
   }
+  removeServices(i){
+    const control = <FormArray>this.servicesForm.controls['servicesArray'];
+    control.removeAt(i);
+  }
 
   async setService() {
     if (this.servicesForm.valid) {
@@ -422,7 +426,7 @@ export class LawyerWizardComponent implements OnInit {
   scrollUp() {
     $("html, body").animate({ scrollTop: 0 }, 600);
   }
-  
+
   removetoMondaySchedule(i: number) {
     const control = <FormArray>this.lawyerScheduleForm.controls['mondaySchedule'];
     control.removeAt(i);

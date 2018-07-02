@@ -13,13 +13,13 @@
         <div class="card">
           <div class="card-header">
             <i class="fa fa-user font-today-dash">
-              <span> &nbsp;WELCOME USER!</span>
+              <span> &nbsp;WELCOME {{authService.profile.username}}!</span>
             </i>
           </div>
           <div class="card-body">
             <blockquote class="blockquote">
-              <a routerLink="agents" class="btn btn-warning btn-block">OUR AGENTS</a>
-              <a routerLink="services" class="btn btn-warning mt-3 d-block mx-auto btn-block">OUR SERVICES</a>
+      
+              <a routerLink="/lawyer/service" class="btn btn-warning mt-3 d-block mx-auto btn-block">OUR SERVICES</a>
             </blockquote>
           </div>
         </div>

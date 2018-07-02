@@ -7,7 +7,7 @@ import { Utils } from '../../../../utils';
 import { AuthenticationService } from '../../../../services/authentication.service';
 import { LawyerService } from '../../../../services/lawyer.service';
 declare const google: any;
-declare const swal:any;
+declare const swal: any;
 
 @Component({
   selector: 'app-edit-company',
@@ -76,7 +76,7 @@ export class EditCompanyComponent implements OnInit {
   });
   public image = '';
 
-  constructor(private lawyerService:LawyerService, public inspectorService: InspectorService, public authService: AuthenticationService) { }
+  constructor(private lawyerService: LawyerService, public inspectorService: InspectorService, public authService: AuthenticationService) { }
 
   ngOnInit() {
     this.getCompanyDetails();
@@ -95,8 +95,7 @@ export class EditCompanyComponent implements OnInit {
       console.log(error);
     }
     Utils.hideLoader('#editCompanyForm');
-  }
-
+  } 
   async editCompanyDetails(editCompanyForm: NgForm) {
     Utils.showLoader('#editCompanyForm');
 
@@ -141,8 +140,8 @@ export class EditCompanyComponent implements OnInit {
       let twitter = editCompanyForm.value['twitter'];
       let associations = editCompanyForm.value['associations'];
       let tags = editCompanyForm.value['tags'];
-      await this.lawyerService.updatelawyerCompanyDetails(this.companyDetails._id,companyName, lawyerName, designation, experience, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations, tags)
-     swal("Great!", "Updated Sucessfully!", "success");
+      await this.lawyerService.updatelawyerCompanyDetails(this.companyDetails._id, companyName, lawyerName, designation, experience, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations, tags)
+      swal("Great!", "Updated Sucessfully!", "success");
     } catch (error) {
       alert(error);
     }

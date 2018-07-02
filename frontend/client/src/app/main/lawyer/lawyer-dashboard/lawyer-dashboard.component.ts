@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../../../services/authentication.service';
 
 @Component({
   selector: 'app-lawyer-dashboard',
@@ -6,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lawyer-dashboard.component.css']
 })
 export class LawyerDashboardComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(public authService:AuthenticationService) { }
   ngOnInit() {
   }
-
 }

@@ -18,31 +18,31 @@
             ngModel="{{companyDetails.name}}" required>
 
 
-            <div class="row">
-              <div class="col-sm-4">
-                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="lawyerName"
-                  placeholder="LawyerName" ngModel="{{companyDetails.lawyerName}}" required>
-              </div>
-              <div class="col-sm-4">
-                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="designation"
-                  placeholder="designation" ngModel="{{companyDetails.designation}}" required>
-              </div>
-              <div class="col-sm-4">
-                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="experience"
-                  placeholder="Experience" ngModel="{{companyDetails.experience}}" required>
-              </div>
-  
+          <div class="row">
+            <div class="col-sm-4">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="lawyerName" placeholder="LawyerName"
+                ngModel="{{companyDetails.lawyerName}}" required>
             </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine1"
-                  placeholder="Address Line 1" ngModel="{{companyDetails.addressLine1}}" required>
-              </div>
-              <div class="col-sm-6">
-                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine2"
-                  placeholder="Address Line 2" ngModel="{{companyDetails.addressLine2}}" required>
-              </div>
+            <div class="col-sm-4">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="designation"
+                placeholder="designation" ngModel="{{companyDetails.designation}}" required>
             </div>
+            <div class="col-sm-4">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="experience" placeholder="Experience"
+                ngModel="{{companyDetails.experience}}" required>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine1"
+                placeholder="Address Line 1" ngModel="{{companyDetails.addressLine1}}" required>
+            </div>
+            <div class="col-sm-6">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" type="text" name="addressLine2"
+                placeholder="Address Line 2" ngModel="{{companyDetails.addressLine2}}" required>
+            </div>
+          </div>
 
 
 
@@ -56,7 +56,8 @@
                 ngModel="{{companyDetails.city}}" required>
             </div>
             <div class="col-sm-6 ">
-              <select name="state" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ngModel="{{companyDetails.state}}" required>
+              <select name="state" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ngModel="{{companyDetails.state}}"
+                required>
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -132,10 +133,14 @@
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="founded" type="date" placeholder="Founded"
                 ngModel="{{companyDetails.founded | date: 'yyyy-MM-dd' }}" required>
             </div>
+            <div class="col-sm-6">
+                <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="notificationEmail" type="email"
+                placeholder="Email Address for Notification"  required>
+              </div>
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="image">Profile Picture</label>
-                <input type="file" ng2FileSelect [uploader]="uploader"  ngModel="companyDetails.image" required name="image" class="form-control-file">
+                <input type="file" ng2FileSelect [uploader]="uploader" ngModel="companyDetails.image" required name="image" class="form-control-file">
                 <img src="{{companyDetails.image}}" width="10%" height="5%">
               </div>
               <br>

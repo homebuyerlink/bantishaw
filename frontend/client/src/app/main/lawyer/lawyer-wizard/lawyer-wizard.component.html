@@ -316,6 +316,9 @@
                   <textarea cols="43" rows="6" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" placeholder="Service Details"
                     formControlName="details"></textarea>
                 </div>
+                <div class="col-md-offset-10 col-md-2">
+                  <button class="btn btn-danger" (click)="removeServices()">Remove Service</button>
+                </div>
               </div>
             </div>
           </div>
@@ -631,9 +634,10 @@
                         <input formControlName="end" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
-                    <button type="button" (click)="addMoretoSundaySchedule()" class="btn btn-primary btn-block">
-                      <span style="text-align: left">+Block</span>
+                    <button type="button" (click)="removetoSundaySchedule(i)" class="btn btn-danger btn-block">
+                      <span style="text-align: left">Remove</span>
                     </button>
+                   
                   </tbody>
                 </table>
                 <button type="button" (click)="addMoretoSundaySchedule()" class="btn btn-primary btn-block">

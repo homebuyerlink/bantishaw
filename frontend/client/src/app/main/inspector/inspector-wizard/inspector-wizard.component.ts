@@ -181,8 +181,10 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
   async saveServices() {
     Utils.showLoader('#serviceForm');
     this.servicesArray = this.servicesFormStep3.value.servicesArray;
-    console.log(this.servicesArray);
-    
+    // console.log(this.servicesArray);
+    for (let index = 0; index < this.servicesArray.length; index++) {
+     var res= this.servicesArray.values[index];      
+    }
     this.reactiveUploader.uploadAll();
     this.reactiveUploader.onCompleteItem = (item: FileItem, response, status, header) => {
       this.servicesArray[item.formData[0].index].image = JSON.parse(response).url;
@@ -199,9 +201,7 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
         userId: this.authservice.profile._id,
         services: this.servicesArray,
       };
-      
-      
-      // await this.inspector.setServicesDetails(obj);
+      await this.inspector.setServicesDetails(obj);
       this.step = 3;
       this.scrollUp();
     } catch (error) {
