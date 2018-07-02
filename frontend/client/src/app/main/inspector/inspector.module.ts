@@ -25,8 +25,7 @@ const routes: Routes = [
   {
     path: "agent",
     loadChildren: './edit-agent/edit-agent.module#EditAgentModule'
-  }
-  ,
+  },
   {
     path: "service",
     loadChildren: './edit-service/edit-service.module#EditServiceModule'

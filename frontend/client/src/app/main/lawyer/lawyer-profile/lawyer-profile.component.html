@@ -27,9 +27,6 @@
               <h2>{{lawyerCompanyDetails?.name}}
                 <a routerLink="/lawyer/edit/company-details" *ngIf="lawyerCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
               </h2>
-              <a href="">{{lawyerCompanyDetails?.addressLine1}}
-                <i class="fa fa-external-link"></i>
-              </a>
             </div>
             <div class="ct-personDescription pull-right ct-u-paddingBoth20">
               <ul class="list-unstyled ct-contactPerson pull-right">
@@ -44,11 +41,31 @@
                 </li>
                 <li>
                   <i class="fa fa-home"></i>
-                  <span>{{lawyerCompanyDetails?.city}}</span>
+                  <span>{{lawyerCompanyDetails?.state}}</span>
                 </li>
                 <li>
                   <a>
                     <i class="fa fa-envelope-o"></i>{{lawyerCompanyDetails?.email}}</a>
+                </li>
+              </ul>
+            </div>
+            <div class="ct-personDescription pull-right ct-u-paddingBoth20">
+              <ul class="list-unstyled ct-contactPerson pull-right">
+                <li>
+                  <i class="fa fa-location-arrow"></i>
+                  <span>{{lawyerCompanyDetails?.addressLine1}}</span>
+                </li>
+                <li>
+                  <i class="fa fa-location-arrow"></i>
+                  <span>{{lawyerCompanyDetails?.addressLine2}}</span>
+                </li>
+                <li>
+                  <i class="fa fa-home"></i>
+                  <span>{{lawyerCompanyDetails?.city}}</span>
+                </li>
+                <li>
+                  <i class="fa fa-home"></i>
+                  <span>{{lawyerCompanyDetails?.zip}}</span>
                 </li>
               </ul>
             </div>

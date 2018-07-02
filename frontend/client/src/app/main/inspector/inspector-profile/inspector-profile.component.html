@@ -27,9 +27,6 @@
               <h2>{{inspectorCompanyDetails?.name}}
                 <a routerLink="/inspector/edit/company-details" *ngIf="inspectorCompanyDetails.userId == authService.profile._id" class="btn btn-xs btn-edit text-uppercase ct-js-btnEdit--Agents">edit</a>
               </h2>
-              <a href="">{{inspectorCompanyDetails?.addressLine1}}
-                <i class="fa fa-external-link"></i>
-              </a>
             </div>
             <div class="ct-personDescription pull-right ct-u-paddingBoth20">
               <ul class="list-unstyled ct-contactPerson pull-right">
@@ -49,6 +46,26 @@
                 <li>
                   <a>
                     <i class="fa fa-envelope-o"></i>{{inspectorCompanyDetails?.email}}</a>
+                </li>
+              </ul>
+            </div>
+            <div class="ct-personDescription pull-right ct-u-paddingBoth20">
+              <ul class="list-unstyled ct-contactPerson pull-right">
+                <li>
+                  <i class="fa fa-location-arrow"></i>
+                  <span>{{inspectorCompanyDetails?.addressLine1}}</span>
+                </li>
+                <li>
+                  <i class="fa fa-location-arrow"></i>
+                  <span>{{inspectorCompanyDetails?.addressLine2}}</span>
+                </li>
+                <li>
+                  <i class="fa fa-home"></i>
+                  <span>{{inspectorCompanyDetails?.city}}</span>
+                </li>
+                <li>
+                  <i class="fa fa-home"></i>
+                  <span>{{inspectorCompanyDetails?.zip}}</span>
                 </li>
               </ul>
             </div>

@@ -6544,8 +6544,8 @@ button {
   padding-bottom: 90px;
 }
 .ct-u-paddingBoth100 {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 70px;
+  padding-bottom: 20px;
 }
 .ct-u-paddingTop100 {
   padding-top: 100px;
@@ -10877,6 +10877,7 @@ header {
 }
 .ct-personBox .ct-imagePerson img {
   width: 100%;
+  height: auto;
 }
 .ct-personBox .ct-imagePerson .ct-panel--socials {
   position: absolute;
@@ -11009,7 +11010,6 @@ header {
   margin-left: -386px;
 }*/
 .ct-personBox--extended .ct-imagePerson {
-  height: 270px;
   width: 270px;
   overflow: hidden;
   background-color: #f7f7f7;
@@ -11810,6 +11810,7 @@ a[href^=tel] {
 .ct-itemProducts .ct-imageBox img,
 .ct-itemProducts--small .ct-imageBox img {
   width: 100%;
+  height: 160px;
 }
 .ct-itemProducts .ct-main-content,
 .ct-itemProducts--small .ct-main-content {
@@ -13412,7 +13413,7 @@ a[href^=tel] {
     margin-bottom: 30px;
   }
   .ct-personBox--extended .ct-imagePerson img {
-    width: auto;
+    width: 360px;
   }
   .ct-navigationGmaps--container {
     top: 100px;
