@@ -21,9 +21,10 @@ const routes: Routes = [
   },
   {
     path: "service",
-    loadChildren: './edit-services/edit-services.module#EditServicesModule'
+    loadChildren: './manage-service/manage-service.module#ManageServiceModule'
   }
 ]
+
 @NgModule({
   imports: [
     CommonModule,

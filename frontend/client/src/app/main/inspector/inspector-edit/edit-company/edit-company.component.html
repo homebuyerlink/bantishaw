@@ -108,11 +108,15 @@
               <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="founded" type="date" placeholder="Founded"
                 ngModel="{{companyDetails.founded | date: 'yyyy-MM-dd'}}" required>
             </div>
+            <div class="col-sm-6">
+              <input class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" name="notificationEmail" type="email"
+              placeholder="Email Address for Notification"  required>
+            </div>
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="image">Profile Picture</label>
                 <input type="file" ng2FileSelect [uploader]="uploader" name="image" class="form-control-file">
-                <img src="{{companyDetails.image}}" width="10%" height="5%">
+                <img src="{{companyDetails?.image}}" width="10%" height="5%">
               </div>
               <br>
               <br>

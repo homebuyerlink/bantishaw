@@ -317,7 +317,7 @@
         <br>
         <div class="row">
           <div class="col-sm-6">
-            <tag-input type="text" [modelAsStrings]="true" formControlName="tags" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10"
+            <tag-input type="text" [modelAsStrings]="true" addOnBlur="true" separatorKeys="[',']" formControlName="tags" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10"
               style="padding-top: 2px;"></tag-input>
           </div>
           <div class="col-sm-6">
@@ -526,7 +526,7 @@
                       <button type="button" (click)="removetoMondaySchedule(i)" class="btn btn-danger btn-block">
                         <span style="text-align: left">Remove</span>
                       </button>
-                      
+
                     </tbody>
                   </table>
                 </div>
@@ -564,9 +564,9 @@
                     </tr>
                     <button type="button" (click)="removetoTuesdaySchedule(i)" class="btn btn-danger btn-block">
                       <span style="text-align: left">Remove</span>
-                     
+
                     </button>
-                    
+
                   </tbody>
                 </table>
                 <button type="button" (click)="addMoretoTuesdaySchedule()" class="btn btn-primary btn-block">
@@ -678,7 +678,7 @@
                       <span style="text-align: left">Remove</span>
                     </button>
                   </tbody>
-                  
+
                 </table>
                 <button type="button" (click)="addMoretoFridaySchedule()" class="btn btn-primary btn-block">
                   <span style="text-align: left">+Block</span>
@@ -762,7 +762,8 @@
           <div class="form-group">
             <label class="col-md-2" for="notification">Notification</label>
             <div class="col-md-10">
-              <input type="text" placeholder="Please provide your Email Address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="notification" formControlName="notification" class="input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10">
+              <input type="text" placeholder="Please provide your Email Address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                name="notification" formControlName="notification" class="input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10">
             </div>
           </div>
           <br>

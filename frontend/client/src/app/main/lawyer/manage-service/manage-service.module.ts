@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EditServicesComponent } from './edit-services.component';
+import { ManageServiceComponent } from './manage-service.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
 
 const routes: Routes = [
   {
     path: "",
-    component: EditServicesComponent
+    component: ManageServiceComponent
   }
 ]
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
-    ReactiveFormsModule,
     FileUploadModule
   ],
-  declarations: [EditServicesComponent]
+  declarations: [ManageServiceComponent]
 })
-export class EditServicesModule { }
+export class ManageServiceModule { }

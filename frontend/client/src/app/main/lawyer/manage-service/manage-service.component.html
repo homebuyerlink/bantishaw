@@ -12,24 +12,28 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Serive Name</th>
-          <th>Serive Image</th>
-          <th>Service Price</th>
-          <th>Service Promo</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Promo</th>
+          <th>Image</th>
           <th>Action</th>
-
         </tr>
       </thead>
       <tbody *ngFor="let value of allServices; let i = index">
         <tr>
           <th scope=row>{{i+1}}</th>
           <td>{{value.name}}</td>
-          <td>{{value.image}}</td>
           <td>{{value.price}}</td>
           <td>{{value.promo}}</td>
           <td>
-            <button (click)="getAgentId(value)" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+            <img src="{{ value.image }}" class="img-rounded img-fluid" style="width: 60px; height: 40px;">
+          </td>
+          <td>
+            <button (click)="getServiceId(value)" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
               <i class="fa fa-edit"></i>
+            </button>
+            <button (click)="deleteService(value._id)" type="button" class="btn btn-danger">
+              <i class="fa fa-trash"></i>
             </button>
           </td>
         </tr>
@@ -67,7 +71,7 @@
                       ngModel="{{selectedService.promo}}" name="promo">
                   </div>
                   <div class="col-md-12">
-                    <label class="btn btn-primary ct-u-marginBottom10"> Upload Image
+                    <label class="btn btn-primary ct-u-marginBottom10"> Update Image
                       <input type="file" ng2FileSelect [uploader]="uploader" name="image" style="display: none">
                     </label>&nbsp;
                     <strong>{{ uploader.queue[uploader.queue.length - 1]?.file?.name }}</strong>
@@ -93,12 +97,4 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
 </ng-container>

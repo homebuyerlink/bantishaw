@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LawyerService } from '../../../services/lawyer.service';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { FileUploader } from 'ng2-file-upload';
-import { Config } from '../../../config';
+import { Config } from './../../../config';
+import { LawyerService } from '../../../services/lawyer.service';
 import { Utils } from '../../../utils';
 
 @Component({
-  selector: 'app-edit-services',
-  templateUrl: './edit-services.component.html',
-  styleUrls: ['./edit-services.component.css']
+  selector: 'app-manage-service',
+  templateUrl: './manage-service.component.html',
+  styleUrls: ['./manage-service.component.css']
 })
-export class EditServicesComponent implements OnInit {
+export class ManageServiceComponent implements OnInit {
+
   public allServices = [];
 
   selectedService = {
@@ -27,14 +28,17 @@ export class EditServicesComponent implements OnInit {
     url: this.URL,
   });
   public image = '';
+
   constructor(private lawyerService: LawyerService, private authService: AuthenticationService) { }
+
   ngOnInit() {
     this.getServices();
   }
 
-  getAgentId(value) {
+  getServiceId(value) {
     this.selectedService = value;
   }
+
   async submitEditServices(editFormServices: NgForm) {
     Utils.showLoader('#editFormServices');
     try {
@@ -79,4 +83,5 @@ export class EditServicesComponent implements OnInit {
     }
     Utils.hideLoader('#editFormServices');
   }
+
 }
