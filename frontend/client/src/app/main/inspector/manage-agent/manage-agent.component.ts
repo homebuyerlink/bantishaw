@@ -116,13 +116,13 @@ export class ManageAgentComponent implements OnInit {
   }
 
   async getInspectorCompanyDetailsById() {
- 
+    Utils.showLoader('#agentDetails');
     try {
       this.inspectorCompanyDetails = (<any>await this.inspectorService.getInspectorCompanyById());
     } catch (error) {
       console.log(error);
     }
-    
+    Utils.hideLoader('#agentDetails');
   }
 
 }

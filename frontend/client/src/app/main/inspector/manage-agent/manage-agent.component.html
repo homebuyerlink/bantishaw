@@ -7,7 +7,7 @@
   <br>
   <br>
   <br>
-  <div class="container" id="agentDetais">
+  <div class="container" id="agentDetails">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -16,6 +16,7 @@
           <th>Designation</th>
           <th>Email</th>
           <th>Phone</th>
+          <th>Image</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -27,8 +28,14 @@
           <td>{{value.email}}</td>
           <td>{{value.phone}}</td>
           <td>
+            <img src="{{ value.image }}" class="img-rounded img-fluid" style="width: 60px; height: 40px;">
+          </td>
+          <td>
             <button (click)="getAgentId(value)" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
               <i class="fa fa-edit"></i>
+            </button>
+            <button (click)="deleteAgent(value._id)" type="button" class="btn btn-danger">
+              <i class="fa fa-trash"></i>
             </button>
           </td>
         </tr>
