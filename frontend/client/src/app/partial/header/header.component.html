@@ -44,7 +44,6 @@
             <div class="ct-panel--item ct-email">
               <a class="btn btn-link btn-xs btn-upper-nav" data-toggle="modal" data-target="#login-modal">
                 <i class="fa fa-user"></i> Login / Register</a>
-
               <div class="modal fade" id="login-modal" role="dialog">
                 <div class="modal-dialog">
                   <div class="modal-content" style="margin-top: 11%;max-width:81%;margin-left: 14%;background-color: white;border: none;" id="modal">
@@ -52,7 +51,6 @@
                       <button type="button" class="close" data-dismiss="modal" style="position: absolute;right: -18px;top: -25px;color: #f3a822;font-size: 27px;text-shadow: none;opacity: 10;">&times;</button>
                       <div class="row">
                         <div class="col-sm-12">
-
                           <div role="tabpanel">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs nav-justified" role="tablist">
@@ -63,7 +61,6 @@
                                 <a href="#vision32-1" aria-controls="vision32-1" role="tab" data-toggle="tab" style="padding: 15px;">REGISTER</a>
                               </li>
                             </ul>
-
                             <div class="clearfix"></div>
                             <!-- Tab panes -->
                             <div class="tab-content tab-content--withBorder" style="background-color: white;color: black;">
@@ -92,9 +89,7 @@
                                 </form>
                               </div>
                               <div role="tabpanel" class="tab-pane" id="vision32-1" style="border: none !important;">
-
                                 <form #signUpForm="ngForm" (submit)="registerNow(signUpForm)">
-
                                   <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="text" name="username" placeholder="Username"
                                     ngModel required>
                                   <input class="form-control input-lg text-inner-input ct-u-marginBottom10" type="email" name="email" placeholder="Email" ngModel
@@ -168,32 +163,12 @@
                 <li class="lis-drop-nav">
                   <a routerLink="/{{authService.profile.userType}}/profile/{{companyDetails?.slug}}" class="no-back">Profile</a>
                 </li>
-
-
                 <li class="lis-drop-nav" *ngIf="authService.profile.profileWizardStep===3">
-                    <a routerLink="/{{authService.profile.userType}}/service" class="no-back">Services</a>
-                  </li>
-
-
-                  <li class="lis-drop-nav" *ngIf="!authService.profile.userType=='lawyer' || authService.profile.profileWizardStep===4">
-                      <a  routerLink="/{{authService.profile.userType}}/agent" class="no-back">Agents</a>
-                    </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                  <a routerLink="/{{authService.profile.userType}}/service" class="no-back">Services</a>
+                </li>
+                <li class="lis-drop-nav" *ngIf="!authService.profile.userType=='lawyer' || authService.profile.profileWizardStep===4">
+                  <a routerLink="/{{authService.profile.userType}}/agent" class="no-back">Agents</a>
+                </li>
                 <li class="lis-drop-nav">
                   <a routerLink="/dashboard/charity-view" class="no-back">Charity</a>
                 </li>

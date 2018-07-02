@@ -30,6 +30,11 @@ const routes: Routes = [
     path: "service",
     loadChildren: './edit-service/edit-service.module#EditServiceModule'
   }
+  ,
+  {
+    path: "service/:slug",
+    loadChildren: './inspector-service-detail/inspector-service-detail.module#InspectorServiceDetailModule'
+  }
 ]
 
 @NgModule({
