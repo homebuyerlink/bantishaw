@@ -305,11 +305,14 @@
                   <input type="file" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ng2FileSelect [uploader]="reactiveUploader"
                     accept="image/x-png,image/gif,image/jpeg" (click)="fileEvent($event, i)" name="image" formControlName="image">
                 </div>
+                <div class="col-md-offset-10 col-md-2">
+                  <button class="btn btn-danger" (click)="removeServiceStep2(i)">Remove Service</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add More Teams</button>
+        <button type="button" class="btn btn-primary" (click)="addMoreDetail()">Add Inspector</button>
         <br>
         <br>
         <div class="row">
@@ -412,6 +415,9 @@
                   <input type="file" class="form-control input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10" ng2FileSelect [uploader]="reactiveUploader"
                     accept="image/x-png,image/gif,image/jpeg" (click)="fileEvent($event, i)" name="image" formControlName="image">
                 </div>
+                <div class="col-md-offset-10 col-md-2">
+                  <button class="btn btn-danger" (click)="removeService(i)">Remove Service</button>
+                </div>
               </div>
             </div>
           </div>
@@ -506,7 +512,7 @@
                       </tr>
                       <tr>
                         <td>
-                          <input formControlName="start" class="form-control" type="number" min="0" max="23">
+                          <input formControlName="start" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                         </td>
                       </tr>
                       <tr>
@@ -514,9 +520,13 @@
                       </tr>
                       <tr>
                         <td>
-                          <input formControlName="end" class="form-control" type="number" min="0" max="23">
+                          <input formControlName="end" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                         </td>
                       </tr>
+                      <button type="button" (click)="removetoMondaySchedule(i)" class="btn btn-danger btn-block">
+                        <span style="text-align: left">Remove</span>
+                      </button>
+                      
                     </tbody>
                   </table>
                 </div>
@@ -541,7 +551,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="start" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="start" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
                     <tr>
@@ -549,9 +559,14 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="end" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="end" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
+                    <button type="button" (click)="removetoTuesdaySchedule(i)" class="btn btn-danger btn-block">
+                      <span style="text-align: left">Remove</span>
+                     
+                    </button>
+                    
                   </tbody>
                 </table>
                 <button type="button" (click)="addMoretoTuesdaySchedule()" class="btn btn-primary btn-block">
@@ -575,7 +590,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="start" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="start" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
                     <tr>
@@ -583,9 +598,12 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="end" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="end" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
+                    <button type="button" (click)="removetoWednesdaySchedule(i)" class="btn btn-danger btn-block">
+                      <span style="text-align: left">Remove</span>
+                    </button>
                   </tbody>
                 </table>
                 <button type="button" (click)="addMoretoWednesdaySchedule()" class="btn btn-primary btn-block">
@@ -609,7 +627,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="start" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="start" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
                     <tr>
@@ -617,9 +635,12 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="end" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="end" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
+                    <button type="button" (click)="removetoThursdaySchedule(i)" class="btn btn-danger btn-block">
+                      <span style="text-align: left">Remove</span>
+                    </button>
                   </tbody>
                 </table>
                 <button type="button" (click)="addMoretoThursdaySchedule()" class="btn btn-primary btn-block">
@@ -642,7 +663,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="start" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="start" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
                     <tr>
@@ -650,10 +671,14 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="end" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="end" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
+                    <button type="button" (click)="removetoFirdaySchedule(i)" class="btn btn-danger btn-block">
+                      <span style="text-align: left">Remove</span>
+                    </button>
                   </tbody>
+                  
                 </table>
                 <button type="button" (click)="addMoretoFridaySchedule()" class="btn btn-primary btn-block">
                   <span style="text-align: left">+Block</span>
@@ -675,7 +700,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="start" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="start" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
                     <tr>
@@ -683,9 +708,12 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="end" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="end" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
+                    <button type="button" (click)="removetoSaturdaySchedule(i)" class="btn btn-danger btn-block">
+                      <span style="text-align: left">Remove</span>
+                    </button>
                   </tbody>
                 </table>
                 <button type="button" (click)="addMoretoSaturdaySchedule()" class="btn btn-primary btn-block">
@@ -708,7 +736,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="start" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="start" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
                     <tr>
@@ -716,9 +744,12 @@
                     </tr>
                     <tr>
                       <td>
-                        <input formControlName="end" class="form-control" type="number" min="0" max="23">
+                        <input formControlName="end" class="form-control" type="number" min="0" placeholder="0-23" max="23">
                       </td>
                     </tr>
+                    <button type="button" (click)="removetoSundaySchedule(i)" class="btn btn-danger btn-block">
+                      <span style="text-align: left">Remove</span>
+                    </button>
                   </tbody>
                 </table>
                 <button type="button" (click)="addMoretoSundaySchedule()" class="btn btn-primary btn-block">
@@ -731,7 +762,7 @@
           <div class="form-group">
             <label class="col-md-2" for="notification">Notification</label>
             <div class="col-md-10">
-              <input type="text" name="notification" formControlName="notification" class="input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10">
+              <input type="text" placeholder="Please provide your Email Address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="notification" formControlName="notification" class="input-lg text-inner-input ct-u-text--dark ct-u-marginBottom10">
             </div>
           </div>
           <br>

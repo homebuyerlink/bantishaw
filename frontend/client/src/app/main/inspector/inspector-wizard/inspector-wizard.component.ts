@@ -7,7 +7,7 @@ import { InspectorService } from '../../../services/inspector.service';
 import { Utils } from '../../../utils';
 import { Router } from '@angular/router';
 declare const google: any;
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-inspector-wizard',
   templateUrl: './inspector-wizard.component.html',
@@ -130,6 +130,7 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
         facebook, youtube, instagram, gplus, twitter, associations);
       this.companyDetails = (<any>response).inspectionCompany;
       this.step = 1;
+      this.scrollUp();
     } catch (error) {
       alert(error);
     }
@@ -168,6 +169,7 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
       };
       await this.inspector.setInspectorDetails(obj);
       this.step = 2;
+      this.scrollUp();
     } catch (error) {
       console.log(error);
     }
@@ -179,6 +181,8 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
   async saveServices() {
     Utils.showLoader('#serviceForm');
     this.servicesArray = this.servicesFormStep3.value.servicesArray;
+    console.log(this.servicesArray);
+    
     this.reactiveUploader.uploadAll();
     this.reactiveUploader.onCompleteItem = (item: FileItem, response, status, header) => {
       this.servicesArray[item.formData[0].index].image = JSON.parse(response).url;
@@ -195,8 +199,11 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
         userId: this.authservice.profile._id,
         services: this.servicesArray,
       };
-      await this.inspector.setServicesDetails(obj);
+      
+      
+      // await this.inspector.setServicesDetails(obj);
       this.step = 3;
+      this.scrollUp();
     } catch (error) {
       console.log(error);
     }
@@ -238,6 +245,14 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
   addMoreDetailStep3() {
     const control = <FormArray>this.servicesFormStep3.controls['servicesArray'];
     control.push(this.initinspectorServicesDetail());
+  }
+  removeService(i){
+    const control = <FormArray>this.servicesFormStep3.controls['servicesArray'];
+    control.removeAt(i);
+  }
+  removeServiceStep2(i){
+    const control = <FormArray>this.servicesFormStep3.controls['servicesArray'];
+    control.removeAt(i);
   }
   //google map cred
   initmap() {
@@ -485,5 +500,36 @@ export class InspectorWizardComponent implements OnInit, AfterViewInit {
     }
     Utils.hideLoader('body');
   }
-
+  scrollUp() {
+    $("html, body").animate({ scrollTop: 0 }, 600);
+  }
+  removetoMondaySchedule(i: number) {
+    const control = <FormArray>this.inspectorScheduleForm.controls['mondaySchedule'];
+    control.removeAt(i);
+  }
+  removetoTuesdaySchedule(i) {
+  const control = <FormArray>this.inspectorScheduleForm.controls['tuesdaySchedule'];
+  control.removeAt(i);
+  }
+  removetoWednesdaySchedule(i) {
+    const control = <FormArray>this.inspectorScheduleForm.controls['wednesdaySchedule'];
+    control.removeAt(i);
+  }
+  removetoThursdaySchedule(i: number) {
+    const control = <FormArray>this.inspectorScheduleForm.controls['thursdaySchedule'];
+    control.removeAt(i);
+  }
+  removetoFirdaySchedule(i) {
+    const control = <FormArray>this.inspectorScheduleForm.controls['fridaySchedule'];
+    control.removeAt(i);
+  }
+  removetoSaturdaySchedule(i) {
+    const control = <FormArray>this.inspectorScheduleForm.controls['saturdaySchedule'];
+    control.removeAt(i);
+  }
+  removetoSundaySchedule(i) {
+    const control = <FormArray>this.inspectorScheduleForm.controls['sundaySchedule'];
+    control.removeAt(i);
+  }
+  
 }

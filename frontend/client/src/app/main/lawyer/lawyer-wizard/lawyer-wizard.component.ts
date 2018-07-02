@@ -7,6 +7,7 @@ import { LawyerService } from '../../../services/lawyer.service';
 import { Utils } from '../../../utils';
 import { Router } from '@angular/router';
 declare const google: any;
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-lawyer-wizard',
@@ -116,6 +117,7 @@ export class LawyerWizardComponent implements OnInit {
       let associations = companyDetailsForm.value['associations'];
       await this.lawyerService.setCompanyDetails(companyName, lawyerName, designation, experience, addressLine1, addressLine2, city, state, zip, phone, email, website, founded, this.image, lat, lng, radius, userId, facebook, youtube, instagram, gplus, twitter, associations, tags);
       this.step = 1;
+      this.scrollUp();
     } catch (error) {
       console.log(error);
     }
@@ -160,6 +162,7 @@ export class LawyerWizardComponent implements OnInit {
       };
       await this.lawyerService.setService(obj);
       this.step = 2;
+      this.scrollUp();
     } catch (error) {
       console.log(error);
     }
@@ -415,5 +418,37 @@ export class LawyerWizardComponent implements OnInit {
       console.log(error);
     }
     Utils.hideLoader('body');
+  }
+  scrollUp() {
+    $("html, body").animate({ scrollTop: 0 }, 600);
+  }
+  
+  removetoMondaySchedule(i: number) {
+    const control = <FormArray>this.lawyerScheduleForm.controls['mondaySchedule'];
+    control.removeAt(i);
+  }
+  removetoTuesdaySchedule(i) {
+  const control = <FormArray>this.lawyerScheduleForm.controls['tuesdaySchedule'];
+  control.removeAt(i);
+  }
+  removetoWednesdaySchedule(i) {
+    const control = <FormArray>this.lawyerScheduleForm.controls['wednesdaySchedule'];
+    control.removeAt(i);
+  }
+  removetoThursdaySchedule(i: number) {
+    const control = <FormArray>this.lawyerScheduleForm.controls['thursdaySchedule'];
+    control.removeAt(i);
+  }
+  removetoFirdaySchedule(i) {
+    const control = <FormArray>this.lawyerScheduleForm.controls['fridaySchedule'];
+    control.removeAt(i);
+  }
+  removetoSaturdaySchedule(i) {
+    const control = <FormArray>this.lawyerScheduleForm.controls['saturdaySchedule'];
+    control.removeAt(i);
+  }
+  removetoSundaySchedule(i) {
+    const control = <FormArray>this.lawyerScheduleForm.controls['sundaySchedule'];
+    control.removeAt(i);
   }
 }
